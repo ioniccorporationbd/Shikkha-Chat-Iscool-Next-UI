@@ -20,10 +20,7 @@ type NavItem = {
 const logoSrc = "/assets/images/logo-mane.png";
 
 const navList: NavItem[] = [
-  {
-    name: "Home",
-    link: "/",
-  },
+  { name: "Home", link: "/" },
   {
     name: "About us",
     link: "/message-from-chairman",
@@ -45,7 +42,7 @@ const navList: NavItem[] = [
       { name: "Guideline for Parents", link: "/guideline-for-parents" },
       { name: "Dress Code", link: "/dress-code" },
       {
-        name: "HomeWork And Class Lecture Documents",
+        name: "HomeWork & Lectures",
         link: "/homework-and-class-lecture-documents",
       },
       { name: "Lesson Plan", link: "/lesson-plan" },
@@ -70,7 +67,7 @@ const navList: NavItem[] = [
       { name: "Policies & Guidelines", link: "/policies-and-guidelines" },
       { name: "Library", link: "/library" },
       {
-        name: "Health and Environmental Awareness Info",
+        name: "Health Awareness",
         link: "/health-and-environmental-awareness-info",
       },
     ],
@@ -100,13 +97,10 @@ const navList: NavItem[] = [
     subLink: [
       { name: "At a Glance", link: "/at-a-glance" },
       { name: "Employment Circulars", link: "/employment-circulars" },
-      { name: "Recruitment Exam Results", link: "/recruitment-exam-results" },
+      { name: "Recruitment Results", link: "/recruitment-exam-results" },
     ],
   },
-  {
-    name: "Contact",
-    link: "/contact",
-  },
+  { name: "Contact", link: "/contact" },
   {
     name: "স্বাধীনতা কর্নার",
     link: "/freedomcorner",
@@ -118,27 +112,8 @@ const navList: NavItem[] = [
   },
 ];
 
-const MenuIcon = () => {
-  return <FaBars className="text-lg" />;
-};
-
-const CloseIcon = () => {
-  return <FaTimes className="text-lg" />;
-};
-
-const DownIcon = ({ open = false }: { open?: boolean }) => {
-  return (
-    <FaChevronDown
-      className={`text-[10px] transition-transform duration-300 ease-out ${
-        open ? "rotate-180" : ""
-      }`}
-    />
-  );
-};
-
 const Navbar = () => {
   const pathname = usePathname();
-
   const [toggle, setToggle] = useState<boolean>(false);
   const [activeSubIndex, setActiveSubIndex] = useState<number | null>(null);
 
@@ -148,9 +123,7 @@ const Navbar = () => {
   };
 
   const handleSubToggle = (index: number) => {
-    setActiveSubIndex((previousIndex) =>
-      previousIndex === index ? null : index
-    );
+    setActiveSubIndex((prev) => (prev === index ? null : index));
   };
 
   const handleMenuLinkClick = (
@@ -162,17 +135,14 @@ const Navbar = () => {
     if (typeof window === "undefined") return;
 
     const targetUrl = new URL(link, window.location.origin);
-    const currentPath = window.location.pathname;
 
-    if (targetUrl.pathname === currentPath && targetUrl.hash) {
+    if (targetUrl.pathname === window.location.pathname && targetUrl.hash) {
       event.preventDefault();
-
       window.history.pushState(
         null,
         "",
         `${targetUrl.pathname}${targetUrl.hash}`
       );
-
       window.dispatchEvent(new Event("hashchange"));
     }
   };
@@ -184,7 +154,6 @@ const Navbar = () => {
 
   const isMenuActive = (item: NavItem) => {
     if (isRouteActive(item.link)) return true;
-
     return Boolean(
       item.subLink?.some((subItem) => isRouteActive(subItem.link))
     );
@@ -192,9 +161,7 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleEscape = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        closeMobileMenu();
-      }
+      if (event.key === "Escape") closeMobileMenu();
     };
 
     document.addEventListener("keydown", handleEscape);
@@ -205,202 +172,84 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-primary font-main text-white">
-      <div className="border-b border-primary bg-primary shadow-sm">
-        <div className="relative mx-auto flex min-h-[78px] w-full items-center justify-between gap-3 px-4">
-          {/* Logo */}
+    <header className="sticky top-0 z-50 w-full border-b border-border-soft bg-color-primary font-main text-inverse shadow-md">
+      <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8">
+        <div className="flex h-20 items-center justify-between gap-2">
+          {/* Logo Brand Container */}
           <Link
             href="/"
             onClick={(event) => handleMenuLinkClick(event, "/")}
-            className="group shrink-0"
+            className="group relative shrink-0 transition-transform duration-200 active:scale-98"
           >
-            <div className="flex h-[78px] w-[136px] items-center justify-center bg-bg-primary px-3 transition-all duration-300 ease-out group-hover:shadow-md">
+            <div className="flex h-14 w-36 items-center justify-center rounded-xl border border-border-soft bg-white px-3 shadow-xs transition-all duration-300 group-hover:border-color-secondary/50 group-hover:shadow-sm sm:w-44">
               <Image
                 src={logoSrc}
                 alt="Logo"
-                width={150}
-                height={70}
+                width={160}
+                height={50}
                 priority
-                className="h-[66px] w-auto object-contain transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                className="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-[1.02]"
               />
             </div>
           </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden flex-1 items-center justify-center gap-1 text-[12px] font-bold text-white xl:flex 2xl:gap-2 2xl:text-[14px]">
+          {/* Desktop Nav Items Links */}
+          <nav className="hidden h-full flex-1 items-center justify-center gap-1 text-xs font-bold xl:flex 2xl:gap-2 2xl:text-sm">
             {navList.map((item, index) => {
               const active = isMenuActive(item);
               const hasDropdown = Boolean(item.subLink?.length);
+              const isLargeDropdown = (item.subLink?.length ?? 0) > 6;
 
               return (
                 <div
                   key={`${item.name}-${index}`}
-                  className="group relative z-20 flex min-h-[78px] items-center"
+                  className="group relative flex h-full items-center"
                 >
                   <Link
                     href={item.link}
-                    onClick={(event) => handleMenuLinkClick(event, item.link)}
-                    className={`flex items-center gap-1 rounded-[6px] border px-3 py-2 transition-all duration-300 ease-out 2xl:px-4 ${
+                    onClick={(event) =>
+                      handleMenuLinkClick(event, item.link)
+                    }
+                    className={`flex items-center gap-1.5 rounded-lg px-3 py-2.5 tracking-wide transition-all duration-200 ${
                       active
-                        ? "border-transparent bg-primary text-text-red"
-                        : "border-transparent text-white hover:bg-primary hover:text-text-red"
+                        ? "text-color-secondary"
+                        : "text-inverse/90 hover:text-color-secondary"
                     }`}
                   >
                     <span className="whitespace-nowrap">{item.name}</span>
-                    {hasDropdown && <DownIcon />}
+
+                    {hasDropdown && (
+                      <FaChevronDown className="text-[9px] opacity-70 transition-transform duration-300 ease-out group-hover:rotate-180" />
+                    )}
                   </Link>
 
+                  {/* Desktop Dropdown Container Menu */}
                   {hasDropdown && (
-                    <div className="invisible absolute left-0 top-full z-50 w-72 translate-y-4 overflow-hidden rounded-[12px] border border-gray-200 bg-white p-3 opacity-0 shadow-2xl transition-all duration-300 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 2xl:w-80">
-                      <div className="mb-3 rounded-[10px] bg-gray-500 px-4 py-3">
-                        <p className="text-sm font-black text-white">
-                          {item.name}
-                        </p>
-                        <p className="mt-1 text-xs font-semibold text-white/80">
-                          Explore related pages
-                        </p>
-                      </div>
+                    <div
+                      className={`invisible absolute top-[calc(100%-4px)] z-50 translate-y-2 opacity-0 transition-all duration-250 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${
+                        isLargeDropdown
+                          ? "left-1/2 w-[560px] -translate-x-1/2 p-2"
+                          : "left-0 w-68 p-2"
+                      }`}
+                    >
+                      {/* Dropdown Panel Body matches Navbar Body Color exactly */}
+                      <div className="rounded-xl border border-border-soft bg-color-primary p-2 shadow-xl ring-1 ring-black/10">
+                        {/* Internal Header Block */}
+                        <div className="mb-2 rounded-lg border border-white/10 bg-white/10 px-3 py-2">
+                          <p className="text-xs font-black text-color-secondary">
+                            {item.name}
+                          </p>
+                          <p className="text-[10px] font-medium text-inverse/60">
+                            Select an option below
+                          </p>
+                        </div>
 
-                      <div className="flex max-h-[430px] flex-col gap-2 overflow-y-auto pr-1">
-                        {item.subLink?.map((subItem, subIndex) => {
-                          const subActive = isRouteActive(subItem.link);
-
-                          return (
-                            <Link
-                              key={`${subItem.name}-${subIndex}`}
-                              href={subItem.link}
-                              onClick={(event) =>
-                                handleMenuLinkClick(event, subItem.link)
-                              }
-                              className={`group/item rounded-[10px] px-4 py-3 text-sm font-bold shadow-sm transition-all duration-300 ease-out hover:translate-x-1 ${
-                                subActive
-                                  ? "bg-primary text-text-red"
-                                  : "bg-gray-500 text-white hover:bg-primary hover:text-text-red"
-                              }`}
-                            >
-                              <span className="flex items-center justify-between gap-3">
-                                <span>{subItem.name}</span>
-
-                                <span
-                                  className={`transition-all duration-300 ease-out group-hover/item:translate-x-1 group-hover/item:opacity-100 ${
-                                    subActive
-                                      ? "text-text-red opacity-100"
-                                      : "text-text-red opacity-0"
-                                  }`}
-                                >
-                                  →
-                                </span>
-                              </span>
-                            </Link>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </nav>
-
-          {/* Desktop Login */}
-          <div className="hidden shrink-0 xl:flex">
-            <Link
-              href="/login"
-              onClick={(event) => handleMenuLinkClick(event, "/login")}
-              className="inline-flex items-center justify-center rounded-[8px] bg-primary px-6 py-3 text-[16px] font-black text-white shadow-sm ring-1 ring-white/20 transition-all duration-300 hover:-translate-y-0.5 hover:text-text-red hover:shadow-lg"
-            >
-              Login
-            </Link>
-          </div>
-
-          {/* Mobile Toggle */}
-          <button
-            type="button"
-            onClick={() => setToggle((previousValue) => !previousValue)}
-            className="flex h-11 w-11 items-center justify-center rounded-[8px] border border-white/20 bg-primary text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:text-text-red hover:shadow-md xl:hidden"
-            aria-label="Toggle menu"
-          >
-            {toggle ? <CloseIcon /> : <MenuIcon />}
-          </button>
-
-          {/* Mobile Menu */}
-          <div
-            className={`absolute left-0 top-full z-50 w-full overflow-hidden border-b border-primary bg-white shadow-2xl transition-all duration-300 ease-out xl:hidden ${
-              toggle
-                ? "visible translate-y-0 opacity-100"
-                : "invisible -translate-y-4 opacity-0"
-            }`}
-          >
-            <nav className="flex max-h-[82vh] flex-col gap-2 overflow-y-auto bg-white p-4">
-              <div className="mb-2 rounded-[10px] border border-gray-200 bg-gray-100 p-4 text-center shadow-sm">
-                <Image
-                  src={logoSrc}
-                  alt="Logo"
-                  width={160}
-                  height={58}
-                  priority
-                  className="mx-auto h-[46px] w-auto object-contain"
-                />
-
-                <p className="mt-3 text-sm font-bold text-gray-600">
-                  Navigate through all important pages
-                </p>
-              </div>
-
-              {navList.map((item, index) => {
-                const hasSubMenu = Boolean(item.subLink?.length);
-                const isOpen = activeSubIndex === index;
-                const isActive = isMenuActive(item);
-
-                return (
-                  <div
-                    key={`${item.name}-${index}`}
-                    className="overflow-hidden rounded-[10px] border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:shadow-md"
-                  >
-                    <div className="flex items-center justify-between gap-1 bg-white p-2">
-                      <Link
-                        href={item.link}
-                        onClick={(event) =>
-                          handleMenuLinkClick(event, item.link)
-                        }
-                        className={`w-full rounded-[8px] px-4 py-3 text-sm font-black transition-all duration-300 ${
-                          isActive
-                            ? "bg-primary text-text-red"
-                            : "bg-gray-500 text-white hover:bg-primary hover:text-text-red"
-                        }`}
-                      >
-                        {item.name}
-                      </Link>
-
-                      {hasSubMenu && (
-                        <button
-                          type="button"
-                          onClick={(event) => {
-                            event.preventDefault();
-                            event.stopPropagation();
-                            handleSubToggle(index);
-                          }}
-                          className={`rounded-[8px] px-4 py-3 transition-all duration-300 ${
-                            isActive || isOpen
-                              ? "bg-primary text-text-red"
-                              : "bg-gray-500 text-white hover:bg-primary hover:text-text-red"
+                        {/* Link Items Layout Grid */}
+                        <div
+                          className={`grid max-h-[360px] gap-1 overflow-y-auto ${
+                            isLargeDropdown ? "grid-cols-2" : "grid-cols-1"
                           }`}
-                          aria-label={`Toggle ${item.name} submenu`}
                         >
-                          <DownIcon open={isOpen} />
-                        </button>
-                      )}
-                    </div>
-
-                    {hasSubMenu && (
-                      <div
-                        className={`overflow-hidden transition-all duration-300 ease-out ${
-                          isOpen
-                            ? "max-h-[760px] opacity-100"
-                            : "max-h-0 opacity-0"
-                        }`}
-                      >
-                        <div className="space-y-2 border-t border-gray-200 bg-white p-3">
                           {item.subLink?.map((subItem, subIndex) => {
                             const subActive = isRouteActive(subItem.link);
 
@@ -411,45 +260,194 @@ const Navbar = () => {
                                 onClick={(event) =>
                                   handleMenuLinkClick(event, subItem.link)
                                 }
-                                className={`group block rounded-[8px] px-4 py-3 text-sm font-bold shadow-sm transition-all duration-300 ease-out hover:translate-x-1 ${
+                                className={`group/item flex items-center justify-between rounded-lg px-3 py-2 text-xs font-bold transition-all duration-150 ${
                                   subActive
-                                    ? "bg-primary text-text-red"
-                                    : "bg-gray-500 text-white hover:bg-primary hover:text-text-red"
+                                    ? "text-color-secondary font-black"
+                                    : "text-inverse/90 hover:text-color-secondary"
                                 }`}
                               >
-                                <span className="flex items-center justify-between gap-3">
-                                  <span>{subItem.name}</span>
+                                <span className="truncate">
+                                  {subItem.name}
+                                </span>
 
-                                  <span
-                                    className={`transition-all duration-300 group-hover:translate-x-1 group-hover:opacity-100 ${
-                                      subActive
-                                        ? "text-text-red opacity-100"
-                                        : "text-text-red opacity-0"
-                                    }`}
-                                  >
-                                    →
-                                  </span>
+                                <span className="transform text-[10px] text-color-secondary opacity-0 transition-all duration-150 group-hover/item:translate-x-1 group-hover/item:opacity-100">
+                                  →
                                 </span>
                               </Link>
                             );
                           })}
                         </div>
                       </div>
-                    )}
-                  </div>
-                );
-              })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </nav>
 
-              <Link
-                href="/login"
-                onClick={closeMobileMenu}
-                className="mt-2 inline-flex items-center justify-center rounded-[8px] bg-primary px-4 py-3 text-center text-sm font-black text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:text-text-red hover:shadow-md"
-              >
-                Login
-              </Link>
-            </nav>
+          {/* Desktop Login Button */}
+          <div className="hidden shrink-0 xl:block">
+            <Link
+              href="/login"
+              onClick={(event) => handleMenuLinkClick(event, "/login")}
+              className="inline-flex h-10 items-center justify-center rounded-lg border border-color-secondary px-5 text-xs font-black tracking-wide text-color-secondary transition-all duration-200 hover:bg-color-secondary hover:text-black active:scale-98"
+            >
+              Login
+            </Link>
           </div>
+
+          {/* Desktop Sign In Button */}
+          <div className="hidden shrink-0 xl:block">
+            <Link
+              href="/signin"
+              onClick={(event) => handleMenuLinkClick(event, "/signin")}
+              className="inline-flex h-10 items-center justify-center rounded-lg border border-color-secondary px-5 text-xs font-black tracking-wide text-color-secondary transition-all duration-200 hover:bg-color-secondary hover:text-black active:scale-98"
+            >
+              Sign In
+            </Link>
+          </div>
+
+          {/* Mobile Action Toggle Drawer Button */}
+          <button
+            type="button"
+            onClick={() => setToggle((prev) => !prev)}
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border-soft bg-color-primary text-inverse shadow-xs transition-colors active:scale-95 xl:hidden"
+            aria-label="Toggle menu"
+          >
+            {toggle ? (
+              <FaTimes className="text-base" />
+            ) : (
+              <FaBars className="text-base" />
+            )}
+          </button>
         </div>
+      </div>
+
+      {/* Mobile Menu Panel Context Canvas */}
+      <div
+        className={`absolute left-0 top-full z-50 w-full border-b border-border-soft bg-color-primary shadow-2xl transition-all duration-300 ease-in-out xl:hidden ${
+          toggle
+            ? "visible translate-y-0 opacity-100"
+            : "invisible -translate-y-2 opacity-0"
+        }`}
+      >
+        <nav className="flex max-h-[76vh] flex-col gap-1.5 overflow-y-auto p-4">
+          <div className="mb-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center shadow-inner">
+            <Image
+              src={logoSrc}
+              alt="Logo"
+              width={130}
+              height={40}
+              priority
+              className="mx-auto h-9 w-auto rounded-lg border border-border-soft bg-white object-contain px-3 py-1"
+            />
+            <p className="mt-2 text-[11px] font-bold text-inverse/60">
+              Institutional Navigation Panel
+            </p>
+          </div>
+
+          {navList.map((item, index) => {
+            const hasSubMenu = Boolean(item.subLink?.length);
+            const isOpen = activeSubIndex === index;
+            const isActive = isMenuActive(item);
+
+            return (
+              <div
+                key={`${item.name}-${index}`}
+                className="overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-xs"
+              >
+                <div className="flex items-center justify-between">
+                  <Link
+                    href={item.link}
+                    onClick={(event) =>
+                      handleMenuLinkClick(event, item.link)
+                    }
+                    className={`w-full px-4 py-3 text-xs font-extrabold transition-all duration-200 ${
+                      isActive
+                        ? "text-color-secondary font-black"
+                        : "text-inverse"
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+
+                  {hasSubMenu && (
+                    <button
+                      type="button"
+                      onClick={(event) => {
+                        event.preventDefault();
+                        event.stopPropagation();
+                        handleSubToggle(index);
+                      }}
+                      className={`p-3 transition-colors ${
+                        isActive ? "text-color-secondary" : "text-inverse/70"
+                      }`}
+                      aria-label={`Toggle ${item.name} list`}
+                    >
+                      <FaChevronDown
+                        className={`text-[10px] transition-transform duration-300 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                  )}
+                </div>
+
+                {/* Mobile Secondary Toggle Level Panel Container */}
+                {hasSubMenu && (
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                      isOpen
+                        ? "max-h-[500px] border-t border-white/10 opacity-100"
+                        : "max-h-0 opacity-0"
+                    }`}
+                  >
+                    <div className="space-y-1 bg-black/10 p-2">
+                      {item.subLink?.map((subItem, subIndex) => {
+                        const subActive = isRouteActive(subItem.link);
+
+                        return (
+                          <Link
+                            key={`${subItem.name}-${subIndex}`}
+                            href={subItem.link}
+                            onClick={(event) =>
+                              handleMenuLinkClick(event, subItem.link)
+                            }
+                            className={`block rounded-lg px-4 py-2.5 text-xs font-bold transition-colors ${
+                              subActive
+                                ? "text-color-secondary font-black"
+                                : "text-inverse/90 hover:text-color-secondary"
+                            }`}
+                          >
+                            {subItem.name}
+                          </Link>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+
+          <div className="mt-2 flex w-full items-center gap-3">
+            <Link
+              href="/login"
+              onClick={closeMobileMenu}
+              className="flex h-11 flex-1 items-center justify-center rounded-lg border border-color-secondary text-xs font-black text-color-secondary transition-all duration-300 hover:bg-color-secondary hover:text-black active:scale-98"
+            >
+              Login
+            </Link>
+
+            <Link
+              href="/signin"
+              onClick={closeMobileMenu}
+              className="flex h-11 flex-1 items-center justify-center rounded-lg border border-color-secondary text-xs font-black text-color-secondary transition-all duration-300 hover:bg-color-secondary hover:text-black active:scale-98"
+            >
+              Sign In
+            </Link>
+          </div>
+        </nav>
       </div>
     </header>
   );
