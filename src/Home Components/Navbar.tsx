@@ -43,7 +43,7 @@ const navList: NavItem[] = [
       { name: "Dress Code", link: "/dress-code" },
       {
         name: "HomeWork & Lectures",
-        link: "/homework-and-class-lecture-documents",
+        link: "/homework-&-lecture",
       },
       { name: "Lesson Plan", link: "/lesson-plan" },
       { name: "Academic calendar", link: "/academic-calendar" },
