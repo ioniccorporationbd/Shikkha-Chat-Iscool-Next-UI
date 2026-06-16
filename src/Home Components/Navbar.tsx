@@ -36,7 +36,7 @@ const navList: NavItem[] = [
   },
   {
     name: "Academic",
-    link: "/academic",
+    link: "/code-of-conducts",
     subLink: [
       { name: "Code of Conducts", link: "/code-of-conducts" },
       { name: "Guideline for Parents", link: "/guideline-for-parents" },
@@ -54,7 +54,7 @@ const navList: NavItem[] = [
   },
   {
     name: "Information",
-    link: "/information",
+    link: "/notice-board",
     subLink: [
       { name: "Notice Board", link: "/notice-board" },
       { name: "Payment Procedure", link: "/payment-procedure" },
@@ -74,7 +74,7 @@ const navList: NavItem[] = [
   },
   {
     name: "Admission",
-    link: "/admission",
+    link: "/apply-now",
     subLink: [
       { name: "Apply Now", link: "/apply-now" },
       { name: "Fast Facts", link: "/fast-facts" },
@@ -87,8 +87,8 @@ const navList: NavItem[] = [
     name: "Campus Life",
     link: "/gallery",
     subLink: [
-      { name: "Photo Gallery", link: "/gallery" },
-      { name: "Video Gallery", link: "/video-gallery" },
+      { name: "Media Gallery", link: "/gallery" },
+  
     ],
   },
   {
@@ -103,11 +103,10 @@ const navList: NavItem[] = [
   { name: "Contact", link: "/contact" },
   {
     name: "স্বাধীনতা কর্নার",
-    link: "/freedomcorner",
+    link: "/notices",
     subLink: [
-      { name: "নোটিশ", link: "/freedomcorner/notices" },
-      { name: "ছবির গ্যালারী", link: "/gallery" },
-      { name: "ভিডিও গ্যালারী", link: "/video-gallery" },
+      { name: "নোটিশ", link: "/notices" },
+
     ],
   },
 ];
@@ -285,6 +284,19 @@ const Navbar = () => {
             })}
           </nav>
 
+
+
+   {/* Desktop Sign In Button */}
+          <div className="hidden shrink-0 xl:block">
+            <Link
+              href="/online-admission"
+              onClick={(event) => handleMenuLinkClick(event, "/signin")}
+              className="inline-flex h-10 bg-red-700 items-center justify-center rounded-lg border border-color-secondary px-5 text-xs font-black tracking-wide text-color-secondary transition-all duration-200 hover:bg-color-secondary hover:text-black active:scale-98"
+            >
+                Online Admission
+            </Link>
+          </div>
+
           {/* Desktop Login Button */}
           <div className="hidden shrink-0 xl:block">
             <Link
@@ -296,16 +308,7 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Sign In Button */}
-          <div className="hidden shrink-0 xl:block">
-            <Link
-              href="/signin"
-              onClick={(event) => handleMenuLinkClick(event, "/signin")}
-              className="inline-flex h-10 items-center justify-center rounded-lg border border-color-secondary px-5 text-xs font-black tracking-wide text-color-secondary transition-all duration-200 hover:bg-color-secondary hover:text-black active:scale-98"
-            >
-              Sign In
-            </Link>
-          </div>
+
 
           {/* Mobile Action Toggle Drawer Button */}
           <button
@@ -431,6 +434,16 @@ const Navbar = () => {
           })}
 
           <div className="mt-2 flex w-full items-center gap-3">
+
+  <Link
+              href="/online-admission"
+              onClick={closeMobileMenu}
+              className="flex h-11 bg-red-700 flex-1 items-center justify-center rounded-lg border border-color-secondary text-xs font-black text-color-secondary transition-all duration-300 hover:bg-color-secondary hover:text-black active:scale-98"
+            >
+              Online Admission
+            </Link>
+
+
             <Link
               href="/login"
               onClick={closeMobileMenu}
@@ -439,13 +452,7 @@ const Navbar = () => {
               Login
             </Link>
 
-            <Link
-              href="/signin"
-              onClick={closeMobileMenu}
-              className="flex h-11 flex-1 items-center justify-center rounded-lg border border-color-secondary text-xs font-black text-color-secondary transition-all duration-300 hover:bg-color-secondary hover:text-black active:scale-98"
-            >
-              Sign In
-            </Link>
+          
           </div>
         </nav>
       </div>
