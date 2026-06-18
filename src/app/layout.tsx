@@ -41,10 +41,10 @@ export default function RootLayout({
       lang="bn"
       className={`${englishFont.variable} ${banglaFont.variable} ${monoFont.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-background font-sans text-foreground">
+      <body className="min-h-full w-full overflow-x-hidden flex flex-col bg-background font-sans text-foreground">
         <SiteHeader />
 
-        <main className="flex-1">{children}</main>
+        <main className="min-w-0 flex-1 overflow-x-hidden">{children}</main>
 
         <Footer />
       </body>

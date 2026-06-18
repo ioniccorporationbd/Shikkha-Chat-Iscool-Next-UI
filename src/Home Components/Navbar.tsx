@@ -181,7 +181,7 @@ const Navbar = () => {
             </div>
           </Link>
 
-          <nav className="hidden h-full flex-1 items-center justify-center gap-1 text-xs font-bold xl:flex 2xl:gap-2 2xl:text-sm">
+          <nav className="hidden h-full flex-1 items-center justify-center gap-1 text-xs font-bold 2xl:flex 2xl:gap-2 2xl:text-sm">
             {navList.map((item, index) => {
               const active = isMenuActive(item);
               const hasDropdown = Boolean(item.subLink?.length);
@@ -274,7 +274,7 @@ const Navbar = () => {
             })}
           </nav>
 
-          <div className="hidden items-center gap-3 xl:flex">
+          <div className="hidden items-center gap-3 2xl:flex">
             <Link
               href="/online-admission"
               className="rounded-full bg-color-secondary px-5 py-2.5 text-sm font-black text-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
@@ -294,7 +294,7 @@ const Navbar = () => {
             type="button"
             onClick={() => setToggle((prev) => !prev)}
             aria-label="Toggle menu"
-            className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-xl text-inverse transition hover:bg-white/15 xl:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-xl text-inverse transition hover:bg-white/15 2xl:hidden"
           >
             {toggle ? <FaTimes /> : <FaBars />}
           </button>
@@ -302,7 +302,7 @@ const Navbar = () => {
       </div>
 
       {toggle && (
-        <div className="xl:hidden">
+        <div className="2xl:hidden">
           <button
             type="button"
             aria-label="Close menu backdrop"

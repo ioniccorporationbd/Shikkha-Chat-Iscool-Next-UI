@@ -456,3 +456,77 @@ select {
     bottom: 10px !important;
   }
 }
+/* =========================
+   Device Responsiveness Hardening
+   Keeps existing design but prevents page-level overflow on 320px+ screens.
+========================= */
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  min-width: 320px;
+}
+
+main,
+section,
+article,
+header,
+footer,
+nav,
+div,
+form,
+aside {
+  min-width: 0;
+}
+
+img,
+video,
+canvas,
+iframe,
+svg {
+  max-width: 100%;
+}
+
+iframe {
+  display: block;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+a,
+button,
+li,
+td,
+th,
+label {
+  overflow-wrap: anywhere;
+}
+
+table {
+  max-width: 100%;
+}
+
+@media (max-width: 639px) {
+  h1,
+  h2 {
+    overflow-wrap: anywhere;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    max-width: 100%;
+  }
+}
