@@ -129,7 +129,7 @@ const GuidelineForParentsPage = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Our Institution
+         আমাদের প্রতিষ্ঠান
           </p>
 
           <h1 className="mt-5 text-[36px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -148,7 +148,7 @@ const GuidelineForParentsPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+           হোম পেজে ফিরে যান
           </Link>
         </div>
       </section>

@@ -83,34 +83,34 @@ const overviewItems: OverviewItem[] = [
   },
   {
     title: "অন্যান্য ফি",
-    value: "প্রয়োজন অনুযায়ী",
+    value: "প্রয়োজন অনুযায়ী",
     icon: <FaWallet />,
   },
 ];
 
 const paymentMethods: PaymentMethod[] = [
   {
-    title: "বিদ্যালয় অফিসে নগদ পেমেন্ট",
+    title: "বিদ্যালয় অফিসে নগদ পেমেন্ট",
     description:
-      "অভিভাবক বিদ্যালয়ের হিসাব শাখায় সরাসরি নগদ ফি জমা দিয়ে রশিদ সংগ্রহ করতে পারবেন।",
+      "অভিভাবক বিদ্যালয়ের হিসাব শাখায় সরাসরি নগদ ফি জমা দিয়ে রশিদ সংগ্রহ করতে পারবেন।",
     icon: <FaCashRegister />,
   },
   {
     title: "ব্যাংক ডিপোজিট",
     description:
-      "বিদ্যালয় নির্ধারিত ব্যাংক হিসাবে ফি জমা দিয়ে জমার স্লিপ বিদ্যালয় অফিসে জমা দিতে হবে।",
+      "বিদ্যালয় নির্ধারিত ব্যাংক হিসাবে ফি জমা দিয়ে জমার স্লিপ বিদ্যালয় অফিসে জমা দিতে হবে।",
     icon: <FaBuildingColumns />,
   },
   {
     title: "মোবাইল ব্যাংকিং",
     description:
-      "বিদ্যালয় অনুমোদিত মোবাইল ব্যাংকিং নম্বরে ফি পাঠিয়ে ট্রানজেকশন আইডি সংরক্ষণ করতে হবে।",
+      "বিদ্যালয় অনুমোদিত মোবাইল ব্যাংকিং নম্বরে ফি পাঠিয়ে ট্রানজেকশন আইডি সংরক্ষণ করতে হবে।",
     icon: <FaMobileScreenButton />,
   },
   {
     title: "অনলাইন পেমেন্ট",
     description:
-      "বিদ্যালয়ের নির্ধারিত অনলাইন পেমেন্ট সিস্টেম ব্যবহার করে নিরাপদে ফি পরিশোধ করা যাবে।",
+      "বিদ্যালয়ের নির্ধারিত অনলাইন পেমেন্ট সিস্টেম ব্যবহার করে নিরাপদে ফি পরিশোধ করা যাবে।",
     icon: <FaCreditCard />,
   },
 ];
@@ -124,7 +124,7 @@ const paymentSteps: PaymentStep[] = [
   {
     title: "ফি-এর ধরন নির্বাচন",
     description:
-      "টিউশন ফি, ভর্তি ফি, পরীক্ষা ফি বা অন্যান্য ফি থেকে প্রয়োজনীয় ধরন নির্বাচন করুন।",
+      "টিউশন ফি, ভর্তি ফি, পরীক্ষা ফি বা অন্যান্য ফি থেকে প্রয়োজনীয় ধরন নির্বাচন করুন।",
   },
   {
     title: "পেমেন্ট মাধ্যম নির্বাচন",
@@ -139,14 +139,14 @@ const paymentSteps: PaymentStep[] = [
   {
     title: "রশিদ সংগ্রহ ও সংরক্ষণ",
     description:
-      "পেমেন্টের পর বিদ্যালয় অফিস থেকে রশিদ সংগ্রহ করুন অথবা ডিজিটাল রশিদ সংরক্ষণ করুন।",
+      "পেমেন্টের পর বিদ্যালয় অফিস থেকে রশিদ সংগ্রহ করুন অথবা ডিজিটাল রশিদ সংরক্ষণ করুন।",
   },
 ];
 
 const requiredInfo: RequiredInfo[] = [
   {
     title: "শিক্ষার্থীর নাম",
-    description: "ভর্তির রেকর্ড অনুযায়ী পূর্ণ নাম ব্যবহার করুন।",
+    description: "ভর্তির রেকর্ড অনুযায়ী পূর্ণ নাম ব্যবহার করুন।",
   },
   {
     title: "শ্রেণি",
@@ -172,27 +172,27 @@ const requiredInfo: RequiredInfo[] = [
 
 const paymentRules: PaymentRule[] = [
   {
-    title: "সময়ের মধ্যে ফি পরিশোধ",
+    title: "সময়ের মধ্যে ফি পরিশোধ",
     description:
-      "নির্ধারিত তারিখের মধ্যে ফি পরিশোধ করলে প্রশাসনিক কাজ ও শিক্ষার্থীর রেকর্ড হালনাগাদ সহজ হয়।",
+      "নির্ধারিত তারিখের মধ্যে ফি পরিশোধ করলে প্রশাসনিক কাজ ও শিক্ষার্থীর রেকর্ড হালনাগাদ সহজ হয়।",
     icon: <FaRegClock />,
   },
   {
     title: "সঠিক তথ্য ব্যবহার",
     description:
-      "ভুল নাম, রোল বা শ্রেণি দিয়ে পেমেন্ট করলে রেকর্ডে সমস্যা হতে পারে, তাই তথ্য যাচাই করে পেমেন্ট করুন।",
+      "ভুল নাম, রোল বা শ্রেণি দিয়ে পেমেন্ট করলে রেকর্ডে সমস্যা হতে পারে, তাই তথ্য যাচাই করে পেমেন্ট করুন।",
     icon: <FaShieldHeart />,
   },
   {
     title: "রশিদ সংরক্ষণ",
     description:
-      "ফি পরিশোধের রশিদ বা ট্রানজেকশন আইডি ভবিষ্যৎ প্রয়োজনের জন্য সংরক্ষণ করা বাধ্যতামূলক।",
+      "ফি পরিশোধের রশিদ বা ট্রানজেকশন আইডি ভবিষ্যৎ প্রয়োজনের জন্য সংরক্ষণ করা বাধ্যতামূলক।",
     icon: <FaReceipt />,
   },
   {
     title: "সমস্যা হলে যোগাযোগ",
     description:
-      "পেমেন্টে কোনো সমস্যা হলে দ্রুত বিদ্যালয়ের হিসাব শাখা বা অফিসে যোগাযোগ করুন।",
+      "পেমেন্টে কোনো সমস্যা হলে দ্রুত বিদ্যালয়ের হিসাব শাখা বা অফিসে যোগাযোগ করুন।",
     icon: <FaTriangleExclamation />,
   },
 ];
@@ -203,32 +203,32 @@ const feeItems: FeeItem[] = [
     feeType: "মাসিক টিউশন ফি",
     paymentTime: "প্রতি মাসের ১-১০ তারিখ",
     method: "নগদ / মোবাইল ব্যাংকিং / অনলাইন",
-    note: "বিলম্ব ফি এড়াতে সময়মতো পরিশোধ করুন।",
+    note: "বিলম্ব ফি এড়াতে সময়মতো পরিশোধ করুন।",
   },
   {
     id: 2,
     feeType: "ভর্তি ফি",
-    paymentTime: "ভর্তির সময়",
+    paymentTime: "ভর্তির সময়",
     method: "নগদ / ব্যাংক ডিপোজিট",
     note: "ভর্তি নিশ্চিত করার জন্য রশিদ সংরক্ষণ করুন।",
   },
   {
     id: 3,
     feeType: "পরীক্ষা ফি",
-    paymentTime: "পরীক্ষার আগে নির্ধারিত সময়",
+    paymentTime: "পরীক্ষার আগে নির্ধারিত সময়",
     method: "নগদ / অনলাইন",
     note: "পরীক্ষার প্রবেশপত্র সংগ্রহের আগে ফি পরিশোধ করুন।",
   },
   {
     id: 4,
     feeType: "সহশিক্ষা কার্যক্রম ফি",
-    paymentTime: "কার্যক্রম অনুযায়ী",
-    method: "বিদ্যালয় অফিস",
-    note: "প্রযোজ্য ক্ষেত্রে বিদ্যালয়ের নোটিশ অনুসরণ করুন।",
+    paymentTime: "কার্যক্রম অনুযায়ী",
+    method: "বিদ্যালয় অফিস",
+    note: "প্রযোজ্য ক্ষেত্রে বিদ্যালয়ের নোটিশ অনুসরণ করুন।",
   },
   {
     id: 5,
-    feeType: "পরিচয়পত্র / ডায়েরি ফি",
+    feeType: "পরিচয়পত্র / ডায়েরি ফি",
     paymentTime: "শিক্ষাবর্ষের শুরুতে",
     method: "নগদ",
     note: "রশিদ সংগ্রহ করে শ্রেণি শিক্ষকের নির্দেশনা অনুসরণ করুন।",
@@ -236,7 +236,7 @@ const feeItems: FeeItem[] = [
   {
     id: 6,
     feeType: "অন্যান্য ফি",
-    paymentTime: "বিদ্যালয়ের নোটিশ অনুযায়ী",
+    paymentTime: "বিদ্যালয়ের নোটিশ অনুযায়ী",
     method: "নির্ধারিত মাধ্যম",
     note: "ফি-এর ধরন ও পরিমাণ অফিস থেকে নিশ্চিত করুন।",
   },
@@ -247,10 +247,10 @@ const guidelineSections: GuidelineSection[] = [
     title: "শিক্ষার্থীদের নির্দেশনা",
     icon: <FaUserGraduate />,
     points: [
-      "অভিভাবকের সহায়তায় নির্ধারিত সময়ের মধ্যে বিদ্যালয়ের ফি জমা দিতে হবে।",
-      "ফি জমা দেওয়ার পর রশিদ শ্রেণি শিক্ষক বা বিদ্যালয় অফিসে দেখাতে হতে পারে।",
-      "বকেয়া ফি থাকলে অভিভাবককে সময়মতো জানাতে হবে।",
-      "পেমেন্ট রশিদ বা ট্রানজেকশন তথ্য হারিয়ে না ফেলার জন্য সতর্ক থাকতে হবে।",
+      "অভিভাবকের সহায়তায় নির্ধারিত সময়ের মধ্যে বিদ্যালয়ের ফি জমা দিতে হবে।",
+      "ফি জমা দেওয়ার পর রশিদ শ্রেণি শিক্ষক বা বিদ্যালয় অফিসে দেখাতে হতে পারে।",
+      "বকেয়া ফি থাকলে অভিভাবককে সময়মতো জানাতে হবে।",
+      "পেমেন্ট রশিদ বা ট্রানজেকশন তথ্য হারিয়ে না ফেলার জন্য সতর্ক থাকতে হবে।",
       "ফি সংক্রান্ত কোনো প্রশ্ন থাকলে শ্রেণি শিক্ষক বা অফিসে যোগাযোগ করতে হবে।",
     ],
   },
@@ -258,11 +258,11 @@ const guidelineSections: GuidelineSection[] = [
     title: "অভিভাবকদের নির্দেশনা",
     icon: <FaPeopleGroup />,
     points: [
-      "নির্ধারিত তারিখের মধ্যে সন্তানের বিদ্যালয় ফি পরিশোধ করুন।",
+      "নির্ধারিত তারিখের মধ্যে সন্তানের বিদ্যালয় ফি পরিশোধ করুন।",
       "পেমেন্ট করার আগে শিক্ষার্থীর নাম, শ্রেণি, রোল এবং ফি-এর ধরন যাচাই করুন।",
       "নগদ, ব্যাংক বা অনলাইন যেকোনো পেমেন্টের রশিদ অবশ্যই সংরক্ষণ করুন।",
-      "ভুল পেমেন্ট বা ট্রানজেকশন সমস্যা হলে দ্রুত বিদ্যালয়ের হিসাব শাখায় যোগাযোগ করুন।",
-      "বিদ্যালয়ের অফিসিয়াল নোটিশ ছাড়া কোনো অননুমোদিত নম্বর বা মাধ্যমে পেমেন্ট করবেন না।",
+      "ভুল পেমেন্ট বা ট্রানজেকশন সমস্যা হলে দ্রুত বিদ্যালয়ের হিসাব শাখায় যোগাযোগ করুন।",
+      "বিদ্যালয়ের অফিসিয়াল নোটিশ ছাড়া কোনো অননুমোদিত নম্বর বা মাধ্যমে পেমেন্ট করবেন না।",
     ],
   },
 ];
@@ -276,7 +276,7 @@ const PaymentProcedurePage = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            School Fee Payment
+            স্কুল ফি প্রদান
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -286,16 +286,16 @@ const PaymentProcedurePage = () => {
           <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-color-primary" />
 
           <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            টিউশন ফি, ভর্তি ফি, পরীক্ষা ফি ও অন্যান্য বিদ্যালয় ফি পরিশোধের
-            নিয়ম, মাধ্যম এবং নির্দেশনা এক জায়গায় দেখার জন্য এই পেজ তৈরি করা
-            হয়েছে।
+            টিউশন ফি, ভর্তি ফি, পরীক্ষা ফি ও অন্যান্য বিদ্যালয় ফি পরিশোধের
+            নিয়ম, মাধ্যম এবং নির্দেশনা এক জায়গায় দেখার জন্য এই পেজ তৈরি করা
+            হয়েছে।
           </p>
 
           <Link
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোম পেজে ফিরে যান
           </Link>
         </div>
       </section>
@@ -346,11 +346,11 @@ const PaymentProcedurePage = () => {
 
               <div className="lg:col-span-8">
                 <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  বিদ্যালয়ের ফি পরিশোধ প্রক্রিয়া শিক্ষার্থী ও অভিভাবকদের জন্য
+                  বিদ্যালয়ের ফি পরিশোধ প্রক্রিয়া শিক্ষার্থী ও অভিভাবকদের জন্য
                   সহজ, স্বচ্ছ এবং নিরাপদভাবে পরিচালনা করার উদ্দেশ্যে এই নির্দেশনা
-                  তৈরি করা হয়েছে। নির্ধারিত সময়ের মধ্যে সঠিক তথ্য দিয়ে ফি
-                  পরিশোধ করলে শিক্ষার্থীর হিসাব রেকর্ড সঠিক থাকে এবং বিদ্যালয়ের
-                  প্রশাসনিক কার্যক্রম দ্রুত সম্পন্ন হয়।
+                  তৈরি করা হয়েছে। নির্ধারিত সময়ের মধ্যে সঠিক তথ্য দিয়ে ফি
+                  পরিশোধ করলে শিক্ষার্থীর হিসাব রেকর্ড সঠিক থাকে এবং বিদ্যালয়ের
+                  প্রশাসনিক কার্যক্রম দ্রুত সম্পন্ন হয়।
                 </p>
               </div>
             </div>
@@ -367,7 +367,7 @@ const PaymentProcedurePage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Payment Methods
+              ফি পরিশোধের মাধ্যমসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -405,11 +405,11 @@ const PaymentProcedurePage = () => {
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
             <div className="mb-8 text-center">
               <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                ধাপে ধাপে প্রক্রিয়া
+                ধাপে ধাপে প্রক্রিয়া
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Step-by-Step Payment Procedure
+                ধাপে ধাপে পেমেন্ট নির্দেশিকা
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -447,11 +447,11 @@ const PaymentProcedurePage = () => {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              প্রয়োজনীয় তথ্য
+              প্রয়োজনীয় তথ্য
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Required Information
+              পেমেন্টের জন্য প্রয়োজনীয় তথ্য
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -496,7 +496,7 @@ const PaymentProcedurePage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Payment Schedule
+              ফি এবং পরিশোধের সময়সূচী
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -514,7 +514,7 @@ const PaymentProcedurePage = () => {
                       ফি-এর ধরন
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      পরিশোধের সময়
+                      পরিশোধের সময়
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
                       মাধ্যম
@@ -558,7 +558,7 @@ const PaymentProcedurePage = () => {
                           href="#"
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -593,7 +593,7 @@ const PaymentProcedurePage = () => {
                   <div className="mt-4 space-y-2">
                     <p className="text-sm font-semibold text-secondary">
                       <span className="font-black text-primary">
-                        পরিশোধের সময়:
+                        পরিশোধের সময়:
                       </span>{" "}
                       {item.paymentTime}
                     </p>
@@ -613,7 +613,7 @@ const PaymentProcedurePage = () => {
                     href="#"
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -628,11 +628,11 @@ const PaymentProcedurePage = () => {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              পেমেন্ট নিয়ম
+              পেমেন্ট নিয়ম
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Payment Rules
+              ফি পরিশোধের নিয়মাবলী
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -726,14 +726,14 @@ const PaymentProcedurePage = () => {
                 </div>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  সময়মতো ফি পরিশোধ করুন
+                  সময়মতো ফি পরিশোধ করুন
                 </h2>
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  বিদ্যালয়ের ফি সময়মতো ও সঠিক নিয়মে পরিশোধ করা শিক্ষার্থী,
-                  অভিভাবক এবং বিদ্যালয় প্রশাসনের জন্য গুরুত্বপূর্ণ। সঠিক তথ্য
+                  বিদ্যালয়ের ফি সময়মতো ও সঠিক নিয়মে পরিশোধ করা শিক্ষার্থী,
+                  অভিভাবক এবং বিদ্যালয় প্রশাসনের জন্য গুরুত্বপূর্ণ। সঠিক তথ্য
                   ব্যবহার, নিরাপদ পেমেন্ট মাধ্যম এবং রশিদ সংরক্ষণের মাধ্যমে ফি
-                  পরিশোধ প্রক্রিয়া আরও সহজ ও স্বচ্ছ হয়।
+                  পরিশোধ প্রক্রিয়া আরও সহজ ও স্বচ্ছ হয়।
                 </p>
               </div>
 
@@ -748,7 +748,7 @@ const PaymentProcedurePage = () => {
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    সঠিক তথ্য দিয়ে ফি পরিশোধ করুন এবং রশিদ সংরক্ষণ করুন।
+                    সঠিক তথ্য দিয়ে ফি পরিশোধ করুন এবং রশিদ সংরক্ষণ করুন।
                   </p>
                 </div>
               </div>

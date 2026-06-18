@@ -80,49 +80,49 @@ const overviewItems: OverviewItem[] = [
   {
     title: "ডাউনলোড ফাইল",
     value: "১২+",
-    description: "PDF, circular ও প্রয়োজনীয় ফাইল ডাউনলোডের সুবিধা।",
+    description: "পিডিএফ, বিজ্ঞপ্তি ও প্রয়োজনীয় ফাইল ডাউনলোডের সুবিধা।",
     icon: <FaCloudArrowDown />,
   },
 ];
 
 const noticeCategories: NoticeCategory[] = [
   {
-    title: "Academic Notice",
+    title: "একাডেমিক নোটিশ",
     value: "৮টি",
     description:
       "ক্লাস রুটিন, পাঠ পরিকল্পনা, একাডেমিক নির্দেশনা এবং শ্রেণিভিত্তিক আপডেট এখানে প্রকাশ করা হয়।",
     icon: <FaBookOpen />,
   },
   {
-    title: "Exam Notice",
+    title: "পরীক্ষার নোটিশ",
     value: "৫টি",
     description:
       "পরীক্ষার তারিখ, সিলেবাস, আসন বিন্যাস, প্রবেশপত্র এবং ফলাফল সংক্রান্ত নোটিশ প্রকাশ করা হয়।",
     icon: <FaClipboardCheck />,
   },
   {
-    title: "Admission Notice",
+    title: "ভর্তি নোটিশ",
     value: "৪টি",
     description:
       "ভর্তি আবেদন, আবেদন সময়সীমা, প্রয়োজনীয় ডকুমেন্ট এবং ভর্তি পরীক্ষার নির্দেশনা দেওয়া হয়।",
     icon: <FaGraduationCap />,
   },
   {
-    title: "Fee Notice",
+    title: "ফি নোটিশ",
     value: "৩টি",
     description:
       "মাসিক ফি, পরীক্ষার ফি, পেমেন্ট সময়সীমা এবং রশিদ সংক্রান্ত গুরুত্বপূর্ণ তথ্য প্রকাশ করা হয়।",
     icon: <FaMoneyBillWave />,
   },
   {
-    title: "Holiday Notice",
+    title: "ছুটির নোটিশ",
     value: "৩টি",
     description:
       "সরকারি ছুটি, বিদ্যালয় ঘোষিত ছুটি, বিশেষ দিবস ও একাডেমিক বিরতির তথ্য দেওয়া হয়।",
     icon: <FaUmbrellaBeach />,
   },
   {
-    title: "Event Notice",
+    title: "অনুষ্ঠানের নোটিশ",
     value: "২টি",
     description:
       "সাংস্কৃতিক অনুষ্ঠান, ক্রীড়া প্রতিযোগিতা, অভিভাবক সভা এবং বিশেষ কার্যক্রমের নোটিশ প্রকাশ করা হয়।",
@@ -135,7 +135,7 @@ const noticeItems: NoticeItem[] = [
     id: 1,
     date: "১৫ জুন ২০২৬",
     title: "অর্ধবার্ষিক পরীক্ষার সময়সূচি প্রকাশ",
-    category: "Exam",
+    category: "পরীক্ষা",
     priority: "জরুরি",
     fileUrl: "#",
   },
@@ -143,7 +143,7 @@ const noticeItems: NoticeItem[] = [
     id: 2,
     date: "১২ জুন ২০২৬",
     title: "নতুন শিক্ষাবর্ষের ভর্তি আবেদন সংক্রান্ত নির্দেশনা",
-    category: "Admission",
+    category: "ভর্তি",
     priority: "গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
@@ -151,7 +151,7 @@ const noticeItems: NoticeItem[] = [
     id: 3,
     date: "১০ জুন ২০২৬",
     title: "জুন মাসের বেতন ও পরীক্ষার ফি পরিশোধের নোটিশ",
-    category: "Fee",
+    category: "ফি",
     priority: "গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
@@ -159,7 +159,7 @@ const noticeItems: NoticeItem[] = [
     id: 4,
     date: "০৮ জুন ২০২৬",
     title: "শ্রেণিভিত্তিক ক্লাস রুটিন আপডেট",
-    category: "Academic",
+    category: "একাডেমিক",
     priority: "সাধারণ",
     fileUrl: "#",
   },
@@ -167,7 +167,7 @@ const noticeItems: NoticeItem[] = [
     id: 5,
     date: "০৫ জুন ২০২৬",
     title: "অভিভাবক সভার তারিখ ও সময় ঘোষণা",
-    category: "Event",
+    category: "অনুষ্ঠান",
     priority: "গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
@@ -175,7 +175,7 @@ const noticeItems: NoticeItem[] = [
     id: 6,
     date: "০১ জুন ২০২৬",
     title: "ঈদুল আযহা উপলক্ষে বিদ্যালয় ছুটির নোটিশ",
-    category: "Holiday",
+    category: "ছুটি",
     priority: "সাধারণ",
     fileUrl: "#",
   },
@@ -183,21 +183,21 @@ const noticeItems: NoticeItem[] = [
 
 const archiveItems: ArchiveItem[] = [
   {
-    title: "PDF Circular",
+    title: "পিডিএফ বিজ্ঞপ্তি",
     value: "ডাউনলোড",
     description:
-      "গুরুত্বপূর্ণ নোটিশ PDF আকারে সংরক্ষণ ও ডাউনলোড করা যাবে।",
+      "গুরুত্বপূর্ণ নোটিশ পিডিএফ আকারে সংরক্ষণ ও ডাউনলোড করা যাবে।",
     icon: <FaFileLines />,
   },
   {
-    title: "Notice Archive",
+    title: "নোটিশ আর্কাইভ",
     value: "সংরক্ষণ",
     description:
       "পুরোনো নোটিশগুলো ক্যাটাগরি ও তারিখ অনুযায়ী সংরক্ষিত থাকবে।",
     icon: <FaClipboardCheck />,
   },
   {
-    title: "Office Verification",
+    title: "অফিস যাচাই",
     value: "যাচাই",
     description:
       "জরুরি তথ্য বা বিভ্রান্তি থাকলে বিদ্যালয় অফিস থেকে যাচাই করুন।",
@@ -231,13 +231,13 @@ const guidelineSections: GuidelineSection[] = [
 const NoticesPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Notices
+            নোটিশসমূহ
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -255,12 +255,12 @@ const NoticesPage = () => {
             href="/"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Overview */}
+      {/* সারসংক্ষেপ */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -288,7 +288,7 @@ const NoticesPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
@@ -320,7 +320,7 @@ const NoticesPage = () => {
               <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-5">
                 <Image
                   src="/assets/3.jpg"
-                  alt="School notices"
+                  alt="বিদ্যালয়ের নোটিশ"
                   width={900}
                   height={520}
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -330,7 +330,7 @@ const NoticesPage = () => {
                 <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2">
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
                     <p className="font-black text-brand-primary">
-                      Regular Update
+                      নিয়মিত আপডেট
                     </p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
                       বিদ্যালয়ের প্রয়োজনীয় তথ্য নিয়মিত প্রকাশ করা হয়।
@@ -339,7 +339,7 @@ const NoticesPage = () => {
 
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
                     <p className="font-black text-brand-primary">
-                      Easy Access
+                      সহজ প্রবেশাধিকার
                     </p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
                       শিক্ষার্থী ও অভিভাবক সহজেই তথ্য দেখতে পারেন।
@@ -352,7 +352,7 @@ const NoticesPage = () => {
         </div>
       </section>
 
-      {/* Latest Notice Highlight */}
+      {/* সর্বশেষ নোটিশ হাইলাইট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -360,7 +360,7 @@ const NoticesPage = () => {
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
                 <FaTriangleExclamation className="text-sm" />
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  Latest Notice Highlight
+                  সর্বশেষ নোটিশ হাইলাইট
                 </p>
               </div>
 
@@ -376,16 +376,19 @@ const NoticesPage = () => {
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
-                {["পরীক্ষা শুরু: ২০ জুন", "রুটিন প্রকাশিত", "সিলেবাস অনুসরণ", "প্রবেশপত্র আবশ্যক"].map(
-                  (badge) => (
-                    <span
-                      key={badge}
-                      className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black text-inverse"
-                    >
-                      {badge}
-                    </span>
-                  )
-                )}
+                {[
+                  "পরীক্ষা শুরু: ২০ জুন",
+                  "রুটিন প্রকাশিত",
+                  "সিলেবাস অনুসরণ",
+                  "প্রবেশপত্র আবশ্যক",
+                ].map((badge) => (
+                  <span
+                    key={badge}
+                    className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black text-inverse"
+                  >
+                    {badge}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -396,7 +399,7 @@ const NoticesPage = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Important Notice
+                  গুরুত্বপূর্ণ নোটিশ
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
@@ -408,7 +411,7 @@ const NoticesPage = () => {
         </div>
       </section>
 
-      {/* Categories */}
+      {/* ক্যাটাগরি */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
@@ -417,7 +420,7 @@ const NoticesPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Notice Categories
+              নোটিশ ক্যাটাগরিসমূহ
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -453,7 +456,7 @@ const NoticesPage = () => {
         </div>
       </section>
 
-      {/* Notice Table */}
+      {/* নোটিশ টেবিল */}
       <section
         id="notice-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -465,7 +468,7 @@ const NoticesPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Latest Notice Table
+              সর্বশেষ নোটিশ তালিকা
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -534,7 +537,7 @@ const NoticesPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:opacity-90"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -582,7 +585,7 @@ const NoticesPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:opacity-90"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -592,14 +595,14 @@ const NoticesPage = () => {
         </div>
       </section>
 
-      {/* Archive Section */}
+      {/* আর্কাইভ অংশ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
             <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-4">
               <Image
                 src="/assets/4.jpg"
-                alt="Notice archive"
+                alt="নোটিশ আর্কাইভ"
                 width={900}
                 height={520}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -609,7 +612,7 @@ const NoticesPage = () => {
 
             <div>
               <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                Download & Archive
+                ডাউনলোড ও আর্কাইভ
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
@@ -617,7 +620,7 @@ const NoticesPage = () => {
               </h2>
 
               <p className="mt-5 text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                গুরুত্বপূর্ণ নোটিশ PDF বা circular আকারে সংরক্ষণ করা হলে
+                গুরুত্বপূর্ণ নোটিশ পিডিএফ বা বিজ্ঞপ্তি আকারে সংরক্ষণ করা হলে
                 শিক্ষার্থী ও অভিভাবক পরবর্তীতে সহজেই তথ্য যাচাই করতে পারেন।
                 বিশেষ করে পরীক্ষা, ভর্তি ও ফি সংক্রান্ত নোটিশ সংরক্ষণ করা খুব
                 জরুরি।
@@ -649,7 +652,7 @@ const NoticesPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-6 lg:grid-cols-2">
           {guidelineSections.map((section) => (
@@ -694,7 +697,7 @@ const NoticesPage = () => {
         </div>
       </section>
 
-      {/* Closing */}
+      {/* সমাপনী */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -726,7 +729,7 @@ const NoticesPage = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Stay Updated
+                  নিয়মিত আপডেট থাকুন
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">

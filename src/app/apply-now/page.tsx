@@ -7,7 +7,6 @@ import {
   FaCloudArrowDown,
   FaFileLines,
   FaGraduationCap,
-  FaMobileScreenButton,
   FaPeopleGroup,
   FaPenToSquare,
   FaRegClock,
@@ -286,13 +285,13 @@ const guidelineSections: GuidelineSection[] = [
 const ApplyNowPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Admission Application
+            ভর্তি আবেদন
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -310,12 +309,12 @@ const ApplyNowPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Application Overview */}
+      {/* আবেদন সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -339,7 +338,7 @@ const ApplyNowPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
@@ -372,7 +371,7 @@ const ApplyNowPage = () => {
         </div>
       </section>
 
-      {/* Featured Apply Card */}
+      {/* বিশেষ আবেদন কার্ড */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -382,7 +381,7 @@ const ApplyNowPage = () => {
                   <FaStar className="text-sm" />
 
                   <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Admission Open
+                    ভর্তি চলছে
                   </p>
                 </div>
 
@@ -418,7 +417,7 @@ const ApplyNowPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Apply Today
+                    আজই আবেদন করুন
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
@@ -431,7 +430,7 @@ const ApplyNowPage = () => {
         </div>
       </section>
 
-      {/* Admission Steps */}
+      {/* ভর্তি ধাপসমূহ */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -441,7 +440,7 @@ const ApplyNowPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Admission Steps
+                ভর্তির ধাপসমূহ
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -457,7 +456,7 @@ const ApplyNowPage = () => {
                   className="group rounded-[24px] border border-soft bg-page-secondary p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-color-secondary text-sm font-black text-primary transition-all duration-500 group-hover:bg-page-primary group-hover:text-brand-primary">
-                    {String(index + 1).padStart(2, "0")}
+                    {["০১", "০২", "০৩", "০৪", "০৫"][index]}
                   </div>
 
                   <h3 className="mt-5 text-lg font-black leading-tight text-primary transition-colors duration-500 group-hover:text-inverse">
@@ -474,7 +473,7 @@ const ApplyNowPage = () => {
         </div>
       </section>
 
-      {/* Required Documents */}
+      {/* প্রয়োজনীয় কাগজপত্র */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -483,7 +482,7 @@ const ApplyNowPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Required Documents
+              প্রয়োজনীয় কাগজপত্র
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -515,7 +514,7 @@ const ApplyNowPage = () => {
         </div>
       </section>
 
-      {/* Application Form Fields */}
+      {/* আবেদন ফরমের তথ্য */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -525,7 +524,7 @@ const ApplyNowPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Application Form Fields
+                আবেদন ফরমের প্রয়োজনীয় তথ্য
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -558,7 +557,7 @@ const ApplyNowPage = () => {
         </div>
       </section>
 
-      {/* Admission Rules */}
+      {/* ভর্তি নিয়ম */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -567,7 +566,7 @@ const ApplyNowPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Admission Rules
+              ভর্তি নিয়মাবলি
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -599,7 +598,7 @@ const ApplyNowPage = () => {
         </div>
       </section>
 
-      {/* Application Table */}
+      {/* আবেদন ধাপের তালিকা */}
       <section
         id="application-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -611,7 +610,7 @@ const ApplyNowPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Application Table
+              আবেদন ধাপের বিস্তারিত তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -680,7 +679,7 @@ const ApplyNowPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -730,7 +729,7 @@ const ApplyNowPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -740,7 +739,7 @@ const ApplyNowPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -787,7 +786,7 @@ const ApplyNowPage = () => {
         </div>
       </section>
 
-      {/* Closing Message */}
+      {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -820,7 +819,7 @@ const ApplyNowPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Admission Journey
+                    ভর্তির যাত্রা
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">

@@ -52,28 +52,28 @@ type LoginFormData = {
 
 const loginRoles: LoginRole[] = [
   {
-    title: "Student Login",
+    title: "শিক্ষার্থী লগইন",
     role: "Student",
     description:
       "শিক্ষার্থীরা ক্লাস রুটিন, নোটিশ, ফলাফল, অ্যাসাইনমেন্ট ও একাডেমিক তথ্য দেখতে পারবে।",
     icon: <FaUserGraduate />,
   },
   {
-    title: "Guardian Login",
+    title: "অভিভাবক লগইন",
     role: "Guardian",
     description:
       "অভিভাবকরা সন্তানের একাডেমিক অগ্রগতি, ফি, নোটিশ ও উপস্থিতির তথ্য দেখতে পারবেন।",
     icon: <FaPeopleGroup />,
   },
   {
-    title: "Teacher Login",
+    title: "শিক্ষক লগইন",
     role: "Teacher",
     description:
       "শিক্ষকরা ক্লাস, শিক্ষার্থী তথ্য, পাঠ পরিকল্পনা, নোটিশ ও একাডেমিক কার্যক্রম পরিচালনা করতে পারবেন।",
     icon: <FaPersonChalkboard />,
   },
   {
-    title: "Admin Login",
+    title: "প্রশাসনিক লগইন",
     role: "Admin",
     description:
       "প্রশাসনিক ব্যবহারকারীরা বিদ্যালয়ের নোটিশ, ভর্তি, একাডেমিক ও অফিস কার্যক্রম পরিচালনা করতে পারবেন।",
@@ -95,30 +95,30 @@ const securityItems: SecurityItem[] = [
     icon: <FaShieldHalved />,
   },
   {
-    title: "Shared Device Reminder",
+    title: "শেয়ার করা ডিভাইস সতর্কতা",
     description:
-      "অন্যের কম্পিউটার বা মোবাইল ব্যবহার করলে কাজ শেষে অবশ্যই logout করুন।",
+      "অন্যের কম্পিউটার বা মোবাইল ব্যবহার করলে কাজ শেষে অবশ্যই লগআউট করুন।",
     icon: <FaLock />,
   },
 ];
 
 const supportItems: SupportItem[] = [
   {
-    title: "Forgot Password",
+    title: "পাসওয়ার্ড ভুলে গেছেন",
     description:
-      "পাসওয়ার্ড ভুলে গেলে বিদ্যালয় অফিস অথবা নির্ধারিত IT support team-এর সঙ্গে যোগাযোগ করুন।",
+      "পাসওয়ার্ড ভুলে গেলে বিদ্যালয় অফিস অথবা নির্ধারিত আইটি সহায়তা টিমের সঙ্গে যোগাযোগ করুন।",
     icon: <FaRegCircleQuestion />,
   },
   {
-    title: "Account Issue",
+    title: "অ্যাকাউন্ট সমস্যা",
     description:
-      "Login ID, role বা account access সমস্যা হলে আপনার শ্রেণি শিক্ষক বা অফিসে জানান।",
+      "লগইন আইডি, ভূমিকা বা অ্যাকাউন্ট প্রবেশাধিকার সমস্যা হলে আপনার শ্রেণি শিক্ষক বা অফিসে জানান।",
     icon: <FaIdCard />,
   },
   {
-    title: "Office Support",
+    title: "অফিস সহায়তা",
     description:
-      "অফিস সময়ের মধ্যে প্রয়োজনীয় তথ্য ও login সহায়তার জন্য বিদ্যালয়ে যোগাযোগ করুন।",
+      "অফিস সময়ের মধ্যে প্রয়োজনীয় তথ্য ও লগইন সহায়তার জন্য বিদ্যালয়ে যোগাযোগ করুন।",
     icon: <FaHouseUser />,
   },
 ];
@@ -132,6 +132,13 @@ const initialFormData: LoginFormData = {
 
 const inputClassName =
   "w-full rounded-2xl border border-soft bg-page-primary p-4 text-sm font-semibold text-primary outline-none placeholder:text-primary transition-all duration-300 focus:border-brand-primary";
+
+const roleLabel: Record<string, string> = {
+  Student: "শিক্ষার্থী",
+  Guardian: "অভিভাবক",
+  Teacher: "শিক্ষক",
+  Admin: "প্রশাসনিক ব্যবহারকারী",
+};
 
 const LoginPage = () => {
   const [formData, setFormData] = useState<LoginFormData>(initialFormData);
@@ -165,32 +172,32 @@ const LoginPage = () => {
     event.preventDefault();
 
     if (!formData.role) {
-      setError("Please select your login role.");
+      setError("অনুগ্রহ করে আপনার লগইন ধরন নির্বাচন করুন।");
       setSuccess("");
       return;
     }
 
     if (!formData.userId.trim()) {
-      setError("Email / ID field is required.");
+      setError("ইমেইল / আইডি ঘরটি পূরণ করা আবশ্যক।");
       setSuccess("");
       return;
     }
 
     if (!formData.password.trim()) {
-      setError("Password field is required.");
+      setError("পাসওয়ার্ড ঘরটি পূরণ করা আবশ্যক।");
       setSuccess("");
       return;
     }
 
     if (formData.password.length < 6) {
-      setError("Password must be at least 6 characters for demo validation.");
+      setError("ডেমো যাচাইয়ের জন্য পাসওয়ার্ড কমপক্ষে ৬ অক্ষরের হতে হবে।");
       setSuccess("");
       return;
     }
 
     setError("");
     setSuccess(
-      `${formData.role} demo login successful. This is frontend-only validation.`
+      `${roleLabel[formData.role] ?? "ব্যবহারকারী"} ডেমো লগইন সফল হয়েছে। এটি শুধু ফ্রন্টএন্ড যাচাই।`
     );
   };
 
@@ -203,13 +210,13 @@ const LoginPage = () => {
 
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Hero Section */}
+      {/* উপরের হিরো অংশ */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Login
+            লগইন
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -228,25 +235,25 @@ const LoginPage = () => {
               href="/"
               className="inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
             >
-              Back to Home
+              হোমে ফিরে যান
             </Link>
 
             <a
               href="#login-form"
               className="inline-flex items-center justify-center rounded-full border border-soft bg-color-secondary px-8 py-4 text-sm font-black text-brand-primary shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
             >
-              Login Now
+              এখনই লগইন করুন
             </a>
           </div>
         </div>
       </section>
 
-      {/* Login Type Cards */}
+      {/* লগইন ধরন কার্ড */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              Login Access
+              লগইন প্রবেশাধিকার
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
@@ -254,8 +261,8 @@ const LoginPage = () => {
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
-              বিদ্যালয়ের ভিন্ন ভিন্ন ব্যবহারকারীর জন্য আলাদা access system
-              রাখা হয়েছে।
+              বিদ্যালয়ের ভিন্ন ভিন্ন ব্যবহারকারীর জন্য আলাদা প্রবেশাধিকার
+              ব্যবস্থা রাখা হয়েছে।
             </p>
           </div>
 
@@ -281,7 +288,7 @@ const LoginPage = () => {
                 </div>
 
                 <p className="mt-5 text-sm font-black uppercase tracking-[0.16em] text-brand-primary">
-                  {item.role}
+                  {roleLabel[item.role]}
                 </p>
 
                 <h3 className="mt-2 text-xl font-black text-primary">
@@ -297,7 +304,7 @@ const LoginPage = () => {
         </div>
       </section>
 
-      {/* Login Form + Visual */}
+      {/* লগইন ফরম ও ভিজ্যুয়াল */}
       <section id="login-form" className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
@@ -305,7 +312,7 @@ const LoginPage = () => {
               <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-5">
                 <Image
                   src="/assets/3.jpg"
-                  alt="School login"
+                  alt="বিদ্যালয় লগইন"
                   width={900}
                   height={520}
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -315,19 +322,20 @@ const LoginPage = () => {
                 <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2">
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
                     <p className="font-black text-brand-primary">
-                      Secure Access
+                      নিরাপদ প্রবেশাধিকার
                     </p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
-                      Role based login access for school users.
+                      বিদ্যালয়ের ব্যবহারকারীদের জন্য ভূমিকা-ভিত্তিক লগইন
+                      প্রবেশাধিকার।
                     </p>
                   </div>
 
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
                     <p className="font-black text-brand-primary">
-                      Demo Validation
+                      ডেমো যাচাই
                     </p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
-                      Frontend-only login validation with success message.
+                      সফল বার্তাসহ শুধু ফ্রন্টএন্ডে লগইন যাচাই।
                     </p>
                   </div>
                 </div>
@@ -343,7 +351,7 @@ const LoginPage = () => {
 
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      Account Login
+                      অ্যাকাউন্ট লগইন
                     </p>
                     <h2 className="mt-1 text-3xl font-black text-primary">
                       নিরাপদ লগইন ফরম
@@ -368,7 +376,7 @@ const LoginPage = () => {
                 <form onSubmit={handleSubmit} className="space-y-5">
                   <div>
                     <label className="mb-2 block text-sm font-black text-primary">
-                      User Role
+                      ব্যবহারকারীর ধরন
                     </label>
                     <select
                       name="role"
@@ -377,7 +385,7 @@ const LoginPage = () => {
                       className={inputClassName}
                     >
                       <option className="bg-page-primary text-primary" value="">
-                        Select Login Role
+                        লগইন ধরন নির্বাচন করুন
                       </option>
                       {loginRoles.map((item) => (
                         <option
@@ -393,21 +401,21 @@ const LoginPage = () => {
 
                   <div>
                     <label className="mb-2 block text-sm font-black text-primary">
-                      Email / ID
+                      ইমেইল / আইডি
                     </label>
                     <input
                       type="text"
                       name="userId"
                       value={formData.userId}
                       onChange={handleChange}
-                      placeholder="Enter your email or user ID"
+                      placeholder="আপনার ইমেইল বা ব্যবহারকারী আইডি লিখুন"
                       className={inputClassName}
                     />
                   </div>
 
                   <div>
                     <label className="mb-2 block text-sm font-black text-primary">
-                      Password
+                      পাসওয়ার্ড
                     </label>
                     <div className="relative">
                       <input
@@ -415,7 +423,7 @@ const LoginPage = () => {
                         name="password"
                         value={formData.password}
                         onChange={handleChange}
-                        placeholder="Enter password"
+                        placeholder="পাসওয়ার্ড লিখুন"
                         className={`${inputClassName} pr-14`}
                       />
 
@@ -424,7 +432,7 @@ const LoginPage = () => {
                         onClick={() => setShowPassword((current) => !current)}
                         className="absolute right-4 top-1/2 -translate-y-1/2 text-brand-primary"
                         aria-label={
-                          showPassword ? "Hide password" : "Show password"
+                          showPassword ? "পাসওয়ার্ড লুকান" : "পাসওয়ার্ড দেখান"
                         }
                       >
                         {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -441,21 +449,21 @@ const LoginPage = () => {
                         onChange={handleChange}
                         className="h-4 w-4 accent-[color:var(--color-primary)]"
                       />
-                      Remember me on this device
+                      এই ডিভাইসে আমাকে মনে রাখুন
                     </label>
 
                     <Link
                       href="#support"
                       className="text-sm font-black text-brand-primary"
                     >
-                      Forgot password?
+                      পাসওয়ার্ড ভুলে গেছেন?
                     </Link>
                   </div>
 
                   {selectedRole && (
                     <div className="rounded-2xl border border-soft bg-page-primary p-4">
                       <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                        Selected Role
+                        নির্বাচিত ধরন
                       </p>
                       <p className="mt-2 text-sm font-bold leading-7 text-secondary">
                         {selectedRole.title}: {selectedRole.description}
@@ -468,7 +476,7 @@ const LoginPage = () => {
                       type="submit"
                       className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-md transition-all duration-300 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl sm:w-auto"
                     >
-                      Login
+                      লগইন
                       <FaLock />
                     </button>
 
@@ -477,7 +485,7 @@ const LoginPage = () => {
                       onClick={handleReset}
                       className="inline-flex w-full items-center justify-center rounded-2xl border border-soft bg-page-primary px-8 py-4 text-sm font-black text-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
                     >
-                      Reset
+                      রিসেট
                     </button>
                   </div>
                 </form>
@@ -487,12 +495,12 @@ const LoginPage = () => {
         </div>
       </section>
 
-      {/* Security Information */}
+      {/* নিরাপত্তা তথ্য */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              Security Information
+              নিরাপত্তা তথ্য
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
@@ -528,12 +536,12 @@ const LoginPage = () => {
         </div>
       </section>
 
-      {/* Help / Support */}
+      {/* সহায়তা */}
       <section id="support" className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              Help & Support
+              সহায়তা
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
@@ -564,7 +572,7 @@ const LoginPage = () => {
         </div>
       </section>
 
-      {/* Closing */}
+      {/* সমাপনী */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -577,13 +585,13 @@ const LoginPage = () => {
               </div>
 
               <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
-                নিরাপদভাবে লগইন করুন এবং প্রয়োজন শেষে logout করুন
+                নিরাপদভাবে লগইন করুন এবং প্রয়োজন শেষে লগআউট করুন
               </h2>
 
               <p className="mt-5 text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
-                বিদ্যালয়ের digital service ব্যবহার করার সময় নিজের account
-                information নিরাপদ রাখুন। Public device ব্যবহার করলে কাজ শেষে
-                অবশ্যই logout করুন।
+                বিদ্যালয়ের ডিজিটাল সেবা ব্যবহার করার সময় নিজের অ্যাকাউন্ট তথ্য
+                নিরাপদ রাখুন। পাবলিক ডিভাইস ব্যবহার করলে কাজ শেষে অবশ্যই লগআউট
+                করুন।
               </p>
             </div>
 
@@ -594,12 +602,12 @@ const LoginPage = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Smart Access
+                  স্মার্ট প্রবেশাধিকার
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
-                  শিক্ষার্থী, অভিভাবক, শিক্ষক ও admin সবার জন্য সহজ login
-                  system।
+                  শিক্ষার্থী, অভিভাবক, শিক্ষক ও প্রশাসনিক ব্যবহারকারী সবার জন্য
+                  সহজ লগইন ব্যবস্থা।
                 </p>
               </div>
             </div>
@@ -607,16 +615,15 @@ const LoginPage = () => {
         </div>
       </section>
 
-      {/* Technical Note */}
+      {/* টেকনিক্যাল নোট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[24px] border border-soft bg-page-primary p-5">
           <div className="flex items-start gap-3">
             <FaCircleInfo className="mt-1 shrink-0 text-brand-primary" />
             <p className="text-sm font-semibold leading-7 text-secondary">
-              Note: এই login page frontend-only demo validation ব্যবহার করে।
-              Real login করার জন্য পরবর্তীতে authentication API, database,
-              session/token system এবং role-based dashboard route যুক্ত করতে
-              হবে।
+              নোট: এই লগইন পেজ শুধু ফ্রন্টএন্ড ডেমো যাচাই ব্যবহার করে। বাস্তব
+              লগইনের জন্য পরবর্তীতে authentication API, database, session/token
+              system এবং role-based dashboard route যুক্ত করতে হবে।
             </p>
           </div>
         </div>

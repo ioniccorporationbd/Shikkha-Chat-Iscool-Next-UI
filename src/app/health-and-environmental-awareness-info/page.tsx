@@ -256,13 +256,13 @@ const guidelineSections: GuidelineSection[] = [
 const HealthEnvironmentalAwarenessInfoPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Health & Environment
+            স্বাস্থ্য ও পরিবেশ
           </p>
 
           <h1 className="mt-5 text-[34px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -280,12 +280,12 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Awareness Overview */}
+      {/* সচেতনতার সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -309,7 +309,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
@@ -343,7 +343,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
         </div>
       </section>
 
-      {/* Featured Awareness */}
+      {/* বিশেষ সচেতনতা বার্তা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -353,7 +353,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
                   <FaStar className="text-sm" />
 
                   <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Awareness Message
+                    সচেতনতার বার্তা
                   </p>
                 </div>
 
@@ -389,7 +389,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Green Campus
+                    সবুজ ক্যাম্পাস
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
@@ -403,7 +403,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
         </div>
       </section>
 
-      {/* Health Awareness */}
+      {/* স্বাস্থ্য সচেতনতা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -412,7 +412,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Health Awareness
+              স্বাস্থ্য সচেতনতা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -444,7 +444,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
         </div>
       </section>
 
-      {/* Environmental Awareness */}
+      {/* পরিবেশ সচেতনতা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -454,7 +454,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Environmental Awareness
+                পরিবেশ সচেতনতা
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -487,7 +487,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
         </div>
       </section>
 
-      {/* School Activities */}
+      {/* বিদ্যালয় কার্যক্রম */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -496,7 +496,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              School Activities
+              বিদ্যালয়ের কার্যক্রমসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -528,7 +528,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
         </div>
       </section>
 
-      {/* Awareness Table */}
+      {/* সচেতনতা কার্যক্রমের তালিকা */}
       <section
         id="awareness-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -540,7 +540,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Awareness Table
+              সচেতনতা কার্যক্রমের তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -616,7 +616,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -673,7 +673,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -683,7 +683,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -730,7 +730,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
         </div>
       </section>
 
-      {/* Closing Message */}
+      {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -763,7 +763,7 @@ const HealthEnvironmentalAwarenessInfoPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Healthy & Green
+                    সুস্থ ও সবুজ
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">

@@ -90,37 +90,37 @@ const overviewItems: OverviewItem[] = [
 
 const feeCategories: FeeCategory[] = [
   {
-    title: "Admission Fee",
+    title: "ভর্তি ফি",
     description:
       "নতুন শিক্ষার্থী ভর্তি, ভর্তি ফরম, রেজিস্ট্রেশন ও প্রাথমিক প্রশাসনিক কার্যক্রমের জন্য নির্ধারিত ফি।",
     icon: <FaGraduationCap />,
   },
   {
-    title: "Monthly Tuition Fee",
+    title: "মাসিক টিউশন ফি",
     description:
       "শ্রেণিভিত্তিক নিয়মিত পাঠদান, একাডেমিক সহায়তা ও বিদ্যালয়ের মাসিক কার্যক্রম পরিচালনার ফি।",
     icon: <FaMoneyBillWave />,
   },
   {
-    title: "Exam Fee",
+    title: "পরীক্ষা ফি",
     description:
       "ক্লাস টেস্ট, অর্ধবার্ষিক, বার্ষিক, মডেল টেস্ট ও মূল্যায়ন কার্যক্রম পরিচালনার জন্য পরীক্ষা ফি।",
     icon: <FaClipboardCheck />,
   },
   {
-    title: "Session Fee",
+    title: "সেশন ফি",
     description:
       "নতুন শিক্ষাবর্ষের একাডেমিক পরিকল্পনা, আইডি কার্ড, ডায়েরি ও প্রশাসনিক সেবার জন্য সেশন ফি।",
     icon: <FaCalendarCheck />,
   },
   {
-    title: "Library / Lab Fee",
+    title: "লাইব্রেরি / ল্যাব ফি",
     description:
       "লাইব্রেরি, বিজ্ঞান ল্যাব, কম্পিউটার ল্যাব ও ব্যবহারিক শিক্ষার সহায়ক সুবিধার জন্য ফি।",
     icon: <FaFileLines />,
   },
   {
-    title: "Transport Fee",
+    title: "পরিবহন ফি",
     description:
       "বিদ্যালয়ের পরিবহন সুবিধা ব্যবহারকারী শিক্ষার্থীদের জন্য রুট অনুযায়ী পরিবহন ফি প্রযোজ্য হতে পারে।",
     icon: <FaSchoolFlag />,
@@ -129,31 +129,31 @@ const feeCategories: FeeCategory[] = [
 
 const paymentMethods: PaymentMethod[] = [
   {
-    title: "Office Cash Payment",
+    title: "অফিসে নগদ পেমেন্ট",
     description:
       "বিদ্যালয় অফিসে সরাসরি নগদ পেমেন্ট করা যাবে এবং পেমেন্টের পর অফিস থেকে রশিদ সংগ্রহ করতে হবে।",
     icon: <FaCashRegister />,
   },
   {
-    title: "Bank Payment",
+    title: "ব্যাংক পেমেন্ট",
     description:
       "বিদ্যালয়ের নির্ধারিত ব্যাংক অ্যাকাউন্টে ফি জমা দিয়ে জমা স্লিপ অফিসে জমা দিতে হবে।",
     icon: <FaBuildingColumns />,
   },
   {
-    title: "Mobile Banking",
+    title: "মোবাইল ব্যাংকিং",
     description:
       "মোবাইল ব্যাংকিংয়ের মাধ্যমে পেমেন্ট করলে ট্রানজেকশন আইডি সংরক্ষণ করতে হবে।",
     icon: <FaMobileScreenButton />,
   },
   {
-    title: "Online Payment",
+    title: "অনলাইন পেমেন্ট",
     description:
       "অনলাইন পেমেন্ট সুবিধা থাকলে শিক্ষার্থী আইডি ব্যবহার করে নির্ধারিত পোর্টালে পেমেন্ট করা যাবে।",
     icon: <FaCreditCard />,
   },
   {
-    title: "Card Payment",
+    title: "কার্ড পেমেন্ট",
     description:
       "ডেবিট বা ক্রেডিট কার্ডের মাধ্যমে পেমেন্ট করার ক্ষেত্রে পেমেন্ট কনফার্মেশন সংরক্ষণ করুন।",
     icon: <FaLandmark />,
@@ -272,13 +272,13 @@ const guidelineSections: GuidelineSection[] = [
 const FeesPaymentPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Fees & Payment
+            ফি ও পেমেন্ট
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -296,12 +296,12 @@ const FeesPaymentPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Fees Overview */}
+      {/* ফি সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -325,7 +325,7 @@ const FeesPaymentPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
@@ -359,7 +359,7 @@ const FeesPaymentPage = () => {
         </div>
       </section>
 
-      {/* Featured Payment Card */}
+      {/* বিশেষ পেমেন্ট কার্ড */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -369,7 +369,7 @@ const FeesPaymentPage = () => {
                   <FaStar className="text-sm" />
 
                   <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Payment Notice
+                    পেমেন্ট নোটিশ
                   </p>
                 </div>
 
@@ -405,7 +405,7 @@ const FeesPaymentPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Payment Receipt
+                    পেমেন্ট রশিদ
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
@@ -418,7 +418,7 @@ const FeesPaymentPage = () => {
         </div>
       </section>
 
-      {/* Fee Categories */}
+      {/* ফি-এর বিভাগ */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -427,7 +427,7 @@ const FeesPaymentPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Fee Categories
+              ফি-এর বিভাগসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -459,7 +459,7 @@ const FeesPaymentPage = () => {
         </div>
       </section>
 
-      {/* Payment Methods */}
+      {/* পেমেন্ট পদ্ধতি */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -469,7 +469,7 @@ const FeesPaymentPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Payment Methods
+                পেমেন্ট পদ্ধতিসমূহ
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -502,7 +502,7 @@ const FeesPaymentPage = () => {
         </div>
       </section>
 
-      {/* Fee Structure Table */}
+      {/* ফি কাঠামো টেবিল */}
       <section
         id="fee-structure"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -514,7 +514,7 @@ const FeesPaymentPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Fee Structure Table
+              ফি কাঠামোর বিস্তারিত তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -590,7 +590,7 @@ const FeesPaymentPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -645,7 +645,7 @@ const FeesPaymentPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -655,7 +655,7 @@ const FeesPaymentPage = () => {
         </div>
       </section>
 
-      {/* Payment Instructions */}
+      {/* পেমেন্ট নির্দেশনা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -664,7 +664,7 @@ const FeesPaymentPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Payment Instructions
+              পেমেন্ট নির্দেশনাসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -696,7 +696,7 @@ const FeesPaymentPage = () => {
         </div>
       </section>
 
-      {/* Late Payment Policy */}
+      {/* বিলম্বিত পেমেন্ট নীতিমালা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -707,7 +707,7 @@ const FeesPaymentPage = () => {
                 </div>
 
                 <p className="mt-5 text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                  Late Payment Policy
+                  বিলম্বিত পেমেন্ট নীতিমালা
                 </p>
 
                 <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
@@ -756,7 +756,7 @@ const FeesPaymentPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -803,7 +803,7 @@ const FeesPaymentPage = () => {
         </div>
       </section>
 
-      {/* Closing Message */}
+      {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -836,7 +836,7 @@ const FeesPaymentPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Pay Safely
+                    নিরাপদে পেমেন্ট করুন
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">

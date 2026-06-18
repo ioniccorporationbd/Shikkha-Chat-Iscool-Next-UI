@@ -92,32 +92,32 @@ const overviewItems: OverviewItem[] = [
 
 const positions: PositionItem[] = [
   {
-    title: "Assistant Teacher",
-    department: "Bangla / English / Math",
+    title: "সহকারী শিক্ষক",
+    department: "বাংলা / ইংরেজি / গণিত",
     vacancies: "৩টি",
     description:
       "বিষয়ভিত্তিক পাঠদান, পাঠ পরিকল্পনা তৈরি, শিক্ষার্থীর অগ্রগতি পর্যবেক্ষণ এবং পরীক্ষার প্রস্তুতিতে সহায়তা করতে হবে।",
     icon: <FaPersonChalkboard />,
   },
   {
-    title: "Office Assistant",
-    department: "Administration",
+    title: "অফিস সহকারী",
+    department: "প্রশাসন",
     vacancies: "১টি",
     description:
       "অফিস ফাইল, শিক্ষার্থী রেকর্ড, ভর্তি তথ্য, ফি রেকর্ড এবং অভিভাবক যোগাযোগ সংক্রান্ত কাজ পরিচালনা করতে হবে।",
     icon: <FaUserTie />,
   },
   {
-    title: "Lab Assistant",
-    department: "Science / ICT",
+    title: "ল্যাব সহকারী",
+    department: "বিজ্ঞান / আইসিটি",
     vacancies: "১টি",
     description:
       "বিজ্ঞান ও কম্পিউটার ল্যাব ব্যবস্থাপনা, ব্যবহারিক ক্লাসে সহায়তা এবং ল্যাব উপকরণ সংরক্ষণ করতে হবে।",
     icon: <FaGraduationCap />,
   },
   {
-    title: "Librarian",
-    department: "Library",
+    title: "গ্রন্থাগারিক",
+    department: "লাইব্রেরি",
     vacancies: "১টি",
     description:
       "লাইব্রেরির বই, রেজিস্টার, পাঠক সেবা, বই ইস্যু-রিটার্ন এবং শিক্ষার্থীদের পাঠাভ্যাস উন্নয়নে কাজ করতে হবে।",
@@ -183,8 +183,8 @@ const processItems: ProcessItem[] = [
 const circularItems: CircularItem[] = [
   {
     id: 1,
-    position: "Assistant Teacher",
-    department: "Bangla",
+    position: "সহকারী শিক্ষক",
+    department: "বাংলা",
     vacancies: "১টি",
     qualification: "সংশ্লিষ্ট বিষয়ে স্নাতক / স্নাতকোত্তর",
     deadline: "৩০ জুন ২০২৬",
@@ -193,18 +193,18 @@ const circularItems: CircularItem[] = [
   },
   {
     id: 2,
-    position: "Assistant Teacher",
-    department: "English",
+    position: "সহকারী শিক্ষক",
+    department: "ইংরেজি",
     vacancies: "১টি",
-    qualification: "English বিষয়ে স্নাতক / স্নাতকোত্তর",
+    qualification: "ইংরেজি বিষয়ে স্নাতক / স্নাতকোত্তর",
     deadline: "৩০ জুন ২০২৬",
     status: "চলমান",
     fileUrl: "#",
   },
   {
     id: 3,
-    position: "Office Assistant",
-    department: "Administration",
+    position: "অফিস সহকারী",
+    department: "প্রশাসন",
     vacancies: "১টি",
     qualification: "এইচএসসি / স্নাতক, কম্পিউটার জ্ঞানসহ",
     deadline: "২৫ জুন ২০২৬",
@@ -213,8 +213,8 @@ const circularItems: CircularItem[] = [
   },
   {
     id: 4,
-    position: "Lab Assistant",
-    department: "Science / ICT",
+    position: "ল্যাব সহকারী",
+    department: "বিজ্ঞান / আইসিটি",
     vacancies: "১টি",
     qualification: "বিজ্ঞান / আইসিটি বিষয়ে দক্ষতা",
     deadline: "২৫ জুন ২০২৬",
@@ -227,7 +227,7 @@ const documentItems: RequirementItem[] = [
   {
     title: "জীবনবৃত্তান্ত",
     description:
-      "ব্যক্তিগত তথ্য, শিক্ষাগত যোগ্যতা, অভিজ্ঞতা ও যোগাযোগ নম্বরসহ পূর্ণাঙ্গ CV জমা দিতে হবে।",
+      "ব্যক্তিগত তথ্য, শিক্ষাগত যোগ্যতা, অভিজ্ঞতা ও যোগাযোগ নম্বরসহ পূর্ণাঙ্গ সিভি জমা দিতে হবে।",
     icon: <FaFileLines />,
   },
   {
@@ -276,13 +276,13 @@ const guidelineSections: GuidelineSection[] = [
 const EmploymentCircularsPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Employment Circulars
+            নিয়োগ বিজ্ঞপ্তি
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -301,12 +301,12 @@ const EmploymentCircularsPage = () => {
             href="/"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Overview */}
+      {/* সারসংক্ষেপ */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -334,7 +334,7 @@ const EmploymentCircularsPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
@@ -367,7 +367,7 @@ const EmploymentCircularsPage = () => {
               <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-5">
                 <Image
                   src="/assets/3.jpg"
-                  alt="Employment circular"
+                  alt="নিয়োগ বিজ্ঞপ্তি"
                   width={900}
                   height={520}
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -376,14 +376,18 @@ const EmploymentCircularsPage = () => {
 
                 <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2">
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
-                    <p className="font-black text-brand-primary">Fair Hiring</p>
+                    <p className="font-black text-brand-primary">
+                      ন্যায্য নিয়োগ
+                    </p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
                       যোগ্যতা ও দক্ষতার ভিত্তিতে স্বচ্ছ নির্বাচন।
                     </p>
                   </div>
 
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
-                    <p className="font-black text-brand-primary">School Team</p>
+                    <p className="font-black text-brand-primary">
+                      বিদ্যালয় টিম
+                    </p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
                       দায়িত্বশীল শিক্ষক ও কর্মী নিয়ে শক্তিশালী টিম।
                     </p>
@@ -395,7 +399,7 @@ const EmploymentCircularsPage = () => {
         </div>
       </section>
       
-      {/* Featured Notice */}
+      {/* বিশেষ নোটিশ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -404,7 +408,7 @@ const EmploymentCircularsPage = () => {
                 <FaTriangleExclamation className="text-sm" />
 
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  Important Notice
+                  গুরুত্বপূর্ণ নোটিশ
                 </p>
               </div>
 
@@ -420,16 +424,19 @@ const EmploymentCircularsPage = () => {
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
-                {["সঠিক তথ্য", "পূর্ণাঙ্গ ডকুমেন্ট", "সময়সীমা অনুসরণ", "পরীক্ষা / সাক্ষাৎকার"].map(
-                  (badge) => (
-                    <span
-                      key={badge}
-                      className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black text-inverse"
-                    >
-                      {badge}
-                    </span>
-                  )
-                )}
+                {[
+                  "সঠিক তথ্য",
+                  "পূর্ণাঙ্গ ডকুমেন্ট",
+                  "সময়সীমা অনুসরণ",
+                  "পরীক্ষা / সাক্ষাৎকার",
+                ].map((badge) => (
+                  <span
+                    key={badge}
+                    className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black text-inverse"
+                  >
+                    {badge}
+                  </span>
+                ))}
               </div>
             </div>
 
@@ -440,7 +447,7 @@ const EmploymentCircularsPage = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Join Our Team
+                  আমাদের টিমে যোগ দিন
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
@@ -453,7 +460,7 @@ const EmploymentCircularsPage = () => {
         </div>
       </section>
 
-      {/* Current Circulars Table */}
+      {/* বর্তমান নিয়োগ বিজ্ঞপ্তি টেবিল */}
       <section
         id="employment-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -465,7 +472,7 @@ const EmploymentCircularsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Current Employment Circulars
+              বর্তমান নিয়োগ বিজ্ঞপ্তি
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -545,7 +552,7 @@ const EmploymentCircularsPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:opacity-90"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -595,7 +602,7 @@ const EmploymentCircularsPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:opacity-90"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -605,7 +612,7 @@ const EmploymentCircularsPage = () => {
         </div>
       </section>
 
-      {/* Positions */}
+      {/* পদসমূহ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
@@ -614,7 +621,7 @@ const EmploymentCircularsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Available Positions
+              উপলব্ধ পদসমূহ
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -650,7 +657,7 @@ const EmploymentCircularsPage = () => {
         </div>
       </section>
 
-      {/* Requirements */}
+      {/* যোগ্যতা ও প্রয়োজনীয়তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -659,7 +666,7 @@ const EmploymentCircularsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Eligibility & Requirements
+              যোগ্যতা ও প্রয়োজনীয়তা
             </h2>
           </div>
 
@@ -686,14 +693,14 @@ const EmploymentCircularsPage = () => {
         </div>
       </section>
 
-      {/* Process With Image */}
+      {/* ছবিসহ আবেদন প্রক্রিয়া */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
             <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-4">
               <Image
                 src="/assets/4.jpg"
-                alt="Application process"
+                alt="আবেদন প্রক্রিয়া"
                 width={900}
                 height={520}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -724,7 +731,7 @@ const EmploymentCircularsPage = () => {
                     className="flex gap-3 rounded-[18px] border border-soft bg-page-secondary p-4"
                   >
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-color-primary text-xs font-black text-inverse">
-                      {index + 1}
+                      {["১", "২", "৩", "৪", "৫"][index]}
                     </span>
 
                     <div>
@@ -743,7 +750,7 @@ const EmploymentCircularsPage = () => {
         </div>
       </section>
 
-      {/* Documents */}
+      {/* প্রয়োজনীয় ডকুমেন্ট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
@@ -752,7 +759,7 @@ const EmploymentCircularsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Required Documents
+              প্রয়োজনীয় ডকুমেন্টসমূহ
             </h2>
           </div>
 
@@ -779,7 +786,7 @@ const EmploymentCircularsPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-6 lg:grid-cols-2">
           {guidelineSections.map((section) => (
@@ -824,7 +831,7 @@ const EmploymentCircularsPage = () => {
         </div>
       </section>
 
-      {/* Closing */}
+      {/* সমাপনী */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -856,7 +863,7 @@ const EmploymentCircularsPage = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Apply Now
+                  এখনই আবেদন করুন
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">

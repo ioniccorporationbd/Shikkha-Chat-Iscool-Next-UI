@@ -118,13 +118,13 @@ const overviewItems: OverviewItem[] = [
   },
   {
     title: "ছবি ও ডকুমেন্ট",
-    value: "Upload",
-    description: "ছবি preview এবং একাধিক document list browser-এ দেখা যাবে।",
+    value: "আপলোড",
+    description: "ছবি প্রিভিউ এবং একাধিক ডকুমেন্ট তালিকা ব্রাউজারে দেখা যাবে।",
     icon: <FaUpload />,
   },
   {
     title: "ভর্তি সহায়তা",
-    value: "Office",
+    value: "অফিস",
     description: "ভর্তি সংক্রান্ত সহায়তার জন্য বিদ্যালয় অফিসে যোগাযোগ করুন।",
     icon: <FaPeopleGroup />,
   },
@@ -132,41 +132,41 @@ const overviewItems: OverviewItem[] = [
 
 const admissionClasses: AdmissionClass[] = [
   {
-    title: "Play Group",
+    title: "প্লে গ্রুপ",
     age: "৪+ বছর",
     fee: "৳৫০০",
     documents: "জন্ম নিবন্ধন, শিক্ষার্থীর ছবি",
-    status: "Open",
+    status: "চলমান",
     description:
       "শিশুর ভাষা, আচরণ, সামাজিকতা এবং আনন্দময় শেখার ভিত্তি তৈরির জন্য উপযোগী শ্রেণি।",
     icon: <FaUserGraduate />,
   },
   {
-    title: "Nursery",
+    title: "নার্সারি",
     age: "৫+ বছর",
     fee: "৳৬০০",
     documents: "জন্ম নিবন্ধন, ছবি, অভিভাবকের পরিচয়পত্র",
-    status: "Open",
+    status: "চলমান",
     description:
       "বাংলা, ইংরেজি, গণিত, সৃজনশীল কাজ এবং নিয়মিত শ্রেণি অভ্যাস গড়ে তোলা হয়।",
     icon: <FaBookOpen />,
   },
   {
-    title: "Primary Section",
+    title: "প্রাথমিক শাখা",
     age: "৬+ বছর",
     fee: "৳৭০০",
     documents: "জন্ম নিবন্ধন, ছবি, পূর্ববর্তী ফলাফল",
-    status: "Open",
+    status: "চলমান",
     description:
       "প্রাথমিক পর্যায়ে শিক্ষার্থীদের মৌলিক জ্ঞান, পাঠাভ্যাস ও আত্মবিশ্বাস উন্নত করা হয়।",
     icon: <FaGraduationCap />,
   },
   {
-    title: "Secondary Section",
+    title: "মাধ্যমিক শাখা",
     age: "শ্রেণিভিত্তিক",
     fee: "৳৮০০",
-    documents: "পূর্ববর্তী ফলাফল, জন্ম নিবন্ধন, ছবি, TC",
-    status: "Limited",
+    documents: "পূর্ববর্তী ফলাফল, জন্ম নিবন্ধন, ছবি, ট্রান্সফার সার্টিফিকেট",
+    status: "সীমিত",
     description:
       "মাধ্যমিক পর্যায়ে বিষয়ভিত্তিক পাঠদান, পরীক্ষা প্রস্তুতি এবং সহশিক্ষা কার্যক্রমে গুরুত্ব দেওয়া হয়।",
     icon: <FaSchoolFlag />,
@@ -187,7 +187,7 @@ const processItems: ProcessItem[] = [
   {
     title: "অভিভাবকের তথ্য পূরণ করুন",
     description:
-      "পিতা, মাতা ও অভিভাবকের মোবাইল নম্বর, NID, পেশা এবং জরুরি যোগাযোগের তথ্য দিন।",
+      "পিতা, মাতা ও অভিভাবকের মোবাইল নম্বর, জাতীয় পরিচয়পত্র, পেশা এবং জরুরি যোগাযোগের তথ্য দিন।",
   },
   {
     title: "ছবি ও ডকুমেন্ট আপলোড করুন",
@@ -197,17 +197,17 @@ const processItems: ProcessItem[] = [
   {
     title: "তথ্য যাচাই করুন",
     description:
-      "লাইভ summary দেখে নাম, শ্রেণি, ফোন নম্বর, ছবি ও ডকুমেন্ট ঠিক আছে কিনা যাচাই করুন।",
+      "লাইভ সারসংক্ষেপ দেখে নাম, শ্রেণি, ফোন নম্বর, ছবি ও ডকুমেন্ট ঠিক আছে কিনা যাচাই করুন।",
   },
   {
     title: "আবেদন জমা দিন",
     description:
-      "সব তথ্য সঠিক হলে final submit করুন। Browser-এ local application ID তৈরি হবে।",
+      "সব তথ্য সঠিক হলে চূড়ান্তভাবে জমা দিন। ব্রাউজারে স্থানীয় আবেদন আইডি তৈরি হবে।",
   },
   {
     title: "আবেদন কপি সংরক্ষণ করুন",
     description:
-      "সফল submission-এর application ID এবং summary ভবিষ্যতের জন্য সংরক্ষণ করুন।",
+      "সফল জমার আবেদন আইডি এবং সারসংক্ষেপ ভবিষ্যতের জন্য সংরক্ষণ করুন।",
   },
 ];
 
@@ -245,7 +245,7 @@ const requiredDocuments: DocumentCard[] = [
   {
     title: "ট্রান্সফার সার্টিফিকেট",
     description:
-      "উচ্চ শ্রেণিতে ভর্তি বা বিদ্যালয় পরিবর্তনের ক্ষেত্রে TC প্রয়োজন হতে পারে।",
+      "উচ্চ শ্রেণিতে ভর্তি বা বিদ্যালয় পরিবর্তনের ক্ষেত্রে ট্রান্সফার সার্টিফিকেট প্রয়োজন হতে পারে।",
     icon: <FaFileLines />,
   },
 ];
@@ -280,7 +280,7 @@ const initialStudentData: StudentData = {
   gender: "",
   bloodGroup: "",
   religion: "",
-  nationality: "Bangladeshi",
+  nationality: "বাংলাদেশি",
   birthRegistrationNumber: "",
   selectedClass: "",
   previousSchool: "",
@@ -306,21 +306,24 @@ const initialGuardianData: GuardianData = {
   guardianPresentAddress: "",
 };
 
+const toBanglaNumber = (value: string | number) =>
+  value.toString().replace(/\d/g, (digit) => "০১২৩৪৫৬৭৮৯"[Number(digit)]);
+
 const formatFileSize = (fileSize: number) => {
   if (fileSize < 1024) {
-    return `${fileSize} B`;
+    return `${toBanglaNumber(fileSize)} বাইট`;
   }
 
   if (fileSize < 1024 * 1024) {
-    return `${(fileSize / 1024).toFixed(1)} KB`;
+    return `${toBanglaNumber((fileSize / 1024).toFixed(1))} কেবি`;
   }
 
-  return `${(fileSize / (1024 * 1024)).toFixed(2)} MB`;
+  return `${toBanglaNumber((fileSize / (1024 * 1024)).toFixed(2))} এমবি`;
 };
 
 const generateApplicationId = () => {
   const randomNumber = Math.floor(1000 + Math.random() * 9000);
-  return `ADM-2026-${randomNumber}`;
+  return `ভর্তি-২০২৬-${toBanglaNumber(randomNumber)}`;
 };
 
 const inputClassName =
@@ -418,7 +421,7 @@ const OnlineAdmissionPage = () => {
     }
 
     if (!selectedFile.type.startsWith("image/")) {
-      setError("শিক্ষার্থীর ছবির জন্য শুধু image file নির্বাচন করুন।");
+      setError("শিক্ষার্থীর ছবির জন্য শুধু ছবি ফাইল নির্বাচন করুন।");
       return;
     }
 
@@ -440,7 +443,7 @@ const OnlineAdmissionPage = () => {
     }
 
     if (!selectedFile.type.startsWith("image/")) {
-      setError("অভিভাবকের ছবির জন্য শুধু image file নির্বাচন করুন।");
+      setError("অভিভাবকের ছবির জন্য শুধু ছবি ফাইল নির্বাচন করুন।");
       return;
     }
 
@@ -578,7 +581,7 @@ const OnlineAdmissionPage = () => {
 
     setApplicationId(newApplicationId);
     setSuccess(
-      "আপনার ভর্তি আবেদন তথ্য সফলভাবে local browser-এ প্রস্তুত হয়েছে। Backend/API ছাড়া এটি demo submission হিসেবে দেখানো হচ্ছে।"
+      "আপনার ভর্তি আবেদন তথ্য সফলভাবে স্থানীয় ব্রাউজারে প্রস্তুত হয়েছে। ব্যাকএন্ড/API ছাড়া এটি ডেমো সাবমিশন হিসেবে দেখানো হচ্ছে।"
     );
     setError("");
 
@@ -618,13 +621,13 @@ const OnlineAdmissionPage = () => {
 
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Hero */}
+      {/* উপরের হিরো অংশ */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Online Admission
+            অনলাইন ভর্তি
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -644,20 +647,20 @@ const OnlineAdmissionPage = () => {
               href="/"
               className="inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
             >
-              Back to Home
+              হোমে ফিরে যান
             </Link>
 
             <a
               href="#online-admission-form"
               className="inline-flex items-center justify-center rounded-full border border-soft bg-color-secondary px-8 py-4 text-sm font-black text-brand-primary shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
             >
-              Apply Online
+              অনলাইনে আবেদন করুন
             </a>
           </div>
         </div>
       </section>
 
-      {/* Overview */}
+      {/* সারসংক্ষেপ */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -685,7 +688,7 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
@@ -700,16 +703,16 @@ const OnlineAdmissionPage = () => {
 
               <p className="mt-6 text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
                 এই অনলাইন ভর্তি পেজে শিক্ষার্থীর তথ্য, অভিভাবকের তথ্য, ছবি
-                আপলোড, একাধিক ডকুমেন্ট নির্বাচন, live application summary,
-                validation এবং local receipt preview অন্তর্ভুক্ত করা হয়েছে।
-                সবকিছু browser state-এর মাধ্যমে কাজ করবে, কোনো backend বা API
-                ব্যবহার করা হয়নি।
+                আপলোড, একাধিক ডকুমেন্ট নির্বাচন, লাইভ আবেদন সারসংক্ষেপ,
+                যাচাই-বাছাই এবং স্থানীয় রশিদ প্রিভিউ অন্তর্ভুক্ত করা হয়েছে।
+                সবকিছু ব্রাউজার স্টেটের মাধ্যমে কাজ করবে, কোনো ব্যাকএন্ড বা
+                API ব্যবহার করা হয়নি।
               </p>
 
               <p className="mt-4 text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
                 আবেদন করার সময় সঠিক নাম, জন্ম তারিখ, শ্রেণি, অভিভাবকের মোবাইল
                 নম্বর, ছবি এবং প্রয়োজনীয় ডকুমেন্ট নির্বাচন করা গুরুত্বপূর্ণ।
-                Submit করলে একটি local application ID তৈরি হবে, যা demo receipt
+                জমা দিলে একটি স্থানীয় আবেদন আইডি তৈরি হবে, যা ডেমো রশিদ
                 হিসেবে দেখা যাবে।
               </p>
             </div>
@@ -718,7 +721,7 @@ const OnlineAdmissionPage = () => {
               <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-5">
                 <Image
                   src="/assets/3.jpg"
-                  alt="Online admission"
+                  alt="অনলাইন ভর্তি"
                   width={900}
                   height={520}
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -727,7 +730,9 @@ const OnlineAdmissionPage = () => {
 
                 <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2">
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
-                    <p className="font-black text-brand-primary">Easy Apply</p>
+                    <p className="font-black text-brand-primary">
+                      সহজ আবেদন
+                    </p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
                       শিক্ষার্থী ও অভিভাবকের তথ্য আলাদাভাবে পূরণ করুন।
                     </p>
@@ -735,10 +740,10 @@ const OnlineAdmissionPage = () => {
 
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
                     <p className="font-black text-brand-primary">
-                      Local Preview
+                      স্থানীয় প্রিভিউ
                     </p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
-                      ছবি ও ডকুমেন্ট browser-এ local preview হিসেবে দেখুন।
+                      ছবি ও ডকুমেন্ট ব্রাউজারে স্থানীয় প্রিভিউ হিসেবে দেখুন।
                     </p>
                   </div>
                 </div>
@@ -748,7 +753,7 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
       
-      {/* Highlight */}
+      {/* হাইলাইট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -756,7 +761,7 @@ const OnlineAdmissionPage = () => {
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
                 <FaTriangleExclamation className="text-sm" />
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  Admission Highlight
+                  ভর্তি হাইলাইট
                 </p>
               </div>
 
@@ -765,19 +770,19 @@ const OnlineAdmissionPage = () => {
               </h2>
 
               <p className="mt-5 text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
-                এই page-এ student form, guardian form, photo upload, multiple
-                document upload, validation, reset, live summary এবং local
-                application receipt সব feature frontend-এ কাজ করবে।
+                এই পেজে শিক্ষার্থী ফরম, অভিভাবক ফরম, ছবি আপলোড, একাধিক
+                ডকুমেন্ট আপলোড, যাচাই, রিসেট, লাইভ সারসংক্ষেপ এবং স্থানীয়
+                আবেদন রশিদ—সব ফিচার ফ্রন্টএন্ডে কাজ করবে।
               </p>
 
               <div className="mt-7 flex flex-wrap gap-3">
                 {[
-                  "Student Form",
-                  "Guardian Form",
-                  "Image Upload",
-                  "Multiple Documents",
-                  "Local Preview",
-                  "Validation",
+                  "শিক্ষার্থী ফরম",
+                  "অভিভাবক ফরম",
+                  "ছবি আপলোড",
+                  "একাধিক ডকুমেন্ট",
+                  "স্থানীয় প্রিভিউ",
+                  "যাচাই",
                 ].map((badge) => (
                   <span
                     key={badge}
@@ -796,11 +801,11 @@ const OnlineAdmissionPage = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Fully Local
+                  সম্পূর্ণ স্থানীয়
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
-                  API ছাড়া browser state দিয়ে form, preview ও receipt কাজ করবে।
+                  API ছাড়া ব্রাউজার স্টেট দিয়ে ফরম, প্রিভিউ ও রশিদ কাজ করবে।
                 </p>
               </div>
             </div>
@@ -808,7 +813,7 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
 
-      {/* Classes */}
+      {/* শ্রেণি */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
@@ -817,7 +822,7 @@ const OnlineAdmissionPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Admission Programs / Classes
+              ভর্তি প্রোগ্রাম / শ্রেণিসমূহ
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -845,7 +850,7 @@ const OnlineAdmissionPage = () => {
                 </h3>
 
                 <p className="mt-2 text-sm font-black text-brand-primary">
-                  Application Fee: {item.fee}
+                  আবেদন ফি: {item.fee}
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
@@ -857,12 +862,12 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
 
-      {/* Functional Forms */}
+      {/* কার্যকরী ফরম */}
       <section id="online-admission-form" className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              Online Application Form
+              অনলাইন আবেদন ফরম
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
@@ -870,8 +875,8 @@ const OnlineAdmissionPage = () => {
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
-              এই ফরমটি frontend-only functional demo। ছবি ও ডকুমেন্ট local
-              browser preview হিসেবে দেখাবে, server-এ upload করবে না।
+              এই ফরমটি শুধু ফ্রন্টএন্ডে কার্যকর ডেমো। ছবি ও ডকুমেন্ট স্থানীয়
+              ব্রাউজার প্রিভিউ হিসেবে দেখাবে, সার্ভারে আপলোড করবে না।
             </p>
           </div>
 
@@ -889,7 +894,7 @@ const OnlineAdmissionPage = () => {
 
           <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-8 lg:grid-cols-12">
             <div className="space-y-8 lg:col-span-8">
-              {/* Student Form */}
+              {/* শিক্ষার্থী ফরম */}
               <section className="rounded-[30px] border border-soft bg-page-secondary p-5 sm:p-6">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-brand-primary">
@@ -897,10 +902,10 @@ const OnlineAdmissionPage = () => {
                   </div>
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      Form 01
+                      ফরম ০১
                     </p>
                     <h3 className="text-2xl font-black text-primary">
-                      Student Information Form
+                      শিক্ষার্থীর তথ্য ফরম
                     </h3>
                   </div>
                 </div>
@@ -910,7 +915,7 @@ const OnlineAdmissionPage = () => {
                     name="studentFullName"
                     value={studentData.studentFullName}
                     onChange={handleStudentChange}
-                    placeholder="Student Full Name *"
+                    placeholder="শিক্ষার্থীর পূর্ণ নাম *"
                     className={inputClassName}
                   />
 
@@ -918,7 +923,7 @@ const OnlineAdmissionPage = () => {
                     name="studentBanglaName"
                     value={studentData.studentBanglaName}
                     onChange={handleStudentChange}
-                    placeholder="Bangla Name"
+                    placeholder="বাংলা নাম"
                     className={inputClassName}
                   />
 
@@ -937,16 +942,16 @@ const OnlineAdmissionPage = () => {
                     className={selectClassName}
                   >
                     <option className="bg-page-primary text-primary" value="">
-                      Select Gender
+                      লিঙ্গ নির্বাচন করুন
                     </option>
-                    <option className="bg-page-primary text-primary" value="Male">
-                      Male
+                    <option className="bg-page-primary text-primary" value="পুরুষ">
+                      পুরুষ
                     </option>
-                    <option className="bg-page-primary text-primary" value="Female">
-                      Female
+                    <option className="bg-page-primary text-primary" value="নারী">
+                      নারী
                     </option>
-                    <option className="bg-page-primary text-primary" value="Other">
-                      Other
+                    <option className="bg-page-primary text-primary" value="অন্যান্য">
+                      অন্যান্য
                     </option>
                   </select>
 
@@ -957,7 +962,7 @@ const OnlineAdmissionPage = () => {
                     className={selectClassName}
                   >
                     <option className="bg-page-primary text-primary" value="">
-                      Blood Group
+                      রক্তের গ্রুপ
                     </option>
                     {["A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"].map(
                       (group) => (
@@ -976,7 +981,7 @@ const OnlineAdmissionPage = () => {
                     name="religion"
                     value={studentData.religion}
                     onChange={handleStudentChange}
-                    placeholder="Religion"
+                    placeholder="ধর্ম"
                     className={inputClassName}
                   />
 
@@ -984,7 +989,7 @@ const OnlineAdmissionPage = () => {
                     name="nationality"
                     value={studentData.nationality}
                     onChange={handleStudentChange}
-                    placeholder="Nationality"
+                    placeholder="জাতীয়তা"
                     className={inputClassName}
                   />
 
@@ -992,7 +997,7 @@ const OnlineAdmissionPage = () => {
                     name="birthRegistrationNumber"
                     value={studentData.birthRegistrationNumber}
                     onChange={handleStudentChange}
-                    placeholder="Birth Registration Number"
+                    placeholder="জন্ম নিবন্ধন নম্বর"
                     className={inputClassName}
                   />
 
@@ -1003,7 +1008,7 @@ const OnlineAdmissionPage = () => {
                     className={selectClassName}
                   >
                     <option className="bg-page-primary text-primary" value="">
-                      Select Class *
+                      শ্রেণি নির্বাচন করুন *
                     </option>
                     {admissionClasses.map((item) => (
                       <option
@@ -1020,7 +1025,7 @@ const OnlineAdmissionPage = () => {
                     name="previousSchool"
                     value={studentData.previousSchool}
                     onChange={handleStudentChange}
-                    placeholder="Previous School"
+                    placeholder="পূর্ববর্তী বিদ্যালয়"
                     className={inputClassName}
                   />
 
@@ -1028,13 +1033,13 @@ const OnlineAdmissionPage = () => {
                     name="previousClass"
                     value={studentData.previousClass}
                     onChange={handleStudentChange}
-                    placeholder="Previous Class"
+                    placeholder="পূর্ববর্তী শ্রেণি"
                     className={inputClassName}
                   />
 
                   <div className="rounded-2xl border border-soft bg-page-primary p-4">
                     <label className="text-sm font-black text-primary">
-                      Student Photo *
+                      শিক্ষার্থীর ছবি *
                     </label>
                     <input
                       type="file"
@@ -1051,7 +1056,7 @@ const OnlineAdmissionPage = () => {
                     value={studentData.presentAddress}
                     onChange={handleStudentChange}
                     rows={4}
-                    placeholder="Present Address"
+                    placeholder="বর্তমান ঠিকানা"
                     className={inputClassName}
                   />
 
@@ -1060,7 +1065,7 @@ const OnlineAdmissionPage = () => {
                     value={studentData.permanentAddress}
                     onChange={handleStudentChange}
                     rows={4}
-                    placeholder="Permanent Address"
+                    placeholder="স্থায়ী ঠিকানা"
                     className={inputClassName}
                   />
                 </div>
@@ -1071,7 +1076,7 @@ const OnlineAdmissionPage = () => {
                       {studentPhotoPreview && (
                         <img
                           src={studentPhotoPreview}
-                          alt="Student preview"
+                          alt="শিক্ষার্থীর প্রিভিউ"
                           className="h-40 w-40 rounded-[20px] object-cover"
                         />
                       )}
@@ -1089,7 +1094,7 @@ const OnlineAdmissionPage = () => {
                           onClick={removeStudentPhoto}
                           className="mt-4 inline-flex items-center gap-2 rounded-full bg-color-primary px-5 py-3 text-sm font-black text-inverse"
                         >
-                          Remove Photo
+                          ছবি সরান
                           <FaTrash />
                         </button>
                       </div>
@@ -1098,7 +1103,7 @@ const OnlineAdmissionPage = () => {
                 )}
               </section>
 
-              {/* Guardian Form */}
+              {/* অভিভাবক ফরম */}
               <section className="rounded-[30px] border border-soft bg-page-secondary p-5 sm:p-6">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-brand-primary">
@@ -1106,29 +1111,29 @@ const OnlineAdmissionPage = () => {
                   </div>
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      Form 02
+                      ফরম ০২
                     </p>
                     <h3 className="text-2xl font-black text-primary">
-                      Guardian Information Form
+                      অভিভাবকের তথ্য ফরম
                     </h3>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
                   {[
-                    ["fatherName", "Father Name"],
-                    ["fatherOccupation", "Father Occupation"],
-                    ["fatherNid", "Father NID"],
-                    ["fatherPhone", "Father Phone"],
-                    ["motherName", "Mother Name"],
-                    ["motherOccupation", "Mother Occupation"],
-                    ["motherNid", "Mother NID"],
-                    ["motherPhone", "Mother Phone"],
-                    ["guardianName", "Guardian Name *"],
-                    ["guardianRelation", "Guardian Relation"],
-                    ["guardianPhone", "Guardian Phone *"],
-                    ["guardianEmail", "Guardian Email"],
-                    ["emergencyContact", "Emergency Contact"],
+                    ["fatherName", "পিতার নাম"],
+                    ["fatherOccupation", "পিতার পেশা"],
+                    ["fatherNid", "পিতার জাতীয় পরিচয়পত্র"],
+                    ["fatherPhone", "পিতার ফোন"],
+                    ["motherName", "মাতার নাম"],
+                    ["motherOccupation", "মাতার পেশা"],
+                    ["motherNid", "মাতার জাতীয় পরিচয়পত্র"],
+                    ["motherPhone", "মাতার ফোন"],
+                    ["guardianName", "অভিভাবকের নাম *"],
+                    ["guardianRelation", "অভিভাবকের সম্পর্ক"],
+                    ["guardianPhone", "অভিভাবকের ফোন *"],
+                    ["guardianEmail", "অভিভাবকের ইমেইল"],
+                    ["emergencyContact", "জরুরি যোগাযোগ"],
                   ].map(([name, placeholder]) => (
                     <input
                       key={name}
@@ -1143,7 +1148,7 @@ const OnlineAdmissionPage = () => {
 
                   <div className="rounded-2xl border border-soft bg-page-primary p-4">
                     <label className="text-sm font-black text-primary">
-                      Guardian Photo *
+                      অভিভাবকের ছবি *
                     </label>
                     <input
                       type="file"
@@ -1159,7 +1164,7 @@ const OnlineAdmissionPage = () => {
                   value={guardianData.guardianPresentAddress}
                   onChange={handleGuardianChange}
                   rows={4}
-                  placeholder="Guardian Present Address"
+                  placeholder="অভিভাবকের বর্তমান ঠিকানা"
                   className={`mt-5 w-full ${inputClassName}`}
                 />
 
@@ -1169,7 +1174,7 @@ const OnlineAdmissionPage = () => {
                       {guardianPhotoPreview && (
                         <img
                           src={guardianPhotoPreview}
-                          alt="Guardian preview"
+                          alt="অভিভাবকের প্রিভিউ"
                           className="h-40 w-40 rounded-[20px] object-cover"
                         />
                       )}
@@ -1187,7 +1192,7 @@ const OnlineAdmissionPage = () => {
                           onClick={removeGuardianPhoto}
                           className="mt-4 inline-flex items-center gap-2 rounded-full bg-color-primary px-5 py-3 text-sm font-black text-inverse"
                         >
-                          Remove Photo
+                          ছবি সরান
                           <FaTrash />
                         </button>
                       </div>
@@ -1196,7 +1201,7 @@ const OnlineAdmissionPage = () => {
                 )}
               </section>
 
-              {/* Documents */}
+              {/* ডকুমেন্ট */}
               <section className="rounded-[30px] border border-soft bg-page-secondary p-5 sm:p-6">
                 <div className="mb-6 flex items-center gap-4">
                   <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-brand-primary">
@@ -1204,10 +1209,10 @@ const OnlineAdmissionPage = () => {
                   </div>
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      Upload Area
+                      আপলোড এলাকা
                     </p>
                     <h3 className="text-2xl font-black text-primary">
-                      Multiple Document Upload
+                      একাধিক ডকুমেন্ট আপলোড
                     </h3>
                   </div>
                 </div>
@@ -1223,17 +1228,17 @@ const OnlineAdmissionPage = () => {
                   />
 
                   <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
-                    PDF, DOC, DOCX, JPG, JPEG, PNG file নির্বাচন করা যাবে। একই
-                    নাম ও একই size-এর duplicate file add হবে না।
+                    PDF, DOC, DOCX, JPG, JPEG, PNG ফাইল নির্বাচন করা যাবে। একই
+                    নাম ও একই সাইজের ডুপ্লিকেট ফাইল যোগ হবে না।
                   </p>
                 </div>
 
                 <div className="mt-5 flex flex-col gap-3 rounded-[20px] border border-soft bg-page-primary p-4 sm:flex-row sm:items-center sm:justify-between">
                   <p className="text-sm font-black text-primary">
-                    Total Documents: {documents.length}
+                    মোট ডকুমেন্ট: {toBanglaNumber(documents.length)}
                   </p>
                   <p className="text-sm font-black text-brand-primary">
-                    Total Size: {formatFileSize(totalDocumentSize)}
+                    মোট সাইজ: {formatFileSize(totalDocumentSize)}
                   </p>
 
                   {documents.length > 0 && (
@@ -1242,7 +1247,7 @@ const OnlineAdmissionPage = () => {
                       onClick={clearDocuments}
                       className="rounded-full bg-color-primary px-5 py-3 text-sm font-black text-inverse"
                     >
-                      Clear All
+                      সব মুছে ফেলুন
                     </button>
                   )}
                 </div>
@@ -1265,7 +1270,7 @@ const OnlineAdmissionPage = () => {
                         onClick={() => removeDocument(index)}
                         className="inline-flex items-center justify-center gap-2 rounded-full bg-color-primary px-5 py-3 text-sm font-black text-inverse"
                       >
-                        Remove
+                        সরান
                         <FaTrash />
                       </button>
                     </div>
@@ -1273,7 +1278,7 @@ const OnlineAdmissionPage = () => {
 
                   {!documents.length && (
                     <div className="rounded-[18px] border border-soft bg-page-primary p-4 text-sm font-semibold text-secondary">
-                      এখনো কোনো document নির্বাচন করা হয়নি।
+                      এখনো কোনো ডকুমেন্ট নির্বাচন করা হয়নি।
                     </div>
                   )}
                 </div>
@@ -1284,7 +1289,7 @@ const OnlineAdmissionPage = () => {
                   type="submit"
                   className="inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-md transition-all duration-300 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl sm:w-auto"
                 >
-                  Submit Application
+                  আবেদন জমা দিন
                   <FaCheck />
                 </button>
 
@@ -1293,12 +1298,12 @@ const OnlineAdmissionPage = () => {
                   onClick={handleReset}
                   className="inline-flex w-full items-center justify-center rounded-2xl border border-soft bg-page-primary px-8 py-4 text-sm font-black text-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg sm:w-auto"
                 >
-                  Reset Everything
+                  সব রিসেট করুন
                 </button>
               </div>
             </div>
 
-            {/* Live Summary */}
+            {/* লাইভ সারসংক্ষেপ */}
             <aside className="lg:col-span-4">
               <div className="sticky top-6 rounded-[30px] border border-soft bg-page-secondary p-5 sm:p-6">
                 <div className="flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-secondary text-3xl text-brand-primary">
@@ -1306,23 +1311,23 @@ const OnlineAdmissionPage = () => {
                 </div>
 
                 <h3 className="mt-5 text-2xl font-black text-primary">
-                  Live Application Summary
+                  লাইভ আবেদন সারসংক্ষেপ
                 </h3>
 
                 <div className="mt-5 space-y-3">
                   {[
-                    ["Student", studentData.studentFullName || "Not provided"],
-                    ["Bangla Name", studentData.studentBanglaName || "Not provided"],
-                    ["Date of Birth", studentData.dateOfBirth || "Not selected"],
-                    ["Class", studentData.selectedClass || "Not selected"],
-                    ["Guardian", guardianData.guardianName || "Not provided"],
-                    ["Guardian Phone", guardianData.guardianPhone || "Not provided"],
-                    ["Student Photo", studentPhoto ? "Uploaded" : "Missing"],
-                    ["Guardian Photo", guardianPhoto ? "Uploaded" : "Missing"],
-                    ["Documents", `${documents.length} file(s)`],
-                    ["Application Fee", selectedClassInfo?.fee || "Select class first"],
-                    ["Required Docs", selectedClassInfo?.documents || "Select class first"],
-                    ["Readiness", isApplicationReady ? "Ready" : "Incomplete"],
+                    ["শিক্ষার্থী", studentData.studentFullName || "দেওয়া হয়নি"],
+                    ["বাংলা নাম", studentData.studentBanglaName || "দেওয়া হয়নি"],
+                    ["জন্ম তারিখ", studentData.dateOfBirth || "নির্বাচন করা হয়নি"],
+                    ["শ্রেণি", studentData.selectedClass || "নির্বাচন করা হয়নি"],
+                    ["অভিভাবক", guardianData.guardianName || "দেওয়া হয়নি"],
+                    ["অভিভাবকের ফোন", guardianData.guardianPhone || "দেওয়া হয়নি"],
+                    ["শিক্ষার্থীর ছবি", studentPhoto ? "আপলোড হয়েছে" : "অনুপস্থিত"],
+                    ["অভিভাবকের ছবি", guardianPhoto ? "আপলোড হয়েছে" : "অনুপস্থিত"],
+                    ["ডকুমেন্ট", `${toBanglaNumber(documents.length)}টি ফাইল`],
+                    ["আবেদন ফি", selectedClassInfo?.fee || "আগে শ্রেণি নির্বাচন করুন"],
+                    ["প্রয়োজনীয় ডকুমেন্ট", selectedClassInfo?.documents || "আগে শ্রেণি নির্বাচন করুন"],
+                    ["প্রস্তুতি", isApplicationReady ? "প্রস্তুত" : "অসম্পূর্ণ"],
                   ].map(([label, value]) => (
                     <div
                       key={label}
@@ -1341,7 +1346,7 @@ const OnlineAdmissionPage = () => {
                 {applicationId && (
                   <div className="mt-5 rounded-[22px] border border-soft bg-color-secondary p-5">
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      Generated ID
+                      তৈরি হওয়া আইডি
                     </p>
                     <p className="mt-2 text-2xl font-black text-primary">
                       {applicationId}
@@ -1361,21 +1366,21 @@ const OnlineAdmissionPage = () => {
 
                 <div>
                   <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                    Submitted Local Receipt
+                    জমা দেওয়া স্থানীয় রশিদ
                   </p>
                   <h3 className="mt-2 text-2xl font-black text-primary">
-                    Application ID: {submittedApplication.applicationId}
+                    আবেদন আইডি: {submittedApplication.applicationId}
                   </h3>
                   <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
-                    Student: {submittedApplication.student.studentFullName} ·
-                    Class: {submittedApplication.student.selectedClass} ·
-                    Guardian: {submittedApplication.guardian.guardianName} ·
-                    Documents: {submittedApplication.documentCount} · Total Size:{" "}
+                    শিক্ষার্থী: {submittedApplication.student.studentFullName} ·
+                    শ্রেণি: {submittedApplication.student.selectedClass} ·
+                    অভিভাবক: {submittedApplication.guardian.guardianName} ·
+                    ডকুমেন্ট: {toBanglaNumber(submittedApplication.documentCount)} · মোট সাইজ:{" "}
                     {submittedApplication.totalDocumentSize}
                   </p>
                   <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
-                    Student Photo: {submittedApplication.studentPhotoName} ·
-                    Guardian Photo: {submittedApplication.guardianPhotoName}
+                    শিক্ষার্থীর ছবি: {submittedApplication.studentPhotoName} ·
+                    অভিভাবকের ছবি: {submittedApplication.guardianPhotoName}
                   </p>
                 </div>
               </div>
@@ -1384,14 +1389,14 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
 
-      {/* Process */}
+      {/* প্রক্রিয়া */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
             <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-4">
               <Image
                 src="/assets/4.jpg"
-                alt="Admission process"
+                alt="ভর্তি প্রক্রিয়া"
                 width={900}
                 height={520}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -1415,7 +1420,7 @@ const OnlineAdmissionPage = () => {
                     className="flex gap-3 rounded-[18px] border border-soft bg-page-secondary p-4"
                   >
                     <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-color-primary text-xs font-black text-inverse">
-                      {index + 1}
+                      {toBanglaNumber(index + 1)}
                     </span>
 
                     <div>
@@ -1434,7 +1439,7 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
 
-      {/* Documents */}
+      {/* ডকুমেন্ট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
@@ -1443,7 +1448,7 @@ const OnlineAdmissionPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Required Documents
+              প্রয়োজনীয় ডকুমেন্টসমূহ
             </h2>
           </div>
 
@@ -1470,7 +1475,7 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
 
-      {/* Admission Table */}
+      {/* ভর্তি টেবিল */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -1479,7 +1484,7 @@ const OnlineAdmissionPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Admission Information Table
+              ভর্তি তথ্যের তালিকা
             </h2>
           </div>
 
@@ -1539,7 +1544,7 @@ const OnlineAdmissionPage = () => {
                           href="#"
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:opacity-90"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -1583,7 +1588,7 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-6 lg:grid-cols-2">
           {guidelineSections.map((section) => (
@@ -1628,7 +1633,7 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
 
-      {/* Closing */}
+      {/* সমাপনী */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -1658,12 +1663,12 @@ const OnlineAdmissionPage = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Admission Ready
+                  ভর্তি প্রস্তুত
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
-                  Browser-only demo form হিসেবে সব feature local state দিয়ে কাজ
-                  করবে।
+                  ব্রাউজার-ভিত্তিক ডেমো ফরম হিসেবে সব ফিচার স্থানীয় স্টেট দিয়ে
+                  কাজ করবে।
                 </p>
               </div>
             </div>
@@ -1671,15 +1676,15 @@ const OnlineAdmissionPage = () => {
         </div>
       </section>
 
-      {/* Small Technical Note */}
+      {/* ছোট টেকনিক্যাল নোট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[24px] border border-soft bg-page-primary p-5">
           <div className="flex items-start gap-3">
             <FaCircleInfo className="mt-1 shrink-0 text-brand-primary" />
             <p className="text-sm font-semibold leading-7 text-secondary">
-              Note: এই page কোনো backend/API ছাড়া কাজ করে। তাই selected image
-              ও document browser memory-তে local preview/list হিসেবে থাকবে। Real
-              admission submission করার জন্য পরবর্তীতে API/server action/database
+              নোট: এই পেজ কোনো ব্যাকএন্ড/API ছাড়া কাজ করে। তাই নির্বাচিত ছবি
+              ও ডকুমেন্ট ব্রাউজার মেমোরিতে স্থানীয় প্রিভিউ/তালিকা হিসেবে থাকবে।
+              বাস্তব ভর্তি সাবমিশনের জন্য পরবর্তীতে API/server action/database
               যুক্ত করতে হবে।
             </p>
           </div>

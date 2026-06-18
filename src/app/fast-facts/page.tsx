@@ -98,7 +98,7 @@ const academicFacts: FactCard[] = [
     title: "পরীক্ষার ধরন",
     value: "৪+",
     description:
-      "ক্লাস টেস্ট, অর্ধবার্ষিক, বার্ষিক ও মডেল টেস্টের মাধ্যমে শিক্ষার্থীদের মূল্যায়ন করা হয়।",
+      "শ্রেণি পরীক্ষা, অর্ধবার্ষিক, বার্ষিক ও মডেল পরীক্ষার মাধ্যমে শিক্ষার্থীদের মূল্যায়ন করা হয়।",
     icon: <FaClipboardCheck />,
   },
 ];
@@ -177,7 +177,7 @@ const achievementFacts: FactCard[] = [
     title: "ক্রীড়া অর্জন",
     value: "২০+",
     description:
-      "ইন্টার স্কুল ও স্থানীয় ক্রীড়া প্রতিযোগিতায় শিক্ষার্থীরা নিয়মিত সাফল্য অর্জন করছে।",
+      "আন্তঃবিদ্যালয় ও স্থানীয় ক্রীড়া প্রতিযোগিতায় শিক্ষার্থীরা নিয়মিত সাফল্য অর্জন করছে।",
     icon: <FaTrophy />,
   },
   {
@@ -279,13 +279,13 @@ const importanceItems: ImportanceItem[] = [
 const FastFactsPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            School Snapshot
+            বিদ্যালয়ের সংক্ষিপ্ত পরিচিতি
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -303,12 +303,12 @@ const FastFactsPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Fast Facts Overview */}
+      {/* দ্রুত তথ্যের সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -332,7 +332,7 @@ const FastFactsPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
@@ -354,7 +354,7 @@ const FastFactsPage = () => {
 
               <div className="lg:col-span-8">
                 <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  Fast Facts পেজটি বিদ্যালয়ের গুরুত্বপূর্ণ তথ্যগুলো দ্রুত
+                  দ্রুত তথ্য পৃষ্ঠাটি বিদ্যালয়ের গুরুত্বপূর্ণ তথ্যগুলো দ্রুত
                   জানার জন্য তৈরি করা হয়েছে। এখানে প্রতিষ্ঠার সাল, শিক্ষার্থী
                   সংখ্যা, শিক্ষক সংখ্যা, একাডেমিক কার্যক্রম, ক্যাম্পাস সুবিধা
                   ও অর্জন সংক্ষেপে তুলে ধরা হয়েছে, যাতে অভিভাবক, শিক্ষার্থী ও
@@ -366,7 +366,7 @@ const FastFactsPage = () => {
         </div>
       </section>
 
-      {/* Featured Facts */}
+      {/* বিশেষ তথ্য */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -376,7 +376,7 @@ const FastFactsPage = () => {
                   <FaStar className="text-sm" />
 
                   <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Quick Overview
+                    দ্রুত সারসংক্ষেপ
                   </p>
                 </div>
 
@@ -413,7 +413,7 @@ const FastFactsPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Fast Facts
+                    দ্রুত তথ্য
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
@@ -426,7 +426,7 @@ const FastFactsPage = () => {
         </div>
       </section>
 
-      {/* Academic Facts */}
+      {/* একাডেমিক তথ্য */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -435,7 +435,7 @@ const FastFactsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Academic Facts
+              একাডেমিক তথ্যসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -471,7 +471,7 @@ const FastFactsPage = () => {
         </div>
       </section>
 
-      {/* Student & Teacher Facts */}
+      {/* শিক্ষার্থী ও শিক্ষক তথ্য */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -481,7 +481,7 @@ const FastFactsPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Student & Teacher Facts
+                শিক্ষার্থী ও শিক্ষক তথ্যসমূহ
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -518,7 +518,7 @@ const FastFactsPage = () => {
         </div>
       </section>
 
-      {/* Campus Facilities Facts */}
+      {/* ক্যাম্পাস সুবিধা তথ্য */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -527,7 +527,7 @@ const FastFactsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Campus Facilities Facts
+              ক্যাম্পাস সুবিধার তথ্যসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -563,7 +563,7 @@ const FastFactsPage = () => {
         </div>
       </section>
 
-      {/* Achievement Facts */}
+      {/* অর্জনের তথ্য */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -573,7 +573,7 @@ const FastFactsPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Achievement Facts
+                অর্জনের তথ্যসমূহ
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -610,7 +610,7 @@ const FastFactsPage = () => {
         </div>
       </section>
 
-      {/* Fast Facts Table */}
+      {/* দ্রুত তথ্যের তালিকা */}
       <section id="fast-facts-table" className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -619,7 +619,7 @@ const FastFactsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Fast Facts Table
+              দ্রুত তথ্যের বিস্তারিত তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -725,7 +725,7 @@ const FastFactsPage = () => {
         </div>
       </section>
 
-      {/* Why These Facts Matter */}
+      {/* এই তথ্য কেন গুরুত্বপূর্ণ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -735,7 +735,7 @@ const FastFactsPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Why These Facts Matter
+                এই তথ্যগুলো কেন গুরুত্বপূর্ণ
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -768,7 +768,7 @@ const FastFactsPage = () => {
         </div>
       </section>
 
-      {/* Closing Message */}
+      {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -801,7 +801,7 @@ const FastFactsPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    School at a Glance
+                    এক নজরে বিদ্যালয়
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">

@@ -71,7 +71,7 @@ const overviewItems: OverviewItem[] = [
     icon: <FaFileLines />,
   },
   {
-    title: "ছাড়পত্র / TC",
+    title: "ছাড়পত্র / টিসি",
     value: "প্রযোজ্য",
     icon: <FaSchoolFlag />,
   },
@@ -89,37 +89,37 @@ const overviewItems: OverviewItem[] = [
 
 const transferTypes: TransferType[] = [
   {
-    title: "Incoming Transfer",
+    title: "ভর্তি স্থানান্তর",
     description:
       "অন্য বিদ্যালয় থেকে আগত শিক্ষার্থীদের ভর্তি, ছাড়পত্র যাচাই ও প্রয়োজনীয় ডকুমেন্ট গ্রহণের প্রক্রিয়া।",
     icon: <FaUserGraduate />,
   },
   {
-    title: "Outgoing Transfer",
+    title: "বহির্গামী স্থানান্তর",
     description:
       "এই বিদ্যালয় থেকে অন্য বিদ্যালয়ে যাওয়ার জন্য ছাড়পত্র বা ট্রান্সফার সার্টিফিকেট প্রদানের প্রক্রিয়া।",
     icon: <FaSchoolFlag />,
   },
   {
-    title: "Mid-Year Transfer",
+    title: "শিক্ষাবর্ষের মাঝামাঝি স্থানান্তর",
     description:
       "শিক্ষাবর্ষের মাঝামাঝি সময়ে বিশেষ কারণ বা পারিবারিক প্রয়োজনে স্থানান্তরের আবেদন।",
     icon: <FaRegClock />,
   },
   {
-    title: "Class Transfer",
+    title: "শ্রেণি স্থানান্তর",
     description:
       "শিক্ষার্থীর এক শ্রেণি থেকে অন্য শ্রেণিতে স্থানান্তর বা শ্রেণি সংশোধনের প্রশাসনিক প্রক্রিয়া।",
     icon: <FaGraduationCap />,
   },
   {
-    title: "Section Transfer",
+    title: "শাখা স্থানান্তর",
     description:
-      "একই শ্রেণির মধ্যে সেকশন পরিবর্তনের আবেদন, যাচাই ও অনুমোদন প্রক্রিয়া।",
+      "একই শ্রেণির মধ্যে শাখা পরিবর্তনের আবেদন, যাচাই ও অনুমোদন প্রক্রিয়া।",
     icon: <FaUsersGear />,
   },
   {
-    title: "Special Case Transfer",
+    title: "বিশেষ পরিস্থিতির স্থানান্তর",
     description:
       "অসুস্থতা, অভিভাবকের বদলি, পারিবারিক জরুরি অবস্থা বা বিশেষ পরিস্থিতিতে স্থানান্তর বিবেচনা।",
     icon: <FaShieldHalved />,
@@ -160,7 +160,7 @@ const requiredDocuments: RequiredDocument[] = [
   {
     title: "পূর্ববর্তী বিদ্যালয়ের ছাড়পত্র",
     description:
-      "Incoming transfer-এর ক্ষেত্রে পূর্ববর্তী বিদ্যালয়ের TC বা ছাড়পত্র জমা দিতে হতে পারে।",
+      "ভর্তি স্থানান্তরের ক্ষেত্রে পূর্ববর্তী বিদ্যালয়ের টিসি বা ছাড়পত্র জমা দিতে হতে পারে।",
     icon: <FaSchoolFlag />,
   },
 ];
@@ -192,7 +192,7 @@ const transferProcess: ProcessStep[] = [
       "শ্রেণি শিক্ষক, হিসাব বিভাগ ও প্রশাসনিক যাচাই শেষে কর্তৃপক্ষ আবেদন অনুমোদন করবে।",
   },
   {
-    title: "TC / ছাড়পত্র গ্রহণ",
+    title: "টিসি / ছাড়পত্র গ্রহণ",
     description:
       "অনুমোদন সম্পন্ন হলে নির্ধারিত সময়ের মধ্যে অফিস থেকে ট্রান্সফার সার্টিফিকেট বা ছাড়পত্র সংগ্রহ করুন।",
   },
@@ -274,7 +274,7 @@ const transferItems: TransferItem[] = [
   {
     id: 6,
     step: "ধাপ ৬",
-    task: "TC / ছাড়পত্র প্রদান",
+    task: "টিসি / ছাড়পত্র প্রদান",
     responsible: "বিদ্যালয় অফিস",
     timeline: "অনুমোদনের পর",
     note: "কর্তৃপক্ষের অনুমোদন শেষে ছাড়পত্র সংগ্রহ করা যাবে।",
@@ -291,7 +291,7 @@ const guidelineSections: GuidelineSection[] = [
       "শ্রেণি শিক্ষককে স্থানান্তরের বিষয়টি জানাতে হবে এবং প্রয়োজনীয় একাডেমিক রেকর্ড সংগ্রহ করতে হবে।",
       "লাইব্রেরি থেকে নেওয়া বই, ল্যাব সামগ্রী বা বিদ্যালয়ের কোনো সম্পদ থাকলে ফেরত দিতে হবে।",
       "বিদ্যালয়ের আইডি কার্ড, ডায়েরি বা অফিসিয়াল রেকর্ড সংক্রান্ত নির্দেশনা অনুসরণ করতে হবে।",
-      "TC বা ছাড়পত্র পাওয়ার পর তা নতুন বিদ্যালয়ে জমা দেওয়ার জন্য যত্নসহকারে সংরক্ষণ করতে হবে।",
+      "টিসি বা ছাড়পত্র পাওয়ার পর তা নতুন বিদ্যালয়ে জমা দেওয়ার জন্য যত্নসহকারে সংরক্ষণ করতে হবে।",
     ],
   },
   {
@@ -310,13 +310,13 @@ const guidelineSections: GuidelineSection[] = [
 const TransferProceduresPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Transfer Procedures
+            স্থানান্তর প্রক্রিয়া
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -335,12 +335,12 @@ const TransferProceduresPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Transfer Overview */}
+      {/* স্থানান্তরের সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -364,7 +364,7 @@ const TransferProceduresPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
@@ -398,7 +398,7 @@ const TransferProceduresPage = () => {
         </div>
       </section>
 
-      {/* Featured Transfer Card */}
+      {/* বিশেষ স্থানান্তর কার্ড */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -408,7 +408,7 @@ const TransferProceduresPage = () => {
                   <FaStar className="text-sm" />
 
                   <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Transfer Notice
+                    স্থানান্তর নোটিশ
                   </p>
                 </div>
 
@@ -418,8 +418,8 @@ const TransferProceduresPage = () => {
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
                   ট্রান্সফার আবেদন করার আগে শিক্ষার্থীর ফি, লাইব্রেরি বই, ল্যাব
-                  সামগ্রী, ফলাফল ও অফিসিয়াল রেকর্ড যাচাই করা জরুরি। এতে TC বা
-                  ছাড়পত্র গ্রহণের প্রক্রিয়া দ্রুত ও সহজ হয়।
+                  সামগ্রী, ফলাফল ও অফিসিয়াল রেকর্ড যাচাই করা জরুরি। এতে টিসি
+                  বা ছাড়পত্র গ্রহণের প্রক্রিয়া দ্রুত ও সহজ হয়।
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
@@ -444,11 +444,11 @@ const TransferProceduresPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Transfer Certificate
+                    ট্রান্সফার সার্টিফিকেট
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    অফিসিয়াল অনুমোদনের পর TC বা ছাড়পত্র সংগ্রহ করুন।
+                    অফিসিয়াল অনুমোদনের পর টিসি বা ছাড়পত্র সংগ্রহ করুন।
                   </p>
                 </div>
               </div>
@@ -457,7 +457,7 @@ const TransferProceduresPage = () => {
         </div>
       </section>
 
-      {/* Transfer Types */}
+      {/* স্থানান্তরের ধরন */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -466,7 +466,7 @@ const TransferProceduresPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Transfer Types
+              স্থানান্তরের ধরনসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -498,7 +498,7 @@ const TransferProceduresPage = () => {
         </div>
       </section>
 
-      {/* Required Documents */}
+      {/* প্রয়োজনীয় কাগজপত্র */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -508,7 +508,7 @@ const TransferProceduresPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Required Documents
+                প্রয়োজনীয় কাগজপত্র
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -541,7 +541,7 @@ const TransferProceduresPage = () => {
         </div>
       </section>
 
-      {/* Transfer Application Process */}
+      {/* স্থানান্তর আবেদন প্রক্রিয়া */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -550,7 +550,7 @@ const TransferProceduresPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Transfer Application Process
+              স্থানান্তর আবেদন প্রক্রিয়া
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -566,7 +566,7 @@ const TransferProceduresPage = () => {
                 className="group rounded-[26px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-color-secondary text-sm font-black text-primary transition-all duration-500 group-hover:bg-page-secondary group-hover:text-brand-primary">
-                  {String(index + 1).padStart(2, "0")}
+                  {["০১", "০২", "০৩", "০৪", "০৫", "০৬"][index]}
                 </div>
 
                 <h3 className="mt-5 text-lg font-black leading-tight text-primary transition-colors duration-500 group-hover:text-inverse">
@@ -582,7 +582,7 @@ const TransferProceduresPage = () => {
         </div>
       </section>
 
-      {/* Transfer Rules */}
+      {/* স্থানান্তর নিয়ম */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -592,7 +592,7 @@ const TransferProceduresPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Transfer Rules
+                স্থানান্তর নিয়মাবলি
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -625,7 +625,7 @@ const TransferProceduresPage = () => {
         </div>
       </section>
 
-      {/* Transfer Table */}
+      {/* স্থানান্তর তালিকা */}
       <section
         id="transfer-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -637,7 +637,7 @@ const TransferProceduresPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Transfer Table
+              স্থানান্তরের বিস্তারিত তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -713,7 +713,7 @@ const TransferProceduresPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -768,7 +768,7 @@ const TransferProceduresPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -778,7 +778,7 @@ const TransferProceduresPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -825,7 +825,7 @@ const TransferProceduresPage = () => {
         </div>
       </section>
 
-      {/* Closing Message */}
+      {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -846,7 +846,7 @@ const TransferProceduresPage = () => {
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
                   স্থানান্তর প্রক্রিয়া একটি গুরুত্বপূর্ণ অফিসিয়াল কাজ। সঠিক
                   তথ্য, প্রয়োজনীয় ডকুমেন্ট, বকেয়া নিষ্পত্তি এবং বিদ্যালয়
-                  কর্তৃপক্ষের নির্দেশনা অনুসরণ করলে TC বা ছাড়পত্র গ্রহণ সহজ,
+                  কর্তৃপক্ষের নির্দেশনা অনুসরণ করলে টিসি বা ছাড়পত্র গ্রহণ সহজ,
                   দ্রুত ও নির্ভুলভাবে সম্পন্ন হয়।
                 </p>
               </div>
@@ -858,11 +858,11 @@ const TransferProceduresPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Official Transfer
+                    অফিসিয়াল স্থানান্তর
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    অফিসিয়াল নিয়ম মেনে TC বা ছাড়পত্র গ্রহণ করুন।
+                    অফিসিয়াল নিয়ম মেনে টিসি বা ছাড়পত্র গ্রহণ করুন।
                   </p>
                 </div>
               </div>

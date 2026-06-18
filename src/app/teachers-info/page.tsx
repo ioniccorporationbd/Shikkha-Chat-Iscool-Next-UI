@@ -38,97 +38,97 @@ type StatCard = {
 const teachers: Teacher[] = [
   {
     id: 1,
-    name: "Md. Hasan Mahmud",
+    name: "মোঃ হাসান মাহমুদ",
     banglaName: "মোঃ হাসান মাহমুদ",
-    designation: "Principal",
-    department: "Administration",
-    qualification: "M.A, B.Ed",
-    experience: "18 Years",
-    phone: "01867268422",
+    designation: "প্রধান শিক্ষক",
+    department: "প্রশাসন",
+    qualification: "এম.এ, বি.এড",
+    experience: "১৮ বছর",
+    phone: "০১৮৬৭২৬৮৪২২",
     email: "principal@shikkhachat.edu.bd",
     image: "/assets/3.jpg",
   },
   {
     id: 2,
-    name: "Nusrat Jahan",
+    name: "নুসরাত জাহান",
     banglaName: "নুসরাত জাহান",
-    designation: "Senior Teacher",
-    department: "Bangla",
-    qualification: "M.A in Bangla, B.Ed",
-    experience: "12 Years",
-    phone: "01866785183",
+    designation: "সিনিয়র শিক্ষক",
+    department: "বাংলা",
+    qualification: "বাংলায় এম.এ, বি.এড",
+    experience: "১২ বছর",
+    phone: "০১৮৬৬৭৮৫১৮৩",
     email: "bangla@shikkhachat.edu.bd",
     image: "/assets/4.jpg",
   },
   {
     id: 3,
-    name: "Md. Arif Hossain",
+    name: "মোঃ আরিফ হোসেন",
     banglaName: "মোঃ আরিফ হোসেন",
-    designation: "Assistant Teacher",
-    department: "Mathematics",
-    qualification: "M.Sc in Mathematics",
-    experience: "10 Years",
-    phone: "01866785184",
+    designation: "সহকারী শিক্ষক",
+    department: "গণিত",
+    qualification: "গণিতে এম.এসসি",
+    experience: "১০ বছর",
+    phone: "০১৮৬৬৭৮৫১৮৪",
     email: "math@shikkhachat.edu.bd",
     image: "/assets/5.jpg",
   },
   {
     id: 4,
-    name: "Farhana Akter",
+    name: "ফারহানা আক্তার",
     banglaName: "ফারহানা আক্তার",
-    designation: "Assistant Teacher",
-    department: "English",
-    qualification: "M.A in English, B.Ed",
-    experience: "9 Years",
-    phone: "01867268423",
+    designation: "সহকারী শিক্ষক",
+    department: "ইংরেজি",
+    qualification: "ইংরেজিতে এম.এ, বি.এড",
+    experience: "৯ বছর",
+    phone: "০১৮৬৭২৬৮৪২৩",
     email: "english@shikkhachat.edu.bd",
     image: "/assets/3.jpg",
   },
   {
     id: 5,
-    name: "Sabbir Rahman",
+    name: "সাব্বির রহমান",
     banglaName: "সাব্বির রহমান",
-    designation: "Assistant Teacher",
-    department: "Science",
-    qualification: "M.Sc in Physics",
-    experience: "8 Years",
-    phone: "01867268424",
+    designation: "সহকারী শিক্ষক",
+    department: "বিজ্ঞান",
+    qualification: "পদার্থবিজ্ঞানে এম.এসসি",
+    experience: "৮ বছর",
+    phone: "০১৮৬৭২৬৮৪২৪",
     email: "science@shikkhachat.edu.bd",
     image: "/assets/4.jpg",
   },
   {
     id: 6,
-    name: "Mst. Jannatul Ferdous",
+    name: "মোছাঃ জান্নাতুল ফেরদৌস",
     banglaName: "মোছাঃ জান্নাতুল ফেরদৌস",
-    designation: "Assistant Teacher",
-    department: "ICT",
-    qualification: "B.Sc in CSE",
-    experience: "7 Years",
-    phone: "01867268425",
+    designation: "সহকারী শিক্ষক",
+    department: "আইসিটি",
+    qualification: "সিএসই-তে বি.এসসি",
+    experience: "৭ বছর",
+    phone: "০১৮৬৭২৬৮৪২৫",
     email: "ict@shikkhachat.edu.bd",
     image: "/assets/5.jpg",
   },
   {
     id: 7,
-    name: "Md. Rakibul Islam",
+    name: "মোঃ রাকিবুল ইসলাম",
     banglaName: "মোঃ রাকিবুল ইসলাম",
-    designation: "Assistant Teacher",
-    department: "Islamic Studies",
-    qualification: "M.A in Islamic Studies",
-    experience: "11 Years",
-    phone: "01867268426",
+    designation: "সহকারী শিক্ষক",
+    department: "ইসলাম শিক্ষা",
+    qualification: "ইসলাম শিক্ষায় এম.এ",
+    experience: "১১ বছর",
+    phone: "০১৮৬৭২৬৮৪২৬",
     email: "islamic@shikkhachat.edu.bd",
     image: "/assets/3.jpg",
   },
   {
     id: 8,
-    name: "Sharmin Sultana",
+    name: "শারমিন সুলতানা",
     banglaName: "শারমিন সুলতানা",
-    designation: "Assistant Teacher",
-    department: "Social Science",
-    qualification: "M.S.S, B.Ed",
-    experience: "6 Years",
-    phone: "01867268427",
+    designation: "সহকারী শিক্ষক",
+    department: "সমাজবিজ্ঞান",
+    qualification: "এম.এস.এস, বি.এড",
+    experience: "৬ বছর",
+    phone: "০১৮৬৭২৬৮৪২৭",
     email: "social@shikkhachat.edu.bd",
     image: "/assets/4.jpg",
   },
@@ -136,52 +136,52 @@ const teachers: Teacher[] = [
 
 const stats: StatCard[] = [
   {
-    title: "Total Teachers",
-    value: "35+",
-    description: "Experienced academic teachers",
+    title: "মোট শিক্ষক",
+    value: "৩৫+",
+    description: "অভিজ্ঞ একাডেমিক শিক্ষক",
     icon: <FaPeopleGroup />,
   },
   {
-    title: "Departments",
-    value: "08",
-    description: "Subject-based departments",
+    title: "বিভাগসমূহ",
+    value: "০৮",
+    description: "বিষয়ভিত্তিক বিভাগ",
     icon: <FaBookOpen />,
   },
   {
-    title: "Senior Teachers",
-    value: "12+",
-    description: "Highly experienced mentors",
+    title: "সিনিয়র শিক্ষক",
+    value: "১২+",
+    description: "অভিজ্ঞ পরামর্শদাতা",
     icon: <FaAward />,
   },
   {
-    title: "Experience",
-    value: "15+",
-    description: "Average years of excellence",
+    title: "অভিজ্ঞতা",
+    value: "১৫+",
+    description: "গড় উৎকর্ষের বছর",
     icon: <FaStar />,
   },
 ];
 
 const departments = [
-  "Administration",
-  "Bangla",
-  "English",
-  "Mathematics",
-  "Science",
-  "ICT",
-  "Islamic Studies",
-  "Social Science",
+  "প্রশাসন",
+  "বাংলা",
+  "ইংরেজি",
+  "গণিত",
+  "বিজ্ঞান",
+  "আইসিটি",
+  "ইসলাম শিক্ষা",
+  "সমাজবিজ্ঞান",
 ];
 
 export default function TeachersInfoPage() {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Hero */}
+      {/* হিরো */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Teachers Info
+            শিক্ষকবৃন্দের তথ্য
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -200,12 +200,12 @@ export default function TeachersInfoPage() {
             href="/"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Overview */}
+      {/* সারসংক্ষেপ */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <div className="overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
@@ -213,7 +213,7 @@ export default function TeachersInfoPage() {
               <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-inverse">
                   <FaSchoolFlag />
-                  Academic Excellence
+                  একাডেমিক উৎকর্ষ
                 </span>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
@@ -235,11 +235,11 @@ export default function TeachersInfoPage() {
                   </div>
 
                   <h3 className="mt-5 text-4xl font-black text-primary">
-                    35+
+                    ৩৫+
                   </h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Dedicated Teachers
+                    নিবেদিত শিক্ষক
                   </p>
                 </div>
 
@@ -249,18 +249,18 @@ export default function TeachersInfoPage() {
                   </div>
 
                   <h3 className="mt-5 text-4xl font-black text-primary">
-                    08
+                    ০৮
                   </h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Departments
+                    বিভাগসমূহ
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Stats */}
+          {/* পরিসংখ্যান */}
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {stats.map((item) => (
               <article
@@ -288,12 +288,12 @@ export default function TeachersInfoPage() {
         </div>
       </section>
 
-      {/* Department List */}
+      {/* বিভাগের তালিকা */}
       <section className="px-4 pb-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-7 text-center">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
-              Departments
+              বিভাগসমূহ
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary">
@@ -321,12 +321,12 @@ export default function TeachersInfoPage() {
         </div>
       </section>
 
-      {/* Teachers Grid */}
+      {/* শিক্ষকদের তালিকা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
-              Teacher Profiles
+              শিক্ষকদের প্রোফাইল
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
@@ -350,7 +350,7 @@ export default function TeachersInfoPage() {
                 <div className="relative h-[280px] overflow-hidden bg-page-secondary">
                   <Image
                     src={teacher.image}
-                    alt={teacher.name}
+                    alt={teacher.banglaName}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
                     className="object-cover transition duration-700 group-hover:scale-110"
@@ -413,7 +413,7 @@ export default function TeachersInfoPage() {
         </div>
       </section>
 
-      {/* Message */}
+      {/* বার্তা */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1600px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -422,7 +422,7 @@ export default function TeachersInfoPage() {
                 <FaUsersGear className="text-sm" />
 
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  Teacher Message
+                  শিক্ষকদের বার্তা
                 </p>
               </div>
 
@@ -445,7 +445,7 @@ export default function TeachersInfoPage() {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Quality Education
+                  মানসম্মত শিক্ষা
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
@@ -457,13 +457,13 @@ export default function TeachersInfoPage() {
         </div>
       </section>
 
-      {/* Office Contact */}
+      {/* অফিস যোগাযোগ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[24px] border border-soft bg-page-primary p-5 shadow-sm">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h3 className="text-xl font-black text-primary">
-                Need teacher-related information?
+                শিক্ষকবৃন্দ সম্পর্কিত তথ্য প্রয়োজন?
               </h3>
 
               <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
@@ -476,7 +476,7 @@ export default function TeachersInfoPage() {
               href="/contact"
               className="inline-flex w-fit items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-lg transition-all duration-300 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
             >
-              Contact Office
+              অফিসে যোগাযোগ করুন
             </Link>
           </div>
         </div>

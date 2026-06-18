@@ -449,7 +449,7 @@ export default function GoverningBodyPage() {
       <section className="mx-auto max-w-[1600px] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
         <header className="mb-12 text-center">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-brand-primary">
-            Governing-body
+        পরিচালনা পর্ষদ
           </p>
 
           <h1 className="mt-3 text-4xl font-black leading-tight text-primary md:text-5xl">

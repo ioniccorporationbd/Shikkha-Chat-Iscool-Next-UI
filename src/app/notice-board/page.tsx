@@ -76,13 +76,13 @@ const noticeCategories: NoticeCategory[] = [
   {
     title: "সাধারণ নোটিশ",
     description:
-      "বিদ্যালয়ের দৈনন্দিন ঘোষণা, সময়সূচি, প্রশাসনিক তথ্য ও সাধারণ নির্দেশনা।",
+      "বিদ্যালয়ের দৈনন্দিন ঘোষণা, সময়সূচি, প্রশাসনিক তথ্য ও সাধারণ নির্দেশনা।",
     icon: <FaBullhorn />,
   },
   {
     title: "পরীক্ষা সংক্রান্ত নোটিশ",
     description:
-      "পরীক্ষার সময়সূচি, আসন বিন্যাস, পরীক্ষার নিয়ম ও ফলাফল সংক্রান্ত ঘোষণা।",
+      "পরীক্ষার সময়সূচি, আসন বিন্যাস, পরীক্ষার নিয়ম ও ফলাফল সংক্রান্ত ঘোষণা।",
     icon: <FaClipboardCheck />,
   },
   {
@@ -94,19 +94,19 @@ const noticeCategories: NoticeCategory[] = [
   {
     title: "ফলাফল নোটিশ",
     description:
-      "টার্ম পরীক্ষা, অর্ধবার্ষিক, বার্ষিক পরীক্ষা ও অন্যান্য মূল্যায়নের ফলাফল।",
+      "টার্ম পরীক্ষা, অর্ধবার্ষিক, বার্ষিক পরীক্ষা ও অন্যান্য মূল্যায়নের ফলাফল।",
     icon: <FaFileLines />,
   },
   {
     title: "ছুটির নোটিশ",
     description:
-      "সরকারি ছুটি, ধর্মীয় ছুটি, বিশেষ ছুটি ও বিদ্যালয় নির্ধারিত ছুটির ঘোষণা।",
+      "সরকারি ছুটি, ধর্মীয় ছুটি, বিশেষ ছুটি ও বিদ্যালয় নির্ধারিত ছুটির ঘোষণা।",
     icon: <FaCalendarCheck />,
   },
   {
     title: "অনুষ্ঠান ও কার্যক্রম",
     description:
-      "ক্রীড়া, সাংস্কৃতিক অনুষ্ঠান, অভিভাবক সভা ও সহশিক্ষা কার্যক্রমের আপডেট।",
+      "ক্রীড়া, সাংস্কৃতিক অনুষ্ঠান, অভিভাবক সভা ও সহশিক্ষা কার্যক্রমের আপডেট।",
     icon: <FaBullhorn />,
   },
 ];
@@ -114,9 +114,9 @@ const noticeCategories: NoticeCategory[] = [
 const latestNotices: NoticeItem[] = [
   {
     id: 1,
-    title: "প্রথম টার্ম পরীক্ষার সময়সূচি প্রকাশ",
+    title: "প্রথম টার্ম পরীক্ষার সময়সূচি প্রকাশ",
     category: "পরীক্ষা",
-    date: "১২ জানুয়ারি ২০২৬",
+    date: "১২ জানুয়ারি ২০২৬",
     status: "নতুন",
     fileUrl: "#",
   },
@@ -124,15 +124,15 @@ const latestNotices: NoticeItem[] = [
     id: 2,
     title: "অভিভাবক-শিক্ষক সভার নোটিশ",
     category: "সভা",
-    date: "১৫ জানুয়ারি ২০২৬",
+    date: "১৫ জানুয়ারি ২০২৬",
     status: "গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
   {
     id: 3,
-    title: "বার্ষিক ক্রীড়া প্রতিযোগিতার প্রস্তুতি",
+    title: "বার্ষিক ক্রীড়া প্রতিযোগিতার প্রস্তুতি",
     category: "কার্যক্রম",
-    date: "১৮ জানুয়ারি ২০২৬",
+    date: "১৮ জানুয়ারি ২০২৬",
     status: "চলমান",
     fileUrl: "#",
   },
@@ -140,7 +140,7 @@ const latestNotices: NoticeItem[] = [
     id: 4,
     title: "নতুন শিক্ষাবর্ষে ভর্তি কার্যক্রম",
     category: "ভর্তি",
-    date: "২০ জানুয়ারি ২০২৬",
+    date: "২০ জানুয়ারি ২০২৬",
     status: "নতুন",
     fileUrl: "#",
   },
@@ -148,7 +148,7 @@ const latestNotices: NoticeItem[] = [
     id: 5,
     title: "বিশেষ ছুটির ঘোষণা",
     category: "ছুটি",
-    date: "২২ জানুয়ারি ২০২৬",
+    date: "২২ জানুয়ারি ২০২৬",
     status: "গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
@@ -156,7 +156,7 @@ const latestNotices: NoticeItem[] = [
     id: 6,
     title: "অর্ধবার্ষিক পরীক্ষার ফলাফল প্রকাশ",
     category: "ফলাফল",
-    date: "২৫ জানুয়ারি ২০২৬",
+    date: "২৫ জানুয়ারি ২০২৬",
     status: "প্রকাশিত",
     fileUrl: "#",
   },
@@ -164,22 +164,22 @@ const latestNotices: NoticeItem[] = [
 
 const importantNotices: ImportantNotice[] = [
   {
-    title: "পরীক্ষার হলে প্রবেশের সময় পরিবর্তন",
-    date: "১০ জানুয়ারি ২০২৬",
+    title: "পরীক্ষার হলে প্রবেশের সময় পরিবর্তন",
+    date: "১০ জানুয়ারি ২০২৬",
     description:
-      "পরীক্ষার দিন শিক্ষার্থীদের নির্ধারিত সময়ের কমপক্ষে ৩০ মিনিট আগে বিদ্যালয়ে উপস্থিত থাকতে হবে।",
+      "পরীক্ষার দিন শিক্ষার্থীদের নির্ধারিত সময়ের কমপক্ষে ৩০ মিনিট আগে বিদ্যালয়ে উপস্থিত থাকতে হবে।",
   },
   {
-    title: "অভিভাবক সভায় উপস্থিতির অনুরোধ",
-    date: "১৫ জানুয়ারি ২০২৬",
+    title: "অভিভাবক সভায় উপস্থিতির অনুরোধ",
+    date: "১৫ জানুয়ারি ২০২৬",
     description:
-      "শিক্ষার্থীর অগ্রগতি, উপস্থিতি ও আচরণ বিষয়ে আলোচনার জন্য অভিভাবকদের সভায় উপস্থিত থাকার অনুরোধ করা হচ্ছে।",
+      "শিক্ষার্থীর অগ্রগতি, উপস্থিতি ও আচরণ বিষয়ে আলোচনার জন্য অভিভাবকদের সভায় উপস্থিত থাকার অনুরোধ করা হচ্ছে।",
   },
   {
-    title: "ইউনিফর্ম ও পরিচয়পত্র সংক্রান্ত নির্দেশনা",
-    date: "২০ জানুয়ারি ২০২৬",
+    title: "ইউনিফর্ম ও পরিচয়পত্র সংক্রান্ত নির্দেশনা",
+    date: "২০ জানুয়ারি ২০২৬",
     description:
-      "বিদ্যালয়ে প্রবেশের সময় শিক্ষার্থীদের পরিচ্ছন্ন ইউনিফর্ম ও পরিচয়পত্র ব্যবহার বাধ্যতামূলক।",
+      "বিদ্যালয়ে প্রবেশের সময় শিক্ষার্থীদের পরিচ্ছন্ন ইউনিফর্ম ও পরিচয়পত্র ব্যবহার বাধ্যতামূলক।",
   },
 ];
 
@@ -188,10 +188,10 @@ const guidelineSections: GuidelineSection[] = [
     title: "শিক্ষার্থীদের নির্দেশনা",
     icon: <FaUserGraduate />,
     points: [
-      "প্রতিদিন নিয়মিত নোটিশ বোর্ড দেখে বিদ্যালয়ের নতুন ঘোষণা সম্পর্কে জানতে হবে।",
-      "পরীক্ষা, ছুটি, ক্লাস সময়সূচি ও কার্যক্রমের তারিখ সতর্কতার সঙ্গে অনুসরণ করতে হবে।",
-      "কোনো নোটিশ বুঝতে সমস্যা হলে শ্রেণি শিক্ষক বা বিদ্যালয় অফিসে যোগাযোগ করতে হবে।",
-      "নোটিশে উল্লেখিত নির্দেশনা যথাসময়ে পালন করতে হবে।",
+      "প্রতিদিন নিয়মিত নোটিশ বোর্ড দেখে বিদ্যালয়ের নতুন ঘোষণা সম্পর্কে জানতে হবে।",
+      "পরীক্ষা, ছুটি, ক্লাস সময়সূচি ও কার্যক্রমের তারিখ সতর্কতার সঙ্গে অনুসরণ করতে হবে।",
+      "কোনো নোটিশ বুঝতে সমস্যা হলে শ্রেণি শিক্ষক বা বিদ্যালয় অফিসে যোগাযোগ করতে হবে।",
+      "নোটিশে উল্লেখিত নির্দেশনা যথাসময়ে পালন করতে হবে।",
       "ডাউনলোড করা নোটিশ বা ফাইল ভালোভাবে সংরক্ষণ করতে হবে।",
     ],
   },
@@ -199,11 +199,11 @@ const guidelineSections: GuidelineSection[] = [
     title: "অভিভাবকদের নির্দেশনা",
     icon: <FaPeopleGroup />,
     points: [
-      "সন্তানের বিদ্যালয় সংক্রান্ত আপডেট জানতে নিয়মিত নোটিশ বোর্ড দেখুন।",
+      "সন্তানের বিদ্যালয় সংক্রান্ত আপডেট জানতে নিয়মিত নোটিশ বোর্ড দেখুন।",
       "পরীক্ষার তারিখ, ছুটি, অভিভাবক সভা ও জরুরি ঘোষণার নোটিশ অনুসরণ করুন।",
-      "কোনো গুরুত্বপূর্ণ নোটিশ পেলে প্রয়োজনীয় প্রস্তুতি নিতে সন্তানকে সহযোগিতা করুন।",
-      "নোটিশ সম্পর্কে কোনো প্রশ্ন থাকলে বিদ্যালয়ের অফিসিয়াল যোগাযোগ মাধ্যমে যোগাযোগ করুন।",
-      "বিদ্যালয়ের নির্দেশনা অনুসরণ করে শিক্ষার্থীর নিয়মিত পড়াশোনা ও উপস্থিতি নিশ্চিত করুন।",
+      "কোনো গুরুত্বপূর্ণ নোটিশ পেলে প্রয়োজনীয় প্রস্তুতি নিতে সন্তানকে সহযোগিতা করুন।",
+      "নোটিশ সম্পর্কে কোনো প্রশ্ন থাকলে বিদ্যালয়ের অফিসিয়াল যোগাযোগ মাধ্যমে যোগাযোগ করুন।",
+      "বিদ্যালয়ের নির্দেশনা অনুসরণ করে শিক্ষার্থীর নিয়মিত পড়াশোনা ও উপস্থিতি নিশ্চিত করুন।",
     ],
   },
 ];
@@ -217,7 +217,7 @@ const NoticeBoardPage = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            School Updates
+            বিদ্যালয়ের আপডেট সমূহ
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -227,15 +227,15 @@ const NoticeBoardPage = () => {
           <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-color-primary" />
 
           <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            বিদ্যালয়ের গুরুত্বপূর্ণ ঘোষণা, পরীক্ষা, ছুটি, ভর্তি, ফলাফল ও
-            অন্যান্য আপডেট এক জায়গায় দেখার জন্য এই পেজ তৈরি করা হয়েছে।
+            বিদ্যালয়ের গুরুত্বপূর্ণ ঘোষণা, পরীক্ষা, ছুটি, ভর্তি, ফলাফল ও
+            অন্যান্য আপডেট এক জায়গায় দেখার জন্য এই পেজ তৈরি করা হয়েছে।
           </p>
 
           <Link
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
@@ -275,7 +275,7 @@ const NoticeBoardPage = () => {
                 </p>
 
                 <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                  বিদ্যালয়ের সকল গুরুত্বপূর্ণ ঘোষণা
+                  বিদ্যালয়ের সকল গুরুত্বপূর্ণ ঘোষণা
                 </h2>
 
                 <div className="mt-5 flex items-center gap-2">
@@ -286,11 +286,10 @@ const NoticeBoardPage = () => {
 
               <div className="lg:col-span-8">
                 <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  নোটিশ বোর্ড বিদ্যালয়ের শিক্ষার্থী, অভিভাবক, শিক্ষক ও
+                  নোটিশ বোর্ড বিদ্যালয়ের শিক্ষার্থী, অভিভাবক, শিক্ষক ও
                   সংশ্লিষ্ট সকলের জন্য গুরুত্বপূর্ণ তথ্য জানার নির্ভরযোগ্য
-                  মাধ্যম। পরীক্ষা, ভর্তি, ফলাফল, ছুটি, সভা, অনুষ্ঠান ও অন্যান্য
-                  প্রশাসনিক ঘোষণা এই পেজে নিয়মিত প্রকাশ করা হবে। তাই সকলকে
-                  নিয়মিত নোটিশ বোর্ড অনুসরণ করার জন্য অনুরোধ করা হচ্ছে।
+                  নিয়মিত প্রকাশ করা হবে। তাই সকলকে
+                  নিয়মিত নোটিশ বোর্ড অনুসরণ করার জন্য অনুরোধ করা হচ্ছে।
                 </p>
               </div>
             </div>
@@ -307,7 +306,7 @@ const NoticeBoardPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Notice Categories
+              নোটিশের ক্যাটাগরি সমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -350,13 +349,13 @@ const NoticeBoardPage = () => {
                 </p>
 
                 <h2 className="mt-2 text-3xl font-black text-primary">
-                  Important Notices
+                  গুরুত্বপূর্ণ নোটিশ সমূহ
                 </h2>
               </div>
 
               <div className="inline-flex items-center gap-2 rounded-full border border-soft bg-page-secondary px-4 py-2 text-sm font-black text-secondary">
                 <FaTriangleExclamation className="text-brand-primary" />
-                নিয়মিত আপডেট দেখুন
+                নিয়মিত আপডেট দেখুন
               </div>
             </div>
 
@@ -400,7 +399,7 @@ const NoticeBoardPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Latest Notices
+              সর্বশেষ নোটিশ সমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -469,7 +468,7 @@ const NoticeBoardPage = () => {
                           href={notice.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড করুন
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -517,7 +516,7 @@ const NoticeBoardPage = () => {
                     href={notice.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড করুন
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -589,14 +588,14 @@ const NoticeBoardPage = () => {
                 </div>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  সময়মতো নোটিশ অনুসরণ করুন
+                  সময়মতো নোটিশ অনুসরণ করুন
                 </h2>
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  নোটিশ বোর্ড বিদ্যালয়ের গুরুত্বপূর্ণ তথ্য জানার প্রধান মাধ্যম।
-                  শিক্ষার্থী, অভিভাবক ও শিক্ষক সবাই নিয়মিত নোটিশ বোর্ড অনুসরণ
+                  নোটিশ বোর্ড বিদ্যালয়ের গুরুত্বপূর্ণ তথ্য জানার প্রধান মাধ্যম।
+                  শিক্ষার্থী, অভিভাবক ও শিক্ষক সবাই নিয়মিত নোটিশ বোর্ড অনুসরণ
                   করলে পরীক্ষা, ছুটি, সভা, ফলাফল ও অন্যান্য কার্যক্রম সম্পর্কে
-                  সময়মতো প্রস্তুতি নেওয়া সহজ হয়।
+                  সময়মতো প্রস্তুতি নেওয়া সহজ হয়।
                 </p>
               </div>
 
@@ -611,7 +610,7 @@ const NoticeBoardPage = () => {
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    নিয়মিত নোটিশ দেখুন এবং বিদ্যালয়ের আপডেট সম্পর্কে সচেতন
+                    নিয়মিত নোটিশ দেখুন এবং বিদ্যালয়ের আপডেট সম্পর্কে সচেতন
                     থাকুন।
                   </p>
                 </div>

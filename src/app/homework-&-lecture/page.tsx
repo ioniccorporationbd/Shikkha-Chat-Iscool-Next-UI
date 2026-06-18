@@ -41,55 +41,55 @@ type SubjectItem = {
 const documentItems: DocumentItem[] = [
   {
     id: 1,
-    className: "Class One",
+    className: "প্রথম শ্রেণি",
     subject: "বাংলা",
-    type: "হোমওয়ার্ক",
-    date: "১২ জানুয়ারি ২০২৬",
+    type: "হোমওয়ার্ক",
+    date: "১২ জানুয়ারি ২০২৬",
     teacher: "শ্রেণি শিক্ষক",
     fileUrl: "#",
   },
   {
     id: 2,
-    className: "Class Two",
+    className: "দ্বিতীয় শ্রেণি",
     subject: "ইংরেজি",
     type: "লেকচার নোট",
-    date: "১৩ জানুয়ারি ২০২৬",
+    date: "১৩ জানুয়ারি ২০২৬",
     teacher: "ইংরেজি শিক্ষক",
     fileUrl: "#",
   },
   {
     id: 3,
-    className: "Class Three",
+    className: "তৃতীয় শ্রেণি",
     subject: "গণিত",
-    type: "ওয়ার্কশিট",
-    date: "১৪ জানুয়ারি ২০২৬",
+    type: "ওয়ার্কশিট",
+    date: "১৪ জানুয়ারি ২০২৬",
     teacher: "গণিত শিক্ষক",
     fileUrl: "#",
   },
   {
     id: 4,
-    className: "Class Four",
+    className: "চতুর্থ শ্রেণি",
     subject: "বিজ্ঞান",
     type: "ক্লাস লেকচার",
-    date: "১৫ জানুয়ারি ২০২৬",
+    date: "১৫ জানুয়ারি ২০২৬",
     teacher: "বিজ্ঞান শিক্ষক",
     fileUrl: "#",
   },
   {
     id: 5,
-    className: "Class Five",
-    subject: "বাংলাদেশ ও বিশ্বপরিচয়",
-    type: "অধ্যায়ভিত্তিক নোট",
-    date: "১৬ জানুয়ারি ২০২৬",
-    teacher: "বিষয় শিক্ষক",
+    className: "পঞ্চম শ্রেণি",
+    subject: "বাংলাদেশ ও বিশ্বপরিচয়",
+    type: "অধ্যায়ভিত্তিক নোট",
+    date: "১৬ জানুয়ারি ২০২৬",
+    teacher: "বিষয় শিক্ষক",
     fileUrl: "#",
   },
   {
     id: 6,
-    className: "Class Six",
+    className: "ষষ্ঠ শ্রেণি",
     subject: "আইসিটি",
     type: "প্র্যাকটিস শিট",
-    date: "১৭ জানুয়ারি ২০২৬",
+    date: "১৭ জানুয়ারি ২০২৬",
     teacher: "আইসিটি শিক্ষক",
     fileUrl: "#",
   },
@@ -127,35 +127,35 @@ const guidelineSections: GuidelineSection[] = [
     title: "শিক্ষার্থীদের নির্দেশনা",
     icon: <FaUserGraduate />,
     points: [
-      "প্রতিদিন নিয়মিত এই পেজ থেকে হোমওয়ার্ক ও ক্লাস লেকচার ডকুমেন্ট চেক করতে হবে।",
-      "নির্ধারিত সময়ের মধ্যে হোমওয়ার্ক সম্পন্ন করে শিক্ষককে জমা দিতে হবে।",
+      "প্রতিদিন নিয়মিত এই পেজ থেকে হোমওয়ার্ক ও ক্লাস লেকচার ডকুমেন্ট চেক করতে হবে।",
+      "নির্ধারিত সময়ের মধ্যে হোমওয়ার্ক সম্পন্ন করে শিক্ষককে জমা দিতে হবে।",
       "ডাউনলোড করা ফাইল ভালোভাবে সংরক্ষণ করতে হবে।",
-      "কোনো ডকুমেন্ট বুঝতে সমস্যা হলে বিষয় শিক্ষক বা শ্রেণি শিক্ষকের সঙ্গে যোগাযোগ করতে হবে।",
+      "কোনো ডকুমেন্ট বুঝতে সমস্যা হলে বিষয় শিক্ষক বা শ্রেণি শিক্ষকের সঙ্গে যোগাযোগ করতে হবে।",
     ],
   },
   {
     title: "অভিভাবকদের নির্দেশনা",
     icon: <FaHouseUser />,
     points: [
-      "সন্তানের হোমওয়ার্ক ও ক্লাস লেকচার ডকুমেন্ট নিয়মিত পর্যবেক্ষণ করুন।",
-      "জমাদানের তারিখ সম্পর্কে সচেতন থাকুন এবং সন্তানকে সময়মতো কাজ শেষ করতে উৎসাহ দিন।",
-      "পড়াশোনায় দুর্বলতা দেখা দিলে শ্রেণি শিক্ষক বা বিষয় শিক্ষকের সঙ্গে যোগাযোগ করুন।",
-      "শিক্ষার্থীর পড়ার রুটিন তৈরি করতে সহায়তা করুন।",
+      "সন্তানের হোমওয়ার্ক ও ক্লাস লেকচার ডকুমেন্ট নিয়মিত পর্যবেক্ষণ করুন।",
+      "জমাদানের তারিখ সম্পর্কে সচেতন থাকুন এবং সন্তানকে সময়মতো কাজ শেষ করতে উৎসাহ দিন।",
+      "পড়াশোনায় দুর্বলতা দেখা দিলে শ্রেণি শিক্ষক বা বিষয় শিক্ষকের সঙ্গে যোগাযোগ করুন।",
+      "शिक्षার্থীর পড়ার রুটিন তৈরি করতে সহায়তা করুন।",
     ],
   },
 ];
 
 const classList = [
-  "Class One",
-  "Class Two",
-  "Class Three",
-  "Class Four",
-  "Class Five",
-  "Class Six",
-  "Class Seven",
-  "Class Eight",
-  "Class Nine",
-  "Class Ten",
+  "প্রথম শ্রেণি",
+  "দ্বিতীয় শ্রেণি",
+  "তৃতীয় শ্রেণি",
+  "চতুর্থ শ্রেণি",
+  "পঞ্চম শ্রেণি",
+  "ষষ্ঠ শ্রেণি",
+  "সপ্তম শ্রেণি",
+  "অষ্টম শ্রেণি",
+  "নবম শ্রেণি",
+  "দশম শ্রেণি",
 ];
 
 const HomeWorkAndLectureDocumentsPage = () => {
@@ -167,26 +167,26 @@ const HomeWorkAndLectureDocumentsPage = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Academic Resources
+            একাডেমিক রিসোর্স
           </p>
 
           <h1 className="mt-5 text-[34px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
-            হোমওয়ার্ক ও ক্লাস লেকচার ডকুমেন্টস
+            হোমওয়ার্ক ও ক্লাস লেকচার ডকুমেন্টস
           </h1>
 
           <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-color-primary" />
 
           <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            শিক্ষার্থীদের নিয়মিত পড়াশোনা, হোমওয়ার্ক, ক্লাস লেকচার, ওয়ার্কশিট
-            এবং অধ্যায়ভিত্তিক নোট সহজভাবে সংগ্রহ করার জন্য এই পেজ তৈরি করা
-            হয়েছে।
+            শিক্ষার্থীদের নিয়মিত পড়াশোনা, হোমওয়ার্ক, ক্লাস লেকচার, ওয়ার্কশিট
+            এবং অধ্যায়ভিত্তিক নোট সহজভাবে সংগ্রহ করার জন্য এই পেজ তৈরি করা
+            হয়েছে।
           </p>
 
           <Link
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোম পেজে ফিরে যান
           </Link>
         </div>
       </section>
@@ -212,7 +212,7 @@ const HomeWorkAndLectureDocumentsPage = () => {
 
             <h3 className="mt-4 text-2xl font-black text-primary">৮+</h3>
             <p className="mt-1 text-sm font-semibold text-secondary">
-              বিষয়ভিত্তিক নোট
+              বিষয়ভিত্তিক নোট
             </p>
           </div>
 
@@ -234,7 +234,7 @@ const HomeWorkAndLectureDocumentsPage = () => {
 
             <h3 className="mt-4 text-2xl font-black text-primary">সাপ্তাহিক</h3>
             <p className="mt-1 text-sm font-semibold text-secondary">
-              নিয়মিত আপডেট
+              নিয়মিত আপডেট
             </p>
           </div>
         </div>
@@ -251,7 +251,7 @@ const HomeWorkAndLectureDocumentsPage = () => {
                 </p>
 
                 <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                  পড়াশোনার সহায়ক ডকুমেন্ট
+                  পড়াশোনার সহায়ক ডকুমেন্ট
                 </h2>
 
                 <div className="mt-5 flex items-center gap-2">
@@ -262,10 +262,10 @@ const HomeWorkAndLectureDocumentsPage = () => {
 
               <div className="lg:col-span-8">
                 <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  এই পেজে শিক্ষার্থীদের জন্য শ্রেণিভিত্তিক ও বিষয়ভিত্তিক
-                  হোমওয়ার্ক, ক্লাস লেকচার, ওয়ার্কশিট এবং পরীক্ষার প্রস্তুতিমূলক
-                  নোট সংরক্ষণ করা হয়েছে। শিক্ষার্থীরা সহজেই প্রয়োজনীয় ডকুমেন্ট
-                  ডাউনলোড করতে পারবে এবং অভিভাবকরাও সন্তানের পড়াশোনা নিয়মিত
+                  এই পেজে শিক্ষার্থীদের জন্য শ্রেণিভিত্তিক ও বিষয়ভিত্তিক
+                  হোমওয়ার্ক, ক্লাস লেকচার, ওয়ার্কশিট এবং পরীক্ষার প্রস্তুতিমূলক
+                  নোট সংরক্ষণ করা হয়েছে। শিক্ষার্থীরা সহজেই প্রয়োজনীয় ডকুমেন্ট
+                  ডাউনলোড করতে পারবে এবং অভিভাবকরাও সন্তানের পড়াশোনা নিয়মিত
                   পর্যবেক্ষণ করতে পারবেন।
                 </p>
               </div>
@@ -279,11 +279,11 @@ const HomeWorkAndLectureDocumentsPage = () => {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              বিষয়ভিত্তিক তালিকা
+              বিষয়ভিত্তিক তালিকা
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              বিষয় অনুযায়ী ডকুমেন্টস
+              বিষয় অনুযায়ী ডকুমেন্টস
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -328,7 +328,7 @@ const HomeWorkAndLectureDocumentsPage = () => {
                   শ্রেণিভিত্তিক
                 </p>
                 <h2 className="mt-2 text-3xl font-black text-primary">
-                  Class Wise Documents
+                  শ্রেণি অনুযায়ী ডকুমেন্টস
                 </h2>
               </div>
 
@@ -358,7 +358,7 @@ const HomeWorkAndLectureDocumentsPage = () => {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              Download Area
+              ডাউনলোড এলাকা
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
@@ -380,7 +380,7 @@ const HomeWorkAndLectureDocumentsPage = () => {
                       শ্রেণি
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      বিষয়
+                      বিষয়
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
                       ডকুমেন্ট
@@ -426,7 +426,7 @@ const HomeWorkAndLectureDocumentsPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড করুন
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -477,7 +477,7 @@ const HomeWorkAndLectureDocumentsPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড করুন
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -548,13 +548,13 @@ const HomeWorkAndLectureDocumentsPage = () => {
                 </div>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  নিয়মিত পড়াশোনার সহজ সহায়ক
+                  নিয়মিত পড়াশোনার সহজ সহায়ক
                 </h2>
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  হোমওয়ার্ক ও ক্লাস লেকচার ডকুমেন্টস শিক্ষার্থীদের প্রতিদিনের
-                  পড়াশোনা আরও সহজ, পরিকল্পিত ও কার্যকর করে তোলে। শিক্ষক,
-                  শিক্ষার্থী এবং অভিভাবকের সম্মিলিত সহযোগিতায় শিক্ষার মান আরও
+                  হোমওয়ার্ক ও ক্লাস লেকচার ডকুমেন্টস শিক্ষার্থীদের প্রতিদিনের
+                  পড়াশোনা আরও সহজ, পরিকল্পিত ও কার্যকর করে তোলে। শিক্ষক,
+                  শিক্ষার্থী এবং অভিভাবকের সম্মিলিত সহযোগিতায় শিক্ষার মান আরও
                   উন্নত করা সম্ভব।
                 </p>
               </div>
@@ -566,11 +566,11 @@ const HomeWorkAndLectureDocumentsPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    শিক্ষা সহায়তা
+                    শিক্ষা সহায়তা
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    নিয়মিত ডকুমেন্ট চেক করে পড়াশোনাকে আরও সহজ ও সফল করুন।
+                    নিয়মিত ডকুমেন্ট চেক করে পড়াশোনাকে আরও সহজ ও সফল করুন।
                   </p>
                 </div>
               </div>

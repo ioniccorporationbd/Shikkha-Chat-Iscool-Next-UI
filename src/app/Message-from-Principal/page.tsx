@@ -15,7 +15,7 @@ export default function PrincipalMessage() {
         {/* Page Header */}
         <header className="mb-10 text-center sm:mb-12 lg:mb-14">
           <p className="text-sm font-extrabold uppercase tracking-[0.28em] text-brand-primary">
-            Message
+         বার্তা
           </p>
 
           <h1 className="mt-3 text-[28px] font-black leading-tight text-primary sm:text-4xl md:text-5xl">
@@ -28,7 +28,7 @@ export default function PrincipalMessage() {
             href="/"
             className="mt-6 inline-flex items-center justify-center rounded-full bg-color-primary px-6 py-3 text-sm font-bold text-inverse shadow-md transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-[rgba(22,66,60,0.18)] sm:px-8"
           >
-            Back to Home
+           হোম পেজে ফিরে যান
           </Link>
         </header>
 

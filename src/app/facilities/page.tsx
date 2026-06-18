@@ -240,7 +240,7 @@ const FacilitiesPage = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Campus Facilities
+            ক্যাম্পাস সুবিধা
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -258,7 +258,7 @@ const FacilitiesPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+          হোম পেজে ফিরে যান
           </Link>
         </div>
       </section>
@@ -330,7 +330,7 @@ const FacilitiesPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Academic Facilities
+            একাডেমিক সুবিধা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -372,7 +372,7 @@ const FacilitiesPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Student Support Facilities
+             ছাত্র সহায়তা সুবিধা
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -414,7 +414,7 @@ const FacilitiesPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Co-curricular Facilities
+              সহ-পাঠ্যক্রমিক সুবিধা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -456,7 +456,7 @@ const FacilitiesPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Safety and Security
+                নিরাপত্তা ও সুরক্ষা
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">

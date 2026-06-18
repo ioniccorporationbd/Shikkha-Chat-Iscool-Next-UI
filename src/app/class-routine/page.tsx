@@ -61,12 +61,12 @@ const overviewItems: OverviewItem[] = [
     icon: <FaCalendarCheck />,
   },
   {
-    title: "ক্লাস সময়",
+    title: "ক্লাস সময়",
     value: "৮:০০ - ২:০০",
     icon: <FaClock />,
   },
   {
-    title: "মোট পিরিয়ড",
+    title: "মোট পিরিয়ড",
     value: "৬টি",
     icon: <FaBookOpen />,
   },
@@ -80,105 +80,105 @@ const overviewItems: OverviewItem[] = [
 const classRoutineItems: ClassRoutineItem[] = [
   {
     id: 1,
-    className: "Class One",
-    shift: "Morning Shift",
-    time: "৮:০০ AM - ১২:০০ PM",
-    totalPeriods: "৫টি পিরিয়ড",
-    room: "Room 101",
+    className: "প্রথম শ্রেণি",
+    shift: "প্রভাতি শাখা",
+    time: "৮:০০ সকাল - ১২:০০ দুপুর",
+    totalPeriods: "৫টি পিরিয়ড",
+    room: "কক্ষ ১০১",
     fileUrl: "#",
   },
   {
     id: 2,
-    className: "Class Two",
-    shift: "Morning Shift",
-    time: "৮:০০ AM - ১২:৩০ PM",
-    totalPeriods: "৫টি পিরিয়ড",
-    room: "Room 102",
+    className: "দ্বিতীয় শ্রেণি",
+    shift: "প্রভাতি শাখা",
+    time: "৮:০০ সকাল - ১২:৩০ দুপুর",
+    totalPeriods: "৫টি পিরিয়ড",
+    room: "কক্ষ ১০২",
     fileUrl: "#",
   },
   {
     id: 3,
-    className: "Class Three",
-    shift: "Morning Shift",
-    time: "৮:০০ AM - ১:০০ PM",
-    totalPeriods: "৬টি পিরিয়ড",
-    room: "Room 201",
+    className: "তৃতীয় শ্রেণি",
+    shift: "প্রভাতি শাখা",
+    time: "৮:০০ সকাল - ১:০০ দুপুর",
+    totalPeriods: "৬টি পিরিয়ড",
+    room: "কক্ষ ২০১",
     fileUrl: "#",
   },
   {
     id: 4,
-    className: "Class Four",
-    shift: "Morning Shift",
-    time: "৮:০০ AM - ১:৩০ PM",
-    totalPeriods: "৬টি পিরিয়ড",
-    room: "Room 202",
+    className: "চতুর্থ শ্রেণি",
+    shift: "প্রভাতি শাখা",
+    time: "৮:০০ সকাল - ১:৩০ দুপুর",
+    totalPeriods: "৬টি পিরিয়ড",
+    room: "কক্ষ ২০২",
     fileUrl: "#",
   },
   {
     id: 5,
-    className: "Class Five",
-    shift: "Day Shift",
-    time: "৯:০০ AM - ২:০০ PM",
-    totalPeriods: "৬টি পিরিয়ড",
-    room: "Room 301",
+    className: "পঞ্চম শ্রেণি",
+    shift: "দিবা শাখা",
+    time: "৯:০০ সকাল - ২:০০ দুপুর",
+    totalPeriods: "৬টি পিরিয়ড",
+    room: "কক্ষ ৩০১",
     fileUrl: "#",
   },
   {
     id: 6,
-    className: "Class Six",
-    shift: "Day Shift",
-    time: "৯:০০ AM - ২:০০ PM",
-    totalPeriods: "৬টি পিরিয়ড",
-    room: "Room 302",
+    className: "ষষ্ঠ শ্রেণি",
+    shift: "দিবা শাখা",
+    time: "৯:০০ সকাল - ২:০০ দুপুর",
+    totalPeriods: "৬টি পিরিয়ড",
+    room: "কক্ষ ৩০২",
     fileUrl: "#",
   },
 ];
 
 const periodItems: PeriodItem[] = [
   {
-    period: "Assembly",
+    period: "সমাবেশ",
     time: "৮:০০ - ৮:১৫",
     type: "প্রাত্যহিক সমাবেশ",
   },
   {
-    period: "1st Period",
+    period: "১ম পিরিয়ড",
     time: "৮:১৫ - ৯:০০",
-    type: "প্রথম পিরিয়ড",
+    type: "প্রথম পিরিয়ড",
   },
   {
-    period: "2nd Period",
+    period: "২য় পিরিয়ড",
     time: "৯:০০ - ৯:৪৫",
-    type: "দ্বিতীয় পিরিয়ড",
+    type: "দ্বিতীয় পিরিয়ড",
   },
   {
-    period: "Short Break",
+    period: "স্বল্প বিরতি",
     time: "৯:৪৫ - ১০:০০",
     type: "সংক্ষিপ্ত বিরতি",
   },
   {
-    period: "3rd Period",
+    period: "৩য় পিরিয়ড",
     time: "১০:০০ - ১০:৪৫",
-    type: "তৃতীয় পিরিয়ড",
+    type: "তৃতীয় পিরিয়ড",
   },
   {
-    period: "4th Period",
+    period: "৪র্থ পিরিয়ড",
     time: "১০:৪৫ - ১১:৩০",
-    type: "চতুর্থ পিরিয়ড",
+    type: "চতুর্থ পিরিয়ড",
   },
   {
-    period: "Tiffin Break",
+    period: "টিফিন বিরতি",
     time: "১১:৩০ - ১২:০০",
     type: "টিফিন বিরতি",
   },
   {
-    period: "5th Period",
+    period: "৫ম পিরিয়ড",
     time: "১২:০০ - ১২:৪৫",
-    type: "পঞ্চম পিরিয়ড",
+    type: "পঞ্চম পিরিয়ড",
   },
   {
-    period: "6th Period",
+    period: "৬ষ্ঠ পিরিয়ড",
     time: "১২:৪৫ - ১:৩০",
-    type: "ষষ্ঠ পিরিয়ড",
+    type: "ষষ্ঠ পিরিয়ড",
   },
 ];
 
@@ -189,7 +189,7 @@ const routineTableItems: RoutineTableItem[] = [
     time: "৮:১৫ - ৯:০০",
     subject: "বাংলা",
     teacher: "বাংলা শিক্ষক",
-    room: "Room 101",
+    room: "কক্ষ ১০১",
   },
   {
     id: 2,
@@ -197,7 +197,7 @@ const routineTableItems: RoutineTableItem[] = [
     time: "৯:০০ - ৯:৪৫",
     subject: "ইংরেজি",
     teacher: "ইংরেজি শিক্ষক",
-    room: "Room 102",
+    room: "কক্ষ ১০২",
   },
   {
     id: 3,
@@ -205,7 +205,7 @@ const routineTableItems: RoutineTableItem[] = [
     time: "১০:০০ - ১০:৪৫",
     subject: "গণিত",
     teacher: "গণিত শিক্ষক",
-    room: "Room 201",
+    room: "কক্ষ ২০১",
   },
   {
     id: 4,
@@ -213,37 +213,37 @@ const routineTableItems: RoutineTableItem[] = [
     time: "১০:৪৫ - ১১:৩০",
     subject: "বিজ্ঞান",
     teacher: "বিজ্ঞান শিক্ষক",
-    room: "Room 202",
+    room: "কক্ষ ২০২",
   },
   {
     id: 5,
     day: "বৃহস্পতিবার",
     time: "১২:০০ - ১২:৪৫",
-    subject: "বাংলাদেশ ও বিশ্বপরিচয়",
-    teacher: "বিষয় শিক্ষক",
-    room: "Room 301",
+    subject: "বাংলাদেশ ও বিশ্বপরিচয়",
+    teacher: "বিষয় শিক্ষক",
+    room: "কক্ষ ৩০১",
   },
   {
     id: 6,
     day: "শনিবার",
     time: "১২:৪৫ - ১:৩০",
-    subject: "আইসিটি",
+    subject: "তথ্য ও যোগাযোগ প্রযুক্তি",
     teacher: "আইসিটি শিক্ষক",
-    room: "ICT Lab",
+    room: "কম্পিউটার ল্যাব",
   },
 ];
 
 const classList = [
-  "Class One",
-  "Class Two",
-  "Class Three",
-  "Class Four",
-  "Class Five",
-  "Class Six",
-  "Class Seven",
-  "Class Eight",
-  "Class Nine",
-  "Class Ten",
+  "প্রথম শ্রেণি",
+  "দ্বিতীয় শ্রেণি",
+  "তৃতীয় শ্রেণি",
+  "চতুর্থ শ্রেণি",
+  "পঞ্চম শ্রেণি",
+  "ষষ্ঠ শ্রেণি",
+  "সপ্তম শ্রেণি",
+  "অষ্টম শ্রেণি",
+  "নবম শ্রেণি",
+  "দশম শ্রেণি",
 ];
 
 const guidelineSections: GuidelineSection[] = [
@@ -251,22 +251,22 @@ const guidelineSections: GuidelineSection[] = [
     title: "শিক্ষার্থীদের নির্দেশনা",
     icon: <FaUserGraduate />,
     points: [
-      "প্রতিদিন ক্লাস রুটিন অনুযায়ী প্রয়োজনীয় বই, খাতা ও শিক্ষা উপকরণ সঙ্গে আনতে হবে।",
-      "সমাবেশ ও প্রতিটি পিরিয়ডে সময়মতো উপস্থিত থাকতে হবে।",
-      "প্রতিটি ক্লাসে মনোযোগ দিয়ে পাঠ শুনতে হবে এবং প্রয়োজন হলে প্রশ্ন করতে হবে।",
-      "রুটিন পরিবর্তন হলে বিদ্যালয়ের নোটিশ বা শ্রেণি শিক্ষকের নির্দেশনা অনুসরণ করতে হবে।",
-      "ক্লাসের কাজ ও হোমওয়ার্ক সময়মতো সম্পন্ন করতে হবে।",
+      "প্রতিদিন ক্লাস রুটিন অনুযায়ী প্রয়োজনীয় বই, খাতা ও শিক্ষা উপকরণ সঙ্গে আনতে হবে।",
+      "সমাবেশ ও প্রতিটি পিরিয়ডে সময়মতো উপস্থিত থাকতে হবে।",
+      "প্রতিটি ক্লাসে মনোযোগ দিয়ে পাঠ শুনতে হবে এবং প্রয়োজন হলে প্রশ্ন করতে হবে।",
+      "রুটিন পরিবর্তন হলে বিদ্যালয়ের নোটিশ বা শ্রেণি শিক্ষকের নির্দেশনা অনুসরণ করতে হবে।",
+      "ক্লাসের কাজ ও হোমওয়ার্ক সময়মতো সম্পন্ন করতে হবে।",
     ],
   },
   {
     title: "অভিভাবকদের নির্দেশনা",
     icon: <FaPeopleGroup />,
     points: [
-      "সন্তানের ক্লাস রুটিন অনুযায়ী প্রতিদিন বই-খাতা ও প্রয়োজনীয় উপকরণ প্রস্তুত করে দিন।",
-      "শিক্ষার্থী যেন সময়মতো বিদ্যালয়ে পৌঁছায়, তা নিশ্চিত করুন।",
-      "রুটিন অনুযায়ী প্রতিদিনের পড়াশোনা ও হোমওয়ার্ক পর্যবেক্ষণ করুন।",
-      "কোনো রুটিন পরিবর্তন বা বিশেষ নোটিশ থাকলে বিদ্যালয়ের অফিসিয়াল ঘোষণা অনুসরণ করুন।",
-      "সন্তানের পড়াশোনায় সমস্যা হলে শ্রেণি শিক্ষক বা বিষয় শিক্ষকের সঙ্গে যোগাযোগ করুন।",
+      "সন্তানের ক্লাস রুটিন অনুযায়ী প্রতিদিন বই-খাতা ও প্রয়োজনীয় উপকরণ প্রস্তুত করে দিন।",
+      "শিক্ষার্থী যেন সময়মতো বিদ্যালয়ে পৌঁছায়, তা নিশ্চিত করুন।",
+      "রুটিন অনুযায়ী প্রতিদিনের পড়াশোনা ও হোমওয়ার্ক পর্যবেক্ষণ করুন।",
+      "কোনো রুটিন পরিবর্তন বা বিশেষ নোটিশ থাকলে বিদ্যালয়ের অফিসিয়াল ঘোষণা অনুসরণ করুন।",
+      "সন্তানের পড়াশোনায় সমস্যা হলে শ্রেণি শিক্ষক বা বিষয় শিক্ষকের সঙ্গে যোগাযোগ করুন।",
     ],
   },
 ];
@@ -280,7 +280,7 @@ const ClassRoutinePage = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Daily Academic Schedule
+            দৈনিক একাডেমিক সময়সূচি
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -290,15 +290,15 @@ const ClassRoutinePage = () => {
           <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-color-primary" />
 
           <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            শ্রেণিভিত্তিক দৈনিক ক্লাস সময়সূচি, বিষয়ভিত্তিক পাঠদান, বিরতি এবং
-            শিক্ষকদের রুটিন এক জায়গায় দেখার জন্য এই পেজ তৈরি করা হয়েছে।
+            শ্রেণিভিত্তিক দৈনিক ক্লাস সময়সূচি, বিষয়ভিত্তিক পাঠদান, বিরতি এবং
+            শিক্ষকদের রুটিন এক জায়গায় দেখার জন্য এই পেজ তৈরি করা হয়েছে।
           </p>
 
           <Link
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            মূল পাতায় ফিরে যান
           </Link>
         </div>
       </section>
@@ -338,7 +338,7 @@ const ClassRoutinePage = () => {
                 </p>
 
                 <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                  পরিকল্পিত দৈনিক ক্লাস সময়সূচি
+                  পরিকল্পিত দৈনিক ক্লাস সময়সূচি
                 </h2>
 
                 <div className="mt-5 flex items-center gap-2">
@@ -349,11 +349,11 @@ const ClassRoutinePage = () => {
 
               <div className="lg:col-span-8">
                 <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  ক্লাস রুটিন শিক্ষার্থীদের দৈনিক পড়াশোনা, বই-খাতা প্রস্তুতি
-                  এবং সময় ব্যবস্থাপনাকে সহজ করে তোলে। শ্রেণিভিত্তিক রুটিনের
-                  মাধ্যমে কোন দিনে কোন বিষয়, কোন সময়ে কোন শিক্ষক ক্লাস নেবেন এবং
-                  কোন কক্ষে পাঠদান হবে—তা সহজে জানা যায়। এটি শিক্ষার্থী,
-                  শিক্ষক ও অভিভাবকদের পরিকল্পিত প্রস্তুতিতে সহায়তা করে।
+                  ক্লাস রুটিন শিক্ষার্থীদের দৈনিক পড়াশোনা, বই-খাতা প্রস্তুতি
+                  এবং সময় ব্যবস্থাপনাকে সহজ করে তোলে। শ্রেণিভিত্তিক রুটিনের
+                  মাধ্যমে কোন দিনে কোন বিষয়, কোন সময়ে কোন শিক্ষক ক্লাস নেবেন এবং
+                  কোন কক্ষে পাঠদান হবে—তা সহজে জানা যায়। এটি শিক্ষার্থী,
+                  শিক্ষক ও অভিভাবকদের পরিকল্পিত প্রস্তুতিতে সহায়তা করে।
                 </p>
               </div>
             </div>
@@ -372,7 +372,7 @@ const ClassRoutinePage = () => {
                 </p>
 
                 <h2 className="mt-2 text-3xl font-black text-primary">
-                  Class Wise Routine
+                  শ্রেণিভিত্তিক রুটিন
                 </h2>
               </div>
 
@@ -464,7 +464,7 @@ const ClassRoutinePage = () => {
                   href={item.fileUrl}
                   className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-5 py-3 text-sm font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                 >
-                  Download Routine
+                  রুটিন ডাউনলোড করুন
                   <FaCloudArrowDown />
                 </Link>
               </article>
@@ -478,11 +478,11 @@ const ClassRoutinePage = () => {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              পিরিয়ড সময়সূচি
+              পিরিয়ড সময়সূচি
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Period Schedule
+              পিরিয়ড তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -499,7 +499,7 @@ const ClassRoutinePage = () => {
               >
                 <div className="flex items-start gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-[18px] bg-color-secondary text-sm font-black text-primary transition-all duration-500 group-hover:bg-page-secondary group-hover:text-brand-primary">
-                    {String(index + 1).padStart(2, "0")}
+                    {String(index + 1).padStart(2, "০")}
                   </div>
 
                   <div>
@@ -534,7 +534,7 @@ const ClassRoutinePage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Daily Routine Table
+              দৈনিক রুটিন টেবিল
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -552,10 +552,10 @@ const ClassRoutinePage = () => {
                       দিন
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      সময়
+                      সময়
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      বিষয়
+                      বিষয়
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
                       শিক্ষক
@@ -624,7 +624,7 @@ const ClassRoutinePage = () => {
 
                   <div className="mt-4 space-y-2">
                     <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">সময়:</span>{" "}
+                      <span className="font-black text-primary">সময়:</span>{" "}
                       {item.time}
                     </p>
 
@@ -661,7 +661,7 @@ const ClassRoutinePage = () => {
 
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      নির্দেশনা
+                      নির্দেশনাবলী
                     </p>
 
                     <h3 className="mt-2 text-xl font-black leading-tight text-primary sm:text-2xl">
@@ -707,14 +707,14 @@ const ClassRoutinePage = () => {
                 </div>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  সঠিক রুটিন অনুসরণেই নিয়মিত পড়াশোনার সফলতা
+                  সঠিক রুটিন অনুসরণেই নিয়মিত পড়াশোনার সফলতা
                 </h2>
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  ক্লাস রুটিন শিক্ষার্থীদের সময়ানুবর্তিতা, প্রস্তুতি এবং
-                  নিয়মিত পড়াশোনার অভ্যাস গড়ে তোলে। শিক্ষক, শিক্ষার্থী ও
-                  অভিভাবকদের সহযোগিতায় রুটিন অনুযায়ী ক্লাস কার্যক্রম সুন্দরভাবে
-                  পরিচালিত হলে শিক্ষার পরিবেশ আরও ফলপ্রসূ হয়।
+                  ক্লাস রুটিন শিক্ষার্থীদের সময়ানুবর্তিতা, প্রস্তুতি এবং
+                  নিয়মিত পড়াশোনার অভ্যাস গড়ে তোলে। শিক্ষক, শিক্ষার্থী ও
+                  অভিভাবকদের সহযোগিতায় রুটিন অনুযায়ী ক্লাস কার্যক্রম সুন্দরভাবে
+                  পরিচালিত হলে শিক্ষার পরিবেশ আরও ফলপ্রসূ হয়।
                 </p>
               </div>
 
@@ -729,7 +729,7 @@ const ClassRoutinePage = () => {
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    নিয়মিত রুটিন মেনে চলা সফল শিক্ষাজীবনের গুরুত্বপূর্ণ অংশ।
+                    নিয়মিত রুটিন মেনে চলা সফল শিক্ষাজীবনের গুরুত্বপূর্ণ অংশ।
                   </p>
                 </div>
               </div>

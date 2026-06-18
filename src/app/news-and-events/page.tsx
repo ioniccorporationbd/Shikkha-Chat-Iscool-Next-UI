@@ -89,56 +89,56 @@ const overviewItems: OverviewItem[] = [
 const latestNews: NewsItem[] = [
   {
     id: 1,
-    title: "প্রথম টার্ম পরীক্ষার সময়সূচি প্রকাশ",
+    title: "প্রথম টার্ম পরীক্ষার সময়সূচি প্রকাশ",
     category: "পরীক্ষা",
-    date: "১২ জানুয়ারি ২০২৬",
+    date: "১২ জানুয়ারি ২০২৬",
     description:
-      "প্রথম টার্ম পরীক্ষার সময়সূচি প্রকাশ করা হয়েছে। শিক্ষার্থীদের নির্ধারিত সময়সূচি অনুযায়ী প্রস্তুতি নেওয়ার জন্য নির্দেশ দেওয়া হচ্ছে।",
+      "প্রথম টার্ম পরীক্ষার সময়সূচি প্রকাশ করা হয়েছে। শিক্ষার্থীদের নির্ধারিত সময়সূচি অনুযায়ী প্রস্তুতি নেওয়ার জন্য নির্দেশ দেওয়া হচ্ছে।",
     fileUrl: "#",
   },
   {
     id: 2,
-    title: "বার্ষিক ক্রীড়া প্রতিযোগিতার প্রস্তুতি শুরু",
-    category: "ক্রীড়া",
-    date: "১৫ জানুয়ারি ২০২৬",
+    title: "বার্ষিক ক্রীড়া প্রতিযোগিতার প্রস্তুতি শুরু",
+    category: "ক্রীড়া",
+    date: "১৫ জানুয়ারি ২০২৬",
     description:
-      "বিদ্যালয়ের বার্ষিক ক্রীড়া প্রতিযোগিতার প্রস্তুতি শুরু হয়েছে। আগ্রহী শিক্ষার্থীদের শ্রেণি শিক্ষকের সঙ্গে যোগাযোগ করতে বলা হচ্ছে।",
+      "বিদ্যালয়ের বার্ষিক ক্রীড়া প্রতিযোগিতার প্রস্তুতি শুরু হয়েছে। আগ্রহী শিক্ষার্থীদের শ্রেণি শিক্ষকের সঙ্গে যোগাযোগ করতে বলা হচ্ছে।",
     fileUrl: "#",
   },
   {
     id: 3,
-    title: "বিজ্ঞান মেলায় শিক্ষার্থীদের অংশগ্রহণ",
+    title: "বিজ্ঞান মেলায় শিক্ষার্থীদের অংশগ্রহণ",
     category: "বিজ্ঞান",
-    date: "১৮ জানুয়ারি ২০২৬",
+    date: "১৮ জানুয়ারি ২০২৬",
     description:
-      "বিদ্যালয়ের শিক্ষার্থীরা বিজ্ঞান মেলায় অংশগ্রহণ করে সৃজনশীল প্রজেক্ট প্রদর্শন করেছে এবং প্রশংসা অর্জন করেছে।",
+      "বিদ্যালয়ের শিক্ষার্থীরা বিজ্ঞান মেলায় অংশগ্রহণ করে সৃজনশীল প্রজেক্ট প্রদর্শন করেছে এবং প্রশংসা অর্জন করেছে।",
     fileUrl: "#",
   },
   {
     id: 4,
     title: "অভিভাবক-শিক্ষক সভার ঘোষণা",
     category: "সভা",
-    date: "২০ জানুয়ারি ২০২৬",
+    date: "২০ জানুয়ারি ২০২৬",
     description:
-      "শিক্ষার্থীদের অগ্রগতি, উপস্থিতি ও আচরণ বিষয়ে আলোচনা করার জন্য অভিভাবক-শিক্ষক সভার আয়োজন করা হয়েছে।",
+      "শিক্ষार्थियों অগ্রগতি, উপস্থিতি ও আচরণ বিষয়ে আলোচনা করার জন্য অভিভাবক-শিক্ষক সভার আয়োজন করা হয়েছে।",
     fileUrl: "#",
   },
   {
     id: 5,
     title: "সাংস্কৃতিক অনুষ্ঠানের নিবন্ধন শুরু",
     category: "সাংস্কৃতিক",
-    date: "২২ জানুয়ারি ২০২৬",
+    date: "২২ জানুয়ারি ২০২৬",
     description:
-      "গান, নৃত্য, আবৃত্তি ও নাটকে অংশগ্রহণের জন্য শিক্ষার্থীদের নিবন্ধন শুরু হয়েছে।",
+      "গান, নৃত্য, আবৃত্তি ও নাটকে অংশগ্রহণের জন্য শিক্ষার্থীদের নিবন্ধন শুরু হয়েছে।",
     fileUrl: "#",
   },
   {
     id: 6,
     title: "নতুন শিক্ষাবর্ষের ভর্তি কার্যক্রম",
     category: "ভর্তি",
-    date: "২৫ জানুয়ারি ২০২৬",
+    date: "২৫ জানুয়ারি ২০২৬",
     description:
-      "নতুন শিক্ষাবর্ষের ভর্তি কার্যক্রম শুরু হয়েছে। ভর্তি ফরম ও প্রয়োজনীয় তথ্য বিদ্যালয় অফিস থেকে সংগ্রহ করা যাবে।",
+      "নতুন শিক্ষাবর্ষের ভর্তি কার্যক্রম শুরু হয়েছে। ভর্তি ফরম ও প্রয়োজনীয় তথ্য বিদ্যালয় অফিস থেকে সংগ্রহ করা যাবে।",
     fileUrl: "#",
   },
 ];
@@ -146,71 +146,71 @@ const latestNews: NewsItem[] = [
 const upcomingEvents: EventItem[] = [
   {
     id: 1,
-    title: "বার্ষিক ক্রীড়া প্রতিযোগিতা",
-    category: "Sports Event",
-    date: "০৫ ফেব্রুয়ারি ২০২৬",
+    title: "বার্ষিক ক্রীড়া প্রতিযোগিতা",
+    category: "ক্রীড়া অনুষ্ঠান",
+    date: "০৫ ফেব্রুয়ারি ২০২৬",
     time: "সকাল ৯:০০টা",
-    venue: "বিদ্যালয় মাঠ",
+    venue: "বিদ্যালয় মাঠ",
   },
   {
     id: 2,
     title: "সাংস্কৃতিক অনুষ্ঠান",
-    category: "Cultural Event",
-    date: "১২ ফেব্রুয়ারি ২০২৬",
+    category: "সাংস্কৃতিক অনুষ্ঠান",
+    date: "১২ ফেব্রুয়ারি ২০২৬",
     time: "সকাল ১০:০০টা",
-    venue: "বিদ্যালয় অডিটোরিয়াম",
+    venue: "বিদ্যালয় অডিটোরিয়াম",
   },
   {
     id: 3,
     title: "বিজ্ঞান মেলা",
-    category: "Science Event",
-    date: "২০ ফেব্রুয়ারি ২০২৬",
+    category: "বিজ্ঞান অনুষ্ঠান",
+    date: "২০ ফেব্রুয়ারি ২০২৬",
     time: "সকাল ৯:৩০টা",
     venue: "বিজ্ঞান ল্যাব",
   },
   {
     id: 4,
     title: "অভিভাবক-শিক্ষক সভা",
-    category: "Parent Meeting",
-    date: "২৫ ফেব্রুয়ারি ২০২৬",
+    category: "অভিভাবক সভা",
+    date: "২৫ ফেব্রুয়ারি ২০২৬",
     time: "দুপুর ১২:০০টা",
-    venue: "বিদ্যালয় হলরুম",
+    venue: "বিদ্যালয় হলরুম",
   },
 ];
 
 const eventCategories: CategoryItem[] = [
   {
-    title: "Academic Events",
+    title: "একাডেমিক ইভেন্ট",
     description:
-      "পরীক্ষা, ফলাফল, ক্লাস কার্যক্রম, সেমিনার ও শিক্ষাবিষয়ক গুরুত্বপূর্ণ আয়োজন।",
+      "পরীক্ষা, ফলাফল, ক্লাস কার্যক্রম, সেমিনার ও শিক্ষাবিষয়ক গুরুত্বপূর্ণ আয়োজন।",
     icon: <FaBookOpen />,
   },
   {
-    title: "Cultural Events",
+    title: "সাংস্কৃতিক ইভেন্ট",
     description:
       "গান, নৃত্য, আবৃত্তি, নাটক ও সাংস্কৃতিক পরিবেশনার মাধ্যমে শিক্ষার্থীদের প্রতিভা বিকাশ।",
     icon: <FaMasksTheater />,
   },
   {
-    title: "Sports Events",
+    title: "ক্রীড়া ইভেন্ট",
     description:
-      "বার্ষিক ক্রীড়া, দলীয় খেলা ও শারীরিক সক্ষমতা বৃদ্ধির বিভিন্ন প্রতিযোগিতা।",
+      "বার্ষিক ক্রীড়া, দলীয় খেলা ও শারীরিক সক্ষমতা বৃদ্ধির বিভিন্ন প্রতিযোগিতা।",
     icon: <FaPersonRunning />,
   },
   {
-    title: "Science & ICT Events",
+    title: "বিজ্ঞান ও আইসিটি ইভেন্ট",
     description:
       "বিজ্ঞান মেলা, প্রযুক্তি প্রদর্শনী, আইসিটি প্রজেক্ট ও উদ্ভাবনী কার্যক্রম।",
     icon: <FaFlask />,
   },
   {
-    title: "National Day Programs",
+    title: "জাতীয় দিবস কর্মসূচি",
     description:
-      "জাতীয় দিবস, বিশেষ দিবস ও সামাজিক সচেতনতামূলক কর্মসূচি পালন।",
+      "জাতীয় দিবস, বিশেষ দিবস ও সামাজিক সচেতনতামূলক কর্মসূচি পালন।",
     icon: <FaSchoolFlag />,
   },
   {
-    title: "Parent Meetings",
+    title: "অভিভাবক সভা",
     description:
       "অভিভাবক-শিক্ষক সভা, শিক্ষার্থীর অগ্রগতি আলোচনা ও পরামর্শমূলক কার্যক্রম।",
     icon: <FaPeopleGroup />,
@@ -219,25 +219,25 @@ const eventCategories: CategoryItem[] = [
 
 const achievements: AchievementItem[] = [
   {
-    title: "বিজ্ঞান মেলায় সাফল্য",
+    title: "বিজ্ঞান মেলায় সাফল্য",
     description:
       "শিক্ষার্থীরা সৃজনশীল বিজ্ঞান প্রজেক্ট প্রদর্শন করে প্রশংসা অর্জন করেছে।",
     icon: <FaFlask />,
   },
   {
-    title: "ক্রীড়া প্রতিযোগিতায় পুরস্কার",
+    title: "ক্রীড়া প্রতিযোগিতায় পুরস্কার",
     description:
-      "বিদ্যালয়ের শিক্ষার্থীরা আন্তঃস্কুল ক্রীড়া প্রতিযোগিতায় ভালো ফলাফল করেছে।",
+      "বিদ্যালয়ের শিক্ষার্থীরা আন্তঃস্কুল ক্রীড়া প্রতিযোগিতায় ভালো ফলাফল করেছে।",
     icon: <FaTrophy />,
   },
   {
     title: "বিতর্কে অসাধারণ পারফরম্যান্স",
     description:
-      "বিতর্ক প্রতিযোগিতায় শিক্ষার্থীরা যুক্তি, ভাষা ও আত্মবিশ্বাসের পরিচয় দিয়েছে।",
+      "বিতর্ক প্রতিযোগিতায় শিক্ষার্থীরা যুক্তি, ভাষা ও আত্মবিশ্বাসের পরিচয় দিয়েছে।",
     icon: <FaAward />,
   },
   {
-    title: "আইসিটি প্রজেক্ট প্রদর্শনী",
+    title: "আইসিটি প্রজেক্টসি প্রদর্শনী",
     description:
       "আইসিটি ক্লাবের শিক্ষার্থীরা প্রযুক্তিনির্ভর প্রজেক্ট উপস্থাপন করেছে।",
     icon: <FaComputer />,
@@ -249,22 +249,22 @@ const guidelineSections: GuidelineSection[] = [
     title: "শিক্ষার্থীদের নির্দেশনা",
     icon: <FaUserGraduate />,
     points: [
-      "বিদ্যালয়ের সংবাদ ও ইভেন্ট আপডেট নিয়মিত দেখতে হবে।",
-      "নির্ধারিত সময় অনুযায়ী অনুষ্ঠান, প্রতিযোগিতা ও কার্যক্রমে অংশগ্রহণ করতে হবে।",
-      "যেকোনো ইভেন্টে অংশগ্রহণের আগে শ্রেণি শিক্ষক বা দায়িত্বপ্রাপ্ত শিক্ষকের নির্দেশনা নিতে হবে।",
-      "অনুষ্ঠানের সময় শৃঙ্খলা, সময়ানুবর্তিতা ও বিদ্যালয়ের নিয়মনীতি মেনে চলতে হবে।",
-      "জয়-পরাজয়কে স্বাভাবিকভাবে গ্রহণ করে শেখার মানসিকতা রাখতে হবে।",
+      "বিদ্যালয়ের সংবাদ ও ইভেন্ট আপডেট নিয়মিত দেখতে হবে।",
+      "নির্ধারিত সময় অনুযায়ী অনুষ্ঠান, প্রতিযোগিতা ও কার্যক্রমে অংশগ্রহণ করতে হবে।",
+      "যেকোনো ইভেন্টে অংশগ্রহণের আগে শ্রেণি শিক্ষক বা দায়িত্বপ্রাপ্ত শিক্ষকের নির্দেশনা নিতে হবে।",
+      "অনুষ্ঠানের সময় শৃঙ্খলা, সময়ানুবর্তিতা ও বিদ্যালয়ের নিয়মনীতি মেনে চলতে হবে।",
+      "জয়-পরাজয়কে স্বাভাবিকভাবে গ্রহণ করে শেখার মানসিকতা রাখতে হবে।",
     ],
   },
   {
     title: "অভিভাবকদের নির্দেশনা",
     icon: <FaPeopleGroup />,
     points: [
-      "বিদ্যালয়ের সংবাদ, অনুষ্ঠান ও গুরুত্বপূর্ণ আপডেট নিয়মিত দেখুন।",
-      "সন্তানের আগ্রহ ও প্রতিভা অনুযায়ী বিদ্যালয়ের কার্যক্রমে অংশগ্রহণে উৎসাহ দিন।",
-      "অনুষ্ঠান বা প্রতিযোগিতার জন্য প্রয়োজনীয় প্রস্তুতিতে সন্তানকে সহযোগিতা করুন।",
-      "অভিভাবক সভা ও বিদ্যালয়ের গুরুত্বপূর্ণ অনুষ্ঠানে অংশগ্রহণের চেষ্টা করুন।",
-      "কোনো ইভেন্ট বা ঘোষণার বিষয়ে প্রশ্ন থাকলে বিদ্যালয়ের অফিসিয়াল মাধ্যমে যোগাযোগ করুন।",
+      "বিদ্যালয়ের সংবাদ, অনুষ্ঠান ও গুরুত্বপূর্ণ আপডেট নিয়মিত দেখুন।",
+      "সন্তানের আগ্রহ ও প্রতিভা অনুযায়ী বিদ্যালয়ের কার্যক্রমে অংশগ্রহণে উৎসাহ দিন।",
+      "অনুষ্ঠান বা প্রতিযোগিতার জন্য প্রয়োজনীয় প্রস্তুতিতে সন্তানকে সহযোগিতা করুন।",
+      "অভিভাবক সভা ও বিদ্যালয়ের গুরুত্বপূর্ণ অনুষ্ঠানে অংশগ্রহণের চেষ্টা করুন।",
+      "কোনো ইভেন্ট বা ঘোষণার বিষয়ে প্রশ্ন থাকলে বিদ্যালয়ের অফিসিয়াল মাধ্যমে যোগাযোগ করুন।",
     ],
   },
 ];
@@ -278,7 +278,7 @@ const NewsAndEventsPage = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            School Updates
+            বিদ্যালয়ের আপডেট
           </p>
 
           <h1 className="mt-5 text-[36px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -288,16 +288,16 @@ const NewsAndEventsPage = () => {
           <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-color-primary" />
 
           <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            বিদ্যালয়ের সর্বশেষ সংবাদ, গুরুত্বপূর্ণ ঘোষণা, অনুষ্ঠান,
-            প্রতিযোগিতা ও শিক্ষার্থীদের অর্জন এক জায়গায় দেখার জন্য এই পেজ
-            তৈরি করা হয়েছে।
+            বিদ্যালয়ের সর্বশেষ সংবাদ, গুরুত্বপূর্ণ ঘোষণা, অনুষ্ঠান,
+            প্রতিযোগিতা ও শিক্ষার্থীদের অর্জন এক জায়গায় দেখার জন্য এই পেজ
+            তৈরি করা হয়েছে।
           </p>
 
           <Link
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            মূল পাতায় ফিরে যান
           </Link>
         </div>
       </section>
@@ -337,7 +337,7 @@ const NewsAndEventsPage = () => {
                 </p>
 
                 <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                  বিদ্যালয়ের সংবাদ ও কার্যক্রম
+                  বিদ্যালয়ের সংবাদ ও কার্যক্রম
                 </h2>
 
                 <div className="mt-5 flex items-center gap-2">
@@ -348,10 +348,10 @@ const NewsAndEventsPage = () => {
 
               <div className="lg:col-span-8">
                 <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  সংবাদ ও অনুষ্ঠান পেজে বিদ্যালয়ের নিয়মিত আপডেট, অনুষ্ঠান,
+                  সংবাদ ও অনুষ্ঠান পেজে বিদ্যালয়ের নিয়মিত আপডেট, অনুষ্ঠান,
                   প্রতিযোগিতা, শিক্ষার্থীদের অর্জন, অভিভাবক সভা এবং গুরুত্বপূর্ণ
-                  কার্যক্রমের তথ্য প্রকাশ করা হয়। শিক্ষার্থী, অভিভাবক ও শিক্ষকরা
-                  এই পেজ থেকে বিদ্যালয়ের সাম্প্রতিক খবর ও আসন্ন আয়োজন সম্পর্কে
+                  কার্যক্রমের তথ্য প্রকাশ করা হয়। শিক্ষার্থী, অভিভাবক ও শিক্ষকরা
+                  এই পেজ থেকে বিদ্যালয়ের সাম্প্রতিক খবর ও আসন্ন আয়োজন সম্পর্কে
                   সহজে জানতে পারবেন।
                 </p>
               </div>
@@ -369,28 +369,28 @@ const NewsAndEventsPage = () => {
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
                   <FaStar className="text-sm" />
                   <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Featured Event
+                    বিশেষ অনুষ্ঠান
                   </p>
                 </div>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  বার্ষিক ক্রীড়া ও সাংস্কৃতিক অনুষ্ঠান ২০২৬
+                  বার্ষিক ক্রীড়া ও সাংস্কৃতিক অনুষ্ঠান ২০২৬
                 </h2>
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  শিক্ষার্থীদের প্রতিভা, আত্মবিশ্বাস, দলগত কাজ এবং সৃজনশীলতা
-                  বিকাশের লক্ষ্যে বার্ষিক ক্রীড়া ও সাংস্কৃতিক অনুষ্ঠানের আয়োজন
+                   can শিক্ষার্থীদের প্রতিভা, আত্মবিশ্বাস, দলগত কাজ এবং সৃজনশীলতা
+                  বিকাশের লক্ষ্যে বার্ষিক ক্রীড়া ও সাংস্কৃতিক অনুষ্ঠানের আয়োজন
                   করা হচ্ছে। সকল শিক্ষার্থী, অভিভাবক ও শিক্ষককে অনুষ্ঠানে
                   অংশগ্রহণের জন্য আমন্ত্রণ জানানো হচ্ছে।
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    তারিখ: ০৫ ফেব্রুয়ারি ২০২৬
+                    তারিখ: ০৫ ফেব্রুয়ারি ২০২৬
                   </span>
 
                   <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    স্থান: বিদ্যালয় মাঠ
+                    স্থান: বিদ্যালয় মাঠ
                   </span>
                 </div>
               </div>
@@ -402,12 +402,12 @@ const NewsAndEventsPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Annual Event
+                    বার্ষিক আয়োজন
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    ক্রীড়া, সংস্কৃতি ও শিক্ষার্থীদের প্রতিভা বিকাশের বিশেষ
-                    আয়োজন।
+                    ক্রীড়া, সংস্কৃতি ও শিক্ষার্থীদের প্রতিভা বিকাশের বিশেষ
+                    আয়োজন।
                   </p>
                 </div>
               </div>
@@ -425,7 +425,7 @@ const NewsAndEventsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Latest News
+              সর্বশেষ আপডেটসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -487,7 +487,7 @@ const NewsAndEventsPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Upcoming Events
+                আসন্ন ইভেন্ট তালিকা
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -511,7 +511,7 @@ const NewsAndEventsPage = () => {
                         তারিখ
                       </th>
                       <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                        সময়
+                        সময়
                       </th>
                       <th className="px-5 py-4 text-left text-sm font-black text-primary">
                         স্থান
@@ -573,7 +573,7 @@ const NewsAndEventsPage = () => {
                       </p>
 
                       <p className="text-sm font-semibold text-secondary">
-                        <span className="font-black text-primary">সময়:</span>{" "}
+                        <span className="font-black text-primary">সময়:</span>{" "}
                         {event.time}
                       </p>
 
@@ -599,7 +599,7 @@ const NewsAndEventsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Event Categories
+              অনুষ্ঠানের ধরনসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -641,7 +641,7 @@ const NewsAndEventsPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Student Achievements
+                গৌরব ও সাফল্যগাথা
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -736,14 +736,14 @@ const NewsAndEventsPage = () => {
                 </div>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  বিদ্যালয়ের প্রতিটি সংবাদ ও অনুষ্ঠান শিক্ষার অংশ
+                  বিদ্যালয়ের প্রতিটি সংবাদ ও অনুষ্ঠান শিক্ষার অংশ
                 </h2>
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  সংবাদ ও অনুষ্ঠান শিক্ষার্থী, অভিভাবক ও শিক্ষকদের বিদ্যালয়ের
-                  কার্যক্রমের সঙ্গে সংযুক্ত রাখে। নিয়মিত আপডেট অনুসরণ করলে
+                  সংবাদ ও অনুষ্ঠান শিক্ষার্থী, অভিভাবক ও শিক্ষকদের বিদ্যালয়ের
+                  কার্যক্রমের সঙ্গে সংযুক্ত রাখে। নিয়মিত আপডেট অনুসরণ করলে
                   শিক্ষার্থীরা বিভিন্ন সুযোগ, প্রতিযোগিতা ও গুরুত্বপূর্ণ
-                  কার্যক্রমে সময়মতো অংশগ্রহণ করতে পারে।
+                  কার্যক্রমে সময়মতো অংশগ্রহণ করতে পারে।
                 </p>
               </div>
 
@@ -754,11 +754,11 @@ const NewsAndEventsPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    School Events
+                    স্কুল ইভেন্ট
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    বিদ্যালয়ের সংবাদ, অনুষ্ঠান ও অর্জন নিয়মিত অনুসরণ করুন।
+                    বিদ্যালয়ের সংবাদ, অনুষ্ঠান ও অর্জন নিয়মিত অনুসরণ করুন।
                   </p>
                 </div>
               </div>

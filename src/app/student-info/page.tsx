@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import type { ReactNode } from "react";
 import {
@@ -43,7 +42,7 @@ type StudentRecord = {
   className: string;
   section: string;
   roll: string;
-  status: "Active" | "Merit" | "Regular";
+  status: "সক্রিয়" | "মেধাবী" | "নিয়মিত";
 };
 
 type Guideline = {
@@ -54,198 +53,198 @@ type Guideline = {
 
 const overviewStats: StudentStat[] = [
   {
-    title: "Total Students",
-    value: "1,250+",
-    description: "Currently enrolled students",
+    title: "মোট শিক্ষার্থী",
+    value: "১,২৫০+",
+    description: "বর্তমানে ভর্তি থাকা শিক্ষার্থী",
     icon: <FaUsers />,
   },
   {
-    title: "Academic Classes",
-    value: "10",
-    description: "From primary to secondary level",
+    title: "একাডেমিক শ্রেণি",
+    value: "১০",
+    description: "প্রাথমিক থেকে মাধ্যমিক স্তর পর্যন্ত",
     icon: <FaBookOpen />,
   },
   {
-    title: "Sections",
-    value: "24",
-    description: "Class-wise organized sections",
+    title: "শাখা",
+    value: "২৪",
+    description: "শ্রেণিভিত্তিক সাজানো শাখা",
     icon: <FaPeopleGroup />,
   },
   {
-    title: "Activities",
-    value: "35+",
-    description: "Academic and co-curricular activities",
+    title: "কার্যক্রম",
+    value: "৩৫+",
+    description: "একাডেমিক ও সহশিক্ষা কার্যক্রম",
     icon: <FaAward />,
   },
 ];
 
 const classWiseInfo: ClassInfo[] = [
   {
-    className: "Class One",
-    sections: "A, B",
+    className: "প্রথম শ্রেণি",
+    sections: "ক, খ",
     boys: 42,
     girls: 38,
     total: 80,
-    classTeacher: "Nusrat Jahan",
+    classTeacher: "নুসরাত জাহান",
   },
   {
-    className: "Class Two",
-    sections: "A, B",
+    className: "দ্বিতীয় শ্রেণি",
+    sections: "ক, খ",
     boys: 45,
     girls: 40,
     total: 85,
-    classTeacher: "Farhana Akter",
+    classTeacher: "ফারহানা আক্তার",
   },
   {
-    className: "Class Three",
-    sections: "A, B, C",
+    className: "তৃতীয় শ্রেণি",
+    sections: "ক, খ, গ",
     boys: 58,
     girls: 52,
     total: 110,
-    classTeacher: "Md. Arif Hossain",
+    classTeacher: "মোঃ আরিফ হোসেন",
   },
   {
-    className: "Class Four",
-    sections: "A, B, C",
+    className: "চতুর্থ শ্রেণি",
+    sections: "ক, খ, গ",
     boys: 60,
     girls: 55,
     total: 115,
-    classTeacher: "Sharmin Sultana",
+    classTeacher: "শারমিন সুলতানা",
   },
   {
-    className: "Class Five",
-    sections: "A, B, C",
+    className: "পঞ্চম শ্রেণি",
+    sections: "ক, খ, গ",
     boys: 65,
     girls: 60,
     total: 125,
-    classTeacher: "Sabbir Rahman",
+    classTeacher: "সাব্বির রহমান",
   },
   {
-    className: "Class Six",
-    sections: "A, B, C",
+    className: "ষষ্ঠ শ্রেণি",
+    sections: "ক, খ, গ",
     boys: 72,
     girls: 68,
     total: 140,
-    classTeacher: "Mst. Jannatul Ferdous",
+    classTeacher: "মোছাঃ জান্নাতুল ফেরদৌস",
   },
   {
-    className: "Class Seven",
-    sections: "A, B, C",
+    className: "সপ্তম শ্রেণি",
+    sections: "ক, খ, গ",
     boys: 75,
     girls: 70,
     total: 145,
-    classTeacher: "Md. Rakibul Islam",
+    classTeacher: "মোঃ রাকিবুল ইসলাম",
   },
   {
-    className: "Class Eight",
-    sections: "A, B, C",
+    className: "অষ্টম শ্রেণি",
+    sections: "ক, খ, গ",
     boys: 78,
     girls: 72,
     total: 150,
-    classTeacher: "Md. Hasan Mahmud",
+    classTeacher: "মোঃ হাসান মাহমুদ",
   },
 ];
 
 const studentRecords: StudentRecord[] = [
   {
-    id: "STD-2026-001",
-    name: "Arafat Rahman",
+    id: "শিক্ষার্থী-২০২৬-০০১",
+    name: "আরাফাত রহমান",
     banglaName: "আরাফাত রহমান",
-    className: "Class Six",
-    section: "A",
-    roll: "01",
-    status: "Merit",
+    className: "ষষ্ঠ শ্রেণি",
+    section: "ক",
+    roll: "০১",
+    status: "মেধাবী",
   },
   {
-    id: "STD-2026-002",
-    name: "Nusrat Jahan Mim",
+    id: "শিক্ষার্থী-২০২৬-০০২",
+    name: "নুসরাত জাহান মিম",
     banglaName: "নুসরাত জাহান মিম",
-    className: "Class Six",
-    section: "A",
-    roll: "02",
-    status: "Active",
+    className: "ষষ্ঠ শ্রেণি",
+    section: "ক",
+    roll: "০২",
+    status: "সক্রিয়",
   },
   {
-    id: "STD-2026-003",
-    name: "Tanvir Ahmed",
+    id: "শিক্ষার্থী-২০২৬-০০৩",
+    name: "তানভীর আহমেদ",
     banglaName: "তানভীর আহমেদ",
-    className: "Class Seven",
-    section: "B",
-    roll: "04",
-    status: "Regular",
+    className: "সপ্তম শ্রেণি",
+    section: "খ",
+    roll: "০৪",
+    status: "নিয়মিত",
   },
   {
-    id: "STD-2026-004",
-    name: "Sumaiya Akter",
+    id: "শিক্ষার্থী-২০২৬-০০৪",
+    name: "সুমাইয়া আক্তার",
     banglaName: "সুমাইয়া আক্তার",
-    className: "Class Eight",
-    section: "A",
-    roll: "03",
-    status: "Merit",
+    className: "অষ্টম শ্রেণি",
+    section: "ক",
+    roll: "০৩",
+    status: "মেধাবী",
   },
   {
-    id: "STD-2026-005",
-    name: "Rakibul Islam",
+    id: "শিক্ষার্থী-২০২৬-০০৫",
+    name: "রাকিবুল ইসলাম",
     banglaName: "রাকিবুল ইসলাম",
-    className: "Class Five",
-    section: "C",
-    roll: "07",
-    status: "Active",
+    className: "পঞ্চম শ্রেণি",
+    section: "গ",
+    roll: "০৭",
+    status: "সক্রিয়",
   },
   {
-    id: "STD-2026-006",
-    name: "Jannatul Ferdous",
+    id: "শিক্ষার্থী-২০২৬-০০৬",
+    name: "জান্নাতুল ফেরদৌস",
     banglaName: "জান্নাতুল ফেরদৌস",
-    className: "Class Four",
-    section: "B",
-    roll: "05",
-    status: "Regular",
+    className: "চতুর্থ শ্রেণি",
+    section: "খ",
+    roll: "০৫",
+    status: "নিয়মিত",
   },
 ];
 
 const guidelines: Guideline[] = [
   {
-    title: "Regular Attendance",
+    title: "নিয়মিত উপস্থিতি",
     description:
       "প্রতিটি শিক্ষার্থীর নিয়মিত উপস্থিতি নিশ্চিত করতে অভিভাবকদের সহযোগিতা প্রয়োজন।",
     icon: <FaCalendarCheck />,
   },
   {
-    title: "Discipline",
+    title: "শৃঙ্খলা",
     description:
       "বিদ্যালয়ের নিয়ম-শৃঙ্খলা মেনে চলা প্রতিটি শিক্ষার্থীর জন্য বাধ্যতামূলক।",
     icon: <FaShieldHalved />,
   },
   {
-    title: "Uniform",
+    title: "নির্ধারিত পোশাক",
     description:
       "নির্ধারিত পোশাক ও পরিচ্ছন্নতা শিক্ষার্থীদের জন্য অত্যন্ত গুরুত্বপূর্ণ।",
     icon: <FaIdCard />,
   },
   {
-    title: "Examination",
+    title: "পরীক্ষা",
     description:
-      "পরীক্ষা, class test এবং মূল্যায়ন কার্যক্রমে নিয়মিত অংশগ্রহণ করতে হবে।",
+      "পরীক্ষা, শ্রেণি পরীক্ষা এবং মূল্যায়ন কার্যক্রমে নিয়মিত অংশগ্রহণ করতে হবে।",
     icon: <FaClipboardCheck />,
   },
 ];
 
 const statusStyle: Record<StudentRecord["status"], string> = {
-  Active: "bg-blue-soft text-blue border-blue-soft",
-  Merit: "bg-color-secondary text-brand-primary border-brand-primary-soft",
-  Regular: "bg-page-secondary text-secondary border-soft",
+  সক্রিয়: "bg-blue-soft text-blue border-blue-soft",
+  মেধাবী: "bg-color-secondary text-brand-primary border-brand-primary-soft",
+  নিয়মিত: "bg-page-secondary text-secondary border-soft",
 };
 
 export default function StudentInfoPage() {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Hero */}
+      {/* হিরো */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Student Info
+            শিক্ষার্থীদের তথ্য
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -264,12 +263,12 @@ export default function StudentInfoPage() {
             href="/"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Overview */}
+      {/* সারসংক্ষেপ */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <div className="overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
@@ -277,7 +276,7 @@ export default function StudentInfoPage() {
               <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-inverse">
                   <FaSchoolFlag />
-                  Student Information System
+                  শিক্ষার্থী তথ্য ব্যবস্থাপনা
                 </span>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
@@ -299,11 +298,11 @@ export default function StudentInfoPage() {
                   </div>
 
                   <h3 className="mt-5 text-4xl font-black text-primary">
-                    1,250+
+                    ১,২৫০+
                   </h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Enrolled Students
+                    ভর্তি শিক্ষার্থী
                   </p>
                 </div>
 
@@ -312,17 +311,17 @@ export default function StudentInfoPage() {
                     <FaGraduationCap />
                   </div>
 
-                  <h3 className="mt-5 text-4xl font-black text-primary">24</h3>
+                  <h3 className="mt-5 text-4xl font-black text-primary">২৪</h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Active Sections
+                    সক্রিয় শাখা
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Stats */}
+          {/* পরিসংখ্যান */}
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {overviewStats.map((item) => (
               <article
@@ -350,12 +349,12 @@ export default function StudentInfoPage() {
         </div>
       </section>
 
-      {/* Class Wise Statistics */}
+      {/* শ্রেণিভিত্তিক পরিসংখ্যান */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[34px] border border-soft bg-page-primary p-5 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
-              Class Wise Statistics
+              শ্রেণিভিত্তিক পরিসংখ্যান
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary">
@@ -365,7 +364,7 @@ export default function StudentInfoPage() {
             <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-color-primary" />
 
             <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold leading-7 text-secondary">
-              প্রতিটি শ্রেণির section, ছাত্র-ছাত্রী সংখ্যা এবং class teacher
+              প্রতিটি শ্রেণির শাখা, ছাত্র-ছাত্রী সংখ্যা এবং শ্রেণি শিক্ষকের
               তথ্য এখানে দেখানো হয়েছে।
             </p>
           </div>
@@ -375,13 +374,13 @@ export default function StudentInfoPage() {
               <table className="w-full min-w-[900px] border-collapse bg-page-primary text-left">
                 <thead className="bg-color-primary text-inverse">
                   <tr>
-                    <th className="px-5 py-4 text-sm font-black">Class</th>
-                    <th className="px-5 py-4 text-sm font-black">Sections</th>
-                    <th className="px-5 py-4 text-sm font-black">Boys</th>
-                    <th className="px-5 py-4 text-sm font-black">Girls</th>
-                    <th className="px-5 py-4 text-sm font-black">Total</th>
+                    <th className="px-5 py-4 text-sm font-black">শ্রেণি</th>
+                    <th className="px-5 py-4 text-sm font-black">শাখা</th>
+                    <th className="px-5 py-4 text-sm font-black">ছাত্র</th>
+                    <th className="px-5 py-4 text-sm font-black">ছাত্রী</th>
+                    <th className="px-5 py-4 text-sm font-black">মোট</th>
                     <th className="px-5 py-4 text-sm font-black">
-                      Class Teacher
+                      শ্রেণি শিক্ষক
                     </th>
                   </tr>
                 </thead>
@@ -424,20 +423,20 @@ export default function StudentInfoPage() {
               <FaChartSimple className="mt-1 shrink-0 text-brand-primary" />
 
               <p className="text-sm font-semibold leading-7 text-secondary">
-                Note: শ্রেণিভিত্তিক শিক্ষার্থী সংখ্যা নমুনা হিসেবে দেখানো হয়েছে।
-                প্রকৃত official record বিদ্যালয় অফিস থেকে সংগ্রহ করতে হবে।
+                নোট: শ্রেণিভিত্তিক শিক্ষার্থী সংখ্যা নমুনা হিসেবে দেখানো হয়েছে।
+                প্রকৃত অফিসিয়াল তথ্য বিদ্যালয় অফিস থেকে সংগ্রহ করতে হবে।
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Student Records */}
+      {/* শিক্ষার্থীদের রেকর্ড */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
-              Student Records
+              শিক্ষার্থীদের রেকর্ড
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
@@ -447,7 +446,7 @@ export default function StudentInfoPage() {
             <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-color-primary" />
 
             <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold leading-7 text-secondary">
-              শিক্ষার্থীদের ID, নাম, শ্রেণি, section, roll এবং status সহজভাবে
+              শিক্ষার্থীদের আইডি, নাম, শ্রেণি, শাখা, রোল এবং অবস্থা সহজভাবে
               দেখানোর জন্য এই তালিকা তৈরি করা হয়েছে।
             </p>
           </div>
@@ -459,16 +458,16 @@ export default function StudentInfoPage() {
                   <thead className="bg-color-primary text-inverse">
                     <tr>
                       <th className="px-5 py-4 text-sm font-black">
-                        Student ID
+                        শিক্ষার্থী আইডি
                       </th>
-                      <th className="px-5 py-4 text-sm font-black">Name</th>
+                      <th className="px-5 py-4 text-sm font-black">নাম</th>
                       <th className="px-5 py-4 text-sm font-black">
-                        Bangla Name
+                        বাংলা নাম
                       </th>
-                      <th className="px-5 py-4 text-sm font-black">Class</th>
-                      <th className="px-5 py-4 text-sm font-black">Section</th>
-                      <th className="px-5 py-4 text-sm font-black">Roll</th>
-                      <th className="px-5 py-4 text-sm font-black">Status</th>
+                      <th className="px-5 py-4 text-sm font-black">শ্রেণি</th>
+                      <th className="px-5 py-4 text-sm font-black">শাখা</th>
+                      <th className="px-5 py-4 text-sm font-black">রোল</th>
+                      <th className="px-5 py-4 text-sm font-black">অবস্থা</th>
                     </tr>
                   </thead>
 
@@ -517,12 +516,12 @@ export default function StudentInfoPage() {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
-              Student Guidelines
+              শিক্ষার্থীদের নির্দেশনা
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary">
@@ -560,7 +559,7 @@ export default function StudentInfoPage() {
         </div>
       </section>
 
-      {/* Important Notes */}
+      {/* গুরুত্বপূর্ণ নোট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -569,13 +568,13 @@ export default function StudentInfoPage() {
             </div>
 
             <h3 className="mt-5 text-2xl font-black text-primary">
-              Official Record
+              অফিসিয়াল রেকর্ড
             </h3>
 
             <p className="mt-4 text-sm font-semibold leading-8 text-secondary">
-              শিক্ষার্থীদের official record, transcript, transfer certificate,
-              attendance report এবং guardian information বিদ্যালয়ের office
-              record অনুযায়ী সংরক্ষণ করা হয়।
+              শিক্ষার্থীদের অফিসিয়াল রেকর্ড, ফলাফলের বিবরণী, ছাড়পত্র,
+              উপস্থিতি প্রতিবেদন এবং অভিভাবক তথ্য বিদ্যালয়ের অফিস রেকর্ড
+              অনুযায়ী সংরক্ষণ করা হয়।
             </p>
           </div>
 
@@ -585,7 +584,7 @@ export default function StudentInfoPage() {
             </div>
 
             <h3 className="mt-5 text-2xl font-black text-primary">
-              Data Privacy
+              তথ্যের গোপনীয়তা
             </h3>
 
             <p className="mt-4 text-sm font-semibold leading-8 text-secondary">
@@ -596,7 +595,7 @@ export default function StudentInfoPage() {
         </div>
       </section>
 
-      {/* Message */}
+      {/* বার্তা */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1600px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -605,7 +604,7 @@ export default function StudentInfoPage() {
                 <FaRegCalendarDays className="text-sm" />
 
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  Student Development
+                  শিক্ষার্থীদের উন্নয়ন
                 </p>
               </div>
 
@@ -628,7 +627,7 @@ export default function StudentInfoPage() {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Student Success
+                  শিক্ষার্থীদের সাফল্য
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
@@ -641,17 +640,17 @@ export default function StudentInfoPage() {
         </div>
       </section>
 
-      {/* Office Contact */}
+      {/* অফিস যোগাযোগ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[24px] border border-soft bg-page-primary p-5 shadow-sm">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h3 className="text-xl font-black text-primary">
-                Need official student information?
+                শিক্ষার্থীদের অফিসিয়াল তথ্য প্রয়োজন?
               </h3>
 
               <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
-                শিক্ষার্থীদের official record বা বিস্তারিত তথ্যের জন্য বিদ্যালয়
+                শিক্ষার্থীদের অফিসিয়াল রেকর্ড বা বিস্তারিত তথ্যের জন্য বিদ্যালয়
                 অফিসে যোগাযোগ করুন।
               </p>
             </div>
@@ -660,7 +659,7 @@ export default function StudentInfoPage() {
               href="/contact"
               className="inline-flex w-fit items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-lg transition-all duration-300 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
             >
-              Contact Office
+              অফিসে যোগাযোগ করুন
             </Link>
           </div>
         </div>
@@ -668,4 +667,3 @@ export default function StudentInfoPage() {
     </main>
   );
 }
-

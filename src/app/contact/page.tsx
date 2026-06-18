@@ -13,8 +13,8 @@ import {
 } from "react-icons/fa6";
 
 export const metadata: Metadata = {
-  title: "Contact | Shikkha Chat",
-  description: "Contact page for Shikkha Chat",
+  title: "যোগাযোগ | শিক্ষা চ্যাট",
+  description: "শিক্ষা চ্যাটের যোগাযোগ পেজ",
 };
 
 type ContactInfo = {
@@ -32,19 +32,19 @@ type OfficeHour = {
 
 const contactInfo: ContactInfo[] = [
   {
-    title: "Address",
-    value: "Ramna, Dhaka-1000",
+    title: "ঠিকানা",
+    value: "রমনা, ঢাকা-১০০০",
     description: "বিদ্যালয় অফিসে সরাসরি যোগাযোগের জন্য এই ঠিকানায় আসতে পারেন।",
     icon: <FaLocationDot />,
   },
   {
-    title: "Phone",
-    value: "02-58310500",
+    title: "ফোন",
+    value: "০২-৫৮৩১০৫০০",
     description: "অফিস সময়ের মধ্যে ফোন করে প্রয়োজনীয় তথ্য জানতে পারবেন।",
     icon: <FaPhone />,
   },
   {
-    title: "Email",
+    title: "ইমেইল",
     value: "info@vnsc.edu.bd, vnsc_bd@yahoo.com",
     description: "ভর্তি, একাডেমিক বা প্রশাসনিক বিষয়ে ইমেইল পাঠাতে পারেন।",
     icon: <FaEnvelope />,
@@ -53,18 +53,18 @@ const contactInfo: ContactInfo[] = [
 
 const officeHours: OfficeHour[] = [
   {
-    title: "Office Hours",
-    time: "Saturday - Thursday",
+    title: "অফিস সময়",
+    time: "শনিবার - বৃহস্পতিবার",
     note: "সকাল ৯টা থেকে বিকাল ৪টা পর্যন্ত অফিস কার্যক্রম চলমান থাকে।",
   },
   {
-    title: "Admission Help",
-    time: "10:00 AM - 02:00 PM",
+    title: "ভর্তি সহায়তা",
+    time: "সকাল ১০:০০ - দুপুর ০২:০০",
     note: "ভর্তি সংক্রান্ত তথ্যের জন্য নির্ধারিত সময়ে যোগাযোগ করুন।",
   },
   {
-    title: "Academic Support",
-    time: "Class Days",
+    title: "একাডেমিক সহায়তা",
+    time: "ক্লাসের দিনসমূহ",
     note: "শ্রেণি শিক্ষক ও অফিসের মাধ্যমে একাডেমিক সহায়তা পাওয়া যাবে।",
   },
 ];
@@ -72,13 +72,13 @@ const officeHours: OfficeHour[] = [
 const Contact = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Hero Section */}
+      {/* উপরের হিরো অংশ */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Contact Us
+            যোগাযোগ করুন
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -97,12 +97,12 @@ const Contact = () => {
             href="/"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Contact Cards */}
+      {/* যোগাযোগ কার্ড */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1260px] grid-cols-1 gap-6 md:grid-cols-3">
           {contactInfo.map((item) => (
@@ -130,7 +130,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Introduction + Office Hours */}
+      {/* যোগাযোগ পরিচিতি ও অফিস সময় */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1260px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
@@ -165,7 +165,7 @@ const Contact = () => {
 
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.18em] text-inverse opacity-80">
-                      Office Time
+                      অফিস সময়
                     </p>
                     <h3 className="mt-2 text-2xl font-black text-inverse">
                       অফিস সময়সূচি
@@ -206,12 +206,12 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* যোগাযোগ ফরম */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1260px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm transition-all duration-500 hover:shadow-xl sm:p-8 lg:p-12 xl:p-16">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              Message Form
+              বার্তা ফরম
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
@@ -229,14 +229,14 @@ const Contact = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
+                placeholder="আপনার নাম"
                 className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
               />
 
               <input
                 type="tel"
                 name="mobile"
-                placeholder="Mobile No."
+                placeholder="মোবাইল নম্বর"
                 className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
               />
             </div>
@@ -245,21 +245,21 @@ const Contact = () => {
               <input
                 type="text"
                 name="subject"
-                placeholder="Subject"
+                placeholder="বিষয়"
                 className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
               />
 
               <input
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder="ইমেইল"
                 className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
               />
             </div>
 
             <textarea
               rows={6}
-              placeholder="Message"
+              placeholder="বার্তা"
               name="message"
               className="w-full resize-none rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
             />
@@ -268,14 +268,14 @@ const Contact = () => {
               type="submit"
               className="mx-auto inline-flex w-full items-center justify-center gap-3 rounded-2xl bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-md transition-all duration-300 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl active:scale-95 lg:w-48"
             >
-              Submit
+              জমা দিন
               <FaMessage />
             </button>
           </form>
         </div>
       </section>
 
-      {/* Map / Location Section */}
+      {/* মানচিত্র / অবস্থান অংশ */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1260px] overflow-hidden rounded-[34px] border border-soft bg-page-primary p-4 shadow-sm transition-all duration-500 hover:shadow-xl sm:p-5">
           <div className="mb-5 flex flex-col gap-4 rounded-[26px] bg-color-primary p-6 text-inverse lg:flex-row lg:items-center lg:justify-between">
@@ -286,10 +286,10 @@ const Contact = () => {
 
               <div>
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-inverse opacity-80">
-                  School Location
+                  বিদ্যালয়ের অবস্থান
                 </p>
                 <h2 className="mt-1 text-2xl font-black text-inverse">
-                  Ramna, Dhaka-1000
+                  রমনা, ঢাকা-১০০০
                 </h2>
               </div>
             </div>
@@ -301,7 +301,7 @@ const Contact = () => {
           </div>
 
           <iframe
-            title="Viqarunnisa Noon School and College Map"
+            title="ভিকারুননিসা নূন স্কুল অ্যান্ড কলেজ মানচিত্র"
             src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14608.589438797351!2d90.407051!3d23.742124!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b84e57c2368d%3A0x4df20dee9b73140e!2sViqarunnisa%20Noon%20School%20and%20College!5e0!3m2!1sen!2sbd!4v1731414574228!5m2!1sen!2sbd"
             width="100%"
             height="450"
@@ -314,7 +314,7 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Closing Section */}
+      {/* সমাপনী অংশ */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1260px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -345,7 +345,7 @@ const Contact = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Contact Support
+                  যোগাযোগ সহায়তা
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">

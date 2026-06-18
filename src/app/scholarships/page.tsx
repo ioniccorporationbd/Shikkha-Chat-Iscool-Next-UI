@@ -92,37 +92,37 @@ const overviewItems: OverviewItem[] = [
 
 const scholarshipCategories: ScholarshipCategory[] = [
   {
-    title: "Merit Scholarship",
+    title: "মেধাবৃত্তি",
     description:
-      "বার্ষিক পরীক্ষা, ক্লাস টেস্ট ও ধারাবাহিক ভালো ফলাফলের ভিত্তিতে মেধাবী শিক্ষার্থীদের জন্য বৃত্তি।",
+      "বার্ষিক পরীক্ষা, শ্রেণি পরীক্ষা ও ধারাবাহিক ভালো ফলাফলের ভিত্তিতে মেধাবী শিক্ষার্থীদের জন্য বৃত্তি।",
     icon: <FaAward />,
   },
   {
-    title: "Need-Based Scholarship",
+    title: "প্রয়োজনভিত্তিক বৃত্তি",
     description:
       "আর্থিকভাবে অসচ্ছল কিন্তু পড়াশোনায় আগ্রহী শিক্ষার্থীদের জন্য বিশেষ আর্থিক সহায়তা।",
     icon: <FaHandHoldingDollar />,
   },
   {
-    title: "Attendance Scholarship",
+    title: "উপস্থিতি বৃত্তি",
     description:
       "নিয়মিত উপস্থিতি, সময়ানুবর্তিতা এবং বিদ্যালয়ের নিয়ম মেনে চলার স্বীকৃতি হিসেবে বৃত্তি।",
     icon: <FaRegClock />,
   },
   {
-    title: "Sports Scholarship",
+    title: "ক্রীড়া বৃত্তি",
     description:
       "ক্রীড়া প্রতিযোগিতায় সাফল্য অর্জনকারী এবং নিয়মিত খেলাধুলায় অংশগ্রহণকারী শিক্ষার্থীদের জন্য।",
     icon: <FaTrophy />,
   },
   {
-    title: "Cultural Scholarship",
+    title: "সাংস্কৃতিক বৃত্তি",
     description:
       "গান, আবৃত্তি, বিতর্ক, চিত্রাঙ্কন ও সাংস্কৃতিক কার্যক্রমে সাফল্যের জন্য বিশেষ বৃত্তি।",
     icon: <FaMedal />,
   },
   {
-    title: "Special Support Scholarship",
+    title: "বিশেষ সহায়তা বৃত্তি",
     description:
       "বিশেষ পরিস্থিতি, পারিবারিক সমস্যা বা জরুরি শিক্ষাসহায়তার প্রয়োজন হলে বিবেচনাধীন সহায়তা।",
     icon: <FaShieldHeart />,
@@ -133,7 +133,7 @@ const eligibilityCriteria: CriteriaItem[] = [
   {
     title: "ভালো ফলাফল",
     description:
-      "পরীক্ষা, ক্লাস টেস্ট ও ধারাবাহিক মূল্যায়নে ভালো ফলাফল বৃত্তির জন্য গুরুত্বপূর্ণ যোগ্যতা।",
+      "পরীক্ষা, শ্রেণি পরীক্ষা ও ধারাবাহিক মূল্যায়নে ভালো ফলাফল বৃত্তির জন্য গুরুত্বপূর্ণ যোগ্যতা।",
     icon: <FaGraduationCap />,
   },
   {
@@ -157,7 +157,7 @@ const eligibilityCriteria: CriteriaItem[] = [
   {
     title: "আর্থিক অবস্থা",
     description:
-      "Need-Based Scholarship-এর ক্ষেত্রে পরিবারের আর্থিক অবস্থা যাচাই-বাছাই করা হতে পারে।",
+      "প্রয়োজনভিত্তিক বৃত্তির ক্ষেত্রে পরিবারের আর্থিক অবস্থা যাচাই-বাছাই করা হতে পারে।",
     icon: <FaHandHoldingDollar />,
   },
 ];
@@ -308,13 +308,13 @@ const guidelineSections: GuidelineSection[] = [
 const ScholarshipsPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Scholarships
+            বৃত্তি
           </p>
 
           <h1 className="mt-5 text-[36px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -332,12 +332,12 @@ const ScholarshipsPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Scholarship Overview */}
+      {/* বৃত্তির সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -361,7 +361,7 @@ const ScholarshipsPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
@@ -395,7 +395,7 @@ const ScholarshipsPage = () => {
         </div>
       </section>
 
-      {/* Featured Scholarship */}
+      {/* বিশেষ বৃত্তি অংশ */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -405,7 +405,7 @@ const ScholarshipsPage = () => {
                   <FaStar className="text-sm" />
 
                   <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Scholarship Support
+                    বৃত্তি সহায়তা
                   </p>
                 </div>
 
@@ -441,7 +441,7 @@ const ScholarshipsPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Merit Support
+                    মেধা সহায়তা
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
@@ -454,7 +454,7 @@ const ScholarshipsPage = () => {
         </div>
       </section>
 
-      {/* Scholarship Categories */}
+      {/* বৃত্তির বিভাগ */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -463,7 +463,7 @@ const ScholarshipsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Scholarship Categories
+              বৃত্তির বিভাগসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -495,7 +495,7 @@ const ScholarshipsPage = () => {
         </div>
       </section>
 
-      {/* Eligibility Criteria */}
+      {/* যোগ্যতার শর্ত */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -505,7 +505,7 @@ const ScholarshipsPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Eligibility Criteria
+                যোগ্যতার শর্তসমূহ
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -538,7 +538,7 @@ const ScholarshipsPage = () => {
         </div>
       </section>
 
-      {/* Required Documents */}
+      {/* প্রয়োজনীয় ডকুমেন্ট */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -547,7 +547,7 @@ const ScholarshipsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Required Documents
+              প্রয়োজনীয় ডকুমেন্টসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -579,7 +579,7 @@ const ScholarshipsPage = () => {
         </div>
       </section>
 
-      {/* Application Process */}
+      {/* আবেদন প্রক্রিয়া */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -589,7 +589,7 @@ const ScholarshipsPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Application Process
+                আবেদন প্রক্রিয়ার ধাপসমূহ
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -605,7 +605,7 @@ const ScholarshipsPage = () => {
                   className="group rounded-[24px] border border-soft bg-page-secondary p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-color-secondary text-sm font-black text-primary transition-all duration-500 group-hover:bg-page-primary group-hover:text-brand-primary">
-                    {String(index + 1).padStart(2, "0")}
+                    {["০১", "০২", "০৩", "০৪", "০৫"][index]}
                   </div>
 
                   <h3 className="mt-5 text-lg font-black leading-tight text-primary transition-colors duration-500 group-hover:text-inverse">
@@ -622,7 +622,7 @@ const ScholarshipsPage = () => {
         </div>
       </section>
 
-      {/* Scholarship Table */}
+      {/* বৃত্তির তালিকা */}
       <section
         id="scholarship-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -634,7 +634,7 @@ const ScholarshipsPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Scholarship Table
+              বৃত্তির বিস্তারিত তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -710,7 +710,7 @@ const ScholarshipsPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -765,7 +765,7 @@ const ScholarshipsPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -775,7 +775,7 @@ const ScholarshipsPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -822,7 +822,7 @@ const ScholarshipsPage = () => {
         </div>
       </section>
 
-      {/* Closing Message */}
+      {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -855,7 +855,7 @@ const ScholarshipsPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Support Education
+                    শিক্ষায় সহায়তা
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">

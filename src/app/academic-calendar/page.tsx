@@ -83,7 +83,7 @@ const overviewItems: OverviewItem[] = [
 
 const monthlySchedules: MonthlySchedule[] = [
   {
-    month: "জানুয়ারি",
+    month: "জানুয়ারি",
     activities: [
       "নতুন শিক্ষাবর্ষের ক্লাস শুরু",
       "বই বিতরণ ও পরিচিতি ক্লাস",
@@ -91,9 +91,9 @@ const monthlySchedules: MonthlySchedule[] = [
     ],
   },
   {
-    month: "ফেব্রুয়ারি",
+    month: "ফেব্রুয়ারি",
     activities: [
-      "নিয়মিত ক্লাস ও সাপ্তাহিক মূল্যায়ন",
+      "নিয়মিত ক্লাস ও সাপ্তাহিক মূল্যায়ন",
       "আন্তর্জাতিক মাতৃভাষা দিবস পালন",
       "অভিভাবক-শিক্ষক যোগাযোগ কার্যক্রম",
     ],
@@ -101,7 +101,7 @@ const monthlySchedules: MonthlySchedule[] = [
   {
     month: "মার্চ",
     activities: [
-      "প্রথম শ্রেণি মূল্যায়ন",
+      "প্রথম শ্রেণি মূল্যায়ন",
       "স্বাধীনতা দিবস উদযাপন",
       "সহশিক্ষা কার্যক্রম ও সাংস্কৃতিক প্রস্তুতি",
     ],
@@ -111,13 +111,13 @@ const monthlySchedules: MonthlySchedule[] = [
     activities: [
       "প্রথম টার্ম পরীক্ষা",
       "বৈশাখী অনুষ্ঠান",
-      "পরীক্ষার খাতা মূল্যায়ন ও অগ্রগতি আলোচনা",
+      "পরীক্ষার খাতা মূল্যায়ন ও অগ্রগতি আলোচনা",
     ],
   },
   {
     month: "মে",
     activities: [
-      "নিয়মিত ক্লাস ও অধ্যায়ভিত্তিক মূল্যায়ন",
+      "নিয়মিত ক্লাস ও অধ্যায়ভিত্তিক মূল্যায়ন",
       "বিজ্ঞান ও সৃজনশীল কার্যক্রম",
       "অভিভাবক সভা",
     ],
@@ -134,23 +134,23 @@ const monthlySchedules: MonthlySchedule[] = [
     month: "জুলাই",
     activities: [
       "অর্ধবার্ষিক পরীক্ষার ফলাফল প্রকাশ",
-      "দুর্বল শিক্ষার্থীদের বিশেষ সহায়তা",
-      "নতুন অধ্যায়ভিত্তিক পাঠদান শুরু",
+      "দুর্বল শিক্ষার্থীদের বিশেষ সহায়তা",
+      "নতুন অধ্যায়ভিত্তিক পাঠদান শুরু",
     ],
   },
   {
     month: "আগস্ট",
     activities: [
-      "জাতীয় শোক দিবস পালন",
-      "নিয়মিত ক্লাস ও ক্লাস টেস্ট",
+      "জাতীয় শোক দিবস পালন",
+      "নিয়মিত ক্লাস ও ক্লাস টেস্ট",
       "সহশিক্ষা কার্যক্রম",
     ],
   },
   {
     month: "সেপ্টেম্বর",
     activities: [
-      "দ্বিতীয় টার্ম মূল্যায়ন",
-      "ক্রীড়া প্রস্তুতি",
+      "দ্বিতীয় টার্ম মূল্যায়ন",
+      "ক্রীড়া প্রস্তুতি",
       "শিক্ষার্থীদের অগ্রগতি পর্যালোচনা",
     ],
   },
@@ -166,7 +166,7 @@ const monthlySchedules: MonthlySchedule[] = [
     month: "নভেম্বর",
     activities: [
       "বার্ষিক পরীক্ষা",
-      "পরীক্ষা খাতা মূল্যায়ন",
+      "পরীক্ষা খাতা মূল্যায়ন",
       "পরবর্তী শ্রেণির প্রস্তুতিমূলক নির্দেশনা",
     ],
   },
@@ -184,45 +184,45 @@ const importantDates: ImportantDate[] = [
   {
     id: 1,
     title: "নতুন শিক্ষাবর্ষের ক্লাস শুরু",
-    date: "০১ জানুয়ারি ২০২৬",
-    type: "Academic",
+    date: "০১ জানুয়ারি ২০২৬",
+    type: "একাডেমিক",
   },
   {
     id: 2,
     title: "প্রথম টার্ম পরীক্ষা",
     date: "১০ এপ্রিল ২০২৬",
-    type: "Exam",
+    type: "পরীক্ষা",
   },
   {
     id: 3,
     title: "অর্ধবার্ষিক পরীক্ষা",
     date: "১৫ জুন ২০২৬",
-    type: "Exam",
+    type: "পরীক্ষা",
   },
   {
     id: 4,
     title: "অভিভাবক-শিক্ষক সভা",
     date: "২০ জুলাই ২০২৬",
-    type: "Meeting",
+    type: "মিটিং",
   },
   {
     id: 5,
     title: "বার্ষিক পরীক্ষা",
     date: "০৫ নভেম্বর ২০২৬",
-    type: "Exam",
+    type: "পরীক্ষা",
   },
   {
     id: 6,
     title: "বার্ষিক ফলাফল প্রকাশ",
     date: "২০ ডিসেম্বর ২০২৬",
-    type: "Result",
+    type: "ফলাফল",
   },
 ];
 
 const examSchedules: ExamSchedule[] = [
   {
     id: 1,
-    className: "Class One - Three",
+    className: "প্রথম - তৃতীয় শ্রেণি",
     examName: "প্রথম টার্ম পরীক্ষা",
     startDate: "১০ এপ্রিল ২০২৬",
     endDate: "১৮ এপ্রিল ২০২৬",
@@ -230,7 +230,7 @@ const examSchedules: ExamSchedule[] = [
   },
   {
     id: 2,
-    className: "Class Four - Five",
+    className: "চতুর্থ - পঞ্চম শ্রেণি",
     examName: "অর্ধবার্ষিক পরীক্ষা",
     startDate: "১৫ জুন ২০২৬",
     endDate: "২৫ জুন ২০২৬",
@@ -238,15 +238,15 @@ const examSchedules: ExamSchedule[] = [
   },
   {
     id: 3,
-    className: "Class Six - Eight",
-    examName: "দ্বিতীয় টার্ম পরীক্ষা",
+    className: "ষষ্ঠ - অষ্টম শ্রেণি",
+    examName: "দ্বিতীয় টার্ম পরীক্ষা",
     startDate: "০৮ সেপ্টেম্বর ২০২৬",
     endDate: "১৮ সেপ্টেম্বর ২০২৬",
     resultDate: "৩০ সেপ্টেম্বর ২০২৬",
   },
   {
     id: 4,
-    className: "Class Nine - Ten",
+    className: "নবম - দশম শ্রেণি",
     examName: "বার্ষিক পরীক্ষা",
     startDate: "০৫ নভেম্বর ২০২৬",
     endDate: "২৫ নভেম্বর ২০২৬",
@@ -258,47 +258,47 @@ const holidayItems: HolidayItem[] = [
   {
     id: 1,
     title: "আন্তর্জাতিক মাতৃভাষা দিবস",
-    date: "২১ ফেব্রুয়ারি ২০২৬",
-    category: "জাতীয় দিবস",
+    date: "২১ ফেব্রুয়ারি ২০২৬",
+    category: "জাতীয় দিবস",
   },
   {
     id: 2,
     title: "স্বাধীনতা দিবস",
     date: "২৬ মার্চ ২০২৬",
-    category: "জাতীয় দিবস",
+    category: "জাতীয় দিবস",
   },
   {
     id: 3,
     title: "ঈদুল ফিতর",
-    date: "বিদ্যালয়ের নোটিশ অনুযায়ী",
-    category: "ধর্মীয় ছুটি",
+    date: "বিদ্যালয়ের নোটিশ অনুযায়ী",
+    category: "ধর্মীয় ছুটি",
   },
   {
     id: 4,
     title: "ঈদুল আযহা",
-    date: "বিদ্যালয়ের নোটিশ অনুযায়ী",
-    category: "ধর্মীয় ছুটি",
+    date: "বিদ্যালয়ের নোটিশ অনুযায়ী",
+    category: "ধর্মীয় ছুটি",
   },
   {
     id: 5,
-    title: "জাতীয় শোক দিবস",
+    title: "জাতীয় শোক দিবস",
     date: "১৫ আগস্ট ২০২৬",
-    category: "জাতীয় দিবস",
+    category: "জাতীয় দিবস",
   },
   {
     id: 6,
-    title: "বিজয় দিবস",
+    title: "বিজয় দিবস",
     date: "১৬ ডিসেম্বর ২০২৬",
-    category: "জাতীয় দিবস",
+    category: "জাতীয় দিবস",
   },
 ];
 
 const eventItems = [
-  "বার্ষিক ক্রীড়া প্রতিযোগিতা",
+  "বার্ষিক ক্রীড়া প্রতিযোগিতা",
   "সাংস্কৃতিক অনুষ্ঠান",
   "বিজ্ঞান মেলা",
   "বিতর্ক প্রতিযোগিতা",
-  "জাতীয় দিবস উদযাপন",
+  "জাতীয় দিবস উদযাপন",
   "অভিভাবক-শিক্ষক সভা",
 ];
 
@@ -307,20 +307,20 @@ const guidelineSections: GuidelineSection[] = [
     title: "শিক্ষার্থীদের নির্দেশনা",
     icon: <FaUserGraduate />,
     points: [
-      "একাডেমিক ক্যালেন্ডার নিয়মিত দেখে ক্লাস, পরীক্ষা ও কার্যক্রমের তারিখ সম্পর্কে সচেতন থাকতে হবে।",
+      "একাডেমিক ক্যালেন্ডার নিয়মিত দেখে ক্লাস, পরীক্ষা ও কার্যক্রমের তারিখ সম্পর্কে সচেতন থাকতে হবে।",
       "পরীক্ষা, ক্লাস টেস্ট ও অ্যাসাইনমেন্টের আগে যথাযথ প্রস্তুতি নিতে হবে।",
-      "বিদ্যালয়ের কোনো কার্যক্রম বা অনুষ্ঠানে অংশগ্রহণের আগে শিক্ষকের নির্দেশনা অনুসরণ করতে হবে।",
-      "কোনো তারিখ পরিবর্তন হলে বিদ্যালয়ের অফিসিয়াল নোটিশ অনুসরণ করতে হবে।",
+      "বিদ্যালয়ের কোনো কার্যক্রম বা অনুষ্ঠানে অংশগ্রহণের আগে শিক্ষকের নির্দেশনা অনুসরণ করতে হবে।",
+      "কোনো তারিখ পরিবর্তন হলে বিদ্যালয়ের অফিসিয়াল নোটিশ অনুসরণ করতে হবে।",
     ],
   },
   {
     title: "অভিভাবকদের নির্দেশনা",
     icon: <FaPeopleGroup />,
     points: [
-      "সন্তানের ক্লাস, পরীক্ষা, ছুটি ও বিদ্যালয়ের কার্যক্রমের তারিখ নিয়মিত পর্যবেক্ষণ করুন।",
-      "পরীক্ষার সময় শিক্ষার্থীর পড়াশোনার রুটিন ও প্রস্তুতিতে সহযোগিতা করুন।",
-      "অভিভাবক সভা ও গুরুত্বপূর্ণ বিদ্যালয় কার্যক্রমে অংশগ্রহণ করুন।",
-      "তারিখ পরিবর্তন বা নতুন ঘোষণা জানতে বিদ্যালয়ের নোটিশ নিয়মিত দেখুন।",
+      "সন্তানের ক্লাস, পরীক্ষা, ছুটি ও বিদ্যালয়ের কার্যক্রমের তারিখ নিয়মিত পর্যবেক্ষণ করুন।",
+      "পরীক্ষার সময় শিক্ষার্থী পড়াশোনার রুটিন ও প্রস্তুতিতে সহযোগিতা করুন।",
+      "অভিভাবক সভা ও গুরুত্বপূর্ণ বিদ্যালয় কার্যক্রমে অংশগ্রহণ করুন।",
+      "তারিখ পরিবর্তন বা নতুন ঘোষণা জানতে বিদ্যালয়ের নোটিশ নিয়মিত দেখুন।",
     ],
   },
 ];
@@ -334,7 +334,7 @@ const AcademicCalendarPage = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Academic Schedule
+            একাডেমিক রুটিন
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -345,14 +345,14 @@ const AcademicCalendarPage = () => {
 
           <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
             শিক্ষাবর্ষের ক্লাস, পরীক্ষা, ছুটি, অনুষ্ঠান ও গুরুত্বপূর্ণ
-            কার্যক্রমের সময়সূচি এক জায়গায় দেখার জন্য এই পেজ তৈরি করা হয়েছে।
+            কার্যক্রমের সময়সূচি এক জায়গায় দেখার জন্য এই পেজ তৈরি করা হয়েছে।
           </p>
 
           <Link
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোম পেজে ফিরে যান
           </Link>
         </div>
       </section>
@@ -392,7 +392,7 @@ const AcademicCalendarPage = () => {
                 </p>
 
                 <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                  শিক্ষাবর্ষের পরিকল্পিত সময়সূচি
+                  শিক্ষাবর্ষের পরিকল্পিত সময়সূচি
                 </h2>
 
                 <div className="mt-5 flex items-center gap-2">
@@ -404,11 +404,11 @@ const AcademicCalendarPage = () => {
               <div className="lg:col-span-8">
                 <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
                   একাডেমিক ক্যালেন্ডার শিক্ষার্থী, শিক্ষক ও অভিভাবকদের জন্য
-                  শিক্ষাবর্ষের গুরুত্বপূর্ণ কার্যক্রম সম্পর্কে পূর্ব ধারণা দেয়।
+                  শিক্ষাবর্ষের গুরুত্বপূর্ণ কার্যক্রম সম্পর্কে পূর্ব ধারণা দেয়।
                   ক্লাস, পরীক্ষা, ছুটি, অভিভাবক সভা, সহশিক্ষা কার্যক্রম ও
-                  ফলাফল প্রকাশের সম্ভাব্য সময়সূচি এই ক্যালেন্ডারে উল্লেখ থাকে।
-                  এতে শিক্ষার্থীরা নিয়মিত প্রস্তুতি নিতে পারে এবং অভিভাবকরাও
-                  সন্তানের পড়াশোনা ও কার্যক্রম পরিকল্পিতভাবে পর্যবেক্ষণ করতে
+                  ফলাফল প্রকাশের সম্ভাব্য সময়সূচি এই ক্যালেন্ডারে উল্লেখ থাকে।
+                  এতে শিক্ষার্থীরা নিয়মিত প্রস্তুতি নিতে পারে এবং অভিভাবকরাও
+                  সন্তানের পড়াশোনা ও কার্যক্রম পরিকল্পিতভাবে পর্যবেক্ষণ করতে
                   পারেন।
                 </p>
               </div>
@@ -422,11 +422,11 @@ const AcademicCalendarPage = () => {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              মাসভিত্তিক সময়সূচি
+              মাসভিত্তিক সময়সূচি
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Monthly Academic Calendar
+              মাসিক একাডেমিক ক্যালেন্ডার
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -448,7 +448,7 @@ const AcademicCalendarPage = () => {
 
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      Month
+                      মাস
                     </p>
 
                     <h3 className="mt-1 text-2xl font-black text-primary">
@@ -490,7 +490,7 @@ const AcademicCalendarPage = () => {
                 </p>
 
                 <h2 className="mt-2 text-3xl font-black text-primary">
-                  Important Dates
+                  গুরুত্বপূর্ণ তারিখসমূহ
                 </h2>
               </div>
 
@@ -498,7 +498,7 @@ const AcademicCalendarPage = () => {
                 href="#exam-schedule"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-color-primary px-5 py-3 text-sm font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
               >
-                Exam Schedule
+                পরীক্ষার সময়সূচি
                 <FaCalendarCheck />
               </Link>
             </div>
@@ -543,11 +543,11 @@ const AcademicCalendarPage = () => {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              পরীক্ষা সময়সূচি
+              পরীক্ষা সময়সূচি
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Exam Schedule
+              পরীক্ষার রুটিন
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -616,7 +616,7 @@ const AcademicCalendarPage = () => {
                           href="#"
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -667,7 +667,7 @@ const AcademicCalendarPage = () => {
                     href="#"
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -687,7 +687,7 @@ const AcademicCalendarPage = () => {
               </p>
 
               <h2 className="mt-2 text-3xl font-black text-primary">
-                Holiday List
+                ছুটির তালিকা
               </h2>
             </div>
 
@@ -728,7 +728,7 @@ const AcademicCalendarPage = () => {
               </p>
 
               <h2 className="mt-2 text-3xl font-black text-primary">
-                Events & Activities
+                অনুষ্ঠান ও কার্যক্রমসমূহ
               </h2>
             </div>
 
@@ -818,9 +818,9 @@ const AcademicCalendarPage = () => {
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
                   একাডেমিক ক্যালেন্ডার শিক্ষার্থী, শিক্ষক ও অভিভাবকদের
-                  সারা বছরের শিক্ষা কার্যক্রম সম্পর্কে সুস্পষ্ট ধারণা দেয়।
-                  সময়মতো প্রস্তুতি, নিয়মিত অংশগ্রহণ এবং বিদ্যালয়ের নির্দেশনা
-                  অনুসরণ করলে শিক্ষাবর্ষ আরও সুন্দর ও সফল হয়।
+                  সারা বছরের শিক্ষা কার্যক্রম সম্পর্কে সুস্পষ্ট ধারণা দেয়।
+                  সময়মতো প্রস্তুতি, নিয়মিত অংশগ্রহণ এবং বিদ্যালয়ের নির্দেশনা
+                  অনুসরন করলে শিক্ষাবর্ষ আরও সুন্দর ও সফল হয়।
                 </p>
               </div>
 
@@ -835,7 +835,7 @@ const AcademicCalendarPage = () => {
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    সময়সূচি মেনে চলা সফল শিক্ষাজীবনের গুরুত্বপূর্ণ অংশ।
+                    সময়সূচি মেনে চলা সফল শিক্ষাজীবনের গুরুত্বপূর্ণ অংশ।
                   </p>
                 </div>
               </div>

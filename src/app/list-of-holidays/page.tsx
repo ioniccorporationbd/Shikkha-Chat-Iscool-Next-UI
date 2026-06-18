@@ -83,31 +83,31 @@ const overviewItems: OverviewItem[] = [
 
 const holidayCategories: HolidayCategory[] = [
   {
-    title: "National Holidays",
+    title: "জাতীয় ছুটি",
     description:
       "জাতীয় দিবস, সরকারি ছুটি ও রাষ্ট্রীয় গুরুত্বপূর্ণ দিবস উপলক্ষে বিদ্যালয় বন্ধ থাকবে।",
     icon: <FaSchoolFlag />,
   },
   {
-    title: "Religious Holidays",
+    title: "ধর্মীয় ছুটি",
     description:
       "ঈদ, পূজা, বড়দিন, বুদ্ধ পূর্ণিমা ও অন্যান্য ধর্মীয় উৎসব উপলক্ষে নির্ধারিত ছুটি।",
     icon: <FaMoon />,
   },
   {
-    title: "School Vacations",
+    title: "বিদ্যালয়ের ছুটি",
     description:
       "গ্রীষ্মকালীন ছুটি, শীতকালীন ছুটি ও শিক্ষাবর্ষের নির্ধারিত দীর্ঘ বিরতি।",
     icon: <FaUmbrellaBeach />,
   },
   {
-    title: "Exam Breaks",
+    title: "পরীক্ষা বিরতি",
     description:
       "পরীক্ষা শেষে শিক্ষার্থীদের বিশ্রাম ও নতুন প্রস্তুতির জন্য নির্ধারিত বিরতি।",
     icon: <FaClipboardCheck />,
   },
   {
-    title: "Special Holidays",
+    title: "বিশেষ ছুটি",
     description:
       "বিশেষ পরিস্থিতি, সরকারি নির্দেশনা বা বিদ্যালয় কর্তৃপক্ষের সিদ্ধান্ত অনুযায়ী ছুটি।",
     icon: <FaBell />,
@@ -304,13 +304,13 @@ const guidelineSections: GuidelineSection[] = [
 const ListOfHolidaysPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Academic Schedule
+            একাডেমিক সময়সূচি
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -328,12 +328,12 @@ const ListOfHolidaysPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Holiday Overview */}
+      {/* ছুটির সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -357,7 +357,7 @@ const ListOfHolidaysPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
@@ -391,7 +391,7 @@ const ListOfHolidaysPage = () => {
         </div>
       </section>
 
-      {/* Holiday Categories */}
+      {/* ছুটির ধরন */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -400,7 +400,7 @@ const ListOfHolidaysPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Holiday Categories
+              ছুটির বিভাগসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -432,7 +432,7 @@ const ListOfHolidaysPage = () => {
         </div>
       </section>
 
-      {/* Monthly Holiday List */}
+      {/* মাসভিত্তিক ছুটির তালিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -442,7 +442,7 @@ const ListOfHolidaysPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Monthly Holiday List
+                মাসভিত্তিক ছুটির তালিকা
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -490,7 +490,7 @@ const ListOfHolidaysPage = () => {
         </div>
       </section>
 
-      {/* Holiday Table */}
+      {/* ছুটির বিস্তারিত তালিকা */}
       <section
         id="holiday-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -502,7 +502,7 @@ const ListOfHolidaysPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Holiday Table
+              ছুটির বিস্তারিত তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -578,7 +578,7 @@ const ListOfHolidaysPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -631,7 +631,7 @@ const ListOfHolidaysPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -641,7 +641,7 @@ const ListOfHolidaysPage = () => {
         </div>
       </section>
 
-      {/* Important Notes */}
+      {/* গুরুত্বপূর্ণ নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -650,7 +650,7 @@ const ListOfHolidaysPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Important Notes
+              গুরুত্বপূর্ণ নোট
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -682,7 +682,7 @@ const ListOfHolidaysPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -729,7 +729,7 @@ const ListOfHolidaysPage = () => {
         </div>
       </section>
 
-      {/* Closing Message */}
+      {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -762,7 +762,7 @@ const ListOfHolidaysPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Holiday Plan
+                    ছুটির পরিকল্পনা
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">

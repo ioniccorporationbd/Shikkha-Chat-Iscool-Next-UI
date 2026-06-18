@@ -1,21 +1,22 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import {
-  FaBook,
   FaBookOpen,
-  FaBookmark,
   FaCalendarCheck,
   FaCheck,
+  FaClipboardCheck,
   FaCloudArrowDown,
   FaFileLines,
   FaGraduationCap,
-  FaMagnifyingGlass,
-  FaNewspaper,
+  FaMobileScreenButton,
   FaPeopleGroup,
+  FaPersonChalkboard,
   FaRegClock,
   FaSchoolFlag,
+  FaShieldHalved,
   FaStar,
   FaUserGraduate,
+  FaUsersGear,
 } from "react-icons/fa6";
 
 type OverviewItem = {
@@ -24,31 +25,24 @@ type OverviewItem = {
   icon: ReactNode;
 };
 
-type BookCategory = {
+type PolicyCategory = {
   title: string;
   description: string;
   icon: ReactNode;
 };
 
-type FacilityItem = {
+type GuidelineItem = {
   title: string;
   description: string;
   icon: ReactNode;
 };
 
-type RuleItem = {
-  title: string;
-  description: string;
-  icon: ReactNode;
-};
-
-type BookItem = {
+type PolicyItem = {
   id: number;
-  bookName: string;
+  policyName: string;
   category: string;
-  author: string;
-  level: string;
-  status: string;
+  applicableFor: string;
+  importance: string;
   fileUrl: string;
 };
 
@@ -60,247 +54,214 @@ type GuidelineSection = {
 
 const overviewItems: OverviewItem[] = [
   {
-    title: "মোট বই",
-    value: "৫০০০+",
-    icon: <FaBook />,
+    title: "আচরণবিধি",
+    value: "১২+",
+    icon: <FaUsersGear />,
   },
   {
-    title: "বিষয়ভিত্তিক বই",
-    value: "২৫+",
-    icon: <FaBookOpen />,
-  },
-  {
-    title: "নিয়মিত পাঠক",
-    value: "৮০০+",
-    icon: <FaPeopleGroup />,
-  },
-  {
-    title: "লাইব্রেরি সময়",
-    value: "৯টা-৩টা",
-    icon: <FaRegClock />,
-  },
-];
-
-const bookCategories: BookCategory[] = [
-  {
-    title: "Text Books",
-    description:
-      "শ্রেণিভিত্তিক পাঠ্যবই, সহায়ক বই ও সিলেবাসভিত্তিক গুরুত্বপূর্ণ বই শিক্ষার্থীদের পড়াশোনায় সহায়তা করে।",
-    icon: <FaBookOpen />,
-  },
-  {
-    title: "Story Books",
-    description:
-      "গল্প, উপন্যাস, শিশু সাহিত্য ও নৈতিক শিক্ষামূলক বই শিক্ষার্থীদের কল্পনাশক্তি ও ভাষা দক্ষতা বাড়ায়।",
-    icon: <FaBookmark />,
-  },
-  {
-    title: "Science Books",
-    description:
-      "বিজ্ঞান, আবিষ্কার, প্রযুক্তি ও গবেষণামূলক বই শিক্ষার্থীদের অনুসন্ধিৎসা ও সৃজনশীল চিন্তা বাড়ায়।",
-    icon: <FaGraduationCap />,
-  },
-  {
-    title: "History Books",
-    description:
-      "ইতিহাস, মুক্তিযুদ্ধ, ঐতিহ্য ও বিশ্বসভ্যতা সম্পর্কিত বই শিক্ষার্থীদের জ্ঞানভান্ডার সমৃদ্ধ করে।",
-    icon: <FaFileLines />,
-  },
-  {
-    title: "Religious Books",
-    description:
-      "নৈতিকতা, মূল্যবোধ, ধর্মীয় শিক্ষা ও সুন্দর জীবন গঠনে সহায়ক বই লাইব্রেরিতে রাখা হয়।",
-    icon: <FaStar />,
-  },
-  {
-    title: "General Knowledge Books",
-    description:
-      "কুইজ, সাধারণ জ্ঞান, সমসাময়িক বিষয় ও প্রতিযোগিতামূলক পরীক্ষার প্রস্তুতির জন্য বই রয়েছে।",
-    icon: <FaMagnifyingGlass />,
-  },
-];
-
-const libraryFacilities: FacilityItem[] = [
-  {
-    title: "পাঠাগার কক্ষ",
-    description:
-      "শিক্ষার্থীদের শান্ত, পরিচ্ছন্ন ও মনোযোগী পরিবেশে বই পড়ার জন্য আলাদা পাঠাগার কক্ষ রয়েছে।",
-    icon: <FaBookOpen />,
-  },
-  {
-    title: "বই ধার নেওয়ার ব্যবস্থা",
-    description:
-      "লাইব্রেরি কার্ড ব্যবহার করে শিক্ষার্থীরা নির্ধারিত সময়ের জন্য বই ধার নিতে পারে।",
-    icon: <FaBookmark />,
-  },
-  {
-    title: "রেফারেন্স বই",
-    description:
-      "পরীক্ষা প্রস্তুতি, গবেষণা ও অতিরিক্ত জ্ঞান অর্জনের জন্য রেফারেন্স বই ব্যবহার করা যায়।",
-    icon: <FaFileLines />,
-  },
-  {
-    title: "পত্রিকা ও ম্যাগাজিন",
-    description:
-      "সমসাময়িক খবর, বিজ্ঞান, শিক্ষা ও সাধারণ জ্ঞান বৃদ্ধির জন্য পত্রিকা ও ম্যাগাজিনের ব্যবস্থা রয়েছে।",
-    icon: <FaNewspaper />,
-  },
-  {
-    title: "নীরব পাঠ পরিবেশ",
-    description:
-      "লাইব্রেরিতে নীরবতা, শৃঙ্খলা ও মনোযোগী পাঠের পরিবেশ বজায় রাখা হয়।",
+    title: "উপস্থিতি নীতিমালা",
+    value: "৯০%",
     icon: <FaRegClock />,
   },
   {
-    title: "শিক্ষার্থী সহায়তা",
-    description:
-      "বই নির্বাচন, রেফারেন্স খোঁজা ও পাঠাভ্যাস তৈরিতে শিক্ষক ও লাইব্রেরি দায়িত্বপ্রাপ্তরা সহায়তা করেন।",
-    icon: <FaPeopleGroup />,
+    title: "পরীক্ষা নীতিমালা",
+    value: "১০+",
+    icon: <FaClipboardCheck />,
+  },
+  {
+    title: "নিরাপত্তা নির্দেশিকা",
+    value: "২৪/৭",
+    icon: <FaShieldHalved />,
   },
 ];
 
-const libraryRules: RuleItem[] = [
+const policyCategories: PolicyCategory[] = [
   {
-    title: "নীরবতা বজায় রাখা",
+    title: "একাডেমিক নীতিমালা",
     description:
-      "লাইব্রেরির ভেতরে উচ্চস্বরে কথা বলা যাবে না, যাতে অন্য শিক্ষার্থীদের পড়াশোনায় বিঘ্ন না ঘটে।",
+      "পাঠদান, হোমওয়ার্ক, অ্যাসাইনমেন্ট, ক্লাস কার্যক্রম ও শিক্ষার্থীর একাডেমিক অগ্রগতি সম্পর্কিত নীতিমালা।",
+    icon: <FaBookOpen />,
+  },
+  {
+    title: "উপস্থিতি নীতিমালা",
+    description:
+      "নিয়মিত উপস্থিতি, সময়মতো বিদ্যালয়ে আসা, অনুপস্থিতির কারণ জানানো এবং উপস্থিতির রেকর্ড সংক্রান্ত নির্দেশনা।",
     icon: <FaRegClock />,
   },
   {
-    title: "বই যত্নসহকারে ব্যবহার",
+    title: "শৃঙ্খলা নীতিমালা",
     description:
-      "বইয়ের পৃষ্ঠা ছেঁড়া, দাগ দেওয়া, ভাঁজ করা বা নষ্ট করা সম্পূর্ণ নিষিদ্ধ।",
-    icon: <FaBook />,
+      "শ্রেণিকক্ষ, ক্যাম্পাস, সহপাঠী ও শিক্ষকদের প্রতি সম্মানজনক আচরণ এবং শৃঙ্খলা বজায় রাখার নীতিমালা।",
+    icon: <FaUsersGear />,
   },
   {
-    title: "সময়মতো বই ফেরত",
+    title: "পরীক্ষা নীতিমালা",
     description:
-      "ধার নেওয়া বই নির্ধারিত সময়ের মধ্যে লাইব্রেরিতে ফেরত দিতে হবে।",
-    icon: <FaCalendarCheck />,
+      "পরীক্ষার সময়সূচি, পরীক্ষার হলে আচরণ, নকলমুক্ত পরীক্ষা ও মূল্যায়ন পদ্ধতি সম্পর্কিত নিয়ম।",
+    icon: <FaClipboardCheck />,
   },
   {
-    title: "লাইব্রেরি কার্ড ব্যবহার",
+    title: "নিরাপত্তা নীতিমালা",
     description:
-      "বই ধার নেওয়া ও ফেরত দেওয়ার সময় লাইব্রেরি কার্ড বা শিক্ষার্থীর পরিচয় ব্যবহার করতে হবে।",
+      "বিদ্যালয় ক্যাম্পাসে নিরাপদ চলাচল, জরুরি পরিস্থিতি, স্বাস্থ্য সচেতনতা ও নিরাপত্তা নির্দেশনা।",
+    icon: <FaShieldHalved />,
+  },
+  {
+    title: "ডিজিটাল ডিভাইস নীতিমালা",
+    description:
+      "মোবাইল, ইন্টারনেট, কম্পিউটার, অনলাইন ক্লাস ও প্রযুক্তি ব্যবহারের দায়িত্বশীল নিয়মনীতি।",
+    icon: <FaMobileScreenButton />,
+  },
+];
+
+const importantGuidelines: GuidelineItem[] = [
+  {
+    title: "সময়মতো বিদ্যালয়ে উপস্থিত হওয়া",
+    description:
+      "প্রতিদিন নির্ধারিত সময়ের আগে বিদ্যালয়ে উপস্থিত হতে হবে এবং ক্লাস শুরু হওয়ার পর প্রবেশ এড়াতে হবে।",
+    icon: <FaRegClock />,
+  },
+  {
+    title: "ইউনিফর্ম ও পরিচয়পত্র ব্যবহার",
+    description:
+      "পরিচ্ছন্ন ইউনিফর্ম, জুতা এবং বিদ্যালয়ের পরিচয়পত্র ব্যবহার করে বিদ্যালয়ে আসতে হবে।",
     icon: <FaUserGraduate />,
   },
+  {
+    title: "ক্লাসে শৃঙ্খলা বজায় রাখা",
+    description:
+      "ক্লাস চলাকালীন মনোযোগ, নীরবতা, শিক্ষক নির্দেশনা এবং সহপাঠীর শেখার পরিবেশ বজায় রাখতে হবে।",
+    icon: <FaPersonChalkboard />,
+  },
+  {
+    title: "পরীক্ষায় সততা বজায় রাখা",
+    description:
+      "পরীক্ষার সময় নকল, অসদুপায় বা অন্যের সহায়তা নেওয়া থেকে বিরত থাকতে হবে।",
+    icon: <FaClipboardCheck />,
+  },
+  {
+    title: "বিদ্যালয়ের সম্পদ সংরক্ষণ",
+    description:
+      "বই, বেঞ্চ, বোর্ড, ল্যাব সামগ্রী, লাইব্রেরি ও ক্যাম্পাসের সম্পদ যত্নসহকারে ব্যবহার করতে হবে।",
+    icon: <FaSchoolFlag />,
+  },
+  {
+    title: "নিরাপত্তা নির্দেশনা মানা",
+    description:
+      "জরুরি পরিস্থিতি, বিরতি, ল্যাব, সিঁড়ি ও ক্যাম্পাস চলাচলের সময় নিরাপত্তা নির্দেশনা মেনে চলতে হবে।",
+    icon: <FaShieldHalved />,
+  },
 ];
 
-const bookItems: BookItem[] = [
+const policyItems: PolicyItem[] = [
   {
     id: 1,
-    bookName: "বাংলা ব্যাকরণ ও রচনা",
-    category: "Text Book",
-    author: "শিক্ষা বোর্ড",
-    level: "ষষ্ঠ - দশম",
-    status: "Available",
+    policyName: "একাডেমিক নীতিমালা",
+    category: "একাডেমিক",
+    applicableFor: "শিক্ষার্থী ও শিক্ষক",
+    importance: "অতি গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
   {
     id: 2,
-    bookName: "English Grammar Practice",
-    category: "Reference",
-    author: "Academic Panel",
-    level: "ষষ্ঠ - দশম",
-    status: "Available",
+    policyName: "উপস্থিতি নীতিমালা",
+    category: "উপস্থিতি",
+    applicableFor: "শিক্ষার্থী",
+    importance: "গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
   {
     id: 3,
-    bookName: "গণিত অনুশীলন সহায়িকা",
-    category: "Text Book",
-    author: "ম্যাথ টিম",
-    level: "চতুর্থ - দশম",
-    status: "Available",
+    policyName: "আচরণ ও শৃঙ্খলা নীতিমালা",
+    category: "শৃঙ্খলা",
+    applicableFor: "সকল শিক্ষার্থী",
+    importance: "অতি গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
   {
     id: 4,
-    bookName: "বিজ্ঞান ও আবিষ্কার",
-    category: "Science",
-    author: "বিজ্ঞান লেখক দল",
-    level: "ষষ্ঠ - দশম",
-    status: "Available",
+    policyName: "পরীক্ষা নীতিমালা",
+    category: "পরীক্ষা",
+    applicableFor: "পরীক্ষার্থী",
+    importance: "অতি গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
   {
     id: 5,
-    bookName: "মুক্তিযুদ্ধের ইতিহাস",
-    category: "History",
-    author: "ইতিহাস গবেষণা দল",
-    level: "সকল শ্রেণি",
-    status: "Available",
+    policyName: "নিরাপত্তা নির্দেশিকা",
+    category: "নিরাপত্তা",
+    applicableFor: "শিক্ষার্থী, শিক্ষক ও অভিভাবক",
+    importance: "গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
   {
     id: 6,
-    bookName: "সাধারণ জ্ঞান সংগ্রহ",
-    category: "General Knowledge",
-    author: "Knowledge Team",
-    level: "তৃতীয় - দশম",
-    status: "Available",
+    policyName: "ডিজিটাল ডিভাইস ব্যবহার নীতিমালা",
+    category: "প্রযুক্তি",
+    applicableFor: "শিক্ষার্থী",
+    importance: "গুরুত্বপূর্ণ",
     fileUrl: "#",
   },
 ];
 
 const guidelineSections: GuidelineSection[] = [
   {
-    title: "শিক্ষার্থীদের নির্দেশনা",
+    title: "শিক্ষার্থীদের নীতিমালা",
     icon: <FaUserGraduate />,
     points: [
-      "নিয়মিত লাইব্রেরিতে গিয়ে পাঠ্যবইয়ের পাশাপাশি গল্প, বিজ্ঞান, ইতিহাস ও সাধারণ জ্ঞানের বই পড়তে হবে।",
-      "বই পরিষ্কার রাখতে হবে এবং বইয়ের কোনো অংশ নষ্ট করা যাবে না।",
-      "লাইব্রেরির ভেতরে নীরবতা, শৃঙ্খলা ও পরিচ্ছন্নতা বজায় রাখতে হবে।",
-      "ধার নেওয়া বই নির্ধারিত সময়ের মধ্যে ফেরত দিতে হবে।",
-      "পড়া বই থেকে গুরুত্বপূর্ণ তথ্য নোট করে নিজের জ্ঞানভান্ডার সমৃদ্ধ করতে হবে।",
+      "প্রতিদিন সময়মতো বিদ্যালয়ে উপস্থিত থাকতে হবে এবং নিয়মিত ক্লাসে অংশগ্রহণ করতে হবে।",
+      "শিক্ষক, সহপাঠী, কর্মচারী এবং বিদ্যালয়ের সকল সদস্যের প্রতি সম্মানজনক আচরণ করতে হবে।",
+      "হোমওয়ার্ক, অ্যাসাইনমেন্ট, প্রজেক্ট ও ক্লাসওয়ার্ক সময়মতো সম্পন্ন করতে হবে।",
+      "পরীক্ষায় সততা বজায় রাখতে হবে এবং কোনো ধরনের অসদুপায় অবলম্বন করা যাবে না।",
+      "মোবাইল বা ডিজিটাল ডিভাইস বিদ্যালয়ের অনুমতি ছাড়া ব্যবহার করা যাবে না।",
     ],
   },
   {
-    title: "অভিভাবকদের নির্দেশনা",
+    title: "অভিভাবকদের নির্দেশিকা",
     icon: <FaPeopleGroup />,
     points: [
-      "সন্তানকে নিয়মিত বই পড়তে উৎসাহ দিন এবং বাসায় পাঠাভ্যাস তৈরিতে সহায়তা করুন।",
-      "পাঠ্যবইয়ের পাশাপাশি গল্প, বিজ্ঞান, ইতিহাস ও শিক্ষামূলক বই পড়তে উৎসাহিত করুন।",
-      "সন্তান লাইব্রেরি থেকে বই ধার নিলে সময়মতো ফেরত দেওয়ার বিষয়ে সচেতন করুন।",
-      "মোবাইল বা স্ক্রিন টাইম কমিয়ে বই পড়ার সময় নির্ধারণে সহযোগিতা করুন।",
-      "সন্তানের আগ্রহ অনুযায়ী উপযুক্ত বই নির্বাচন করতে শিক্ষক বা লাইব্রেরি দায়িত্বপ্রাপ্তদের পরামর্শ নিতে পারেন।",
+      "সন্তানের নিয়মিত উপস্থিতি, সময়ানুবর্তিতা ও পড়াশোনার অগ্রগতি পর্যবেক্ষণ করুন।",
+      "বিদ্যালয়ের নোটিশ, পরীক্ষার সময়সূচি, ছুটি ও গুরুত্বপূর্ণ নির্দেশনা নিয়মিত অনুসরণ করুন।",
+      "শ্রেণি শিক্ষক ও বিষয় শিক্ষকের সঙ্গে সন্তানের পড়াশোনা ও আচরণ সম্পর্কে যোগাযোগ রাখুন।",
+      "বিদ্যালয়ের নীতিমালা মেনে চলতে সন্তানকে উৎসাহিত করুন এবং প্রয়োজনীয় সহায়তা দিন।",
+      "কোনো সমস্যা হলে সরাসরি বিদ্যালয় কর্তৃপক্ষ বা দায়িত্বপ্রাপ্ত শিক্ষকের সঙ্গে যোগাযোগ করুন।",
     ],
   },
 ];
 
-const LibraryPage = () => {
+const PoliciesGuidelinesPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            School Library
+            বিদ্যালয়ের নিয়মনীতি
           </p>
 
-          <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
-            লাইব্রেরি
+          <h1 className="mt-5 text-[36px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
+            নীতিমালা ও নির্দেশিকা
           </h1>
 
           <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-color-primary" />
 
           <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            শিক্ষার্থীদের পাঠাভ্যাস, জ্ঞানচর্চা, গবেষণা ও সৃজনশীল চিন্তা
-            বিকাশে বিদ্যালয়ের লাইব্রেরি সুবিধা।
+            বিদ্যালয়ের একাডেমিক, শৃঙ্খলা, নিরাপত্তা, উপস্থিতি, পরীক্ষা ও
+            অভিভাবক-শিক্ষার্থী সম্পর্কিত গুরুত্বপূর্ণ নীতিমালা ও নির্দেশিকা।
           </p>
 
           <Link
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Library Overview */}
+      {/* নীতিমালার সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -324,7 +285,7 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
@@ -335,7 +296,7 @@ const LibraryPage = () => {
                 </p>
 
                 <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                  বই পড়া জ্ঞানের দরজা খুলে দেয়
+                  নিয়মনীতি মানলেই সুন্দর শিক্ষার পরিবেশ
                 </h2>
 
                 <div className="mt-5 flex items-center gap-2">
@@ -346,11 +307,13 @@ const LibraryPage = () => {
 
               <div className="lg:col-span-8">
                 <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  বিদ্যালয়ের লাইব্রেরি শিক্ষার্থীদের জ্ঞানচর্চা, পাঠাভ্যাস,
-                  গবেষণা, সৃজনশীল চিন্তা এবং ভাষা দক্ষতা বিকাশে গুরুত্বপূর্ণ
-                  ভূমিকা রাখে। পাঠ্যবইয়ের পাশাপাশি গল্প, বিজ্ঞান, ইতিহাস,
-                  ধর্মীয় শিক্ষা, সাধারণ জ্ঞান ও রেফারেন্স বই শিক্ষার্থীদের
-                  শেখাকে আরও বিস্তৃত ও আনন্দদায়ক করে তোলে।
+                  বিদ্যালয়ের নীতিমালা ও নির্দেশিকা শিক্ষার্থী, শিক্ষক,
+                  অভিভাবক এবং বিদ্যালয় কর্তৃপক্ষের মধ্যে দায়িত্ববোধ, শৃঙ্খলা ও
+                  সহযোগিতা নিশ্চিত করে। একটি নিরাপদ, পরিচ্ছন্ন, নৈতিক ও
+                  শিক্ষাবান্ধব পরিবেশ গড়ে তুলতে নিয়মনীতি অনুসরণ করা অত্যন্ত
+                  গুরুত্বপূর্ণ। এই পেজে বিদ্যালয়ের গুরুত্বপূর্ণ একাডেমিক,
+                  উপস্থিতি, পরীক্ষা, আচরণ, নিরাপত্তা ও প্রযুক্তি ব্যবহার
+                  সম্পর্কিত নির্দেশনা তুলে ধরা হয়েছে।
                 </p>
               </div>
             </div>
@@ -358,7 +321,7 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Featured Library */}
+      {/* প্রধান নীতিমালা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -368,32 +331,32 @@ const LibraryPage = () => {
                   <FaStar className="text-sm" />
 
                   <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Reading Culture
+                    মূল নির্দেশিকা
                   </p>
                 </div>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  পাঠাভ্যাস গড়ে তুলতে লাইব্রেরির ভূমিকা
+                  শৃঙ্খলা, নিরাপত্তা ও সততা আমাদের প্রধান নীতি
                 </h2>
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  নিয়মিত বই পড়া শিক্ষার্থীর ভাষা দক্ষতা, চিন্তাশক্তি,
-                  কল্পনাশক্তি ও আত্মবিশ্বাস বৃদ্ধি করে। বিদ্যালয়ের লাইব্রেরি
-                  শিক্ষার্থীদের জন্য এমন একটি পরিবেশ তৈরি করে, যেখানে তারা
-                  নিজের আগ্রহ অনুযায়ী বই নির্বাচন করে জ্ঞান অর্জন করতে পারে।
+                  বিদ্যালয়ের প্রতিটি শিক্ষার্থীকে সময়ানুবর্তিতা, সততা,
+                  সম্মানজনক আচরণ এবং দায়িত্বশীলতার মাধ্যমে শিক্ষার পরিবেশ
+                  উন্নত করতে উৎসাহিত করা হয়। নিয়মনীতি মেনে চললে শিক্ষার্থী
+                  শুধু ভালো ফলাফল নয়, ভালো মানুষ হিসেবেও গড়ে ওঠে।
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    বই: ৫০০০+
+                    আচরণ: সম্মানজনক
                   </span>
 
                   <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    সময়: সকাল ৯টা - বিকাল ৩টা
+                    পরীক্ষা: নকলমুক্ত
                   </span>
 
                   <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    সুবিধা: বই ধার
+                    উপস্থিতি: নিয়মিত
                   </span>
                 </div>
               </div>
@@ -401,15 +364,16 @@ const LibraryPage = () => {
               <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
                 <div className="rounded-[28px] bg-page-primary p-6 text-center shadow-lg">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
-                    <FaBookOpen />
+                    <FaShieldHalved />
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Read More
+                    নিরাপদ ক্যাম্পাস
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    বই পড়ার অভ্যাস শিক্ষার্থীর শেখাকে গভীর ও আনন্দদায়ক করে।
+                    নিয়মনীতি, নিরাপত্তা ও দায়িত্বশীল আচরণই সুন্দর ক্যাম্পাসের
+                    ভিত্তি।
                   </p>
                 </div>
               </div>
@@ -418,16 +382,16 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Book Categories */}
+      {/* নীতিমালার বিভাগ */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              বইয়ের বিভাগ
+              নীতিমালার বিভাগ
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Book Categories
+              নীতিমালার বিভাগসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -437,7 +401,7 @@ const LibraryPage = () => {
           </div>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {bookCategories.map((category) => (
+            {policyCategories.map((category) => (
               <article
                 key={category.title}
                 className="group rounded-[26px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
@@ -459,17 +423,17 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Library Facilities */}
+      {/* গুরুত্বপূর্ণ নির্দেশিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
             <div className="mb-8 text-center">
               <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                লাইব্রেরি সুবিধা
+                গুরুত্বপূর্ণ নির্দেশিকা
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Library Facilities
+                গুরুত্বপূর্ণ নির্দেশনাসমূহ
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -479,21 +443,21 @@ const LibraryPage = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {libraryFacilities.map((facility) => (
+              {importantGuidelines.map((item) => (
                 <article
-                  key={facility.title}
+                  key={item.title}
                   className="group rounded-[24px] border border-soft bg-page-secondary p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
                 >
                   <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-page-primary group-hover:text-brand-primary">
-                    {facility.icon}
+                    {item.icon}
                   </div>
 
                   <h3 className="mt-5 text-xl font-black leading-tight text-primary transition-colors duration-500 group-hover:text-inverse">
-                    {facility.title}
+                    {item.title}
                   </h3>
 
                   <p className="mt-3 text-sm font-semibold leading-7 text-secondary transition-colors duration-500 group-hover:text-inverse/80">
-                    {facility.description}
+                    {item.description}
                   </p>
                 </article>
               ))}
@@ -502,57 +466,19 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Library Rules */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
+      {/* নীতিমালার তালিকা */}
+      <section
+        id="policy-table"
+        className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
+      >
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              লাইব্রেরি নিয়ম
+              নীতিমালা তালিকা
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Library Rules
-            </h2>
-
-            <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-              <span className="h-1 w-16 rounded-full bg-color-primary" />
-              <span className="h-1 w-7 rounded-full bg-color-secondary" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {libraryRules.map((rule) => (
-              <article
-                key={rule.title}
-                className="group rounded-[26px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
-                  {rule.icon}
-                </div>
-
-                <h3 className="mt-5 text-xl font-black leading-tight text-primary">
-                  {rule.title}
-                </h3>
-
-                <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
-                  {rule.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Book List Table */}
-      <section id="book-list" className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              বইয়ের তালিকা
-            </p>
-
-            <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Book List Table
+              নীতিমালার বিস্তারিত তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -567,19 +493,16 @@ const LibraryPage = () => {
                 <thead>
                   <tr className="border-b border-soft bg-page-secondary">
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      বইয়ের নাম
+                      নীতিমালার নাম
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
                       বিভাগ
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      লেখক
+                      প্রযোজ্য ব্যক্তি
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      শ্রেণি / স্তর
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      অবস্থা
+                      গুরুত্ব
                     </th>
                     <th className="px-5 py-4 text-right text-sm font-black text-primary">
                       বিস্তারিত
@@ -588,47 +511,43 @@ const LibraryPage = () => {
                 </thead>
 
                 <tbody>
-                  {bookItems.map((book) => (
+                  {policyItems.map((item) => (
                     <tr
-                      key={book.id}
+                      key={item.id}
                       className="border-b border-soft transition-all duration-500 hover:bg-page-secondary"
                     >
                       <td className="px-5 py-5">
                         <div className="flex items-center gap-3">
                           <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-color-secondary text-primary">
-                            <FaBookOpen />
+                            <FaFileLines />
                           </span>
 
                           <p className="text-sm font-black leading-6 text-primary">
-                            {book.bookName}
+                            {item.policyName}
                           </p>
                         </div>
                       </td>
 
                       <td className="px-5 py-5">
                         <span className="inline-flex items-center rounded-full bg-page-secondary px-3 py-2 text-xs font-black text-brand-primary">
-                          {book.category}
+                          {item.category}
                         </span>
                       </td>
 
                       <td className="px-5 py-5 text-sm font-bold text-secondary">
-                        {book.author}
-                      </td>
-
-                      <td className="px-5 py-5 text-sm font-bold text-secondary">
-                        {book.level}
+                        {item.applicableFor}
                       </td>
 
                       <td className="px-5 py-5 text-sm font-black text-secondary">
-                        {book.status}
+                        {item.importance}
                       </td>
 
                       <td className="px-5 py-5 text-right">
                         <Link
-                          href={book.fileUrl}
+                          href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -639,51 +558,46 @@ const LibraryPage = () => {
             </div>
 
             <div className="grid grid-cols-1 gap-4 p-4 lg:hidden">
-              {bookItems.map((book) => (
+              {policyItems.map((item) => (
                 <div
-                  key={book.id}
+                  key={item.id}
                   className="rounded-[22px] border border-soft bg-page-secondary p-4"
                 >
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                        {book.category}
+                        {item.category}
                       </p>
 
                       <h3 className="mt-2 text-xl font-black leading-tight text-primary">
-                        {book.bookName}
+                        {item.policyName}
                       </h3>
                     </div>
 
                     <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-color-secondary text-primary">
-                      <FaBookOpen />
+                      <FaFileLines />
                     </div>
                   </div>
 
                   <div className="mt-4 space-y-2">
                     <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">লেখক:</span>{" "}
-                      {book.author}
-                    </p>
-
-                    <p className="text-sm font-semibold text-secondary">
                       <span className="font-black text-primary">
-                        শ্রেণি / স্তর:
+                        প্রযোজ্য ব্যক্তি:
                       </span>{" "}
-                      {book.level}
+                      {item.applicableFor}
                     </p>
 
                     <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">অবস্থা:</span>{" "}
-                      {book.status}
+                      <span className="font-black text-primary">গুরুত্ব:</span>{" "}
+                      {item.importance}
                     </p>
                   </div>
 
                   <Link
-                    href={book.fileUrl}
+                    href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -693,7 +607,7 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* শিক্ষার্থী ও অভিভাবক নির্দেশিকা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -709,7 +623,7 @@ const LibraryPage = () => {
 
                   <div>
                     <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      নির্দেশনা
+                      নির্দেশিকা
                     </p>
 
                     <h3 className="mt-2 text-xl font-black leading-tight text-primary sm:text-2xl">
@@ -740,7 +654,7 @@ const LibraryPage = () => {
         </div>
       </section>
 
-      {/* Closing Message */}
+      {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -755,29 +669,30 @@ const LibraryPage = () => {
                 </div>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  লাইব্রেরি শিক্ষার্থীর জ্ঞানের ভান্ডার
+                  নিয়মনীতি মানলেই নিরাপদ ও সুন্দর বিদ্যালয়
                 </h2>
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  নিয়মিত বই পড়া শিক্ষার্থীর চিন্তা, ভাষা, কল্পনা ও নৈতিক
-                  বোধকে সমৃদ্ধ করে। বিদ্যালয়ের লাইব্রেরি শুধু বই সংরক্ষণের
-                  জায়গা নয়, এটি শিক্ষার্থীর জ্ঞান, গবেষণা ও সৃজনশীলতার বিকাশের
-                  একটি গুরুত্বপূর্ণ কেন্দ্র।
+                  বিদ্যালয়ের নীতিমালা ও নির্দেশিকা মেনে চললে শিক্ষার্থী,
+                  শিক্ষক ও অভিভাবকের মধ্যে সুন্দর সমন্বয় তৈরি হয়। শৃঙ্খলা,
+                  সততা, নিরাপত্তা ও দায়িত্বশীলতার মাধ্যমে একটি আদর্শ
+                  শিক্ষাবান্ধব পরিবেশ গড়ে তোলা সম্ভব।
                 </p>
               </div>
 
               <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
                 <div className="rounded-[28px] bg-page-primary p-6 text-center shadow-lg">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
-                    <FaSchoolFlag />
+                    <FaGraduationCap />
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Knowledge Hub
+                    সুন্দর শিক্ষাজীবন
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    বই পড়ুন, জানুন, ভাবুন এবং নিজেকে সমৃদ্ধ করুন।
+                    নিয়ম, দায়িত্ব ও সম্মান বজায় রাখাই সুন্দর শিক্ষাজীবনের
+                    ভিত্তি।
                   </p>
                 </div>
               </div>
@@ -789,4 +704,4 @@ const LibraryPage = () => {
   );
 };
 
-export default LibraryPage;
+export default PoliciesGuidelinesPage;

@@ -54,27 +54,27 @@ type Instruction = {
 
 const summaryCards: SummaryCard[] = [
   {
-    title: "Published Results",
-    value: "08",
-    description: "Recruitment results published",
+    title: "প্রকাশিত ফলাফল",
+    value: "০৮",
+    description: "নিয়োগ পরীক্ষার ফলাফল প্রকাশিত হয়েছে",
     icon: <FaFileLines />,
   },
   {
-    title: "Written Exam",
-    value: "04",
-    description: "Written exam result notices",
+    title: "লিখিত পরীক্ষা",
+    value: "০৪",
+    description: "লিখিত পরীক্ষার ফলাফল নোটিশ",
     icon: <FaPenToSquare />,
   },
   {
-    title: "Viva Result",
-    value: "03",
-    description: "Viva and practical exam results",
+    title: "মৌখিক পরীক্ষার ফলাফল",
+    value: "০৩",
+    description: "মৌখিক ও ব্যবহারিক পরীক্ষার ফলাফল",
     icon: <FaPeopleGroup />,
   },
   {
-    title: "Final Selection",
-    value: "01",
-    description: "Final selected candidate list",
+    title: "চূড়ান্ত নির্বাচন",
+    value: "০১",
+    description: "চূড়ান্ত নির্বাচিত প্রার্থীর তালিকা",
     icon: <FaAward />,
   },
 ];
@@ -82,46 +82,46 @@ const summaryCards: SummaryCard[] = [
 const resultNotices: ResultNotice[] = [
   {
     id: 1,
-    title: "Assistant Teacher Recruitment Final Result 2026",
+    title: "সহকারী শিক্ষক নিয়োগের চূড়ান্ত ফলাফল ২০২৬",
     circularId: "REC-2026-01",
-    examType: "Final Selection",
-    publishDate: "15 March 2026",
+    examType: "চূড়ান্ত নির্বাচন",
+    publishDate: "১৫ মার্চ ২০২৬",
     status: "Final",
     downloadUrl: "#",
   },
   {
     id: 2,
-    title: "Assistant Teacher Viva Result 2026",
+    title: "সহকারী শিক্ষক মৌখিক পরীক্ষার ফলাফল ২০২৬",
     circularId: "REC-2026-01",
-    examType: "Viva Result",
-    publishDate: "10 March 2026",
+    examType: "মৌখিক পরীক্ষার ফলাফল",
+    publishDate: "১০ মার্চ ২০২৬",
     status: "Viva",
     downloadUrl: "#",
   },
   {
     id: 3,
-    title: "Office Assistant Written Exam Result",
+    title: "অফিস সহকারী লিখিত পরীক্ষার ফলাফল",
     circularId: "REC-2026-02",
-    examType: "Written Exam",
-    publishDate: "05 March 2026",
+    examType: "লিখিত পরীক্ষা",
+    publishDate: "০৫ মার্চ ২০২৬",
     status: "Written",
     downloadUrl: "#",
   },
   {
     id: 4,
-    title: "Computer Operator Recruitment Result",
+    title: "কম্পিউটার অপারেটর নিয়োগের ফলাফল",
     circularId: "REC-2026-03",
-    examType: "Practical & Viva",
-    publishDate: "28 February 2026",
+    examType: "ব্যবহারিক ও মৌখিক পরীক্ষা",
+    publishDate: "২৮ ফেব্রুয়ারি ২০২৬",
     status: "Published",
     downloadUrl: "#",
   },
   {
     id: 5,
-    title: "Account Assistant Written Exam Result",
+    title: "হিসাব সহকারী লিখিত পরীক্ষার ফলাফল",
     circularId: "REC-2026-04",
-    examType: "Written Exam",
-    publishDate: "20 February 2026",
+    examType: "লিখিত পরীক্ষা",
+    publishDate: "২০ ফেব্রুয়ারি ২০২৬",
     status: "Written",
     downloadUrl: "#",
   },
@@ -130,77 +130,77 @@ const resultNotices: ResultNotice[] = [
 const candidates: Candidate[] = [
   {
     id: 1,
-    roll: "20260101",
-    name: "Md. Hasan Mahmud",
-    post: "Assistant Teacher - Mathematics",
+    roll: "২০২৬০১০১",
+    name: "মোঃ হাসান মাহমুদ",
+    post: "সহকারী শিক্ষক - গণিত",
     result: "Selected",
-    remarks: "Final selected",
+    remarks: "চূড়ান্তভাবে নির্বাচিত",
   },
   {
     id: 2,
-    roll: "20260108",
-    name: "Nusrat Jahan",
-    post: "Assistant Teacher - Bangla",
+    roll: "২০২৬০১০৮",
+    name: "নুসরাত জাহান",
+    post: "সহকারী শিক্ষক - বাংলা",
     result: "Selected",
-    remarks: "Final selected",
+    remarks: "চূড়ান্তভাবে নির্বাচিত",
   },
   {
     id: 3,
-    roll: "20260115",
-    name: "Farhana Akter",
-    post: "Assistant Teacher - English",
+    roll: "২০২৬০১১৫",
+    name: "ফারহানা আক্তার",
+    post: "সহকারী শিক্ষক - ইংরেজি",
     result: "Qualified",
-    remarks: "Qualified for viva",
+    remarks: "মৌখিক পরীক্ষার জন্য উত্তীর্ণ",
   },
   {
     id: 4,
-    roll: "20260122",
-    name: "Md. Arif Hossain",
-    post: "Computer Operator",
+    roll: "২০২৬০১২২",
+    name: "মোঃ আরিফ হোসেন",
+    post: "কম্পিউটার অপারেটর",
     result: "Selected",
-    remarks: "Practical passed",
+    remarks: "ব্যবহারিক পরীক্ষায় উত্তীর্ণ",
   },
   {
     id: 5,
-    roll: "20260129",
-    name: "Sharmin Sultana",
-    post: "Office Assistant",
+    roll: "২০২৬০১২৯",
+    name: "শারমিন সুলতানা",
+    post: "অফিস সহকারী",
     result: "Waiting",
-    remarks: "Waiting list",
+    remarks: "অপেক্ষমাণ তালিকা",
   },
   {
     id: 6,
-    roll: "20260136",
-    name: "Rakibul Islam",
-    post: "Account Assistant",
+    roll: "২০২৬০১৩৬",
+    name: "রাকিবুল ইসলাম",
+    post: "হিসাব সহকারী",
     result: "Qualified",
-    remarks: "Written passed",
+    remarks: "লিখিত পরীক্ষায় উত্তীর্ণ",
   },
 ];
 
 const instructions: Instruction[] = [
   {
-    title: "Document Verification",
+    title: "ডকুমেন্ট যাচাই",
     description:
       "নির্বাচিত প্রার্থীদের নির্ধারিত তারিখে মূল সনদ, জাতীয় পরিচয়পত্র এবং প্রয়োজনীয় কাগজপত্রসহ উপস্থিত হতে হবে।",
     icon: <FaIdCard />,
   },
   {
-    title: "Viva Schedule",
+    title: "মৌখিক পরীক্ষার সময়সূচি",
     description:
-      "লিখিত পরীক্ষায় উত্তীর্ণ প্রার্থীদের viva schedule notice board এবং website-এ প্রকাশ করা হবে।",
+      "লিখিত পরীক্ষায় উত্তীর্ণ প্রার্থীদের মৌখিক পরীক্ষার সময়সূচি নোটিশ বোর্ড এবং ওয়েবসাইটে প্রকাশ করা হবে।",
     icon: <FaCalendarCheck />,
   },
   {
-    title: "Joining Instruction",
+    title: "যোগদানের নির্দেশনা",
     description:
-      "চূড়ান্তভাবে নির্বাচিত প্রার্থীদের joining letter সংগ্রহের জন্য বিদ্যালয় অফিসে যোগাযোগ করতে হবে।",
+      "চূড়ান্তভাবে নির্বাচিত প্রার্থীদের যোগদানপত্র সংগ্রহের জন্য বিদ্যালয় অফিসে যোগাযোগ করতে হবে।",
     icon: <FaClipboardCheck />,
   },
   {
-    title: "Official Verification",
+    title: "অফিসিয়াল যাচাই",
     description:
-      "ফলাফল যাচাইয়ের ক্ষেত্রে বিদ্যালয়ের official notice এবং অফিসের তথ্যই চূড়ান্ত বলে গণ্য হবে।",
+      "ফলাফল যাচাইয়ের ক্ষেত্রে বিদ্যালয়ের অফিসিয়াল নোটিশ এবং অফিসের তথ্যই চূড়ান্ত বলে গণ্য হবে।",
     icon: <FaShieldHalved />,
   },
 ];
@@ -218,16 +218,29 @@ const candidateStatusStyle: Record<Candidate["result"], string> = {
   Qualified: "bg-blue-soft text-blue border-blue-soft",
 };
 
+const statusLabel: Record<ResultNotice["status"], string> = {
+  Published: "প্রকাশিত",
+  Final: "চূড়ান্ত",
+  Viva: "মৌখিক",
+  Written: "লিখিত",
+};
+
+const candidateResultLabel: Record<Candidate["result"], string> = {
+  Selected: "নির্বাচিত",
+  Waiting: "অপেক্ষমাণ",
+  Qualified: "উত্তীর্ণ",
+};
+
 export default function RecruitmentExamResultsPage() {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Hero */}
+      {/* হিরো */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Recruitment Exam Results
+            নিয়োগ পরীক্ষার ফলাফল
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -237,21 +250,21 @@ export default function RecruitmentExamResultsPage() {
           <div className="mx-auto mt-7 h-1 w-28 rounded-full bg-color-primary" />
 
           <p className="mx-auto mt-9 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            বিদ্যালয়ের নিয়োগ পরীক্ষার লিখিত, viva, practical এবং final selection
-            ফলাফল এখানে প্রকাশ করা হয়। প্রার্থীদের official notice অনুসরণ করার
-            জন্য অনুরোধ করা হলো।
+            বিদ্যালয়ের নিয়োগ পরীক্ষার লিখিত, মৌখিক, ব্যবহারিক এবং চূড়ান্ত
+            নির্বাচনের ফলাফল এখানে প্রকাশ করা হয়। প্রার্থীদের অফিসিয়াল নোটিশ
+            অনুসরণ করার জন্য অনুরোধ করা হলো।
           </p>
 
           <Link
             href="/"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Overview */}
+      {/* সারসংক্ষেপ */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <div className="overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
@@ -259,16 +272,17 @@ export default function RecruitmentExamResultsPage() {
               <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-inverse">
                   <FaSchoolFlag />
-                  Recruitment Result Notice
+                  নিয়োগ ফলাফল নোটিশ
                 </span>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
-                  নিয়োগ পরীক্ষার ফলাফল, viva schedule ও final selection notice
+                  নিয়োগ পরীক্ষার ফলাফল, মৌখিক পরীক্ষার সময়সূচি ও চূড়ান্ত
+                  নির্বাচন নোটিশ
                 </h2>
 
                 <p className="mt-5 max-w-4xl text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
-                  নিয়োগ প্রক্রিয়ার স্বচ্ছতা নিশ্চিত করতে লিখিত পরীক্ষা, viva,
-                  practical এবং final selection-এর ফলাফল ধাপে ধাপে প্রকাশ করা
+                  নিয়োগ প্রক্রিয়ার স্বচ্ছতা নিশ্চিত করতে লিখিত পরীক্ষা, মৌখিক,
+                  ব্যবহারিক এবং চূড়ান্ত নির্বাচনের ফলাফল ধাপে ধাপে প্রকাশ করা
                   হয়। প্রার্থীদের নির্ধারিত সময়ের মধ্যে প্রয়োজনীয় নির্দেশনা
                   অনুসরণ করতে হবে।
                 </p>
@@ -280,10 +294,10 @@ export default function RecruitmentExamResultsPage() {
                     <FaClipboardCheck />
                   </div>
 
-                  <h3 className="mt-5 text-4xl font-black text-primary">08</h3>
+                  <h3 className="mt-5 text-4xl font-black text-primary">০৮</h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Result Notices
+                    ফলাফল নোটিশ
                   </p>
                 </div>
 
@@ -292,17 +306,17 @@ export default function RecruitmentExamResultsPage() {
                     <FaUserGraduate />
                   </div>
 
-                  <h3 className="mt-5 text-4xl font-black text-primary">06</h3>
+                  <h3 className="mt-5 text-4xl font-black text-primary">০৬</h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Sample Candidates
+                    নমুনা প্রার্থী
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Summary Cards */}
+          {/* সারসংক্ষেপ কার্ড */}
           <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {summaryCards.map((item) => (
               <article
@@ -330,12 +344,12 @@ export default function RecruitmentExamResultsPage() {
         </div>
       </section>
 
-      {/* Result Notice Table */}
+      {/* ফলাফল নোটিশ টেবিল */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[34px] border border-soft bg-page-primary p-5 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
-              Published Result Notices
+              প্রকাশিত ফলাফল নোটিশ
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary">
@@ -345,8 +359,8 @@ export default function RecruitmentExamResultsPage() {
             <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-color-primary" />
 
             <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold leading-7 text-secondary">
-              নিয়োগ পরীক্ষার ফলাফল notice list থেকে প্রয়োজনীয় result notice
-              download বা view করা যাবে।
+              নিয়োগ পরীক্ষার ফলাফল নোটিশ তালিকা থেকে প্রয়োজনীয় ফলাফল নোটিশ
+              ডাউনলোড বা দেখা যাবে।
             </p>
           </div>
 
@@ -355,18 +369,18 @@ export default function RecruitmentExamResultsPage() {
               <table className="w-full min-w-[980px] border-collapse bg-page-primary text-left">
                 <thead className="bg-color-primary text-inverse">
                   <tr>
-                    <th className="px-5 py-4 text-sm font-black">Title</th>
+                    <th className="px-5 py-4 text-sm font-black">শিরোনাম</th>
                     <th className="px-5 py-4 text-sm font-black">
-                      Circular ID
+                      বিজ্ঞপ্তি আইডি
                     </th>
                     <th className="px-5 py-4 text-sm font-black">
-                      Exam Type
+                      পরীক্ষার ধরন
                     </th>
                     <th className="px-5 py-4 text-sm font-black">
-                      Publish Date
+                      প্রকাশের তারিখ
                     </th>
-                    <th className="px-5 py-4 text-sm font-black">Status</th>
-                    <th className="px-5 py-4 text-sm font-black">Download</th>
+                    <th className="px-5 py-4 text-sm font-black">অবস্থা</th>
+                    <th className="px-5 py-4 text-sm font-black">ডাউনলোড</th>
                   </tr>
                 </thead>
 
@@ -398,7 +412,7 @@ export default function RecruitmentExamResultsPage() {
                         <span
                           className={`inline-flex rounded-full border px-4 py-2 text-xs font-black ${statusStyle[item.status]}`}
                         >
-                          {item.status}
+                          {statusLabel[item.status]}
                         </span>
                       </td>
 
@@ -408,7 +422,7 @@ export default function RecruitmentExamResultsPage() {
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-300 hover:-translate-y-1 hover:opacity-90"
                         >
                           <FaCloudArrowDown />
-                          Download
+                          ডাউনলোড
                         </Link>
                       </td>
                     </tr>
@@ -423,8 +437,8 @@ export default function RecruitmentExamResultsPage() {
               <FaCircleInfo className="mt-1 shrink-0 text-brand-primary" />
 
               <p className="text-sm font-semibold leading-7 text-secondary">
-                Note: Download links এখানে placeholder হিসেবে দেওয়া হয়েছে।
-                Official PDF/result file যুক্ত করতে `downloadUrl` field-এ actual
+                নোট: ডাউনলোড লিংকগুলো এখানে placeholder হিসেবে দেওয়া হয়েছে।
+                অফিসিয়াল PDF/result file যুক্ত করতে `downloadUrl` field-এ actual
                 PDF path বা file URL বসাতে হবে।
               </p>
             </div>
@@ -432,12 +446,12 @@ export default function RecruitmentExamResultsPage() {
         </div>
       </section>
 
-      {/* Selected Candidate List */}
+      {/* নির্বাচিত প্রার্থীর তালিকা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
-              Candidate List
+              প্রার্থীদের তালিকা
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
@@ -447,8 +461,8 @@ export default function RecruitmentExamResultsPage() {
             <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-color-primary" />
 
             <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold leading-7 text-secondary">
-              নিচের তালিকায় roll number, candidate name, post name এবং result
-              status দেখানো হয়েছে।
+              নিচের তালিকায় রোল নম্বর, প্রার্থীর নাম, পদবি এবং ফলাফলের অবস্থা
+              দেখানো হয়েছে।
             </p>
           </div>
 
@@ -458,13 +472,13 @@ export default function RecruitmentExamResultsPage() {
                 <table className="w-full min-w-[950px] border-collapse text-left">
                   <thead className="bg-color-primary text-inverse">
                     <tr>
-                      <th className="px-5 py-4 text-sm font-black">Roll</th>
+                      <th className="px-5 py-4 text-sm font-black">রোল</th>
                       <th className="px-5 py-4 text-sm font-black">
-                        Candidate Name
+                        প্রার্থীর নাম
                       </th>
-                      <th className="px-5 py-4 text-sm font-black">Post</th>
-                      <th className="px-5 py-4 text-sm font-black">Result</th>
-                      <th className="px-5 py-4 text-sm font-black">Remarks</th>
+                      <th className="px-5 py-4 text-sm font-black">পদবি</th>
+                      <th className="px-5 py-4 text-sm font-black">ফলাফল</th>
+                      <th className="px-5 py-4 text-sm font-black">মন্তব্য</th>
                     </tr>
                   </thead>
 
@@ -494,7 +508,7 @@ export default function RecruitmentExamResultsPage() {
                           <span
                             className={`inline-flex rounded-full border px-4 py-2 text-xs font-black ${candidateStatusStyle[candidate.result]}`}
                           >
-                            {candidate.result}
+                            {candidateResultLabel[candidate.result]}
                           </span>
                         </td>
 
@@ -511,12 +525,12 @@ export default function RecruitmentExamResultsPage() {
         </div>
       </section>
 
-      {/* Instructions */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
-              Important Instructions
+              গুরুত্বপূর্ণ নির্দেশনা
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary">
@@ -554,7 +568,7 @@ export default function RecruitmentExamResultsPage() {
         </div>
       </section>
 
-      {/* Important Notes */}
+      {/* গুরুত্বপূর্ণ নোট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] grid grid-cols-1 gap-6 lg:grid-cols-2">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -563,13 +577,13 @@ export default function RecruitmentExamResultsPage() {
             </div>
 
             <h3 className="mt-5 text-2xl font-black text-primary">
-              Official Result
+              অফিসিয়াল ফলাফল
             </h3>
 
             <p className="mt-4 text-sm font-semibold leading-8 text-secondary">
-              ওয়েবসাইটে প্রকাশিত নিয়োগ পরীক্ষার ফলাফল বিদ্যালয়ের official notice
-              অনুযায়ী আপডেট করা হয়। কোনো অসঙ্গতি পাওয়া গেলে বিদ্যালয় অফিসে
-              যোগাযোগ করতে হবে।
+              ওয়েবসাইটে প্রকাশিত নিয়োগ পরীক্ষার ফলাফল বিদ্যালয়ের অফিসিয়াল
+              নোটিশ অনুযায়ী আপডেট করা হয়। কোনো অসঙ্গতি পাওয়া গেলে বিদ্যালয়
+              অফিসে যোগাযোগ করতে হবে।
             </p>
           </div>
 
@@ -579,19 +593,19 @@ export default function RecruitmentExamResultsPage() {
             </div>
 
             <h3 className="mt-5 text-2xl font-black text-primary">
-              Verification Notice
+              যাচাই নোটিশ
             </h3>
 
             <p className="mt-4 text-sm font-semibold leading-8 text-secondary">
-              প্রার্থীদের result status, roll number এবং document verification
-              schedule যাচাই করতে official notice অনুসরণ করতে হবে। ভুল তথ্য
-              প্রদান করলে candidature বাতিল হতে পারে।
+              প্রার্থীদের ফলাফলের অবস্থা, রোল নম্বর এবং ডকুমেন্ট যাচাইয়ের
+              সময়সূচি যাচাই করতে অফিসিয়াল নোটিশ অনুসরণ করতে হবে। ভুল তথ্য
+              প্রদান করলে প্রার্থিতা বাতিল হতে পারে।
             </p>
           </div>
         </div>
       </section>
 
-      {/* Message */}
+      {/* বার্তা */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1600px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -600,7 +614,7 @@ export default function RecruitmentExamResultsPage() {
                 <FaRegCalendarDays className="text-sm" />
 
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  Recruitment Update
+                  নিয়োগ আপডেট
                 </p>
               </div>
 
@@ -622,7 +636,7 @@ export default function RecruitmentExamResultsPage() {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Fair Selection
+                  ন্যায্য নির্বাচন
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
@@ -635,18 +649,18 @@ export default function RecruitmentExamResultsPage() {
         </div>
       </section>
 
-      {/* Office Contact */}
+      {/* অফিস যোগাযোগ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[24px] border border-soft bg-page-primary p-5 shadow-sm">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <h3 className="text-xl font-black text-primary">
-                Need result verification?
+                ফলাফল যাচাই প্রয়োজন?
               </h3>
 
               <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
-                নিয়োগ পরীক্ষার ফলাফল, document verification বা joining
-                instruction সম্পর্কে জানতে বিদ্যালয় অফিসে যোগাযোগ করুন।
+                নিয়োগ পরীক্ষার ফলাফল, ডকুমেন্ট যাচাই বা যোগদানের নির্দেশনা
+                সম্পর্কে জানতে বিদ্যালয় অফিসে যোগাযোগ করুন।
               </p>
             </div>
 
@@ -654,7 +668,7 @@ export default function RecruitmentExamResultsPage() {
               href="/contact"
               className="inline-flex w-fit items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-lg transition-all duration-300 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
             >
-              Contact Office
+              অফিসে যোগাযোগ করুন
             </Link>
           </div>
         </div>

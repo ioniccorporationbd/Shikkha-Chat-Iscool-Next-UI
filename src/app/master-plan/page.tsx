@@ -106,7 +106,7 @@ export default function SchoolMasterPlanPage() {
         {/* পেজ হেডার */}
         <header className="mb-12 text-center">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-brand-primary">
-        Master Plan
+       মাস্টার প্ল্যান
           </p>
 
           <h1 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl md:text-5xl">

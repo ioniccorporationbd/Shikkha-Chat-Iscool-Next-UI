@@ -110,7 +110,7 @@ const academicInfo: InfoCard[] = [
     title: "মূল্যায়ন পদ্ধতি",
     value: "নিয়মিত",
     description:
-      "ক্লাস টেস্ট, অ্যাসাইনমেন্ট, মৌখিক মূল্যায়ন, অর্ধবার্ষিক ও বার্ষিক পরীক্ষার মাধ্যমে অগ্রগতি যাচাই করা হয়।",
+      "শ্রেণি পরীক্ষা, অ্যাসাইনমেন্ট, মৌখিক মূল্যায়ন, অর্ধবার্ষিক ও বার্ষিক পরীক্ষার মাধ্যমে অগ্রগতি যাচাই করা হয়।",
     icon: <FaClipboardCheck />,
   },
 ];
@@ -179,25 +179,25 @@ const campusFacilities: InfoCard[] = [
 
 const programs: ProgramItem[] = [
   {
-    title: "Academic Excellence Program",
+    title: "একাডেমিক উৎকর্ষ প্রোগ্রাম",
     description:
       "নিয়মিত ক্লাস, সাপ্তাহিক মূল্যায়ন, বিশেষ ক্লাস এবং দুর্বল শিক্ষার্থীদের জন্য অতিরিক্ত সহায়তার মাধ্যমে একাডেমিক মান উন্নত করা হয়।",
     icon: <FaGraduationCap />,
   },
   {
-    title: "Co-Curricular Program",
+    title: "সহশিক্ষা প্রোগ্রাম",
     description:
       "বিতর্ক, আবৃত্তি, চিত্রাঙ্কন, সাংস্কৃতিক অনুষ্ঠান, বিজ্ঞান মেলা ও ক্লাব কার্যক্রম শিক্ষার্থীদের সৃজনশীলতা বাড়ায়।",
     icon: <FaUsersGear />,
   },
   {
-    title: "Sports & Wellness Program",
+    title: "ক্রীড়া ও সুস্থতা প্রোগ্রাম",
     description:
       "নিয়মিত খেলাধুলা, শরীরচর্চা, বার্ষিক ক্রীড়া প্রতিযোগিতা এবং স্বাস্থ্য সচেতনতা কার্যক্রম শিক্ষার্থীদের সুস্থ রাখে।",
     icon: <FaTrophy />,
   },
   {
-    title: "Discipline & Leadership Program",
+    title: "শৃঙ্খলা ও নেতৃত্ব প্রোগ্রাম",
     description:
       "শৃঙ্খলা, দায়িত্ববোধ, সময়ানুবর্তিতা, দলগত কাজ ও নেতৃত্বের গুণাবলি তৈরির জন্য নিয়মিত কার্যক্রম পরিচালিত হয়।",
     icon: <FaShieldHalved />,
@@ -245,9 +245,9 @@ const tableItems: TableItem[] = [
   },
   {
     id: 2,
-    subject: "EIIN / কোড",
+    subject: "ইআইআইএন / কোড",
     description: "বিদ্যালয়ের পরিচিতি কোড",
-    value: "123456",
+    value: "১২৩৪৫৬",
     note: "অফিসিয়াল রেকর্ড অনুযায়ী পরিবর্তনযোগ্য।",
   },
   {
@@ -320,13 +320,13 @@ const guidelineSections: GuidelineSection[] = [
 const AtAGlancePage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.65em] text-brand-primary sm:text-sm">
-            At A Glance
+            এক নজরে
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -344,12 +344,12 @@ const AtAGlancePage = () => {
             href="/"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Overview Cards */}
+      {/* সারসংক্ষেপ কার্ড */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -377,7 +377,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Introduction With Image */}
+      {/* ছবিসহ পরিচিতি */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
@@ -412,7 +412,7 @@ const AtAGlancePage = () => {
               <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-5">
                 <Image
                   src="/assets/3.jpg"
-                  alt="School campus"
+                  alt="বিদ্যালয় ক্যাম্পাস"
                   width={900}
                   height={520}
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -421,14 +421,14 @@ const AtAGlancePage = () => {
 
                 <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2">
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
-                    <p className="font-black text-brand-primary">Mission</p>
+                    <p className="font-black text-brand-primary">লক্ষ্য</p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
                       শিক্ষার্থীদের জ্ঞান, নৈতিকতা ও দক্ষতায় এগিয়ে নেওয়া।
                     </p>
                   </div>
 
                   <div className="rounded-[20px] border border-soft bg-page-primary p-4">
-                    <p className="font-black text-brand-primary">Vision</p>
+                    <p className="font-black text-brand-primary">ভিশন</p>
                     <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
                       দায়িত্বশীল, সৃজনশীল ও আত্মবিশ্বাসী নাগরিক গড়ে তোলা।
                     </p>
@@ -440,7 +440,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
       
-      {/* Featured Presentation */}
+      {/* বিশেষ উপস্থাপনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -449,7 +449,7 @@ const AtAGlancePage = () => {
                 <FaStar className="text-sm" />
 
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  School Profile
+                  বিদ্যালয়ের প্রোফাইল
                 </p>
               </div>
 
@@ -488,7 +488,7 @@ const AtAGlancePage = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  ১৮+ Years
+                  ১৮+ বছর
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
@@ -501,7 +501,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Academic Information */}
+      {/* একাডেমিক তথ্য */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -510,7 +510,7 @@ const AtAGlancePage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Academic Information
+              একাডেমিক তথ্য
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -546,7 +546,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Students & Teachers */}
+      {/* শিক্ষার্থী ও শিক্ষক */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
@@ -555,7 +555,7 @@ const AtAGlancePage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Students & Teachers
+              শিক্ষার্থী ও শিক্ষক
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -591,14 +591,14 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Image Paragraph Section */}
+      {/* ছবিসহ শেখার পরিবেশ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
             <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-4">
               <Image
                 src="/assets/4.jpg"
-                alt="Classroom"
+                alt="শ্রেণিকক্ষ"
                 width={900}
                 height={520}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -608,7 +608,7 @@ const AtAGlancePage = () => {
 
             <div>
               <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                Learning Environment
+                শেখার পরিবেশ
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
@@ -625,7 +625,7 @@ const AtAGlancePage = () => {
 
               <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <div className="rounded-[20px] border border-soft bg-page-secondary p-4">
-                  <p className="font-black text-primary">Interactive Class</p>
+                  <p className="font-black text-primary">অংশগ্রহণমূলক ক্লাস</p>
 
                   <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
                     প্রশ্নোত্তর ও অংশগ্রহণমূলক পাঠদান।
@@ -633,7 +633,7 @@ const AtAGlancePage = () => {
                 </div>
 
                 <div className="rounded-[20px] border border-soft bg-page-secondary p-4">
-                  <p className="font-black text-primary">Regular Assessment</p>
+                  <p className="font-black text-primary">নিয়মিত মূল্যায়ন</p>
 
                   <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
                     ধারাবাহিক মূল্যায়নের মাধ্যমে উন্নয়ন।
@@ -645,7 +645,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
       
-      {/* Programs */}
+      {/* প্রোগ্রাম */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
@@ -654,7 +654,7 @@ const AtAGlancePage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Programs & Activities
+              প্রোগ্রাম ও কার্যক্রম
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -686,7 +686,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Campus Facilities */}
+      {/* ক্যাম্পাস সুবিধা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -695,7 +695,7 @@ const AtAGlancePage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Campus Facilities
+              ক্যাম্পাস সুবিধাসমূহ
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -731,13 +731,13 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Second Image Section */}
+      {/* দ্বিতীয় ছবি অংশ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                Beyond Classroom
+                শ্রেণিকক্ষের বাইরে
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
@@ -776,7 +776,7 @@ const AtAGlancePage = () => {
             <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-4">
               <Image
                 src="/assets/3.jpg"
-                alt="School programs"
+                alt="বিদ্যালয়ের প্রোগ্রাম"
                 width={900}
                 height={520}
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -787,7 +787,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Achievements */}
+      {/* অর্জন */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
@@ -796,7 +796,7 @@ const AtAGlancePage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              Achievements
+              অর্জন ও সাফল্য
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -832,7 +832,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Table */}
+      {/* টেবিল */}
       <section
         id="at-a-glance-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -844,7 +844,7 @@ const AtAGlancePage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
-              At a Glance Table
+              এক নজরে তথ্যের তালিকা
             </h2>
 
             <p className="mx-auto mt-4 max-w-3xl text-sm font-semibold leading-7 text-secondary">
@@ -953,7 +953,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
+      {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-6 lg:grid-cols-2">
           {guidelineSections.map((section) => (
@@ -998,7 +998,7 @@ const AtAGlancePage = () => {
         </div>
       </section>
 
-      {/* Closing */}
+      {/* সমাপনী */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -1030,7 +1030,7 @@ const AtAGlancePage = () => {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  At a Glance
+                  এক নজরে
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">

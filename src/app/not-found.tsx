@@ -8,7 +8,7 @@ const NotFoundPage = () => {
         <div className="mx-auto mb-6 flex justify-center">
           <Image
             src="/assets/images/flogo.png"
-            alt="Shikkha Chat Logo"
+            alt="শিক্ষা চ্যাট লোগো"
             width={150}
             height={60}
             priority
@@ -17,11 +17,11 @@ const NotFoundPage = () => {
         </div>
 
         <h1 className="text-7xl font-bold text-primary sm:text-8xl">
-          404
+          ৪০৪
         </h1>
 
         <h2 className="mt-4 text-2xl font-bold text-primary sm:text-3xl">
-          Page Not Found
+          পেজ পাওয়া যায়নি
         </h2>
 
         <p className="mx-auto mt-4 max-w-xl text-sm leading-7 text-secondary sm:text-base">
@@ -30,8 +30,8 @@ const NotFoundPage = () => {
         </p>
 
         <p className="mx-auto mt-3 max-w-xl text-sm leading-7 text-secondary sm:text-base">
-          Sorry, the page you are looking for does not exist or may have been
-          moved.
+          অনুগ্রহ করে হোম পেজে ফিরে যান অথবা সহায়তার জন্য আমাদের সঙ্গে যোগাযোগ
+          করুন।
         </p>
 
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
@@ -39,14 +39,14 @@ const NotFoundPage = () => {
             href="/"
             className="rounded-lg bg-primary px-6 py-3 text-sm font-bold text-inverse transition-all duration-300 hover:-translate-y-1 hover:bg-primary/90 hover:shadow-md"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
 
           <Link
             href="/contact"
             className="rounded-lg border border-primary bg-bg-primary px-6 py-3 text-sm font-bold text-primary transition-all duration-300 hover:-translate-y-1 hover:bg-primary hover:text-inverse hover:shadow-md"
           >
-            Contact Support
+            সহায়তার জন্য যোগাযোগ করুন
           </Link>
         </div>
       </section>

@@ -15,7 +15,6 @@ import {
   FaSchoolFlag,
   FaShieldHalved,
   FaStar,
-  FaTriangleExclamation,
   FaUserGraduate,
   FaUsersGear,
 } from "react-icons/fa6";
@@ -78,37 +77,37 @@ const overviewItems: OverviewItem[] = [
 
 const policyCategories: PolicyCategory[] = [
   {
-    title: "Academic Policy",
+    title: "একাডেমিক নীতিমালা",
     description:
       "পাঠদান, হোমওয়ার্ক, অ্যাসাইনমেন্ট, ক্লাস কার্যক্রম ও শিক্ষার্থীর একাডেমিক অগ্রগতি সম্পর্কিত নীতিমালা।",
     icon: <FaBookOpen />,
   },
   {
-    title: "Attendance Policy",
+    title: "উপস্থিতি নীতিমালা",
     description:
       "নিয়মিত উপস্থিতি, সময়মতো বিদ্যালয়ে আসা, অনুপস্থিতির কারণ জানানো এবং উপস্থিতির রেকর্ড সংক্রান্ত নির্দেশনা।",
     icon: <FaRegClock />,
   },
   {
-    title: "Discipline Policy",
+    title: "শৃঙ্খলা নীতিমালা",
     description:
       "শ্রেণিকক্ষ, ক্যাম্পাস, সহপাঠী ও শিক্ষকদের প্রতি সম্মানজনক আচরণ এবং শৃঙ্খলা বজায় রাখার নীতিমালা।",
     icon: <FaUsersGear />,
   },
   {
-    title: "Exam Policy",
+    title: "পরীক্ষা নীতিমালা",
     description:
       "পরীক্ষার সময়সূচি, পরীক্ষার হলে আচরণ, নকলমুক্ত পরীক্ষা ও মূল্যায়ন পদ্ধতি সম্পর্কিত নিয়ম।",
     icon: <FaClipboardCheck />,
   },
   {
-    title: "Safety & Security Policy",
+    title: "নিরাপত্তা নীতিমালা",
     description:
       "বিদ্যালয় ক্যাম্পাসে নিরাপদ চলাচল, জরুরি পরিস্থিতি, স্বাস্থ্য সচেতনতা ও নিরাপত্তা নির্দেশনা।",
     icon: <FaShieldHalved />,
   },
   {
-    title: "Digital Device Policy",
+    title: "ডিজিটাল ডিভাইস নীতিমালা",
     description:
       "মোবাইল, ইন্টারনেট, কম্পিউটার, অনলাইন ক্লাস ও প্রযুক্তি ব্যবহারের দায়িত্বশীল নিয়মনীতি।",
     icon: <FaMobileScreenButton />,
@@ -158,7 +157,7 @@ const policyItems: PolicyItem[] = [
   {
     id: 1,
     policyName: "একাডেমিক নীতিমালা",
-    category: "Academic",
+    category: "একাডেমিক",
     applicableFor: "শিক্ষার্থী ও শিক্ষক",
     importance: "অতি গুরুত্বপূর্ণ",
     fileUrl: "#",
@@ -166,7 +165,7 @@ const policyItems: PolicyItem[] = [
   {
     id: 2,
     policyName: "উপস্থিতি নীতিমালা",
-    category: "Attendance",
+    category: "উপস্থিতি",
     applicableFor: "শিক্ষার্থী",
     importance: "গুরুত্বপূর্ণ",
     fileUrl: "#",
@@ -174,7 +173,7 @@ const policyItems: PolicyItem[] = [
   {
     id: 3,
     policyName: "আচরণ ও শৃঙ্খলা নীতিমালা",
-    category: "Discipline",
+    category: "শৃঙ্খলা",
     applicableFor: "সকল শিক্ষার্থী",
     importance: "অতি গুরুত্বপূর্ণ",
     fileUrl: "#",
@@ -182,7 +181,7 @@ const policyItems: PolicyItem[] = [
   {
     id: 4,
     policyName: "পরীক্ষা নীতিমালা",
-    category: "Exam",
+    category: "পরীক্ষা",
     applicableFor: "পরীক্ষার্থী",
     importance: "অতি গুরুত্বপূর্ণ",
     fileUrl: "#",
@@ -190,7 +189,7 @@ const policyItems: PolicyItem[] = [
   {
     id: 5,
     policyName: "নিরাপত্তা নির্দেশিকা",
-    category: "Safety",
+    category: "নিরাপত্তা",
     applicableFor: "শিক্ষার্থী, শিক্ষক ও অভিভাবক",
     importance: "গুরুত্বপূর্ণ",
     fileUrl: "#",
@@ -198,7 +197,7 @@ const policyItems: PolicyItem[] = [
   {
     id: 6,
     policyName: "ডিজিটাল ডিভাইস ব্যবহার নীতিমালা",
-    category: "Technology",
+    category: "প্রযুক্তি",
     applicableFor: "শিক্ষার্থী",
     importance: "গুরুত্বপূর্ণ",
     fileUrl: "#",
@@ -233,13 +232,13 @@ const guidelineSections: GuidelineSection[] = [
 const PoliciesGuidelinesPage = () => {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
+      {/* উপরের অংশ */}
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            School Rules
+            বিদ্যালয়ের নিয়মনীতি
           </p>
 
           <h1 className="mt-5 text-[36px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -257,12 +256,12 @@ const PoliciesGuidelinesPage = () => {
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
 
-      {/* Policy Overview */}
+      {/* নীতিমালার সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
@@ -286,7 +285,7 @@ const PoliciesGuidelinesPage = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
@@ -322,7 +321,7 @@ const PoliciesGuidelinesPage = () => {
         </div>
       </section>
 
-      {/* Featured Policy */}
+      {/* প্রধান নীতিমালা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -332,7 +331,7 @@ const PoliciesGuidelinesPage = () => {
                   <FaStar className="text-sm" />
 
                   <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Core Guideline
+                    মূল নির্দেশিকা
                   </p>
                 </div>
 
@@ -369,7 +368,7 @@ const PoliciesGuidelinesPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Safe Campus
+                    নিরাপদ ক্যাম্পাস
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
@@ -383,7 +382,7 @@ const PoliciesGuidelinesPage = () => {
         </div>
       </section>
 
-      {/* Policy Categories */}
+      {/* নীতিমালার বিভাগ */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
@@ -392,7 +391,7 @@ const PoliciesGuidelinesPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Policy Categories
+              নীতিমালার বিভাগসমূহ
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -424,7 +423,7 @@ const PoliciesGuidelinesPage = () => {
         </div>
       </section>
 
-      {/* Important Guidelines */}
+      {/* গুরুত্বপূর্ণ নির্দেশিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1500px]">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
@@ -434,7 +433,7 @@ const PoliciesGuidelinesPage = () => {
               </p>
 
               <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Important Guidelines
+                গুরুত্বপূর্ণ নির্দেশনাসমূহ
               </h2>
 
               <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -467,7 +466,7 @@ const PoliciesGuidelinesPage = () => {
         </div>
       </section>
 
-      {/* Policy Table */}
+      {/* নীতিমালার তালিকা */}
       <section
         id="policy-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
@@ -479,7 +478,7 @@ const PoliciesGuidelinesPage = () => {
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Policy Table
+              নীতিমালার বিস্তারিত তালিকা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -548,7 +547,7 @@ const PoliciesGuidelinesPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -598,7 +597,7 @@ const PoliciesGuidelinesPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -608,7 +607,7 @@ const PoliciesGuidelinesPage = () => {
         </div>
       </section>
 
-      {/* Student and Parent Guidelines */}
+      {/* শিক্ষার্থী ও অভিভাবক নির্দেশিকা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
@@ -655,7 +654,7 @@ const PoliciesGuidelinesPage = () => {
         </div>
       </section>
 
-      {/* Closing Message */}
+      {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
         <div className="mx-auto max-w-[1500px]">
           <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
@@ -688,7 +687,7 @@ const PoliciesGuidelinesPage = () => {
                   </div>
 
                   <p className="mt-5 text-2xl font-black text-primary">
-                    Better School Life
+                    সুন্দর শিক্ষাজীবন
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">

@@ -48,7 +48,7 @@ type GoalItem = {
 const lessonPlanItems: LessonPlanItem[] = [
   {
     id: 1,
-    className: "Class One",
+    className: "প্রথম শ্রেণি",
     subject: "বাংলা",
     topic: "স্বরবর্ণ ও ব্যঞ্জনবর্ণ পরিচিতি",
     duration: "৪৫ মিনিট",
@@ -57,25 +57,25 @@ const lessonPlanItems: LessonPlanItem[] = [
   },
   {
     id: 2,
-    className: "Class Two",
+    className: "দ্বিতীয় শ্রেণি",
     subject: "ইংরেজি",
-    topic: "Basic Sentence Making",
+    topic: "প্রাথমিক বাক্য গঠন (Basic Sentence Making)",
     duration: "৪৫ মিনিট",
     teacher: "ইংরেজি শিক্ষক",
     fileUrl: "#",
   },
   {
     id: 3,
-    className: "Class Three",
+    className: "তৃতীয় শ্রেণি",
     subject: "গণিত",
-    topic: "যোগ ও বিয়োগের অনুশীলন",
+    topic: "যোগ ও বিয়োগের অনুশীলন",
     duration: "৫০ মিনিট",
     teacher: "গণিত শিক্ষক",
     fileUrl: "#",
   },
   {
     id: 4,
-    className: "Class Four",
+    className: "চতুর্থ শ্রেণি",
     subject: "বিজ্ঞান",
     topic: "উদ্ভিদের অংশ ও কাজ",
     duration: "৫০ মিনিট",
@@ -84,16 +84,16 @@ const lessonPlanItems: LessonPlanItem[] = [
   },
   {
     id: 5,
-    className: "Class Five",
-    subject: "বাংলাদেশ ও বিশ্বপরিচয়",
+    className: "পঞ্চম শ্রেণি",
+    subject: "বাংলাদেশ ও বিশ্বপরিচয়",
     topic: "বাংলাদেশের প্রাকৃতিক সম্পদ",
     duration: "৪৫ মিনিট",
-    teacher: "বিষয় শিক্ষক",
+    teacher: "বিষয় শিক্ষক",
     fileUrl: "#",
   },
   {
     id: 6,
-    className: "Class Six",
+    className: "ষষ্ঠ শ্রেণি",
     subject: "আইসিটি",
     topic: "কম্পিউটারের মৌলিক ধারণা",
     duration: "৫০ মিনিট",
@@ -137,21 +137,21 @@ const goals: GoalItem[] = [
     icon: <FaListCheck />,
   },
   {
-    title: "সময়ভিত্তিক পাঠদান",
+    title: "সময়ভিত্তিক পাঠদান",
     description:
-      "নির্দিষ্ট সময়ের মধ্যে পাঠ, আলোচনা, অনুশীলন ও মূল্যায়ন সম্পন্ন করা।",
+      "নির্দিষ্ট সময়ের মধ্যে পাঠ, আলোচনা, অনুশীলন ও মূল্যায়ন সম্পন্ন করা।",
     icon: <FaRegClock />,
   },
   {
     title: "শিক্ষার্থী অংশগ্রহণ",
     description:
-      "প্রশ্নোত্তর, দলীয় কাজ ও অনুশীলনের মাধ্যমে সক্রিয় অংশগ্রহণ নিশ্চিত করা।",
+      "প্রশ্নোত্তর, দলীয় কাজ ও অনুশীলনের মাধ্যমে সক্রিয় অংশগ্রহণ নিশ্চিত করা।",
     icon: <FaUserGraduate />,
   },
   {
-    title: "মূল্যায়ন ও অগ্রগতি",
+    title: "মূল্যায়ন ও অগ্রগতি",
     description:
-      "পাঠ শেষে শিক্ষার্থীর শেখার অগ্রগতি যাচাই ও প্রয়োজনীয় সহায়তা প্রদান।",
+      "পাঠ শেষে শিক্ষার্থীর শেখার অগ্রগতি যাচাই ও প্রয়োজনীয় সহায়তা প্রদান।",
     icon: <FaClipboardCheck />,
   },
 ];
@@ -161,37 +161,37 @@ const guidelineSections: GuidelineSection[] = [
     title: "শিক্ষকদের নির্দেশনা",
     icon: <FaChalkboardUser />,
     points: [
-      "প্রতিটি ক্লাসের আগে নির্ধারিত অধ্যায় ও টপিক অনুযায়ী পাঠ পরিকল্পনা প্রস্তুত করতে হবে।",
-      "পাঠের শেখার লক্ষ্য, প্রয়োজনীয় উপকরণ এবং সময় বণ্টন আগে থেকেই নির্ধারণ করতে হবে।",
-      "শিক্ষার্থীদের সক্রিয় অংশগ্রহণ নিশ্চিত করতে প্রশ্নোত্তর, আলোচনা ও অনুশীলনের ব্যবস্থা রাখতে হবে।",
-      "পাঠ শেষে সংক্ষিপ্ত মূল্যায়নের মাধ্যমে শিক্ষার্থীদের শেখার অগ্রগতি যাচাই করতে হবে।",
-      "যেসব শিক্ষার্থী দুর্বল, তাদের জন্য অতিরিক্ত সহায়তা বা পুনরায় ব্যাখ্যার ব্যবস্থা করতে হবে।",
+      "প্রতিটি ক্লাসের আগে নির্ধারিত অধ্যায় ও টপিক অনুযায়ী পাঠ পরিকল্পনা প্রস্তুত করতে হবে।",
+      "পাঠের শেখার লক্ষ্য, প্রয়োজনীয় উপকরণ এবং সময় বণ্টন আগে থেকেই নির্ধারণ করতে হবে।",
+      "শিক্ষার্থীদের সক্রিয় অংশগ্রহণ নিশ্চিত করতে প্রশ্নোত্তর, আলোচনা ও অনুশীলনের ব্যবস্থা রাখতে হবে।",
+      "পাঠ শেষে সংক্ষিপ্ত মূল্যায়নের মাধ্যমে শিক্ষার্থীদের শেখার অগ্রগতি যাচাই করতে হবে।",
+      "যেসব শিক্ষার্থী দুর্বল, তাদের জন্য অতিরিক্ত সহায়তা বা পুনরায় ব্যাখ্যার ব্যবস্থা করতে হবে।",
     ],
   },
   {
     title: "শিক্ষার্থীদের নির্দেশনা",
     icon: <FaGraduationCap />,
     points: [
-      "ক্লাসে আসার আগে নির্ধারিত অধ্যায় বা টপিক পড়ে আসার চেষ্টা করতে হবে।",
-      "পাঠদানের সময় মনোযোগ দিয়ে শুনতে হবে এবং প্রয়োজন হলে প্রশ্ন করতে হবে।",
-      "শ্রেণিকক্ষে দেওয়া কাজ, অনুশীলন এবং গ্রুপ অ্যাক্টিভিটিতে সক্রিয়ভাবে অংশগ্রহণ করতে হবে।",
-      "ক্লাস শেষে বাড়িতে পাঠ পুনরায় অনুশীলন করতে হবে।",
-      "কোনো বিষয় বুঝতে সমস্যা হলে শ্রেণি শিক্ষক বা বিষয় শিক্ষকের সঙ্গে যোগাযোগ করতে হবে।",
+      "ক্লাসে আসার আগে নির্ধারিত অধ্যায় বা টপিক পড়ে আসার চেষ্টা করতে হবে।",
+      "পাঠদানের সময় মনোযোগ দিয়ে শুনতে হবে এবং প্রয়োজন হলে প্রশ্ন করতে হবে।",
+      "শ্রেণিকক্ষে দেওয়া কাজ, অনুশীলন এবং গ্রুপ অ্যাক্টিভিটিতে সক্রিয়ভাবে অংশগ্রহণ করতে হবে।",
+      "класс শেষে বাড়িতে পাঠ পুনরায় অনুশীলন করতে হবে।",
+      "কোনো বিষয় বুঝতে সমস্যা হলে শ্রেণি শিক্ষক বা বিষয় শিক্ষকের সঙ্গে যোগাযোগ করতে হবে।",
     ],
   },
 ];
 
 const classList = [
-  "Class One",
-  "Class Two",
-  "Class Three",
-  "Class Four",
-  "Class Five",
-  "Class Six",
-  "Class Seven",
-  "Class Eight",
-  "Class Nine",
-  "Class Ten",
+  "প্রথম শ্রেণি",
+  "দ্বিতীয় শ্রেণি",
+  "তৃতীয় শ্রেণি",
+  "চতুর্থ শ্রেণি",
+  "পঞ্চম শ্রেণি",
+  "ষষ্ঠ শ্রেণি",
+  "সপ্তম শ্রেণি",
+  "অষ্টম শ্রেণি",
+  "নবম শ্রেণি",
+  "দশম শ্রেণি",
 ];
 
 const LessonPlanPage = () => {
@@ -203,7 +203,7 @@ const LessonPlanPage = () => {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Academic Planning
+            একাডেমিক পরিকল্পনা
           </p>
 
           <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
@@ -214,14 +214,14 @@ const LessonPlanPage = () => {
 
           <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
             শিক্ষকদের পরিকল্পিত পাঠদান, শ্রেণিভিত্তিক পাঠসূচি এবং
-            শিক্ষার্থীদের কার্যকর শেখার সহায়তায় এই পেজ তৈরি করা হয়েছে।
+            শিক্ষার্থীদের কার্যকর শেখার সহায়তায় এই পেজ তৈরি করা হয়েছে।
           </p>
 
           <Link
             href="/"
             className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
           >
-            Back to Home
+            হোম পেজে ফিরে যান
           </Link>
         </div>
       </section>
@@ -247,7 +247,7 @@ const LessonPlanPage = () => {
 
             <h3 className="mt-4 text-2xl font-black text-primary">৮+</h3>
             <p className="mt-1 text-sm font-semibold text-secondary">
-              বিষয়ভিত্তিক পরিকল্পনা
+              বিষয়ভিত্তিক পরিকল্পনা
             </p>
           </div>
 
@@ -269,7 +269,7 @@ const LessonPlanPage = () => {
 
             <h3 className="mt-4 text-2xl font-black text-primary">সাপ্তাহিক</h3>
             <p className="mt-1 text-sm font-semibold text-secondary">
-              নিয়মিত আপডেট
+              নিয়মিত আপডেট
             </p>
           </div>
         </div>
@@ -299,10 +299,10 @@ const LessonPlanPage = () => {
                 <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
                   পাঠ পরিকল্পনা শিক্ষকদের পাঠদানকে আরও সংগঠিত, লক্ষ্যভিত্তিক
                   এবং কার্যকর করে তোলে। এর মাধ্যমে প্রতিটি পাঠে কী শেখানো হবে,
-                  কীভাবে শেখানো হবে এবং শিক্ষার্থীরা কতটুকু শিখেছে তা মূল্যায়ন
-                  করা সহজ হয়। শ্রেণিভিত্তিক ও বিষয়ভিত্তিক পরিকল্পনা শিক্ষার্থী,
-                  শিক্ষক এবং অভিভাবকদের মধ্যে শিক্ষার ধারাবাহিকতা বজায় রাখতে
-                  সহায়তা করে।
+                  কীভাবে শেখানো হবে এবং শিক্ষার্থীরা কতটুকু শিখেছে তা মূল্যায়ন
+                  করা সহজ হয়। শ্রেণিভিত্তিক ও বিষয়ভিত্তিক পরিকল্পনা শিক্ষার্থী,
+                  शिक्षक এবং অভিভাবকদের মধ্যে শিক্ষার ধারাবাহিকতা বজায় রাখতে
+                  সহায়তা করে।
                 </p>
               </div>
             </div>
@@ -356,11 +356,11 @@ const LessonPlanPage = () => {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              বিষয়ভিত্তিক তালিকা
+              বিষয়ভিত্তিক তালিকা
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              বিষয় অনুযায়ী Lesson Plan
+              বিষয় অনুযায়ী পাঠ পরিকল্পনা
             </h2>
 
             <div className="mx-auto mt-4 flex items-center justify-center gap-2">
@@ -405,7 +405,7 @@ const LessonPlanPage = () => {
                   শ্রেণিভিত্তিক
                 </p>
                 <h2 className="mt-2 text-3xl font-black text-primary">
-                  Class Wise Lesson Plan
+                  শ্রেণি অনুযায়ী পাঠ পরিকল্পনা
                 </h2>
               </div>
 
@@ -438,7 +438,7 @@ const LessonPlanPage = () => {
         <div className="mx-auto max-w-[1500px]">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              Download Area
+              ডাউনলোড এরিয়া
             </p>
 
             <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
@@ -460,13 +460,13 @@ const LessonPlanPage = () => {
                       শ্রেণি
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      বিষয়
+                      বিষয়
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      অধ্যায় / টপিক
+                      অধ্যায় / টপিক
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      সময়কাল
+                      সময়কাল
                     </th>
                     <th className="px-5 py-4 text-left text-sm font-black text-primary">
                       শিক্ষক
@@ -506,7 +506,7 @@ const LessonPlanPage = () => {
                           href={item.fileUrl}
                           className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
                         >
-                          Download
+                          ডাউনলোড করুন
                           <FaCloudArrowDown />
                         </Link>
                       </td>
@@ -544,7 +544,7 @@ const LessonPlanPage = () => {
                       {item.topic}
                     </p>
                     <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">সময়কাল:</span>{" "}
+                      <span className="font-black text-primary">সময়কাল:</span>{" "}
                       {item.duration}
                     </p>
                     <p className="text-sm font-semibold text-secondary">
@@ -557,7 +557,7 @@ const LessonPlanPage = () => {
                     href={item.fileUrl}
                     className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
                   >
-                    Download
+                    ডাউনলোড করুন
                     <FaCloudArrowDown />
                   </Link>
                 </div>
@@ -633,9 +633,9 @@ const LessonPlanPage = () => {
 
                 <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
                   একটি ভালো পাঠ পরিকল্পনা শিক্ষককে সুসংগঠিতভাবে পাঠদান করতে
-                  সহায়তা করে এবং শিক্ষার্থীর শেখাকে আরও সহজ, আকর্ষণীয় ও
-                  ফলপ্রসূ করে তোলে। পরিকল্পিত পাঠদান, সক্রিয় অংশগ্রহণ এবং
-                  নিয়মিত মূল্যায়নের মাধ্যমে শিক্ষার মান উন্নত করা সম্ভব।
+                  সহায়তা করে এবং শিক্ষার্থীর শেখাকে আরও সহজ, আকর্ষণীয় ও
+                  ফলপ্রসূ করে তোলে। পরিকল্পিত পাঠদান, সক্রিয় অংশগ্রহণ এবং
+                  নিয়মিত মূল্যায়নের মাধ্যমে শিক্ষার মান উন্নত করা সম্ভব।
                 </p>
               </div>
 
@@ -650,7 +650,7 @@ const LessonPlanPage = () => {
                   </p>
 
                   <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    সুপরিকল্পিত পাঠ শিক্ষার্থীর শেখাকে সহজ ও আনন্দদায়ক করে।
+                    সুপরিকল্পিত পাঠ শিক্ষার্থীর শেখাকে সহজ ও আনন্দদায়ক করে।
                   </p>
                 </div>
               </div>
