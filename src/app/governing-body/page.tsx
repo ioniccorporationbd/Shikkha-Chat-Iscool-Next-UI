@@ -43,10 +43,10 @@ const members: GoverningMember[] = [
   },
   {
     id: 2,
-    name: "Mohammad Hossain",
-    title: "Vice Chairman",
+    name: "মোহাম্মদ হোসাইন",
+    title: "ভাইস চেয়ারম্যান",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রতিষ্ঠানের উন্নয়ন, প্রশাসনিক সমন্বয় ও শিক্ষাবান্ধব পরিবেশ গঠনে সহায়ক ভূমিকা পালন করেন।",
+    bio: "প্রতিষ্ঠানের উন্নয়ন, प्रशासनिक সমন্বয় ও শিক্ষাবান্ধব পরিবেশ গঠনে সহায়ক ভূমিকা পালন করেন।",
     slug: "mohammad-hossain",
     socials: defaultSocials,
   },
@@ -55,151 +55,151 @@ const members: GoverningMember[] = [
     name: "মোঃ হারিসুল আলম",
     title: "ব্যবস্থাপনা পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "শিক্ষা ব্যবস্থাপনা, পরিকল্পনা বাস্তবায়ন ও প্রশাসনিক কার্যক্রমে নেতৃত্ব প্রদান করেন।",
+    bio: "শিক্ষা ব্যবস্থাপনা, পরিকল্পনা বাস্তবায়ন ও প্রশাসনিক কার্যক্রমে নেতৃত্ব প্রদান করেন।",
     slug: "harisul-alam",
     socials: defaultSocials,
   },
   {
     id: 4,
-    name: "Tipu Alam Milon",
-    title: "Deputy Managing Director",
+    name: "টিপু আলম মিলন",
+    title: "ডেপুটি ম্যানেজিং ডিরেক্টর",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রতিষ্ঠানের কার্যক্রম, উন্নয়ন পরিকল্পনা ও একাডেমিক সহায়তায় সক্রিয় ভূমিকা রাখেন।",
+    bio: "প্রতিষ্ঠানের কার্যক্রম, উন্নয়ন পরিকল্পনা ও একাডেমিক সহায়তায় সক্রিয় ভূমিকা রাখেন।",
     slug: "tipu-alam",
     socials: defaultSocials,
   },
   {
     id: 5,
-    name: "Arif Hossain",
-    title: "Finance Director",
+    name: "আরিফ হোসাইন",
+    title: "অর্থ পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "আর্থিক ব্যবস্থাপনা, বাজেট পরিকল্পনা ও স্বচ্ছতা নিশ্চিতকরণে দায়িত্ব পালন করেন।",
+    bio: "আর্থিক ব্যবস্থাপনা, বাজেট পরিকল্পনা ও স্বচ্ছতা নিশ্চিতকরণে দায়িত্ব পালন করেন।",
     slug: "arif-hossain",
     socials: defaultSocials,
   },
   {
     id: 6,
-    name: "Syed Momin Hossain",
-    title: "Director",
+    name: "সৈয়দ মোমিন হোসাইন",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রতিষ্ঠানের সামগ্রিক উন্নয়ন ও শিক্ষার্থী কল্যাণমূলক কার্যক্রমে যুক্ত।",
+    bio: "প্রতিষ্ঠানের সামগ্রিক উন্নয়ন ও শিক্ষার্থী কল্যাণমূলক কার্যক্রমে যুক্ত।",
     slug: "syed-momin",
     socials: defaultSocials,
   },
   {
     id: 7,
-    name: "Shahidul Islam",
-    title: "Director",
+    name: "শাহিদুল ইসলাম",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রশাসনিক সহায়তা, উন্নয়ন কার্যক্রম ও শিক্ষার মানোন্নয়নে অবদান রাখেন।",
+    bio: "প্রশাসনিক সহায়তা, উন্নয়ন কার্যক্রম ও শিক্ষার মানোন্নয়নে অবদান রাখেন।",
     slug: "shahidul-islam",
     socials: defaultSocials,
   },
   {
     id: 8,
-    name: "Parimal Kar",
-    title: "Director",
+    name: "পরিমল কর",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "শৃঙ্খলা, পরিচালনা ও প্রতিষ্ঠানের দীর্ঘমেয়াদি পরিকল্পনায় সহায়তা করেন।",
+    bio: "শৃঙ্খলা, পরিচালনা ও প্রতিষ্ঠানের দীর্ঘমেয়াদি পরিকল্পনায় সহায়তা করেন।",
     slug: "parimal-kar",
     socials: defaultSocials,
   },
   {
     id: 9,
-    name: "Md Abul Hasan",
-    title: "Director",
+    name: "মোঃ আবুল হাসান",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "শিক্ষার্থীদের কল্যাণ, অভিভাবক সমন্বয় এবং উন্নয়নমূলক কাজে সম্পৃক্ত।",
+    bio: "শিক্ষার্থীদের কল্যাণ, অভিভাবক সমন্বয় এবং উন্নয়নমূলক কাজে সম্পৃক্ত।",
     slug: "abul-hasan",
     socials: defaultSocials,
   },
   {
     id: 10,
-    name: "Md. Shariful Islam Gazi",
-    title: "Director",
+    name: "মোঃ শরিফুল ইসলাম গাজী",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রতিষ্ঠানের পরিকল্পনা, পরিচালনা ও সেবা কার্যক্রমে দায়িত্বশীল ভূমিকা পালন করেন।",
+    bio: "প্রতিষ্ঠানের পরিকল্পনা, পরিচালনা ও সেবা কার্যক্রমে দায়িত্বশীল ভূমিকা পালন করেন।",
     slug: "shariful-islam",
     socials: defaultSocials,
   },
   {
     id: 11,
-    name: "Md Marazul Islam",
-    title: "Director",
+    name: "মোঃ মারাজুল ইসলাম",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "আধুনিক শিক্ষা পরিবেশ ও প্রতিষ্ঠান উন্নয়নে সহযোগী ভূমিকা রাখেন।",
+    bio: "আধুনিক শিক্ষা পরিবেশ ও প্রতিষ্ঠান উন্নয়নে সহযোগী ভূমিকা রাখেন।",
     slug: "marazul-islam",
     socials: defaultSocials,
   },
   {
     id: 12,
-    name: "Mosaraf Hossain",
-    title: "Director",
+    name: "মোশাররফ হোসাইন",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রতিষ্ঠানের শৃঙ্খলা, পরিকল্পনা এবং শিক্ষার্থী সহায়ক কাজে যুক্ত।",
+    bio: "প্রতিষ্ঠানের শৃঙ্খলা, পরিকল্পনা এবং শিক্ষার্থী সহায়ক কাজে যুক্ত।",
     slug: "mosaraf-hossain",
     socials: defaultSocials,
   },
   {
     id: 13,
-    name: "Md. Masud Parvej",
-    title: "Director",
+    name: "মোঃ মাসুদ পারভেজ",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রশাসনিক উন্নয়ন ও শিক্ষা কার্যক্রমের মানোন্নয়নে ভূমিকা রাখেন।",
+    bio: "প্রশাসনিক উন্নয়ন ও শিক্ষা কার্যক্রমের মানোন্নয়নে ভূমিকা রাখেন।",
     slug: "masud-parvej",
     socials: defaultSocials,
   },
   {
     id: 14,
-    name: "Md. Yousuf Ali",
-    title: "Director",
+    name: "মোঃ ইউসুফ আলী",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "শিক্ষা, সংস্কৃতি ও সহশিক্ষা কার্যক্রম উন্নয়নে সহায়তা করেন।",
+    bio: "শিক্ষা, সংস্কৃতি ও সহশিক্ষা কার্যক্রম উন্নয়নে সহায়তা করেন।",
     slug: "yousuf-ali",
     socials: defaultSocials,
   },
   {
     id: 15,
-    name: "Kajal Kumar Saha",
-    title: "Director",
+    name: "কাজল কুমার সাহা",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রতিষ্ঠানের উন্নয়ন পরিকল্পনা ও একাডেমিক পরিবেশ উন্নত করতে কাজ করেন।",
+    bio: "প্রতিষ্ঠানের উন্নয়ন পরিকল্পনা ও একাডেমিক পরিবেশ উন্নত করতে কাজ করেন।",
     slug: "kajal-kumar",
     socials: defaultSocials,
   },
   {
     id: 16,
-    name: "Md. Shajalal Ansari",
-    title: "Director",
+    name: "মোঃ শাহজালাল আনসারী",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "শিক্ষার্থী কল্যাণ ও প্রতিষ্ঠান পরিচালনায় সহযোগী দায়িত্ব পালন করেন।",
+    bio: "শিক্ষার্থী কল্যাণ ও প্রতিষ্ঠান পরিচালনায় সহযোগী দায়িত্ব পালন করেন।",
     slug: "shajalal-ansari",
     socials: defaultSocials,
   },
   {
     id: 17,
-    name: "A. T. M. Gausul Wajet",
-    title: "Director",
+    name: "এ. টি. এম. গাউসুল ওয়াজেত",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রতিষ্ঠানের সার্বিক অগ্রগতি, শৃঙ্খলা ও পরিকল্পনায় সম্পৃক্ত।",
+    bio: "প্রতিষ্ঠানের সার্বিক অগ্রগতি, শৃঙ্খলা ও পরিকল্পনায় সম্পৃক্ত।",
     slug: "gausul-wajet",
     socials: defaultSocials,
   },
   {
     id: 18,
-    name: "A.T.M. Khurshid Alam",
-    title: "Director",
+    name: "এ. টি. এম. খুরশিদ আলম",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "প্রতিষ্ঠানের মানোন্নয়ন ও কার্যকর পরিচালনায় দায়িত্বশীল ভূমিকা রাখেন।",
+    bio: "প্রতিষ্ঠানের মানোন্নয়ন ও কার্যকর পরিচালনায় দায়িত্বশীল ভূমিকা রাখেন।",
     slug: "khurshid-alam",
     socials: defaultSocials,
   },
   {
     id: 19,
-    name: "Shukdeb Chandra Das",
-    title: "Director",
+    name: "শুকদেব চন্দ্র দাস",
+    title: "পরিচালক",
     image: "/assets/images/managing-director.avif",
-    bio: "শিক্ষা, প্রশাসন ও উন্নয়ন কার্যক্রমে গুরুত্বপূর্ণ সহযোগিতা প্রদান করেন।",
+    bio: "শিক্ষা, প্রশাসন ও উন্নয়ন কার্যক্রমে গুরুত্বপূর্ণ সহযোগিতা প্রদান করেন।",
     slug: "shukdeb-das",
     socials: defaultSocials,
   },
@@ -331,7 +331,7 @@ function GoverningCard({
           type="button"
           className="mt-6 rounded-full bg-color-primary px-5 py-2.5 text-sm font-bold text-inverse shadow-sm transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md"
         >
-          View Details
+          বিস্তারিত দেখুন
         </button>
       </div>
     </article>
@@ -428,7 +428,7 @@ function GoverningDetailsModal({
               onClick={onClose}
               className="mt-8 rounded-full bg-color-primary px-6 py-3 text-sm font-bold text-inverse transition-all duration-500 hover:-translate-y-0.5 hover:shadow-md"
             >
-              Close Details
+              বন্ধ করুন
             </button>
           </div>
         </div>
@@ -449,7 +449,7 @@ export default function GoverningBodyPage() {
       <section className="mx-auto max-w-[1600px] px-4 py-10 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
         <header className="mb-12 text-center">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-brand-primary">
-            Governing Body
+            Governing-body
           </p>
 
           <h1 className="mt-3 text-4xl font-black leading-tight text-primary md:text-5xl">
@@ -459,7 +459,7 @@ export default function GoverningBodyPage() {
           <div className="mx-auto mt-5 h-[4px] w-28 rounded-full bg-color-primary" />
 
           <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-7 text-secondary">
-            প্রতিষ্ঠানের সার্বিক উন্নয়ন, শৃঙ্খলা, মানসম্মত শিক্ষা ও
+            প্রতিষ্ঠানের সার্বিক উন্নয়ন, শৃঙ্খলা, মানসম্মত শিক্ষা ও
             শিক্ষার্থীদের কল্যাণে নিবেদিত সম্মানিত গভর্নিং বডির সদস্যবৃন্দ।
           </p>
 
@@ -467,7 +467,7 @@ export default function GoverningBodyPage() {
             href="/"
             className="mt-6 inline-flex rounded-full bg-color-primary px-6 py-3 text-sm font-bold text-inverse shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-md"
           >
-            Back to Home
+            হোম পেজে ফিরে যান
           </Link>
         </header>
 
@@ -479,7 +479,8 @@ export default function GoverningBodyPage() {
           />
         </div>
 
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* উন্নত রেসপন্সিভ গ্রিড लेআউট (ট্যাবলেটের জন্য md:grid-cols-3 যুক্ত করা হয়েছে) */}
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {otherMembers.map((member) => (
             <GoverningCard
               key={member.id}

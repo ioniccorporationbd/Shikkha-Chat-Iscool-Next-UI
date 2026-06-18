@@ -1,428 +1,286 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import {
-  FaBell,
-  FaCalendarCheck,
-  FaCheck,
-  FaClipboardCheck,
-  FaCloudArrowDown,
-  FaFileLines,
-  FaMoon,
+  FaAward,
+  FaBookOpen,
+  FaEnvelope,
+  FaGraduationCap,
+  FaIdCard,
   FaPeopleGroup,
-  FaRegCalendarDays,
-  FaRegClock,
+  FaPhone,
   FaSchoolFlag,
   FaStar,
-  FaTriangleExclamation,
   FaUserGraduate,
+  FaUsersGear,
 } from "react-icons/fa6";
 
-type OverviewItem = {
+type Teacher = {
+  id: number;
+  name: string;
+  banglaName: string;
+  designation: string;
+  department: string;
+  qualification: string;
+  experience: string;
+  phone: string;
+  email: string;
+  image: string;
+};
+
+type StatCard = {
   title: string;
   value: string;
-  icon: ReactNode;
-};
-
-type HolidayCategory = {
-  title: string;
   description: string;
   icon: ReactNode;
 };
 
-type MonthlyHoliday = {
-  month: string;
-  holidays: string[];
-};
-
-type HolidayItem = {
-  id: number;
-  holidayName: string;
-  type: string;
-  date: string;
-  day: string;
-  note: string;
-  fileUrl: string;
-};
-
-type ImportantNote = {
-  title: string;
-  description: string;
-  icon: ReactNode;
-};
-
-type GuidelineSection = {
-  title: string;
-  icon: ReactNode;
-  points: string[];
-};
-
-const overviewItems: OverviewItem[] = [
-  {
-    title: "মোট ছুটি",
-    value: "৬৫+",
-    icon: <FaRegCalendarDays />,
-  },
-  {
-    title: "সরকারি ছুটি",
-    value: "২২+",
-    icon: <FaSchoolFlag />,
-  },
-  {
-    title: "ধর্মীয় ছুটি",
-    value: "১৮+",
-    icon: <FaMoon />,
-  },
-  {
-    title: "বিদ্যালয় নির্ধারিত ছুটি",
-    value: "২৫+",
-    icon: <FaCalendarCheck />,
-  },
-];
-
-const holidayCategories: HolidayCategory[] = [
-  {
-    title: "National Holidays",
-    description:
-      "জাতীয় দিবস, সরকারি ছুটি ও রাষ্ট্রীয় গুরুত্বপূর্ণ দিবস উপলক্ষে বিদ্যালয় বন্ধ থাকবে।",
-    icon: <FaSchoolFlag />,
-  },
-  {
-    title: "Religious Holidays",
-    description:
-      "ঈদ, পূজা, বড়দিন, বুদ্ধ পূর্ণিমা ও অন্যান্য ধর্মীয় উৎসব উপলক্ষে নির্ধারিত ছুটি।",
-    icon: <FaMoon />,
-  },
-  {
-    title: "School Vacations",
-    description:
-      "গ্রীষ্মকালীন ছুটি, শীতকালীন ছুটি ও শিক্ষাবর্ষের নির্ধারিত দীর্ঘ বিরতি।",
-    icon: <FaCalendarCheck />,
-  },
-  {
-    title: "Exam Breaks",
-    description:
-      "পরীক্ষা শেষে শিক্ষার্থীদের বিশ্রাম ও নতুন প্রস্তুতির জন্য নির্ধারিত বিরতি।",
-    icon: <FaClipboardCheck />,
-  },
-  {
-    title: "Special Holidays",
-    description:
-      "বিশেষ পরিস্থিতি, সরকারি নির্দেশনা বা বিদ্যালয় কর্তৃপক্ষের সিদ্ধান্ত অনুযায়ী ছুটি।",
-    icon: <FaBell />,
-  },
-];
-
-const monthlyHolidays: MonthlyHoliday[] = [
-  {
-    month: "জানুয়ারি",
-    holidays: ["শীতকালীন ছুটি", "জাতীয় পাঠ্যপুস্তক উৎসব পরবর্তী বিরতি"],
-  },
-  {
-    month: "ফেব্রুয়ারি",
-    holidays: ["শহীদ দিবস ও আন্তর্জাতিক মাতৃভাষা দিবস"],
-  },
-  {
-    month: "মার্চ",
-    holidays: ["স্বাধীনতা দিবস", "শবেবরাত উপলক্ষে ছুটি"],
-  },
-  {
-    month: "এপ্রিল",
-    holidays: ["বাংলা নববর্ষ", "ঈদুল ফিতর উপলক্ষে ছুটি"],
-  },
-  {
-    month: "মে",
-    holidays: ["মে দিবস", "বুদ্ধ পূর্ণিমা"],
-  },
-  {
-    month: "জুন",
-    holidays: ["ঈদুল আযহা উপলক্ষে ছুটি", "গ্রীষ্মকালীন ছুটি"],
-  },
-  {
-    month: "জুলাই",
-    holidays: ["পরীক্ষা পরবর্তী বিরতি", "বিদ্যালয় নির্ধারিত বিশেষ ছুটি"],
-  },
-  {
-    month: "আগস্ট",
-    holidays: ["জাতীয় শোক দিবস", "সাপ্তাহিক ও বিশেষ ছুটি"],
-  },
-  {
-    month: "সেপ্টেম্বর",
-    holidays: ["মিলাদুন্নবী উপলক্ষে ছুটি"],
-  },
-  {
-    month: "অক্টোবর",
-    holidays: ["দুর্গাপূজা উপলক্ষে ছুটি"],
-  },
-  {
-    month: "নভেম্বর",
-    holidays: ["বার্ষিক পরীক্ষা প্রস্তুতি বিরতি"],
-  },
-  {
-    month: "ডিসেম্বর",
-    holidays: ["বিজয় দিবস", "শীতকালীন ছুটি", "বড়দিন উপলক্ষে ছুটি"],
-  },
-];
-
-const holidayItems: HolidayItem[] = [
+const teachers: Teacher[] = [
   {
     id: 1,
-    holidayName: "শহীদ দিবস ও আন্তর্জাতিক মাতৃভাষা দিবস",
-    type: "জাতীয় ছুটি",
-    date: "২১ ফেব্রুয়ারি ২০২৬",
-    day: "শনিবার",
-    note: "বিদ্যালয়ে বিশেষ আলোচনা ও শ্রদ্ধা নিবেদন অনুষ্ঠিত হতে পারে।",
-    fileUrl: "#",
+    name: "Md. Hasan Mahmud",
+    banglaName: "মোঃ হাসান মাহমুদ",
+    designation: "Principal",
+    department: "Administration",
+    qualification: "M.A, B.Ed",
+    experience: "18 Years",
+    phone: "01867268422",
+    email: "principal@shikkhachat.edu.bd",
+    image: "/assets/3.jpg",
   },
   {
     id: 2,
-    holidayName: "স্বাধীনতা দিবস",
-    type: "জাতীয় ছুটি",
-    date: "২৬ মার্চ ২০২৬",
-    day: "বৃহস্পতিবার",
-    note: "জাতীয় দিবস উপলক্ষে বিদ্যালয়ের নির্ধারিত কর্মসূচি থাকতে পারে।",
-    fileUrl: "#",
+    name: "Nusrat Jahan",
+    banglaName: "নুসরাত জাহান",
+    designation: "Senior Teacher",
+    department: "Bangla",
+    qualification: "M.A in Bangla, B.Ed",
+    experience: "12 Years",
+    phone: "01866785183",
+    email: "bangla@shikkhachat.edu.bd",
+    image: "/assets/4.jpg",
   },
   {
     id: 3,
-    holidayName: "বাংলা নববর্ষ",
-    type: "জাতীয় উৎসব",
-    date: "১৪ এপ্রিল ২০২৬",
-    day: "মঙ্গলবার",
-    note: "সাংস্কৃতিক কার্যক্রম বিদ্যালয়ের নোটিশ অনুযায়ী অনুষ্ঠিত হবে।",
-    fileUrl: "#",
+    name: "Md. Arif Hossain",
+    banglaName: "মোঃ আরিফ হোসেন",
+    designation: "Assistant Teacher",
+    department: "Mathematics",
+    qualification: "M.Sc in Mathematics",
+    experience: "10 Years",
+    phone: "01866785184",
+    email: "math@shikkhachat.edu.bd",
+    image: "/assets/5.jpg",
   },
   {
     id: 4,
-    holidayName: "ঈদুল ফিতর",
-    type: "ধর্মীয় ছুটি",
-    date: "চাঁদ দেখা সাপেক্ষে",
-    day: "পরিবর্তনশীল",
-    note: "সরকারি ঘোষণা অনুযায়ী ছুটির সময়সূচি নির্ধারিত হবে।",
-    fileUrl: "#",
+    name: "Farhana Akter",
+    banglaName: "ফারহানা আক্তার",
+    designation: "Assistant Teacher",
+    department: "English",
+    qualification: "M.A in English, B.Ed",
+    experience: "9 Years",
+    phone: "01867268423",
+    email: "english@shikkhachat.edu.bd",
+    image: "/assets/3.jpg",
   },
   {
     id: 5,
-    holidayName: "ঈদুল আযহা",
-    type: "ধর্মীয় ছুটি",
-    date: "চাঁদ দেখা সাপেক্ষে",
-    day: "পরিবর্তনশীল",
-    note: "সরকারি নির্দেশনা অনুযায়ী ছুটির তালিকা হালনাগাদ করা হবে।",
-    fileUrl: "#",
+    name: "Sabbir Rahman",
+    banglaName: "সাব্বির রহমান",
+    designation: "Assistant Teacher",
+    department: "Science",
+    qualification: "M.Sc in Physics",
+    experience: "8 Years",
+    phone: "01867268424",
+    email: "science@shikkhachat.edu.bd",
+    image: "/assets/4.jpg",
   },
   {
     id: 6,
-    holidayName: "দুর্গাপূজা",
-    type: "ধর্মীয় ছুটি",
-    date: "অক্টোবর ২০২৬",
-    day: "নোটিশ অনুযায়ী",
-    note: "বিদ্যালয়ের নোটিশ বোর্ডে বিস্তারিত সময়সূচি প্রকাশ করা হবে।",
-    fileUrl: "#",
+    name: "Mst. Jannatul Ferdous",
+    banglaName: "মোছাঃ জান্নাতুল ফেরদৌস",
+    designation: "Assistant Teacher",
+    department: "ICT",
+    qualification: "B.Sc in CSE",
+    experience: "7 Years",
+    phone: "01867268425",
+    email: "ict@shikkhachat.edu.bd",
+    image: "/assets/5.jpg",
   },
   {
     id: 7,
-    holidayName: "বার্ষিক পরীক্ষা পরবর্তী বিরতি",
-    type: "পরীক্ষা বিরতি",
-    date: "নভেম্বর ২০২৬",
-    day: "নোটিশ অনুযায়ী",
-    note: "পরীক্ষার সময়সূচি শেষে বিরতির তারিখ জানানো হবে।",
-    fileUrl: "#",
+    name: "Md. Rakibul Islam",
+    banglaName: "মোঃ রাকিবুল ইসলাম",
+    designation: "Assistant Teacher",
+    department: "Islamic Studies",
+    qualification: "M.A in Islamic Studies",
+    experience: "11 Years",
+    phone: "01867268426",
+    email: "islamic@shikkhachat.edu.bd",
+    image: "/assets/3.jpg",
   },
   {
     id: 8,
-    holidayName: "বিজয় দিবস",
-    type: "জাতীয় ছুটি",
-    date: "১৬ ডিসেম্বর ২০২৬",
-    day: "বুধবার",
-    note: "জাতীয় কর্মসূচি ও বিদ্যালয়ের অনুষ্ঠান থাকতে পারে।",
-    fileUrl: "#",
-  },
-  {
-    id: 9,
-    holidayName: "শীতকালীন ছুটি",
-    type: "বিদ্যালয় ছুটি",
-    date: "ডিসেম্বর ২০২৬",
-    day: "নোটিশ অনুযায়ী",
-    note: "চূড়ান্ত ছুটির সময়সূচি বিদ্যালয়ের অফিসিয়াল নোটিশে প্রকাশ করা হবে।",
-    fileUrl: "#",
+    name: "Sharmin Sultana",
+    banglaName: "শারমিন সুলতানা",
+    designation: "Assistant Teacher",
+    department: "Social Science",
+    qualification: "M.S.S, B.Ed",
+    experience: "6 Years",
+    phone: "01867268427",
+    email: "social@shikkhachat.edu.bd",
+    image: "/assets/4.jpg",
   },
 ];
 
-const importantNotes: ImportantNote[] = [
+const stats: StatCard[] = [
   {
-    title: "ধর্মীয় ছুটির তারিখ পরিবর্তন হতে পারে",
-    description:
-      "ঈদ, শবেবরাত ও অন্যান্য চাঁদ দেখা সাপেক্ষ ছুটির তারিখ সরকারি ঘোষণার ভিত্তিতে পরিবর্তন হতে পারে।",
-    icon: <FaMoon />,
-  },
-  {
-    title: "সরকারি নির্দেশনা অনুসরণ করা হবে",
-    description:
-      "শিক্ষা মন্ত্রণালয় বা সংশ্লিষ্ট কর্তৃপক্ষের নির্দেশনা অনুযায়ী ছুটির তালিকা হালনাগাদ করা হবে।",
-    icon: <FaSchoolFlag />,
-  },
-  {
-    title: "জরুরি নোটিশ প্রকাশ করা হবে",
-    description:
-      "ছুটির সময়সূচিতে কোনো পরিবর্তন হলে বিদ্যালয়ের নোটিশ বোর্ড ও অফিসিয়াল মাধ্যমে জানানো হবে।",
-    icon: <FaTriangleExclamation />,
-  },
-  {
-    title: "ছুটির পর উপস্থিতি জরুরি",
-    description:
-      "ছুটি শেষে নির্ধারিত দিনে শিক্ষার্থীদের সময়মতো বিদ্যালয়ে উপস্থিত থাকতে হবে।",
-    icon: <FaRegClock />,
-  },
-];
-
-const guidelineSections: GuidelineSection[] = [
-  {
-    title: "শিক্ষার্থীদের নির্দেশনা",
-    icon: <FaUserGraduate />,
-    points: [
-      "ছুটির সময় পড়াশোনার নিয়মিত রুটিন বজায় রাখতে হবে।",
-      "শিক্ষক কর্তৃক দেওয়া হোমওয়ার্ক, অ্যাসাইনমেন্ট ও প্রজেক্ট সময়মতো সম্পন্ন করতে হবে।",
-      "ছুটির পরে নির্ধারিত দিনে বিদ্যালয়ে উপস্থিত থাকতে হবে।",
-      "দীর্ঘ ছুটির সময় বই পড়া, অনুশীলন ও সৃজনশীল কাজে সময় ব্যয় করতে হবে।",
-      "ছুটির সময় নিরাপদ চলাফেরা ও অভিভাবকের নির্দেশনা মেনে চলতে হবে।",
-    ],
-  },
-  {
-    title: "অভিভাবকদের নির্দেশনা",
+    title: "Total Teachers",
+    value: "35+",
+    description: "Experienced academic teachers",
     icon: <FaPeopleGroup />,
-    points: [
-      "সন্তানের ছুটির সময় পড়াশোনা, বিশ্রাম ও বিনোদনের মধ্যে ভারসাম্য বজায় রাখতে সহায়তা করুন।",
-      "বিদ্যালয়ের নোটিশ বোর্ড ও অফিসিয়াল আপডেট নিয়মিত অনুসরণ করুন।",
-      "হোমওয়ার্ক, অ্যাসাইনমেন্ট ও পরীক্ষার প্রস্তুতি পর্যবেক্ষণ করুন।",
-      "ছুটির পর সন্তানের নিয়মিত উপস্থিতি নিশ্চিত করুন।",
-      "যেকোনো পরিবর্তিত ছুটির তথ্য বিদ্যালয়ের অফিস থেকে নিশ্চিত করুন।",
-    ],
+  },
+  {
+    title: "Departments",
+    value: "08",
+    description: "Subject-based departments",
+    icon: <FaBookOpen />,
+  },
+  {
+    title: "Senior Teachers",
+    value: "12+",
+    description: "Highly experienced mentors",
+    icon: <FaAward />,
+  },
+  {
+    title: "Experience",
+    value: "15+",
+    description: "Average years of excellence",
+    icon: <FaStar />,
   },
 ];
 
-const ListOfHolidaysPage = () => {
+const departments = [
+  "Administration",
+  "Bangla",
+  "English",
+  "Mathematics",
+  "Science",
+  "ICT",
+  "Islamic Studies",
+  "Social Science",
+];
+
+export default function TeachersInfoPage() {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
-      <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
-          <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Academic Schedule
+          <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
+            Teachers Info
           </p>
 
-          <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
-            ছুটির তালিকা
+          <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
+            শিক্ষকবৃন্দের তথ্য
           </h1>
 
-          <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-color-primary" />
+          <div className="mx-auto mt-7 h-1 w-28 rounded-full bg-color-primary" />
 
-          <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            শিক্ষাবর্ষের সরকারি ছুটি, ধর্মীয় ছুটি, জাতীয় দিবস, পরীক্ষার
-            পরবর্তী বিরতি এবং বিদ্যালয় নির্ধারিত ছুটির তালিকা।
+          <p className="mx-auto mt-9 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
+            আমাদের বিদ্যালয়ের শিক্ষকবৃন্দ শিক্ষার্থীদের নৈতিকতা, জ্ঞান,
+            সৃজনশীলতা এবং ভবিষ্যৎ নেতৃত্ব তৈরিতে গুরুত্বপূর্ণ ভূমিকা পালন
+            করেন।
           </p>
 
           <Link
             href="/"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
+            className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
             Back to Home
           </Link>
         </div>
       </section>
 
-      {/* Holiday Overview */}
-      <section className="px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {overviewItems.map((item) => (
-            <div
-              key={item.title}
-              className="group rounded-[24px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-[18px] bg-color-secondary text-xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
-                {item.icon}
-              </div>
+      {/* Overview */}
+      <section className="px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px]">
+          <div className="overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
+            <div className="grid grid-cols-1 lg:grid-cols-12">
+              <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-inverse">
+                  <FaSchoolFlag />
+                  Academic Excellence
+                </span>
 
-              <h3 className="mt-4 text-2xl font-black text-primary">
-                {item.value}
-              </h3>
-
-              <p className="mt-1 text-sm font-semibold text-secondary">
-                {item.title}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start">
-              <div className="lg:col-span-4">
-                <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                  ভূমিকা
-                </p>
-
-                <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                  শিক্ষাবর্ষের ছুটি পরিকল্পনা
+                <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
+                  অভিজ্ঞ শিক্ষক, উন্নত শিক্ষা ও যত্নশীল দিকনির্দেশনা
                 </h2>
 
-                <div className="mt-5 flex items-center gap-2">
-                  <span className="h-1 w-16 rounded-full bg-color-primary" />
-                  <span className="h-1 w-7 rounded-full bg-color-secondary" />
-                </div>
-              </div>
-
-              <div className="lg:col-span-8">
-                <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  ছুটির তালিকা শিক্ষার্থী, অভিভাবক ও শিক্ষকদের পুরো শিক্ষাবর্ষের
-                  পরিকল্পনা করতে সহায়তা করে। জাতীয় দিবস, সরকারি ছুটি, ধর্মীয়
-                  উৎসব, পরীক্ষা পরবর্তী বিরতি এবং বিদ্যালয় নির্ধারিত ছুটির
-                  তথ্য এখানে সাজানো হয়েছে। কোনো ছুটির তারিখ পরিবর্তন হলে
-                  বিদ্যালয়ের নোটিশ বোর্ডে হালনাগাদ তথ্য প্রকাশ করা হবে।
+                <p className="mt-5 max-w-4xl text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
+                  আমাদের শিক্ষকবৃন্দ নিয়মিত পাঠদান, মূল্যায়ন, সহশিক্ষা
+                  কার্যক্রম এবং শিক্ষার্থীদের ব্যক্তিগত উন্নয়নে নিবেদিত। প্রতিটি
+                  শিক্ষক শিক্ষার্থীদের জন্য একটি অনুপ্রেরণামূলক শেখার পরিবেশ
+                  তৈরি করেন।
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Holiday Categories */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              ছুটির ধরন
-            </p>
+              <div className="grid grid-cols-1 gap-4 bg-color-secondary p-6 sm:grid-cols-2 sm:p-8 lg:col-span-4 lg:p-10">
+                <div className="rounded-[26px] border border-soft bg-page-primary p-6 text-center shadow-xl">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
+                    <FaUserGraduate />
+                  </div>
 
-            <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Holiday Categories
-            </h2>
+                  <h3 className="mt-5 text-4xl font-black text-primary">
+                    35+
+                  </h3>
 
-            <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-              <span className="h-1 w-16 rounded-full bg-color-primary" />
-              <span className="h-1 w-7 rounded-full bg-color-secondary" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {holidayCategories.map((category) => (
-              <article
-                key={category.title}
-                className="group rounded-[26px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-page-secondary group-hover:text-brand-primary">
-                  {category.icon}
+                  <p className="mt-2 text-sm font-black text-brand-primary">
+                    Dedicated Teachers
+                  </p>
                 </div>
 
-                <h3 className="mt-5 text-xl font-black leading-tight text-primary transition-colors duration-500 group-hover:text-inverse">
-                  {category.title}
+                <div className="rounded-[26px] border border-soft bg-page-primary p-6 text-center shadow-xl">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
+                    <FaGraduationCap />
+                  </div>
+
+                  <h3 className="mt-5 text-4xl font-black text-primary">
+                    08
+                  </h3>
+
+                  <p className="mt-2 text-sm font-black text-brand-primary">
+                    Departments
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {stats.map((item) => (
+              <article
+                key={item.title}
+                className="group rounded-[28px] border border-soft bg-page-primary p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary hover:shadow-xl"
+              >
+                <div className="flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-secondary text-3xl text-brand-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
+                  {item.icon}
+                </div>
+
+                <h3 className="mt-6 text-4xl font-black text-primary">
+                  {item.value}
                 </h3>
 
-                <p className="mt-3 text-sm font-semibold leading-7 text-secondary transition-colors duration-500 group-hover:text-inverse/80">
-                  {category.description}
+                <p className="mt-2 text-lg font-black text-primary">
+                  {item.title}
+                </p>
+
+                <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
+                  {item.description}
                 </p>
               </article>
             ))}
@@ -430,351 +288,199 @@ const ListOfHolidaysPage = () => {
         </div>
       </section>
 
-      {/* Monthly Holiday List */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
-            <div className="mb-8 text-center">
-              <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                মাসভিত্তিক ছুটি
-              </p>
+      {/* Department List */}
+      <section className="px-4 pb-10 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px] rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
+          <div className="mb-7 text-center">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
+              Departments
+            </p>
 
-              <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Monthly Holiday List
+            <h2 className="mt-3 text-3xl font-black text-primary">
+              বিভাগসমূহ
+            </h2>
+
+            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-color-primary" />
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold leading-7 text-secondary">
+              বিষয়ভিত্তিক বিভাগ অনুযায়ী শিক্ষকবৃন্দ শিক্ষার্থীদের পাঠদান ও
+              একাডেমিক দিকনির্দেশনা প্রদান করেন।
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
+            {departments.map((department) => (
+              <div
+                key={department}
+                className="rounded-[20px] border border-soft bg-page-secondary px-4 py-4 text-center text-sm font-black text-primary transition-all duration-300 hover:-translate-y-1 hover:border-brand-primary hover:bg-color-secondary hover:text-brand-primary"
+              >
+                {department}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Teachers Grid */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px]">
+          <div className="mb-8 text-center">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
+              Teacher Profiles
+            </p>
+
+            <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
+              আমাদের শিক্ষকবৃন্দ
+            </h2>
+
+            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-color-primary" />
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold leading-7 text-secondary">
+              বিদ্যালয়ের প্রতিটি শিক্ষক শিক্ষার্থীদের উন্নত শিক্ষা, নৈতিকতা ও
+              সফল ভবিষ্যৎ গঠনে প্রতিশ্রুতিবদ্ধ।
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-4">
+            {teachers.map((teacher) => (
+              <article
+                key={teacher.id}
+                className="group overflow-hidden rounded-[30px] border border-soft bg-page-primary shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary hover:shadow-xl"
+              >
+                <div className="relative h-[280px] overflow-hidden bg-page-secondary">
+                  <Image
+                    src={teacher.image}
+                    alt={teacher.name}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                    className="object-cover transition duration-700 group-hover:scale-110"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/90 via-[var(--color-primary)]/10 to-transparent" />
+
+                  <div className="absolute left-5 top-5">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-color-secondary px-4 py-2 text-xs font-black text-brand-primary shadow-md">
+                      <FaIdCard />
+                      {teacher.department}
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-0 left-0 right-0 p-5">
+                    <h3 className="text-2xl font-black text-inverse">
+                      {teacher.banglaName}
+                    </h3>
+
+                    <p className="mt-1 text-sm font-semibold text-inverse opacity-90">
+                      {teacher.designation}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-5">
+                  <h4 className="text-lg font-black text-primary">
+                    {teacher.name}
+                  </h4>
+
+                  <p className="mt-2 text-sm font-semibold text-brand-primary">
+                    {teacher.qualification}
+                  </p>
+
+                  <div className="mt-5 space-y-3 border-t border-soft pt-4 text-sm font-semibold text-secondary">
+                    <p className="flex items-center gap-3">
+                      <FaBookOpen className="shrink-0 text-brand-primary" />
+                      {teacher.department}
+                    </p>
+
+                    <p className="flex items-center gap-3">
+                      <FaAward className="shrink-0 text-brand-primary" />
+                      {teacher.experience}
+                    </p>
+
+                    <p className="flex items-center gap-3">
+                      <FaPhone className="shrink-0 text-brand-primary" />
+                      {teacher.phone}
+                    </p>
+
+                    <p className="flex items-center gap-3 break-all">
+                      <FaEnvelope className="shrink-0 text-brand-primary" />
+                      {teacher.email}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Message */}
+      <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <div className="mx-auto max-w-[1600px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                <FaUsersGear className="text-sm" />
+
+                <p className="text-xs font-black uppercase tracking-[0.18em]">
+                  Teacher Message
+                </p>
+              </div>
+
+              <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
+                শিক্ষকই শিক্ষার্থীর সফল ভবিষ্যতের পথপ্রদর্শক
               </h2>
 
-              <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-                <span className="h-1 w-16 rounded-full bg-color-primary" />
-                <span className="h-1 w-7 rounded-full bg-color-secondary" />
-              </div>
+              <p className="mt-5 text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
+                আমাদের শিক্ষকবৃন্দ পাঠ্যক্রমের পাশাপাশি শিক্ষার্থীদের মূল্যবোধ,
+                শৃঙ্খলা, নেতৃত্ব ও আত্মবিশ্বাস গড়ে তুলতে কাজ করেন। প্রতিটি
+                শিক্ষার্থীর প্রতিভা বিকাশে শিক্ষকরা সর্বোচ্চ যত্ন ও দিকনির্দেশনা
+                প্রদান করেন।
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {monthlyHolidays.map((item) => (
-                <article
-                  key={item.month}
-                  className="group rounded-[24px] border border-soft bg-page-secondary p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-color-secondary text-primary transition-all duration-500 group-hover:bg-page-primary group-hover:text-brand-primary">
-                      <FaCalendarCheck />
-                    </div>
-
-                    <h3 className="text-xl font-black text-primary transition-colors duration-500 group-hover:text-inverse">
-                      {item.month}
-                    </h3>
-                  </div>
-
-                  <div className="mt-4 space-y-3">
-                    {item.holidays.map((holiday) => (
-                      <div
-                        key={holiday}
-                        className="flex gap-3 rounded-[18px] border border-soft bg-page-primary p-3 transition-all duration-500 group-hover:border-white/20 group-hover:bg-white/10"
-                      >
-                        <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-color-primary text-[9px] text-inverse">
-                          <FaCheck />
-                        </span>
-
-                        <p className="text-sm font-semibold leading-6 text-secondary transition-colors duration-500 group-hover:text-inverse/80">
-                          {holiday}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Holiday Table */}
-      <section
-        id="holiday-table"
-        className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
-      >
-        <div className="mx-auto max-w-[1500px]">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              বিস্তারিত তালিকা
-            </p>
-
-            <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Holiday Table
-            </h2>
-
-            <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-              <span className="h-1 w-16 rounded-full bg-color-primary" />
-              <span className="h-1 w-7 rounded-full bg-color-secondary" />
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-[30px] border border-soft bg-page-primary shadow-sm">
-            <div className="hidden lg:block">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b border-soft bg-page-secondary">
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      ছুটির নাম
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      ধরন
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      তারিখ
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      দিন
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      মন্তব্য
-                    </th>
-                    <th className="px-5 py-4 text-right text-sm font-black text-primary">
-                      ডাউনলোড
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {holidayItems.map((item) => (
-                    <tr
-                      key={item.id}
-                      className="border-b border-soft transition-all duration-500 hover:bg-page-secondary"
-                    >
-                      <td className="px-5 py-5">
-                        <div className="flex items-center gap-3">
-                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-color-secondary text-primary">
-                            <FaCalendarCheck />
-                          </span>
-
-                          <p className="text-sm font-black leading-6 text-primary">
-                            {item.holidayName}
-                          </p>
-                        </div>
-                      </td>
-
-                      <td className="px-5 py-5">
-                        <span className="inline-flex items-center rounded-full bg-page-secondary px-3 py-2 text-xs font-black text-brand-primary">
-                          {item.type}
-                        </span>
-                      </td>
-
-                      <td className="px-5 py-5 text-sm font-bold text-secondary">
-                        {item.date}
-                      </td>
-
-                      <td className="px-5 py-5 text-sm font-bold text-secondary">
-                        {item.day}
-                      </td>
-
-                      <td className="px-5 py-5 text-sm font-semibold leading-7 text-secondary">
-                        {item.note}
-                      </td>
-
-                      <td className="px-5 py-5 text-right">
-                        <Link
-                          href={item.fileUrl}
-                          className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
-                        >
-                          Download
-                          <FaCloudArrowDown />
-                        </Link>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-
-            <div className="grid grid-cols-1 gap-4 p-4 lg:hidden">
-              {holidayItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="rounded-[22px] border border-soft bg-page-secondary p-4"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                        {item.type}
-                      </p>
-
-                      <h3 className="mt-2 text-xl font-black leading-tight text-primary">
-                        {item.holidayName}
-                      </h3>
-                    </div>
-
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-color-secondary text-primary">
-                      <FaCalendarCheck />
-                    </div>
-                  </div>
-
-                  <div className="mt-4 space-y-2">
-                    <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">তারিখ:</span>{" "}
-                      {item.date}
-                    </p>
-
-                    <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">দিন:</span>{" "}
-                      {item.day}
-                    </p>
-
-                    <p className="text-sm font-semibold leading-7 text-secondary">
-                      <span className="font-black text-primary">মন্তব্য:</span>{" "}
-                      {item.note}
-                    </p>
-                  </div>
-
-                  <Link
-                    href={item.fileUrl}
-                    className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
-                  >
-                    Download
-                    <FaCloudArrowDown />
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Important Notes */}
-      <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              গুরুত্বপূর্ণ নির্দেশনা
-            </p>
-
-            <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Important Notes
-            </h2>
-
-            <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-              <span className="h-1 w-16 rounded-full bg-color-primary" />
-              <span className="h-1 w-7 rounded-full bg-color-secondary" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {importantNotes.map((note) => (
-              <article
-                key={note.title}
-                className="group rounded-[26px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
-                  {note.icon}
+            <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
+              <div className="w-full rounded-[30px] border border-soft bg-page-primary p-6 text-center shadow-xl">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[26px] bg-color-primary text-4xl text-inverse">
+                  <FaGraduationCap />
                 </div>
 
-                <h3 className="mt-5 text-xl font-black leading-tight text-primary">
-                  {note.title}
-                </h3>
+                <p className="mt-6 text-3xl font-black text-primary">
+                  Quality Education
+                </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
-                  {note.description}
+                  অভিজ্ঞ শিক্ষক, উন্নত শিক্ষা এবং শিক্ষার্থীবান্ধব পরিবেশ।
                 </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Guidelines */}
-      <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {guidelineSections.map((section) => (
-              <article
-                key={section.title}
-                className="group rounded-[28px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl sm:p-6 lg:p-7"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
-                    {section.icon}
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      নির্দেশনা
-                    </p>
-
-                    <h3 className="mt-2 text-xl font-black leading-tight text-primary sm:text-2xl">
-                      {section.title}
-                    </h3>
-                  </div>
-                </div>
-
-                <div className="mt-5 space-y-3">
-                  {section.points.map((point) => (
-                    <div
-                      key={point}
-                      className="flex gap-3 rounded-[18px] border border-soft bg-page-secondary p-4 transition-all duration-500 group-hover:border-brand-primary-soft"
-                    >
-                      <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-color-primary text-[10px] text-inverse">
-                        <FaCheck />
-                      </span>
-
-                      <p className="text-sm font-semibold leading-7 text-secondary">
-                        {point}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Closing Message */}
-      <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
-            <div className="grid grid-cols-1 lg:grid-cols-12">
-              <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
-                  <FaStar className="text-sm" />
-
-                  <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    সমাপনী বার্তা
-                  </p>
-                </div>
-
-                <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  ছুটির সময়ও শেখার ধারাবাহিকতা বজায় রাখুন
-                </h2>
-
-                <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  ছুটি শিক্ষার্থীদের বিশ্রাম, পরিবারকে সময় দেওয়া এবং নতুন
-                  উদ্যমে পড়াশোনায় ফেরার সুযোগ তৈরি করে। তবে ছুটির সময় নিয়মিত
-                  পড়াশোনা, হোমওয়ার্ক সম্পন্ন করা এবং বিদ্যালয়ের আপডেট অনুসরণ
-                  করলে শিক্ষার ধারাবাহিকতা বজায় থাকে।
-                </p>
-              </div>
-
-              <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
-                <div className="rounded-[28px] bg-page-primary p-6 text-center shadow-lg">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
-                    <FaRegCalendarDays />
-                  </div>
-
-                  <p className="mt-5 text-2xl font-black text-primary">
-                    Holiday Plan
-                  </p>
-
-                  <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    ছুটির তালিকা দেখে পড়াশোনা, বিশ্রাম ও প্রস্তুতির পরিকল্পনা
-                    করুন।
-                  </p>
-                </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Office Contact */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px] rounded-[24px] border border-soft bg-page-primary p-5 shadow-sm">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 className="text-xl font-black text-primary">
+                Need teacher-related information?
+              </h3>
+
+              <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
+                শিক্ষকবৃন্দ সম্পর্কিত বিস্তারিত তথ্যের জন্য বিদ্যালয়ের অফিসে
+                যোগাযোগ করুন।
+              </p>
+            </div>
+
+            <Link
+              href="/contact"
+              className="inline-flex w-fit items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-lg transition-all duration-300 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
+            >
+              Contact Office
+            </Link>
           </div>
         </div>
       </section>
     </main>
   );
-};
-
-export default ListOfHolidaysPage;
+}

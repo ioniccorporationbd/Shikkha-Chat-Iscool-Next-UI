@@ -20,100 +20,91 @@ type NavItem = {
 const logoSrc = "/assets/images/logo-mane.png";
 
 const navList: NavItem[] = [
-  { name: "Home", link: "/" },
+  { name: "হোম", link: "/" },
   {
-    name: "About us",
-    link: "/message-from-chairman",
+    name: "আমাদের সম্পর্কে",
+    link: "#",
     subLink: [
-      { name: "Message from Chairman", link: "/message-from-chairman" },
-      { name: "Message from Principal", link: "/message-from-principal" },
-      { name: "Governing Body", link: "/governing-body" },
-      { name: "Master Plan", link: "/master-plan" },
-      { name: "History", link: "/history" },
-      { name: "Vision and Objectives", link: "/vision-and-objectives" },
-      { name: "Infrastructure", link: "/infrastructure" },
+      { name: "চেয়ারম্যানের বাণী", link: "/message-from-chairman" },
+      { name: "প্রিন্সিপালের বাণী", link: "/message-from-principal" },
+      { name: "গভর্নিং বডি", link: "/governing-body" },
+      { name: "স্মাস্টার প্ল্যান", link: "/master-plan" },
+      { name: "ইতিহাস", link: "/history" },
+      { name: "লক্ষ্য ও উদ্দেশ্য", link: "/vision-and-objectives" },
+      { name: "অবকাঠামো", link: "/infrastructure" },
     ],
   },
   {
-    name: "Academic",
-    link: "/code-of-conducts",
+    name: "একাডেমিক",
+    link: "#",
     subLink: [
-      { name: "Code of Conducts", link: "/code-of-conducts" },
-      { name: "Guideline for Parents", link: "/guideline-for-parents" },
-      { name: "Dress Code", link: "/dress-code" },
-      {
-        name: "HomeWork & Lectures",
-        link: "/homework-&-lecture",
-      },
-      { name: "Lesson Plan", link: "/lesson-plan" },
-      { name: "Academic calendar", link: "/academic-calendar" },
-      { name: "Syllabus", link: "/syllabus" },
-      { name: "Class Routine", link: "/class-routine" },
-      { name: "Co-curricular Activities", link: "/co-curricular-activities" },
+      { name: "আচরণবিধি", link: "/code-of-conducts" },
+      { name: "অভিভাবকদের নির্দেশিকা", link: "/guideline-for-parents" },
+      { name: "ড্রেস কোড", link: "/dress-code" },
+      { name: "বাড়ির কাজ ও লেকচার", link: "/homework-&-lecture" },
+      { name: "পাঠ পরিকল্পনা", link: "/lesson-plan" },
+      { name: "একাডেমিক ক্যালেন্ডার", link: "/academic-calendar" },
+      { name: "সিলেবাস", link: "/syllabus" },
+      { name: "ক্লাসের সময়সূচি", link: "/class-routine" },
+      { name: "সহ-শিক্ষা কার্যক্রম", link: "/co-curricular-activities" },
     ],
   },
   {
-    name: "Information",
-    link: "/notice-board",
+    name: "তথ্য",
+    link: "#",
     subLink: [
-      { name: "Notice Board", link: "/notice-board" },
-      { name: "Payment Procedure", link: "/payment-procedure" },
-      { name: "Facilities", link: "/facilities" },
-      { name: "News and Events", link: "/news-and-events" },
-      { name: "Our Achievements", link: "/our-achievements" },
-      { name: "List of Holidays", link: "/list-of-holidays" },
-      { name: "Teachers Info", link: "/teachers-info" },
-      { name: "Student Info", link: "/student-info" },
-      { name: "Policies & Guidelines", link: "/policies-and-guidelines" },
-      { name: "Library", link: "/library" },
+      { name: "নোটিশ বোর্ড", link: "/notice-board" },
+      { name: "পেমেন্ট পদ্ধতি", link: "/payment-procedure" },
+      { name: "সুযোগ-সুবিধা", link: "/facilities" },
+      { name: "সংবাদ ও অনুষ্ঠান", link: "/news-and-events" },
+      { name: "আমাদের অর্জনসমূহ", link: "/our-achievements" },
+      { name: "ছুটির তালিকা", link: "/list-of-holidays" },
+      { name: "শিক্ষকদের তথ্য", link: "/teachers-info" },
+      { name: "শিক্ষার্থীদের তথ্য", link: "/student-info" },
+      { name: "নীতিমালা ও নির্দেশিকা", link: "/policies-and-guidelines" },
+      { name: "লাইব্রেরি", link: "/library" },
       {
-        name: "Health Awareness",
+        name: "স্বাস্থ্য সচেতনতা",
         link: "/health-and-environmental-awareness-info",
       },
     ],
   },
   {
-    name: "Admission",
-    link: "/apply-now",
+    name: "ভর্তি",
+    link: "#",
     subLink: [
-      { name: "Apply Now", link: "/apply-now" },
-      { name: "Fast Facts", link: "/fast-facts" },
-      { name: "Fees & Payment", link: "/fees-and-payment" },
-      { name: "Scholarships", link: "/scholarships" },
-      { name: "Transfer Procedures", link: "/transfer-procedures" },
+      { name: "এখনই আবেদন করুন", link: "/apply-now" },
+      { name: "এক নজরে মূল তথ্য", link: "/fast-facts" },
+      { name: "ফি এবং পেমেন্ট", link: "/fees-and-payment" },
+      { name: "বৃত্তি ও আর্থিক সহায়তা", link: "/scholarships" },
+      { name: "স্থানান্তর প্রক্রিয়া", link: "/transfer-procedures" },
     ],
   },
   {
-    name: "Campus Life",
-    link: "/gallery",
-    subLink: [
-      { name: "Media Gallery", link: "/gallery" },
-  
-    ],
+    name: "মিডিয়া",
+    link: "#",
+    subLink: [{ name: "মিডিয়া গ্যালারি", link: "/gallery" }],
   },
   {
-    name: "Employment",
-    link: "/employment",
+    name: "কর্মসংস্থান",
+    link: "#",
     subLink: [
-      { name: "At a Glance", link: "/at-a-glance" },
-      { name: "Employment Circulars", link: "/employment-circulars" },
-      { name: "Recruitment Results", link: "/recruitment-exam-results" },
+      { name: "এক নজরে", link: "/at-a-glance" },
+      { name: "নিয়োগ বিজ্ঞপ্তি", link: "/employment-circulars" },
+      { name: "নিয়োগ পরীক্ষার ফলাফল", link: "/recruitment-exam-results" },
     ],
   },
-  { name: "Contact", link: "/contact" },
-  {
+  { name: "যোগাযোগ", link: "/contact" },
+ {
     name: "স্বাধীনতা কর্নার",
     link: "/notices",
-    subLink: [
-      { name: "নোটিশ", link: "/notices" },
-
-    ],
+    subLink: [{ name: "নোটিশ", link: "/notices" }],
   },
 ];
 
 const Navbar = () => {
   const pathname = usePathname();
-  const [toggle, setToggle] = useState<boolean>(false);
+  const [toggle, setToggle] = useState(false);
   const [activeSubIndex, setActiveSubIndex] = useState<number | null>(null);
 
   const closeMobileMenu = () => {
@@ -147,15 +138,14 @@ const Navbar = () => {
   };
 
   const isRouteActive = (link: string) => {
+    if (link === "#") return false;
     if (link === "/") return pathname === "/";
     return pathname === link || pathname.startsWith(`${link}/`);
   };
 
   const isMenuActive = (item: NavItem) => {
     if (isRouteActive(item.link)) return true;
-    return Boolean(
-      item.subLink?.some((subItem) => isRouteActive(subItem.link))
-    );
+    return Boolean(item.subLink?.some((subItem) => isRouteActive(subItem.link)));
   };
 
   useEffect(() => {
@@ -171,16 +161,15 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border-soft bg-color-primary font-main text-inverse shadow-md">
+    <header className="sticky top-0 z-50 w-full border-b border-soft bg-color-primary font-main text-inverse shadow-md">
       <div className="mx-auto w-full max-w-[1600px] px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between gap-2">
-          {/* Logo Brand Container */}
           <Link
             href="/"
             onClick={(event) => handleMenuLinkClick(event, "/")}
-            className="group relative shrink-0 transition-transform duration-200 active:scale-98"
+            className="group relative shrink-0 transition-transform duration-200 active:scale-[0.98]"
           >
-            <div className="flex h-14 w-36 items-center justify-center rounded-xl border border-border-soft bg-white px-3 shadow-xs transition-all duration-300 group-hover:border-color-secondary/50 group-hover:shadow-sm sm:w-44">
+            <div className="flex h-14 w-36 items-center justify-center rounded-xl border border-soft bg-page-primary px-3 shadow-sm transition-all duration-300 group-hover:border-brand-primary-soft group-hover:shadow-md sm:w-44">
               <Image
                 src={logoSrc}
                 alt="Logo"
@@ -192,63 +181,60 @@ const Navbar = () => {
             </div>
           </Link>
 
-          {/* Desktop Nav Items Links */}
           <nav className="hidden h-full flex-1 items-center justify-center gap-1 text-xs font-bold xl:flex 2xl:gap-2 2xl:text-sm">
             {navList.map((item, index) => {
               const active = isMenuActive(item);
               const hasDropdown = Boolean(item.subLink?.length);
-              const isLargeDropdown = (item.subLink?.length ?? 0) > 6;
+              const isRightDropdown = index >= navList.length - 3;
 
               return (
                 <div
                   key={`${item.name}-${index}`}
                   className="group relative flex h-full items-center"
                 >
-                  <Link
-                    href={item.link}
-                    onClick={(event) =>
-                      handleMenuLinkClick(event, item.link)
-                    }
-                    className={`flex items-center gap-1.5 rounded-lg px-3 py-2.5 tracking-wide transition-all duration-200 ${
-                      active
-                        ? "text-color-secondary"
-                        : "text-inverse/90 hover:text-color-secondary"
-                    }`}
-                  >
-                    <span className="whitespace-nowrap">{item.name}</span>
-
-                    {hasDropdown && (
-                      <FaChevronDown className="text-[9px] opacity-70 transition-transform duration-300 ease-out group-hover:rotate-180" />
-                    )}
-                  </Link>
-
-                  {/* Desktop Dropdown Container Menu */}
-                  {hasDropdown && (
-                    <div
-                      className={`invisible absolute top-[calc(100%-4px)] z-50 translate-y-2 opacity-0 transition-all duration-250 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${
-                        isLargeDropdown
-                          ? "left-1/2 w-[560px] -translate-x-1/2 p-2"
-                          : "left-0 w-68 p-2"
+                  {hasDropdown ? (
+                    <button
+                      type="button"
+                      className={`flex items-center gap-1.5 rounded-lg px-3 py-2.5 tracking-wide transition-all duration-200 ${
+                        active
+                          ? "text-brand-secondary"
+                          : "text-inverse/90 hover:text-brand-secondary"
                       }`}
                     >
-                      {/* Dropdown Panel Body matches Navbar Body Color exactly */}
-                      <div className="rounded-xl border border-border-soft bg-color-primary p-2 shadow-xl ring-1 ring-black/10">
-                        {/* Internal Header Block */}
+                      <span className="whitespace-nowrap">{item.name}</span>
+                      <FaChevronDown className="text-[9px] opacity-70 transition-transform duration-300 ease-out group-hover:rotate-180" />
+                    </button>
+                  ) : (
+                    <Link
+                      href={item.link}
+                      onClick={(event) => handleMenuLinkClick(event, item.link)}
+                      className={`flex items-center gap-1.5 rounded-lg px-3 py-2.5 tracking-wide transition-all duration-200 ${
+                        active
+                          ? "text-brand-secondary"
+                          : "text-inverse/90 hover:text-brand-secondary"
+                      }`}
+                    >
+                      <span className="whitespace-nowrap">{item.name}</span>
+                    </Link>
+                  )}
+
+                  {hasDropdown && (
+                    <div
+                      className={`invisible absolute top-[calc(100%-4px)] z-50 w-80 translate-y-2 p-2 opacity-0 transition-all duration-200 ease-out group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 ${
+                        isRightDropdown ? "right-0" : "left-0"
+                      }`}
+                    >
+                      <div className="rounded-xl border border-soft bg-color-primary p-2 shadow-xl ring-1 ring-black/10">
                         <div className="mb-2 rounded-lg border border-white/10 bg-white/10 px-3 py-2">
-                          <p className="text-xs font-black text-color-secondary">
+                          <p className="text-xs font-black text-brand-secondary">
                             {item.name}
                           </p>
                           <p className="text-[10px] font-medium text-inverse/60">
-                            Select an option below
+                           নিচে একটি বিকল্প নির্বাচন করুন
                           </p>
                         </div>
 
-                        {/* Link Items Layout Grid */}
-                        <div
-                          className={`grid max-h-[360px] gap-1 overflow-y-auto ${
-                            isLargeDropdown ? "grid-cols-2" : "grid-cols-1"
-                          }`}
-                        >
+                        <div className="grid max-h-[360px] grid-cols-1 gap-1 overflow-y-auto">
                           {item.subLink?.map((subItem, subIndex) => {
                             const subActive = isRouteActive(subItem.link);
 
@@ -259,19 +245,23 @@ const Navbar = () => {
                                 onClick={(event) =>
                                   handleMenuLinkClick(event, subItem.link)
                                 }
-                                className={`group/item flex items-center justify-between rounded-lg px-3 py-2 text-xs font-bold transition-all duration-150 ${
+                                className={`group/item flex items-center justify-between rounded-lg px-3 py-2.5 text-xs font-semibold transition-all duration-200 ${
                                   subActive
-                                    ? "text-color-secondary font-black"
-                                    : "text-inverse/90 hover:text-color-secondary"
+                                    ? "bg-color-secondary text-primary"
+                                    : "text-inverse/80 hover:bg-white/10 hover:text-brand-secondary"
                                 }`}
                               >
-                                <span className="truncate">
+                                <span className="leading-5">
                                   {subItem.name}
                                 </span>
 
-                                <span className="transform text-[10px] text-color-secondary opacity-0 transition-all duration-150 group-hover/item:translate-x-1 group-hover/item:opacity-100">
-                                  →
-                                </span>
+                                <span
+                                  className={`ml-3 h-1.5 w-1.5 shrink-0 rounded-full transition-all duration-200 ${
+                                    subActive
+                                      ? "bg-color-primary"
+                                      : "bg-color-secondary opacity-0 group-hover/item:opacity-100"
+                                  }`}
+                                />
                               </Link>
                             );
                           })}
@@ -284,178 +274,166 @@ const Navbar = () => {
             })}
           </nav>
 
-
-
-   {/* Desktop Sign In Button */}
-          <div className="hidden shrink-0 xl:block">
+          <div className="hidden items-center gap-3 xl:flex">
             <Link
               href="/online-admission"
-              onClick={(event) => handleMenuLinkClick(event, "/signin")}
-              className="inline-flex h-10 bg-red-700 items-center justify-center rounded-lg border border-color-secondary px-5 text-xs font-black tracking-wide text-color-secondary transition-all duration-200 hover:bg-color-secondary hover:text-black active:scale-98"
+              className="rounded-full bg-color-secondary px-5 py-2.5 text-sm font-black text-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
             >
-                Online Admission
+              অনলাইন ভর্তি
             </Link>
-          </div>
 
-          {/* Desktop Login Button */}
-          <div className="hidden shrink-0 xl:block">
             <Link
               href="/login"
-              onClick={(event) => handleMenuLinkClick(event, "/login")}
-              className="inline-flex h-10 items-center justify-center rounded-lg border border-color-secondary px-5 text-xs font-black tracking-wide text-color-secondary transition-all duration-200 hover:bg-color-secondary hover:text-black active:scale-98"
+              className="rounded-full border border-white/20 bg-white/10 px-5 py-2.5 text-sm font-black text-inverse transition-all duration-300 hover:-translate-y-1 hover:bg-white/20"
             >
-              Login
+              লগইন
             </Link>
           </div>
 
-
-
-          {/* Mobile Action Toggle Drawer Button */}
           <button
             type="button"
             onClick={() => setToggle((prev) => !prev)}
-            className="flex h-10 w-10 items-center justify-center rounded-lg border border-border-soft bg-color-primary text-inverse shadow-xs transition-colors active:scale-95 xl:hidden"
             aria-label="Toggle menu"
+            className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-xl text-inverse transition hover:bg-white/15 xl:hidden"
           >
-            {toggle ? (
-              <FaTimes className="text-base" />
-            ) : (
-              <FaBars className="text-base" />
-            )}
+            {toggle ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu Panel Context Canvas */}
-      <div
-        className={`absolute left-0 top-full z-50 w-full border-b border-border-soft bg-color-primary shadow-2xl transition-all duration-300 ease-in-out xl:hidden ${
-          toggle
-            ? "visible translate-y-0 opacity-100"
-            : "invisible -translate-y-2 opacity-0"
-        }`}
-      >
-        <nav className="flex max-h-[76vh] flex-col gap-1.5 overflow-y-auto p-4">
-          <div className="mb-2 rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-center shadow-inner">
-            <Image
-              src={logoSrc}
-              alt="Logo"
-              width={130}
-              height={40}
-              priority
-              className="mx-auto h-9 w-auto rounded-lg border border-border-soft bg-white object-contain px-3 py-1"
-            />
-            <p className="mt-2 text-[11px] font-bold text-inverse/60">
-              Institutional Navigation Panel
-            </p>
-          </div>
+      {toggle && (
+        <div className="xl:hidden">
+          <button
+            type="button"
+            aria-label="Close menu backdrop"
+            onClick={closeMobileMenu}
+            className="fixed inset-0 z-40 bg-black/45"
+          />
 
-          {navList.map((item, index) => {
-            const hasSubMenu = Boolean(item.subLink?.length);
-            const isOpen = activeSubIndex === index;
-            const isActive = isMenuActive(item);
-
-            return (
-              <div
-                key={`${item.name}-${index}`}
-                className="overflow-hidden rounded-xl border border-white/10 bg-white/5 shadow-xs"
+          <div className="fixed right-0 top-0 z-50 h-screen w-[86%] max-w-[390px] overflow-y-auto border-l border-soft bg-color-primary p-4 shadow-2xl">
+            <div className="mb-5 flex items-center justify-between gap-4">
+              <Link
+                href="/"
+                onClick={(event) => handleMenuLinkClick(event, "/")}
+                className="flex h-14 w-40 items-center justify-center rounded-xl border border-soft bg-page-primary px-3"
               >
-                <div className="flex items-center justify-between">
-                  <Link
-                    href={item.link}
-                    onClick={(event) =>
-                      handleMenuLinkClick(event, item.link)
-                    }
-                    className={`w-full px-4 py-3 text-xs font-extrabold transition-all duration-200 ${
-                      isActive
-                        ? "text-color-secondary font-black"
-                        : "text-inverse"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
+                <Image
+                  src={logoSrc}
+                  alt="Logo"
+                  width={150}
+                  height={48}
+                  priority
+                  className="h-10 w-auto object-contain"
+                />
+              </Link>
 
-                  {hasSubMenu && (
-                    <button
-                      type="button"
-                      onClick={(event) => {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        handleSubToggle(index);
-                      }}
-                      className={`p-3 transition-colors ${
-                        isActive ? "text-color-secondary" : "text-inverse/70"
-                      }`}
-                      aria-label={`Toggle ${item.name} list`}
-                    >
-                      <FaChevronDown
-                        className={`text-[10px] transition-transform duration-300 ${
-                          isOpen ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-                  )}
-                </div>
+              <button
+                type="button"
+                onClick={closeMobileMenu}
+                aria-label="Close menu"
+                className="flex h-11 w-11 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-xl text-inverse"
+              >
+                <FaTimes />
+              </button>
+            </div>
 
-                {/* Mobile Secondary Toggle Level Panel Container */}
-                {hasSubMenu && (
+            <nav className="space-y-2">
+              {navList.map((item, index) => {
+                const active = isMenuActive(item);
+                const hasDropdown = Boolean(item.subLink?.length);
+                const dropdownOpen = activeSubIndex === index;
+
+                return (
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                      isOpen
-                        ? "max-h-[500px] border-t border-white/10 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
+                    key={`${item.name}-mobile-${index}`}
+                    className="rounded-xl border border-white/10 bg-white/5"
                   >
-                    <div className="space-y-1 bg-black/10 p-2">
-                      {item.subLink?.map((subItem, subIndex) => {
-                        const subActive = isRouteActive(subItem.link);
-
-                        return (
-                          <Link
-                            key={`${subItem.name}-${subIndex}`}
-                            href={subItem.link}
-                            onClick={(event) =>
-                              handleMenuLinkClick(event, subItem.link)
-                            }
-                            className={`block rounded-lg px-4 py-2.5 text-xs font-bold transition-colors ${
-                              subActive
-                                ? "text-color-secondary font-black"
-                                : "text-inverse/90 hover:text-color-secondary"
+                    <div className="flex items-center">
+                      {hasDropdown ? (
+                        <button
+                          type="button"
+                          onClick={() => handleSubToggle(index)}
+                          className={`flex min-h-12 flex-1 items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-bold transition ${
+                            active
+                              ? "text-brand-secondary"
+                              : "text-inverse/85 hover:text-brand-secondary"
+                          }`}
+                        >
+                          <span>{item.name}</span>
+                          <FaChevronDown
+                            className={`text-xs transition-transform duration-300 ${
+                              dropdownOpen ? "rotate-180" : ""
                             }`}
-                          >
-                            {subItem.name}
-                          </Link>
-                        );
-                      })}
+                          />
+                        </button>
+                      ) : (
+                        <Link
+                          href={item.link}
+                          onClick={(event) =>
+                            handleMenuLinkClick(event, item.link)
+                          }
+                          className={`flex min-h-12 flex-1 items-center rounded-xl px-4 py-3 text-sm font-bold transition ${
+                            active
+                              ? "text-brand-secondary"
+                              : "text-inverse/85 hover:text-brand-secondary"
+                          }`}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
                     </div>
+
+                    {hasDropdown && dropdownOpen && (
+                      <div className="border-t border-white/10 p-2">
+                        <div className="grid grid-cols-1 gap-1">
+                          {item.subLink?.map((subItem, subIndex) => {
+                            const subActive = isRouteActive(subItem.link);
+
+                            return (
+                              <Link
+                                key={`${subItem.name}-mobile-${subIndex}`}
+                                href={subItem.link}
+                                onClick={(event) =>
+                                  handleMenuLinkClick(event, subItem.link)
+                                }
+                                className={`block rounded-lg px-3 py-2.5 text-sm font-semibold transition ${
+                                  subActive
+                                    ? "bg-color-secondary text-primary"
+                                    : "text-inverse/75 hover:bg-white/10 hover:text-brand-secondary"
+                                }`}
+                              >
+                                {subItem.name}
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
                   </div>
-                )}
-              </div>
-            );
-          })}
+                );
+              })}
+            </nav>
 
-          <div className="mt-2 flex w-full items-center gap-3">
+            <div className="sticky bottom-0 mt-6 grid grid-cols-2 gap-3 border-t border-white/10 bg-color-primary pt-5">
+              <Link
+                href="/online-admission"
+                onClick={closeMobileMenu}
+                className="flex items-center justify-center rounded-xl bg-color-secondary px-4 py-3 text-sm font-black text-primary"
+              >
+            অনলাইন ভর্তি
+              </Link>
 
-  <Link
-              href="/online-admission"
-              onClick={closeMobileMenu}
-              className="flex h-11 bg-red-700 flex-1 items-center justify-center rounded-lg border border-color-secondary text-xs font-black text-color-secondary transition-all duration-300 hover:bg-color-secondary hover:text-black active:scale-98"
-            >
-              Online Admission
-            </Link>
-
-
-            <Link
-              href="/login"
-              onClick={closeMobileMenu}
-              className="flex h-11 flex-1 items-center justify-center rounded-lg border border-color-secondary text-xs font-black text-color-secondary transition-all duration-300 hover:bg-color-secondary hover:text-black active:scale-98"
-            >
-              Login
-            </Link>
-
-          
+              <Link
+                href="/login"
+                onClick={closeMobileMenu}
+                className="flex items-center justify-center rounded-xl border border-white/20 bg-white/10 px-4 py-3 text-sm font-black text-inverse"
+              >
+                লগইন
+              </Link>
+            </div>
           </div>
-        </nav>
-      </div>
+        </div>
+      )}
     </header>
   );
 };

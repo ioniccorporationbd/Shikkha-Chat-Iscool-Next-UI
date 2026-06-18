@@ -27,33 +27,33 @@ type FooterLink = {
 const logoSrc = "/assets/images/logo-mane.png";
 
 const academicLinks: FooterLink[] = [
-  { title: "Admissions Info", href: "/admission" },
-  { title: "Online Application", href: "/admission" },
-  { title: "Academic Results", href: "#" },
-  { title: "Tuition & Fees Payment", href: "#" },
-  { title: "Campus Life & Gallery", href: "/gallery" },
+  { title: "ভর্তি তথ্য", href: "/admission" },
+  { title: "অনলাইন আবেদন", href: "/admission" },
+  { title: "একাডেমিক ফলাফল", href: "#" },
+  { title: "বেতন ও ফি পরিশোধ", href: "#" },
+  { title: "ক্যাম্পাস লাইফ ও গ্যালারি", href: "/gallery" },
 ];
 
 const institutionalLinks: FooterLink[] = [
-  { title: "About Our Institution", href: "/about" },
-  { title: "Message from the Chairman", href: "/message-from-chairman" },
-  { title: "Mission, Vision & Values", href: "/vision-and-objectives" },
-  { title: "Governing Body", href: "/governing-body" },
-  { title: "Careers / Join Us", href: "/employment" },
+  { title: "আমাদের প্রতিষ্ঠান সম্পর্কে", href: "/about" },
+  { title: "চেয়ারম্যানের বাণী", href: "/message-from-chairman" },
+  { title: "লক্ষ্য, উদ্দেশ্য ও মূল্যবোধ", href: "/vision-and-objectives" },
+  { title: "পরিচালনা পরিষদ", href: "/governing-body" },
+  { title: "চাকরি / আমাদের সাথে যোগ দিন", href: "/employment" },
 ];
 
 const boardLinks: FooterLink[] = [
-  { title: "Ministry of Education", href: "#", isExternal: true },
-  { title: "Dhaka Education Board", href: "#", isExternal: true },
-  { title: "DSHE", href: "#", isExternal: true },
-  { title: "Directorate of Primary Education", href: "#", isExternal: true },
+  { title: "শিক্ষা মন্ত্রণালয়", href: "#", isExternal: true },
+  { title: "ঢাকা শিক্ষা বোর্ড", href: "#", isExternal: true },
+  { title: "মাধ্যমিক ও উচ্চ শিক্ষা অধিদপ্তর", href: "#", isExternal: true },
+  { title: "প্রাথমিক শিক্ষা অধিদপ্তর", href: "#", isExternal: true },
 ];
 
 const socialLinks = [
-  { title: "Facebook", href: "#", icon: <FaFacebookF /> },
-  { title: "YouTube", href: "#", icon: <FaYoutube /> },
-  { title: "LinkedIn", href: "#", icon: <FaLinkedinIn /> },
-  { title: "Twitter", href: "#", icon: <FaXTwitter /> },
+  { title: "ফেসবুক", href: "#", icon: <FaFacebookF /> },
+  { title: "ইউটিউব", href: "#", icon: <FaYoutube /> },
+  { title: "লিংকডইন", href: "#", icon: <FaLinkedinIn /> },
+  { title: "টুইটার", href: "#", icon: <FaXTwitter /> },
 ];
 
 export default function Footer() {
@@ -89,7 +89,7 @@ export default function Footer() {
             <Link href="/" className="inline-block bg-white p-3 rounded-xl shadow-inner">
               <Image
                 src={logoSrc}
-                alt="School Logo"
+                alt="স্কুলের লোগো"
                 width={150}
                 height={80}
                 priority
@@ -97,16 +97,16 @@ export default function Footer() {
               />
             </Link>
             <p className="text-sm leading-relaxed text-slate-400 max-w-sm">
-              Committed to providing global standards of learning, cultivating character, and fostering intellectual development for young minds.
+              আন্তর্জাতিক মানের শিক্ষা প্রদান, চারিত্রিক গঠন এবং শিক্ষার্থীদের মানসিক বিকাশে আমরা প্রতিশ্রুতিবদ্ধ।
             </p>
             <div className="space-y-3 pt-2 text-sm">
               <div className="flex items-start gap-3">
                 <FaMapPin className="mt-1 text-blue-400 shrink-0" />
-                <span>Baily Road, Dhaka, Bangladesh</span>
+                <span>বেইলি রোড, ঢাকা, বাংলাদেশ</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaPhone className="text-blue-400 shrink-0" />
-                <span>+880 2-48317513, +880 2-58310500</span>
+                <span>+৮৮০ ২-৪৮৩১৭৫১৩, +৮৮০ ২-৫৮৩১০৫০০</span>
               </div>
               <div className="flex items-center gap-3">
                 <FaEnvelope className="text-blue-400 shrink-0" />
@@ -118,7 +118,7 @@ export default function Footer() {
           {/* Navigation Links Columns */}
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:col-span-8">
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">Academics</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">শিক্ষা বিভাগ</h3>
               <ul className="mt-4 space-y-2 text-sm">
                 {academicLinks.map((link) => (
                   <li key={link.title}>
@@ -131,7 +131,7 @@ export default function Footer() {
             </div>
 
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">Institution</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">প্রতিষ্ঠান</h3>
               <ul className="mt-4 space-y-2 text-sm">
                 {institutionalLinks.map((link) => (
                   <li key={link.title}>
@@ -144,7 +144,7 @@ export default function Footer() {
             </div>
 
             <div className="col-span-2 sm:col-span-1">
-              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">Portals & Boards</h3>
+              <h3 className="text-xs font-bold uppercase tracking-widest text-slate-400">পোর্টাল ও বোর্ড</h3>
               <ul className="mt-4 space-y-2 text-sm">
                 {boardLinks.map((link) => (
                   <li key={link.title}>
@@ -166,7 +166,7 @@ export default function Footer() {
           <div className="flex items-center justify-center  gap-4 rounded-xl bg-white p-6 border border-slate-200 shadow-sm">
             <FaClock className="text-2xl text-indigo-600" />
             <div>
-              <p className="font-bold text-lg text-slate-800">Office Hours</p>
+              <p className="font-bold text-lg text-slate-800">অফিস সময়</p>
             </div>
           </div>
 
@@ -174,7 +174,7 @@ export default function Footer() {
           <div className="flex items-center justify-center gap-4 rounded-xl bg-white p-6 border border-slate-200 shadow-sm">
             <FaUsers className="text-2xl text-indigo-600" />
             <div>
-              <p className="font-bold text-lg text-slate-800">Daily Unique Visits</p>
+              <p className="font-bold text-lg text-slate-800">দৈনিক ভিজিটর সংখ্যা</p>
             </div>
           </div>
 
@@ -182,7 +182,7 @@ export default function Footer() {
           <div className="flex items-center justify-center gap-4 rounded-xl bg-white p-6 border border-slate-200 shadow-sm">
             <FaGlobe className="text-2xl text-indigo-600" />
             <div>
-              <p className="font-bold text-lg text-slate-800">Total Analytics Registry</p>
+              <p className="font-bold text-lg text-slate-800">সর্বমোট পরিদর্শন সংখ্যা</p>
             </div>
           </div>
         </div>
@@ -207,9 +207,9 @@ export default function Footer() {
           </div>
       <div className="mx-20">
   <p className="text-xs text-white text-center sm:text-left">
-    &copy; {new Date().getFullYear()} Viqarunnisa Noon School & College. All rights reserved.
+    &copy; {new Date().getFullYear()} ভিকারুননিসা নূন স্কুল ও কলেজ। সর্বস্বত্ব সংরক্ষিত।
     <span className="block sm:inline sm:ml-[15px] text-slate-600">
-      Site architecture by IONIC Corporation.
+      ওয়েবসাইট নির্মাণ ও ডিজাইন: আইওনিক কর্পোরেশন।
     </span>
   </p>
 </div>

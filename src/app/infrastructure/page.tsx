@@ -38,26 +38,26 @@ const infrastructureItems: InfrastructureItem[] = [
   {
     id: "০১",
     title: "আধুনিক শ্রেণিকক্ষ",
-    subtitle: "Smart & Comfortable Classrooms",
+    subtitle: "স্মার্ট এবং আরামদায়ক ক্লাসরুম",
     image: "/assets/3.jpg",
     description:
       "শিক্ষার্থীদের মনোযোগ, অংশগ্রহণ ও শেখার আগ্রহ বৃদ্ধির জন্য আমাদের শ্রেণিকক্ষগুলো আলো-বাতাসপূর্ণ, পরিচ্ছন্ন এবং শিক্ষাবান্ধবভাবে সাজানো।",
     points: [
       "প্রশস্ত বসার ব্যবস্থা",
-      "পর্যাপ্ত আলো ও বায়ু চলাচল",
-      "মাল্টিমিডিয়া ও স্মার্ট বোর্ড সুবিধা",
+      "পর্যাপ্ত আলো ও বায়ু চলাচল",
+      "মাল্টিমিডিয়া ও স্মার্ট বোর্ড সুবিধা",
       "শিক্ষার্থী-কেন্দ্রিক ক্লাসরুম পরিবেশ",
     ],
   },
   {
     id: "০২",
     title: "বিজ্ঞান ল্যাবরেটরি",
-    subtitle: "Science Laboratory",
+    subtitle: "বিজ্ঞান গবেষণাগার",
     image: "/assets/4.jpg",
     description:
-      "বিজ্ঞান শিক্ষাকে বাস্তবভিত্তিক করতে নিরাপদ, পরিচ্ছন্ন ও প্রয়োজনীয় যন্ত্রপাতিসম্পন্ন বিজ্ঞান ল্যাবরেটরি রাখা হয়েছে।",
+      "বিজ্ঞান শিক্ষাকে বাস্তবভিত্তিক করতে নিরাপদ, পরিচ্ছন্ন ও প্রয়োজনীয় যন্ত্রপাতিসম্পন্ন বিজ্ঞান ল্যাবরেটরি রাখা হয়েছে।",
     points: [
-      "পদার্থ, রসায়ন ও জীববিজ্ঞান ব্যবহারিক শিক্ষা",
+      "পদার্থ, রসায়ন ও জীববিজ্ঞান ব্যবহারিক শিক্ষা",
       "নিরাপদ পরীক্ষণ ব্যবস্থা",
       "শিক্ষকের তত্ত্বাবধানে ল্যাব কার্যক্রম",
       "প্রজেক্টভিত্তিক শেখার সুযোগ",
@@ -66,10 +66,10 @@ const infrastructureItems: InfrastructureItem[] = [
   {
     id: "০৩",
     title: "কম্পিউটার ও আইসিটি ল্যাব",
-    subtitle: "Computer & ICT Lab",
+    subtitle: "কম্পিউটার ও তথ্যপ্রযুক্তি ল্যাব",
     image: "/assets/3.jpg",
     description:
-      "ডিজিটাল যুগের দক্ষতা অর্জনের জন্য কম্পিউটার ল্যাব, বেসিক কোডিং, ডিজিটাল লিটারেসি এবং প্রযুক্তিনির্ভর শিক্ষার ব্যবস্থা রাখা হয়েছে।",
+      "ডিজিটাল যুগের দক্ষতা অর্জনের জন্য কম্পিউটার ল্যাব, বেসিক কোডিং, ডিজিটাল লিটারেসি এবং প্রযুক্তিনির্ভর শিক্ষার ব্যবস্থা রাখা হয়েছে।",
     points: [
       "কম্পিউটার ব্যবহার শেখার সুযোগ",
       "ইন্টারনেট ও ডিজিটাল রিসোর্স",
@@ -80,7 +80,7 @@ const infrastructureItems: InfrastructureItem[] = [
   {
     id: "০৪",
     title: "সমৃদ্ধ লাইব্রেরি",
-    subtitle: "Library & Reading Corner",
+    subtitle: "গ্রন্থাগার ও রিডিং কর্নার",
     image: "/assets/4.jpg",
     description:
       "পাঠাভ্যাস, গবেষণা মনোভাব ও জ্ঞানচর্চা বৃদ্ধির জন্য একটি শান্ত, পরিচ্ছন্ন ও সমৃদ্ধ লাইব্রেরি শিক্ষার্থীদের জন্য উন্মুক্ত।",
@@ -88,18 +88,18 @@ const infrastructureItems: InfrastructureItem[] = [
       "পাঠ্যবই ও রেফারেন্স বই",
       "সাহিত্য ও সাধারণ জ্ঞান কর্নার",
       "শান্ত পাঠের পরিবেশ",
-      "নিয়মিত বইপাঠ কার্যক্রম",
+      "নিয়মিত বইপাঠ কার্যক্রম",
     ],
   },
   {
     id: "০৫",
     title: "নিরাপদ ক্যাম্পাস",
-    subtitle: "Safety & Security",
+    subtitle: "সুরক্ষা ও নিরাপত্তা",
     image: "/assets/3.jpg",
     description:
-      "বিশেষ করে গার্লস স্কুলের জন্য নিরাপত্তা সবচেয়ে গুরুত্বপূর্ণ। তাই নিয়ন্ত্রিত প্রবেশদ্বার, পর্যবেক্ষণ ও জরুরি নিরাপত্তা ব্যবস্থা রাখা হয়েছে।",
+      "বিশেষ করে গার্লস স্কুলের জন্য নিরাপত্তা সবচেয়ে গুরুত্বপূর্ণ। তাই নিয়ন্ত্রিত প্রবেশদ্বার, পর্যবেক্ষণ ও জরুরি নিরাপত্তা ব্যবস্থা রাখা হয়েছে।",
     points: [
-      "নিয়ন্ত্রিত প্রবেশ ও প্রস্থান",
+      "নিয়ন্ত্রিত প্রবেশ ও প্রস্থান",
       "সিসিটিভি নজরদারি",
       "নিরাপত্তা কর্মী",
       "জরুরি বহির্গমন ব্যবস্থা",
@@ -108,13 +108,13 @@ const infrastructureItems: InfrastructureItem[] = [
   {
     id: "০৬",
     title: "স্বাস্থ্য ও স্যানিটেশন",
-    subtitle: "Health, Hygiene & Sanitation",
+    subtitle: "স্বাস্থ্য, পরিচ্ছন্নতা ও স্যানিটেশন",
     image: "/assets/4.jpg",
     description:
-      "ছাত্রীদের স্বাস্থ্য, পরিচ্ছন্নতা ও ব্যক্তিগত নিরাপত্তার জন্য স্বাস্থ্যসম্মত স্যানিটেশন, বিশুদ্ধ পানি এবং ফার্স্ট এইড সুবিধা নিশ্চিত করা হয়েছে।",
+      "ছাত্রীদের স্বাস্থ্য, পরিচ্ছন্নতা ও ব্যক্তিগত নিরাপত্তার জন্য স্বাস্থ্যসম্মত স্যানিটেশন, বিশুদ্ধ পানি এবং ফার্স্ট এইড সুবিধা নিশ্চিত করা হয়েছে।",
     points: [
-      "স্বাস্থ্যসম্মত টয়লেট ব্যবস্থা",
-      "বিশুদ্ধ পানীয় জল",
+      "স্বাস্থ্যসম্মত টয়লেট ব্যবস্থা",
+      "বিশুদ্ধ পানীয় জল",
       "ফার্স্ট এইড কর্নার",
       "স্যানিটারি হাইজিন সচেতনতা",
     ],
@@ -122,10 +122,10 @@ const infrastructureItems: InfrastructureItem[] = [
   {
     id: "০৭",
     title: "খেলার মাঠ ও সহশিক্ষা",
-    subtitle: "Playground & Co-curricular Activities",
+    subtitle: "খেলার মাঠ ও সহ-পাঠ্যক্রমিক কার্যক্রম",
     image: "/assets/3.jpg",
     description:
-      "শারীরিক, মানসিক ও সামাজিক বিকাশের জন্য খেলাধুলা, সাংস্কৃতিক কার্যক্রম, বিতর্ক এবং ক্লাব কার্যক্রমের জন্য প্রয়োজনীয় পরিবেশ রাখা হয়েছে।",
+      "শারীরিক, মানসিক ও সামাজিক বিকাশের জন্য খেলাধুলা, সাংস্কৃতিক কার্যক্রম, বিতর্ক এবং ক্লাব কার্যক্রমের জন্য প্রয়োজনীয় পরিবেশ রাখা হয়েছে।",
     points: [
       "খেলার মাঠ",
       "ইনডোর ও আউটডোর গেমস",
@@ -136,10 +136,10 @@ const infrastructureItems: InfrastructureItem[] = [
   {
     id: "০৮",
     title: "সবুজ ও পরিচ্ছন্ন ক্যাম্পাস",
-    subtitle: "Green & Clean Campus",
+    subtitle: "সবুজ ও পরিচ্ছন্ন ক্যাম্পাস",
     image: "/assets/4.jpg",
     description:
-      "শিক্ষার্থীদের জন্য স্বাস্থ্যকর ও মনোরম পরিবেশ নিশ্চিত করতে সবুজায়ন, বাগান, পরিচ্ছন্নতা ও পরিবেশবান্ধব উদ্যোগ গ্রহণ করা হয়েছে।",
+      "শিক্ষার্থীদের জন্য স্বাস্থ্যকর ও মনোরম পরিবেশ নিশ্চিত করতে সবুজায়ন, বাগান, পরিচ্ছন্নতা ও পরিবেশবান্ধব উদ্যোগ গ্রহণ করা হয়েছে।",
     points: [
       "বৃক্ষরোপণ ও বাগান",
       "পরিচ্ছন্ন ক্যাম্পাস",
@@ -176,7 +176,7 @@ function InfrastructureImage({
 
       <div className="absolute bottom-5 left-5 right-5 rounded-2xl bg-white/10 p-4 text-inverse backdrop-blur-sm transition-all duration-500 group-hover:bg-white/15">
         <p className="text-sm font-bold text-brand-secondary">
-          School Infrastructure
+          বিদ্যালয়ের অবকাঠামো
         </p>
         <p className="mt-1 text-xl font-black leading-snug">{alt}</p>
       </div>
@@ -246,7 +246,7 @@ export default function SchoolInfrastructurePage() {
         {/* Page Header */}
         <header className="mb-12 text-center">
           <p className="text-sm font-black uppercase tracking-[0.3em] text-brand-primary">
-            Infrastructure
+            অবকাঠামো
           </p>
 
           <h1 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl md:text-5xl">
@@ -264,7 +264,7 @@ export default function SchoolInfrastructurePage() {
             href="/"
             className="mt-6 inline-flex rounded-full bg-color-primary px-6 py-3 text-sm font-bold text-inverse shadow-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-md"
           >
-            Back to Home
+            হোম পেজে ফিরে যান
           </Link>
         </header>
 
@@ -273,7 +273,7 @@ export default function SchoolInfrastructurePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-10">
               <span className="inline-block rounded-full bg-white/10 px-4 py-2 text-sm font-bold text-brand-secondary">
-                Our Campus Facilities
+                আমাদের ক্যাম্পাস সুবিধাসমূহ
               </span>
 
               <h2 className="mt-5 text-3xl font-black leading-snug sm:text-4xl">
@@ -282,11 +282,11 @@ export default function SchoolInfrastructurePage() {
 
               <p className="mt-5 max-w-4xl text-justify text-base font-medium leading-8 text-white/85 sm:text-lg">
                 একটি ভালো স্কুলের অবকাঠামো শুধু ভবন, শ্রেণিকক্ষ বা মাঠের মধ্যে
-                সীমাবদ্ধ নয়। এটি শিক্ষার্থীর নিরাপত্তা, স্বাস্থ্য, শেখার
+                সীমাবদ্ধ নয়। এটি শিক্ষার্থীর নিরাপত্তা, স্বাস্থ্য, শেখার
                 পরিবেশ, প্রযুক্তি দক্ষতা, সহশিক্ষা কার্যক্রম এবং মানসিক
                 বিকাশের সাথে সরাসরি সম্পর্কিত। তাই আমাদের স্কুলে প্রতিটি
-                সুবিধা পরিকল্পিতভাবে সাজানো হয়েছে, যাতে শিক্ষার্থীরা নিরাপদ ও
-                আনন্দময় পরিবেশে শিক্ষা গ্রহণ করতে পারে।
+                সুবিধা পরিকল্পিতভাবে সাজানো হয়েছে, যাতে শিক্ষার্থীরা নিরাপদ ও
+                आनন্দময় পরিবেশে শিক্ষা গ্রহণ করতে পারে।
               </p>
             </div>
 
@@ -319,19 +319,19 @@ export default function SchoolInfrastructurePage() {
         {/* Closing Section */}
         <section className="mt-12 rounded-3xl border border-soft bg-page-primary p-6 text-center shadow-xl sm:p-8 lg:p-10">
           <span className="inline-flex rounded-full bg-color-secondary px-4 py-2 text-sm font-black text-primary">
-            Future Development
+            ভবিষ্যত উন্নয়ন পরিকল্পনা
           </span>
 
           <h2 className="mx-auto mt-5 max-w-3xl text-2xl font-black leading-snug text-primary sm:text-3xl">
-            আরও উন্নত, নিরাপদ ও প্রযুক্তিনির্ভর শিক্ষা পরিবেশ গড়ে তোলাই আমাদের
+            আরও উন্নত, নিরাপদ ও প্রযুক্তিনির্ভর শিক্ষা পরিবেশ গড়ে তোলাই আমাদের
             ভবিষ্যৎ পরিকল্পনা
           </h2>
 
           <p className="mx-auto mt-5 max-w-4xl text-base font-medium leading-8 text-secondary sm:text-lg">
             ভবিষ্যতে আরও স্মার্ট ক্লাসরুম, উন্নত বিজ্ঞান ও আইসিটি ল্যাব,
             সমৃদ্ধ লাইব্রেরি, স্বাস্থ্যসেবা, পরিবহন সুবিধা এবং পরিবেশবান্ধব
-            ক্যাম্পাস উন্নয়নের মাধ্যমে স্কুলকে একটি আদর্শ শিক্ষা প্রতিষ্ঠানে
-            রূপান্তর করার পরিকল্পনা রয়েছে।
+            ক্যাম্পাস উন্নয়নের মাধ্যমে স্কুলকে একটি আদর্শ শিক্ষা প্রতিষ্ঠানে
+            রূপান্তর করার পরিকল্পনা রয়েছে।
           </p>
         </section>
       </section>

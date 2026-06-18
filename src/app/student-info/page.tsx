@@ -1,485 +1,348 @@
+
 import Link from "next/link";
 import type { ReactNode } from "react";
 import {
   FaAward,
   FaBookOpen,
   FaCalendarCheck,
+  FaChartSimple,
   FaCheck,
   FaClipboardCheck,
-  FaCloudArrowDown,
-  FaComputer,
-  FaFlask,
   FaGraduationCap,
+  FaIdCard,
   FaPeopleGroup,
-  FaPersonChalkboard,
-  FaRegClock,
+  FaRegCalendarDays,
   FaSchoolFlag,
+  FaShieldHalved,
   FaStar,
+  FaTriangleExclamation,
   FaUserGraduate,
-  FaUsersGear,
+  FaUsers,
 } from "react-icons/fa6";
 
-type OverviewItem = {
+type StudentStat = {
   title: string;
   value: string;
-  icon: ReactNode;
-};
-
-type TeacherCategory = {
-  title: string;
   description: string;
   icon: ReactNode;
 };
 
-type TeacherItem = {
-  id: number;
+type ClassInfo = {
+  className: string;
+  sections: string;
+  boys: number;
+  girls: number;
+  total: number;
+  classTeacher: string;
+};
+
+type StudentRecord = {
+  id: string;
   name: string;
-  designation: string;
-  subject: string;
-  qualification: string;
-  experience: string;
-  fileUrl: string;
+  banglaName: string;
+  className: string;
+  section: string;
+  roll: string;
+  status: "Active" | "Merit" | "Regular";
 };
 
-type SubjectTeacher = {
-  subject: string;
-  teacher: string;
-  classRange: string;
-  icon: ReactNode;
-};
-
-type Responsibility = {
+type Guideline = {
   title: string;
   description: string;
   icon: ReactNode;
 };
 
-type GuidelineSection = {
-  title: string;
-  icon: ReactNode;
-  points: string[];
-};
-
-const overviewItems: OverviewItem[] = [
+const overviewStats: StudentStat[] = [
   {
-    title: "মোট শিক্ষক",
-    value: "৪৫+",
-    icon: <FaPeopleGroup />,
+    title: "Total Students",
+    value: "1,250+",
+    description: "Currently enrolled students",
+    icon: <FaUsers />,
   },
   {
-    title: "বিষয়ভিত্তিক শিক্ষক",
-    value: "২৫+",
+    title: "Academic Classes",
+    value: "10",
+    description: "From primary to secondary level",
     icon: <FaBookOpen />,
   },
   {
-    title: "সিনিয়র শিক্ষক",
-    value: "১২+",
+    title: "Sections",
+    value: "24",
+    description: "Class-wise organized sections",
+    icon: <FaPeopleGroup />,
+  },
+  {
+    title: "Activities",
+    value: "35+",
+    description: "Academic and co-curricular activities",
     icon: <FaAward />,
   },
+];
+
+const classWiseInfo: ClassInfo[] = [
   {
-    title: "সহকারী শিক্ষক",
-    value: "৩০+",
-    icon: <FaPersonChalkboard />,
+    className: "Class One",
+    sections: "A, B",
+    boys: 42,
+    girls: 38,
+    total: 80,
+    classTeacher: "Nusrat Jahan",
+  },
+  {
+    className: "Class Two",
+    sections: "A, B",
+    boys: 45,
+    girls: 40,
+    total: 85,
+    classTeacher: "Farhana Akter",
+  },
+  {
+    className: "Class Three",
+    sections: "A, B, C",
+    boys: 58,
+    girls: 52,
+    total: 110,
+    classTeacher: "Md. Arif Hossain",
+  },
+  {
+    className: "Class Four",
+    sections: "A, B, C",
+    boys: 60,
+    girls: 55,
+    total: 115,
+    classTeacher: "Sharmin Sultana",
+  },
+  {
+    className: "Class Five",
+    sections: "A, B, C",
+    boys: 65,
+    girls: 60,
+    total: 125,
+    classTeacher: "Sabbir Rahman",
+  },
+  {
+    className: "Class Six",
+    sections: "A, B, C",
+    boys: 72,
+    girls: 68,
+    total: 140,
+    classTeacher: "Mst. Jannatul Ferdous",
+  },
+  {
+    className: "Class Seven",
+    sections: "A, B, C",
+    boys: 75,
+    girls: 70,
+    total: 145,
+    classTeacher: "Md. Rakibul Islam",
+  },
+  {
+    className: "Class Eight",
+    sections: "A, B, C",
+    boys: 78,
+    girls: 72,
+    total: 150,
+    classTeacher: "Md. Hasan Mahmud",
   },
 ];
 
-const teacherCategories: TeacherCategory[] = [
+const studentRecords: StudentRecord[] = [
   {
-    title: "Head Teacher",
-    description:
-      "বিদ্যালয়ের একাডেমিক পরিকল্পনা, প্রশাসনিক নেতৃত্ব ও সামগ্রিক শিক্ষার মান উন্নয়নে নেতৃত্ব প্রদান করেন।",
-    icon: <FaSchoolFlag />,
+    id: "STD-2026-001",
+    name: "Arafat Rahman",
+    banglaName: "আরাফাত রহমান",
+    className: "Class Six",
+    section: "A",
+    roll: "01",
+    status: "Merit",
   },
   {
-    title: "Assistant Teachers",
-    description:
-      "শ্রেণিকক্ষ পাঠদান, শিক্ষার্থী মূল্যায়ন এবং দৈনন্দিন একাডেমিক কার্যক্রম পরিচালনা করেন।",
-    icon: <FaPersonChalkboard />,
+    id: "STD-2026-002",
+    name: "Nusrat Jahan Mim",
+    banglaName: "নুসরাত জাহান মিম",
+    className: "Class Six",
+    section: "A",
+    roll: "02",
+    status: "Active",
   },
   {
-    title: "Subject Teachers",
-    description:
-      "নির্দিষ্ট বিষয়ের দক্ষ শিক্ষকরা বিষয়ভিত্তিক পাঠদান, অনুশীলন ও মূল্যায়ন পরিচালনা করেন।",
-    icon: <FaBookOpen />,
+    id: "STD-2026-003",
+    name: "Tanvir Ahmed",
+    banglaName: "তানভীর আহমেদ",
+    className: "Class Seven",
+    section: "B",
+    roll: "04",
+    status: "Regular",
   },
   {
-    title: "Class Teachers",
+    id: "STD-2026-004",
+    name: "Sumaiya Akter",
+    banglaName: "সুমাইয়া আক্তার",
+    className: "Class Eight",
+    section: "A",
+    roll: "03",
+    status: "Merit",
+  },
+  {
+    id: "STD-2026-005",
+    name: "Rakibul Islam",
+    banglaName: "রাকিবুল ইসলাম",
+    className: "Class Five",
+    section: "C",
+    roll: "07",
+    status: "Active",
+  },
+  {
+    id: "STD-2026-006",
+    name: "Jannatul Ferdous",
+    banglaName: "জান্নাতুল ফেরদৌস",
+    className: "Class Four",
+    section: "B",
+    roll: "05",
+    status: "Regular",
+  },
+];
+
+const guidelines: Guideline[] = [
+  {
+    title: "Regular Attendance",
     description:
-      "শ্রেণির উপস্থিতি, আচরণ, অগ্রগতি ও অভিভাবক যোগাযোগের দায়িত্ব পালন করেন।",
+      "প্রতিটি শিক্ষার্থীর নিয়মিত উপস্থিতি নিশ্চিত করতে অভিভাবকদের সহযোগিতা প্রয়োজন।",
+    icon: <FaCalendarCheck />,
+  },
+  {
+    title: "Discipline",
+    description:
+      "বিদ্যালয়ের নিয়ম-শৃঙ্খলা মেনে চলা প্রতিটি শিক্ষার্থীর জন্য বাধ্যতামূলক।",
+    icon: <FaShieldHalved />,
+  },
+  {
+    title: "Uniform",
+    description:
+      "নির্ধারিত পোশাক ও পরিচ্ছন্নতা শিক্ষার্থীদের জন্য অত্যন্ত গুরুত্বপূর্ণ।",
+    icon: <FaIdCard />,
+  },
+  {
+    title: "Examination",
+    description:
+      "পরীক্ষা, class test এবং মূল্যায়ন কার্যক্রমে নিয়মিত অংশগ্রহণ করতে হবে।",
     icon: <FaClipboardCheck />,
   },
-  {
-    title: "ICT / Lab Teachers",
-    description:
-      "কম্পিউটার, বিজ্ঞান ল্যাব ও প্র্যাকটিক্যাল ক্লাস পরিচালনার মাধ্যমে বাস্তবভিত্তিক শিক্ষা নিশ্চিত করেন।",
-    icon: <FaComputer />,
-  },
 ];
 
-const teachers: TeacherItem[] = [
-  {
-    id: 1,
-    name: "মোঃ আব্দুল করিম",
-    designation: "প্রধান শিক্ষক",
-    subject: "প্রশাসন ও একাডেমিক নেতৃত্ব",
-    qualification: "এম.এ, বি.এড",
-    experience: "২০ বছর",
-    fileUrl: "#",
-  },
-  {
-    id: 2,
-    name: "মোছাঃ সালমা আক্তার",
-    designation: "সহকারী প্রধান শিক্ষক",
-    subject: "বাংলা",
-    qualification: "এম.এ, বি.এড",
-    experience: "১৬ বছর",
-    fileUrl: "#",
-  },
-  {
-    id: 3,
-    name: "মোঃ রবিউল ইসলাম",
-    designation: "সিনিয়র শিক্ষক",
-    subject: "গণিত",
-    qualification: "এম.এসসি, বি.এড",
-    experience: "১৪ বছর",
-    fileUrl: "#",
-  },
-  {
-    id: 4,
-    name: "নুসরাত জাহান",
-    designation: "সহকারী শিক্ষক",
-    subject: "ইংরেজি",
-    qualification: "এম.এ, বি.এড",
-    experience: "১০ বছর",
-    fileUrl: "#",
-  },
-  {
-    id: 5,
-    name: "মোঃ মাহমুদুল হাসান",
-    designation: "সহকারী শিক্ষক",
-    subject: "বিজ্ঞান",
-    qualification: "এম.এসসি",
-    experience: "৯ বছর",
-    fileUrl: "#",
-  },
-  {
-    id: 6,
-    name: "সাবিনা ইয়াসমিন",
-    designation: "আইসিটি শিক্ষক",
-    subject: "আইসিটি",
-    qualification: "বি.এসসি ইন সিএসই",
-    experience: "৭ বছর",
-    fileUrl: "#",
-  },
-  {
-    id: 7,
-    name: "মোঃ ফারুক হোসেন",
-    designation: "সহকারী শিক্ষক",
-    subject: "সমাজবিজ্ঞান",
-    qualification: "এম.এস.এস",
-    experience: "১১ বছর",
-    fileUrl: "#",
-  },
-  {
-    id: 8,
-    name: "আয়েশা সিদ্দিকা",
-    designation: "সহকারী শিক্ষক",
-    subject: "ধর্ম শিক্ষা",
-    qualification: "এম.এ",
-    experience: "৮ বছর",
-    fileUrl: "#",
-  },
-];
+const statusStyle: Record<StudentRecord["status"], string> = {
+  Active: "bg-blue-soft text-blue border-blue-soft",
+  Merit: "bg-color-secondary text-brand-primary border-brand-primary-soft",
+  Regular: "bg-page-secondary text-secondary border-soft",
+};
 
-const subjectTeachers: SubjectTeacher[] = [
-  {
-    subject: "বাংলা",
-    teacher: "মোছাঃ সালমা আক্তার",
-    classRange: "ষষ্ঠ - দশম",
-    icon: <FaBookOpen />,
-  },
-  {
-    subject: "ইংরেজি",
-    teacher: "নুসরাত জাহান",
-    classRange: "তৃতীয় - দশম",
-    icon: <FaGraduationCap />,
-  },
-  {
-    subject: "গণিত",
-    teacher: "মোঃ রবিউল ইসলাম",
-    classRange: "চতুর্থ - দশম",
-    icon: <FaClipboardCheck />,
-  },
-  {
-    subject: "বিজ্ঞান",
-    teacher: "মোঃ মাহমুদুল হাসান",
-    classRange: "ষষ্ঠ - দশম",
-    icon: <FaFlask />,
-  },
-  {
-    subject: "আইসিটি",
-    teacher: "সাবিনা ইয়াসমিন",
-    classRange: "ষষ্ঠ - দশম",
-    icon: <FaComputer />,
-  },
-  {
-    subject: "সমাজবিজ্ঞান",
-    teacher: "মোঃ ফারুক হোসেন",
-    classRange: "ষষ্ঠ - দশম",
-    icon: <FaPeopleGroup />,
-  },
-];
-
-const responsibilities: Responsibility[] = [
-  {
-    title: "পাঠদান পরিচালনা",
-    description:
-      "শিক্ষার্থীদের বয়স, শ্রেণি ও পাঠ্যসূচি অনুযায়ী সহজ, কার্যকর ও অংশগ্রহণমূলক পাঠদান পরিচালনা করা।",
-    icon: <FaPersonChalkboard />,
-  },
-  {
-    title: "শিক্ষার্থী মূল্যায়ন",
-    description:
-      "ক্লাস টেস্ট, অ্যাসাইনমেন্ট, মৌখিক পরীক্ষা ও লিখিত পরীক্ষার মাধ্যমে শিক্ষার্থীর অগ্রগতি মূল্যায়ন করা।",
-    icon: <FaClipboardCheck />,
-  },
-  {
-    title: "অভিভাবক যোগাযোগ",
-    description:
-      "শিক্ষার্থীর উপস্থিতি, আচরণ ও পড়াশোনার অগ্রগতি সম্পর্কে অভিভাবকদের সঙ্গে প্রয়োজনীয় যোগাযোগ রাখা।",
-    icon: <FaPeopleGroup />,
-  },
-  {
-    title: "সহশিক্ষা কার্যক্রম",
-    description:
-      "বিতর্ক, ক্রীড়া, সাংস্কৃতিক অনুষ্ঠান, বিজ্ঞান মেলা ও ক্লাব কার্যক্রমে শিক্ষার্থীদের দিকনির্দেশনা দেওয়া।",
-    icon: <FaUsersGear />,
-  },
-  {
-    title: "ক্লাস রুটিন অনুসরণ",
-    description:
-      "নির্ধারিত সময়সূচি অনুযায়ী ক্লাস নেওয়া, পাঠ পরিকল্পনা অনুসরণ করা এবং সময়ানুবর্তিতা বজায় রাখা।",
-    icon: <FaRegClock />,
-  },
-  {
-    title: "শৃঙ্খলা ও নৈতিকতা",
-    description:
-      "শিক্ষার্থীদের শৃঙ্খলা, দায়িত্ববোধ, নৈতিকতা ও ভালো আচরণ গঠনে ইতিবাচক ভূমিকা রাখা।",
-    icon: <FaStar />,
-  },
-];
-
-const guidelineSections: GuidelineSection[] = [
-  {
-    title: "শিক্ষার্থীদের নির্দেশনা",
-    icon: <FaUserGraduate />,
-    points: [
-      "শিক্ষকদের সম্মান করতে হবে এবং ক্লাসে মনোযোগ দিয়ে পাঠ শুনতে হবে।",
-      "কোনো বিষয় বুঝতে সমস্যা হলে বিনয়ের সঙ্গে শিক্ষককে প্রশ্ন করতে হবে।",
-      "শিক্ষকের দেওয়া হোমওয়ার্ক, অ্যাসাইনমেন্ট ও নির্দেশনা সময়মতো সম্পন্ন করতে হবে।",
-      "ক্লাসে শৃঙ্খলা বজায় রাখতে হবে এবং অন্য শিক্ষার্থীদের শেখার পরিবেশ নষ্ট করা যাবে না।",
-      "শিক্ষকের পরামর্শ অনুযায়ী নিয়মিত পড়াশোনা ও অনুশীলন করতে হবে।",
-    ],
-  },
-  {
-    title: "অভিভাবকদের নির্দেশনা",
-    icon: <FaPeopleGroup />,
-    points: [
-      "সন্তানের শ্রেণি শিক্ষক ও বিষয় শিক্ষকের সঙ্গে নিয়মিত যোগাযোগ রাখুন।",
-      "অভিভাবক-শিক্ষক সভায় অংশগ্রহণ করে সন্তানের অগ্রগতি সম্পর্কে জানুন।",
-      "শিক্ষকের পরামর্শ অনুযায়ী বাড়িতে পড়াশোনার পরিবেশ তৈরি করতে সহায়তা করুন।",
-      "সন্তানের উপস্থিতি, হোমওয়ার্ক ও আচরণ নিয়মিত পর্যবেক্ষণ করুন।",
-      "কোনো সমস্যা হলে সরাসরি শিক্ষক বা বিদ্যালয় কর্তৃপক্ষের সঙ্গে যোগাযোগ করুন।",
-    ],
-  },
-];
-
-const TeachersInfoPage = () => {
+export default function StudentInfoPage() {
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Section */}
-      <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
+      {/* Hero */}
+      <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
-          <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            Faculty Members
+          <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
+            Student Info
           </p>
 
-          <h1 className="mt-5 text-[38px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
-            শিক্ষকদের তথ্য
+          <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
+            শিক্ষার্থীদের তথ্য
           </h1>
 
-          <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-color-primary" />
+          <div className="mx-auto mt-7 h-1 w-28 rounded-full bg-color-primary" />
 
-          <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            বিদ্যালয়ের অভিজ্ঞ শিক্ষক-শিক্ষিকাদের পরিচিতি, পদবি, বিষয়, যোগ্যতা
-            ও দায়িত্ব সম্পর্কে বিস্তারিত তথ্য।
+          <p className="mx-auto mt-9 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
+            শিক্ষার্থীদের একাডেমিক তথ্য, শ্রেণিভিত্তিক সংখ্যা, উপস্থিতি,
+            শৃঙ্খলা, মূল্যায়ন এবং বিদ্যালয় সম্পর্কিত গুরুত্বপূর্ণ নির্দেশনা
+            এখানে উপস্থাপন করা হয়েছে।
           </p>
 
           <Link
             href="/"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
+            className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
             Back to Home
           </Link>
         </div>
       </section>
 
-      {/* Teachers Overview */}
-      <section className="px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {overviewItems.map((item) => (
-            <div
-              key={item.title}
-              className="group rounded-[24px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
-            >
-              <div className="flex h-12 w-12 items-center justify-center rounded-[18px] bg-color-secondary text-xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
-                {item.icon}
-              </div>
-
-              <h3 className="mt-4 text-2xl font-black text-primary">
-                {item.value}
-              </h3>
-
-              <p className="mt-1 text-sm font-semibold text-secondary">
-                {item.title}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Introduction */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start">
-              <div className="lg:col-span-4">
-                <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                  ভূমিকা
-                </p>
-
-                <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                  অভিজ্ঞ শিক্ষক, মানসম্মত শিক্ষা
-                </h2>
-
-                <div className="mt-5 flex items-center gap-2">
-                  <span className="h-1 w-16 rounded-full bg-color-primary" />
-                  <span className="h-1 w-7 rounded-full bg-color-secondary" />
-                </div>
-              </div>
-
-              <div className="lg:col-span-8">
-                <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  বিদ্যালয়ের শিক্ষকরা শিক্ষার্থীদের জ্ঞান, নৈতিকতা, শৃঙ্খলা ও
-                  সৃজনশীলতা গঠনে গুরুত্বপূর্ণ ভূমিকা পালন করেন। অভিজ্ঞতা,
-                  বিষয়ভিত্তিক দক্ষতা এবং শিক্ষার্থীবান্ধব পাঠদান পদ্ধতির মাধ্যমে
-                  শিক্ষকরা প্রতিটি শিক্ষার্থীর শেখার অগ্রগতি নিশ্চিত করতে কাজ
-                  করেন। এই পেজে বিদ্যালয়ের শিক্ষক-শিক্ষিকাদের পরিচিতি, দায়িত্ব
-                  ও বিষয়ভিত্তিক তথ্য তুলে ধরা হয়েছে।
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Teacher */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
+      {/* Overview */}
+      <section className="px-4 py-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px]">
+          <div className="overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12">
-              <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
-                  <FaStar className="text-sm" />
+              <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-inverse">
+                  <FaSchoolFlag />
+                  Student Information System
+                </span>
 
-                  <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    Leadership
-                  </p>
-                </div>
-
-                <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  প্রধান শিক্ষকের নেতৃত্বে শিক্ষার মান উন্নয়ন
+                <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
+                  শিক্ষার্থীদের তথ্য, অগ্রগতি ও একাডেমিক কার্যক্রম
                 </h2>
 
-                <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  বিদ্যালয়ের প্রধান শিক্ষক একাডেমিক পরিকল্পনা, শিক্ষক
-                  তত্ত্বাবধান, শিক্ষার্থী উন্নয়ন এবং বিদ্যালয়ের সামগ্রিক
-                  প্রশাসনিক কার্যক্রম পরিচালনায় নেতৃত্ব প্রদান করেন। তাঁর
-                  অভিজ্ঞতা ও দিকনির্দেশনা বিদ্যালয়ের শিক্ষার পরিবেশকে আরও
-                  উন্নত ও শৃঙ্খলাপূর্ণ করে তোলে।
+                <p className="mt-5 max-w-4xl text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
+                  বিদ্যালয়ের শিক্ষার্থীদের শ্রেণি, শাখা, রোল, উপস্থিতি, ফলাফল
+                  এবং সামগ্রিক উন্নয়ন পর্যবেক্ষণের জন্য তথ্যগুলো সুশৃঙ্খলভাবে
+                  উপস্থাপন করা হয়েছে। এটি অভিভাবক, শিক্ষক এবং প্রশাসনের জন্য
+                  সহায়ক।
                 </p>
-
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    পদবি: প্রধান শিক্ষক
-                  </span>
-
-                  <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    অভিজ্ঞতা: ২০ বছর
-                  </span>
-
-                  <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    যোগ্যতা: এম.এ, বি.এড
-                  </span>
-                </div>
               </div>
 
-              <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
-                <div className="rounded-[28px] bg-page-primary p-6 text-center shadow-lg">
+              <div className="grid grid-cols-1 gap-4 bg-color-secondary p-6 sm:grid-cols-2 sm:p-8 lg:col-span-4 lg:p-10">
+                <div className="rounded-[26px] border border-soft bg-page-primary p-6 text-center shadow-xl">
                   <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
-                    <FaPersonChalkboard />
+                    <FaUserGraduate />
                   </div>
 
-                  <p className="mt-5 text-2xl font-black text-primary">
-                    Head Teacher
-                  </p>
+                  <h3 className="mt-5 text-4xl font-black text-primary">
+                    1,250+
+                  </h3>
 
-                  <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    শিক্ষার মান, শৃঙ্খলা ও বিদ্যালয়ের অগ্রগতিতে নেতৃত্ব প্রদান।
+                  <p className="mt-2 text-sm font-black text-brand-primary">
+                    Enrolled Students
+                  </p>
+                </div>
+
+                <div className="rounded-[26px] border border-soft bg-page-primary p-6 text-center shadow-xl">
+                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
+                    <FaGraduationCap />
+                  </div>
+
+                  <h3 className="mt-5 text-4xl font-black text-primary">24</h3>
+
+                  <p className="mt-2 text-sm font-black text-brand-primary">
+                    Active Sections
                   </p>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Teacher Categories */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              শিক্ষক বিভাগ
-            </p>
-
-            <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Teacher Categories
-            </h2>
-
-            <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-              <span className="h-1 w-16 rounded-full bg-color-primary" />
-              <span className="h-1 w-7 rounded-full bg-color-secondary" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {teacherCategories.map((category) => (
+          {/* Stats */}
+          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {overviewStats.map((item) => (
               <article
-                key={category.title}
-                className="group rounded-[26px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
+                key={item.title}
+                className="group rounded-[28px] border border-soft bg-page-primary p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary hover:shadow-xl"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-page-secondary group-hover:text-brand-primary">
-                  {category.icon}
+                <div className="flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-secondary text-3xl text-brand-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
+                  {item.icon}
                 </div>
 
-                <h3 className="mt-5 text-xl font-black leading-tight text-primary transition-colors duration-500 group-hover:text-inverse">
-                  {category.title}
+                <h3 className="mt-6 text-4xl font-black text-primary">
+                  {item.value}
                 </h3>
 
-                <p className="mt-3 text-sm font-semibold leading-7 text-secondary transition-colors duration-500 group-hover:text-inverse/80">
-                  {category.description}
+                <p className="mt-2 text-lg font-black text-primary">
+                  {item.title}
+                </p>
+
+                <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
+                  {item.description}
                 </p>
               </article>
             ))}
@@ -487,233 +350,204 @@ const TeachersInfoPage = () => {
         </div>
       </section>
 
-      {/* Subject Wise Teachers */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
-            <div className="mb-8 text-center">
-              <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                বিষয়ভিত্তিক শিক্ষক
-              </p>
-
-              <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                Subject Wise Teachers
-              </h2>
-
-              <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-                <span className="h-1 w-16 rounded-full bg-color-primary" />
-                <span className="h-1 w-7 rounded-full bg-color-secondary" />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {subjectTeachers.map((item) => (
-                <article
-                  key={item.subject}
-                  className="group rounded-[24px] border border-soft bg-page-secondary p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-page-primary group-hover:text-brand-primary">
-                    {item.icon}
-                  </div>
-
-                  <h3 className="mt-5 text-xl font-black leading-tight text-primary transition-colors duration-500 group-hover:text-inverse">
-                    {item.subject}
-                  </h3>
-
-                  <p className="mt-2 text-sm font-black text-brand-primary transition-colors duration-500 group-hover:text-inverse/90">
-                    {item.teacher}
-                  </p>
-
-                  <p className="mt-3 text-sm font-semibold leading-7 text-secondary transition-colors duration-500 group-hover:text-inverse/80">
-                    শ্রেণি: {item.classRange}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Teachers List */}
-      <section
-        id="teachers-list"
-        className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
-      >
-        <div className="mx-auto max-w-[1500px]">
+      {/* Class Wise Statistics */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px] rounded-[34px] border border-soft bg-page-primary p-5 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              শিক্ষকদের তালিকা
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
+              Class Wise Statistics
             </p>
 
-            <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Teachers List
+            <h2 className="mt-3 text-3xl font-black text-primary">
+              শ্রেণিভিত্তিক শিক্ষার্থী সংখ্যা
             </h2>
 
-            <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-              <span className="h-1 w-16 rounded-full bg-color-primary" />
-              <span className="h-1 w-7 rounded-full bg-color-secondary" />
-            </div>
+            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-color-primary" />
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold leading-7 text-secondary">
+              প্রতিটি শ্রেণির section, ছাত্র-ছাত্রী সংখ্যা এবং class teacher
+              তথ্য এখানে দেখানো হয়েছে।
+            </p>
           </div>
 
-          <div className="overflow-hidden rounded-[30px] border border-soft bg-page-primary shadow-sm">
-            <div className="hidden lg:block">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b border-soft bg-page-secondary">
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      শিক্ষকের নাম
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      পদবি
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      বিষয়
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      যোগ্যতা
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      অভিজ্ঞতা
-                    </th>
-                    <th className="px-5 py-4 text-right text-sm font-black text-primary">
-                      বিস্তারিত
+          <div className="overflow-hidden rounded-[24px] border border-soft">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[900px] border-collapse bg-page-primary text-left">
+                <thead className="bg-color-primary text-inverse">
+                  <tr>
+                    <th className="px-5 py-4 text-sm font-black">Class</th>
+                    <th className="px-5 py-4 text-sm font-black">Sections</th>
+                    <th className="px-5 py-4 text-sm font-black">Boys</th>
+                    <th className="px-5 py-4 text-sm font-black">Girls</th>
+                    <th className="px-5 py-4 text-sm font-black">Total</th>
+                    <th className="px-5 py-4 text-sm font-black">
+                      Class Teacher
                     </th>
                   </tr>
                 </thead>
 
                 <tbody>
-                  {teachers.map((teacher) => (
+                  {classWiseInfo.map((item, index) => (
                     <tr
-                      key={teacher.id}
-                      className="border-b border-soft transition-all duration-500 hover:bg-page-secondary"
+                      key={item.className}
+                      className={`border-b border-soft ${
+                        index % 2 === 0 ? "bg-page-primary" : "bg-page-secondary"
+                      }`}
                     >
-                      <td className="px-5 py-5">
-                        <div className="flex items-center gap-3">
-                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-color-secondary text-primary">
-                            <FaPersonChalkboard />
-                          </span>
-
-                          <p className="text-sm font-black leading-6 text-primary">
-                            {teacher.name}
-                          </p>
-                        </div>
+                      <td className="px-5 py-4 text-sm font-black text-primary">
+                        {item.className}
                       </td>
-
-                      <td className="px-5 py-5">
-                        <span className="inline-flex items-center rounded-full bg-page-secondary px-3 py-2 text-xs font-black text-brand-primary">
-                          {teacher.designation}
-                        </span>
+                      <td className="px-5 py-4 text-sm font-semibold text-secondary">
+                        {item.sections}
                       </td>
-
-                      <td className="px-5 py-5 text-sm font-bold text-secondary">
-                        {teacher.subject}
+                      <td className="px-5 py-4 text-sm font-semibold text-secondary">
+                        {item.boys}
                       </td>
-
-                      <td className="px-5 py-5 text-sm font-bold text-secondary">
-                        {teacher.qualification}
+                      <td className="px-5 py-4 text-sm font-semibold text-secondary">
+                        {item.girls}
                       </td>
-
-                      <td className="px-5 py-5 text-sm font-bold text-secondary">
-                        {teacher.experience}
+                      <td className="px-5 py-4 text-sm font-black text-brand-primary">
+                        {item.total}
                       </td>
-
-                      <td className="px-5 py-5 text-right">
-                        <Link
-                          href={teacher.fileUrl}
-                          className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
-                        >
-                          Download
-                          <FaCloudArrowDown />
-                        </Link>
+                      <td className="px-5 py-4 text-sm font-semibold text-secondary">
+                        {item.classTeacher}
                       </td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
+          </div>
 
-            <div className="grid grid-cols-1 gap-4 p-4 lg:hidden">
-              {teachers.map((teacher) => (
-                <div
-                  key={teacher.id}
-                  className="rounded-[22px] border border-soft bg-page-secondary p-4"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                        {teacher.designation}
-                      </p>
+          <div className="mt-6 rounded-[24px] border border-soft bg-page-secondary p-5">
+            <div className="flex items-start gap-3">
+              <FaChartSimple className="mt-1 shrink-0 text-brand-primary" />
 
-                      <h3 className="mt-2 text-xl font-black leading-tight text-primary">
-                        {teacher.name}
-                      </h3>
-                    </div>
-
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-color-secondary text-primary">
-                      <FaPersonChalkboard />
-                    </div>
-                  </div>
-
-                  <div className="mt-4 space-y-2">
-                    <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">বিষয়:</span>{" "}
-                      {teacher.subject}
-                    </p>
-
-                    <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">যোগ্যতা:</span>{" "}
-                      {teacher.qualification}
-                    </p>
-
-                    <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">অভিজ্ঞতা:</span>{" "}
-                      {teacher.experience}
-                    </p>
-                  </div>
-
-                  <Link
-                    href={teacher.fileUrl}
-                    className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
-                  >
-                    Download
-                    <FaCloudArrowDown />
-                  </Link>
-                </div>
-              ))}
+              <p className="text-sm font-semibold leading-7 text-secondary">
+                Note: শ্রেণিভিত্তিক শিক্ষার্থী সংখ্যা নমুনা হিসেবে দেখানো হয়েছে।
+                প্রকৃত official record বিদ্যালয় অফিস থেকে সংগ্রহ করতে হবে।
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Teacher Responsibilities */}
-      <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
+      {/* Student Records */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px]">
           <div className="mb-8 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              শিক্ষকদের দায়িত্ব
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
+              Student Records
             </p>
 
-            <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              Teacher Responsibilities
+            <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
+              শিক্ষার্থীদের নমুনা তালিকা
             </h2>
 
-            <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-              <span className="h-1 w-16 rounded-full bg-color-primary" />
-              <span className="h-1 w-7 rounded-full bg-color-secondary" />
-            </div>
+            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-color-primary" />
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold leading-7 text-secondary">
+              শিক্ষার্থীদের ID, নাম, শ্রেণি, section, roll এবং status সহজভাবে
+              দেখানোর জন্য এই তালিকা তৈরি করা হয়েছে।
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {responsibilities.map((item) => (
+          <div className="overflow-hidden rounded-[34px] border border-soft bg-page-primary p-5 shadow-sm sm:p-6">
+            <div className="overflow-hidden rounded-[24px] border border-soft">
+              <div className="overflow-x-auto">
+                <table className="w-full min-w-[950px] border-collapse text-left">
+                  <thead className="bg-color-primary text-inverse">
+                    <tr>
+                      <th className="px-5 py-4 text-sm font-black">
+                        Student ID
+                      </th>
+                      <th className="px-5 py-4 text-sm font-black">Name</th>
+                      <th className="px-5 py-4 text-sm font-black">
+                        Bangla Name
+                      </th>
+                      <th className="px-5 py-4 text-sm font-black">Class</th>
+                      <th className="px-5 py-4 text-sm font-black">Section</th>
+                      <th className="px-5 py-4 text-sm font-black">Roll</th>
+                      <th className="px-5 py-4 text-sm font-black">Status</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {studentRecords.map((student, index) => (
+                      <tr
+                        key={student.id}
+                        className={`border-b border-soft ${
+                          index % 2 === 0
+                            ? "bg-page-primary"
+                            : "bg-page-secondary"
+                        }`}
+                      >
+                        <td className="px-5 py-4 text-sm font-black text-brand-primary">
+                          {student.id}
+                        </td>
+                        <td className="px-5 py-4 text-sm font-semibold text-primary">
+                          {student.name}
+                        </td>
+                        <td className="px-5 py-4 text-sm font-semibold text-primary">
+                          {student.banglaName}
+                        </td>
+                        <td className="px-5 py-4 text-sm font-semibold text-secondary">
+                          {student.className}
+                        </td>
+                        <td className="px-5 py-4 text-sm font-semibold text-secondary">
+                          {student.section}
+                        </td>
+                        <td className="px-5 py-4 text-sm font-black text-primary">
+                          {student.roll}
+                        </td>
+                        <td className="px-5 py-4">
+                          <span
+                            className={`inline-flex rounded-full border px-4 py-2 text-xs font-black ${statusStyle[student.status]}`}
+                          >
+                            {student.status}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Guidelines */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
+          <div className="mb-8 text-center">
+            <p className="text-sm font-black uppercase tracking-[0.25em] text-brand-primary">
+              Student Guidelines
+            </p>
+
+            <h2 className="mt-3 text-3xl font-black text-primary">
+              শিক্ষার্থীদের জন্য নির্দেশনা
+            </h2>
+
+            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-color-primary" />
+
+            <p className="mx-auto mt-5 max-w-2xl text-sm font-semibold leading-7 text-secondary">
+              বিদ্যালয়ের নিয়ম-শৃঙ্খলা, উপস্থিতি, পরীক্ষা এবং অভিভাবক যোগাযোগের
+              ক্ষেত্রে শিক্ষার্থীদের জন্য গুরুত্বপূর্ণ নির্দেশনা।
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
+            {guidelines.map((item) => (
               <article
                 key={item.title}
-                className="group rounded-[26px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+                className="group rounded-[26px] border border-soft bg-page-secondary p-6 transition-all duration-500 hover:-translate-y-2 hover:border-brand-primary hover:bg-page-primary hover:shadow-xl"
               >
-                <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
+                <div className="flex h-14 w-14 items-center justify-center rounded-[18px] bg-color-secondary text-2xl text-brand-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
                   {item.icon}
                 </div>
 
-                <h3 className="mt-5 text-xl font-black leading-tight text-primary">
+                <h3 className="mt-5 text-xl font-black text-primary">
                   {item.title}
                 </h3>
 
@@ -726,100 +560,112 @@ const TeachersInfoPage = () => {
         </div>
       </section>
 
-      {/* Guidelines */}
-      <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {guidelineSections.map((section) => (
-              <article
-                key={section.title}
-                className="group rounded-[28px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl sm:p-6 lg:p-7"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
-                    {section.icon}
-                  </div>
+      {/* Important Notes */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px] grid grid-cols-1 gap-6 lg:grid-cols-2">
+          <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
+            <div className="flex h-14 w-14 items-center justify-center rounded-[18px] bg-color-secondary text-2xl text-brand-primary">
+              <FaCheck />
+            </div>
 
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      নির্দেশনা
-                    </p>
+            <h3 className="mt-5 text-2xl font-black text-primary">
+              Official Record
+            </h3>
 
-                    <h3 className="mt-2 text-xl font-black leading-tight text-primary sm:text-2xl">
-                      {section.title}
-                    </h3>
-                  </div>
-                </div>
+            <p className="mt-4 text-sm font-semibold leading-8 text-secondary">
+              শিক্ষার্থীদের official record, transcript, transfer certificate,
+              attendance report এবং guardian information বিদ্যালয়ের office
+              record অনুযায়ী সংরক্ষণ করা হয়।
+            </p>
+          </div>
 
-                <div className="mt-5 space-y-3">
-                  {section.points.map((point) => (
-                    <div
-                      key={point}
-                      className="flex gap-3 rounded-[18px] border border-soft bg-page-secondary p-4 transition-all duration-500 group-hover:border-brand-primary-soft"
-                    >
-                      <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-color-primary text-[10px] text-inverse">
-                        <FaCheck />
-                      </span>
+          <div className="rounded-[30px] border border-red-soft bg-red-soft p-6 shadow-sm sm:p-8">
+            <div className="flex h-14 w-14 items-center justify-center rounded-[18px] bg-page-primary text-2xl text-red">
+              <FaTriangleExclamation />
+            </div>
 
-                      <p className="text-sm font-semibold leading-7 text-secondary">
-                        {point}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </article>
-            ))}
+            <h3 className="mt-5 text-2xl font-black text-primary">
+              Data Privacy
+            </h3>
+
+            <p className="mt-4 text-sm font-semibold leading-8 text-secondary">
+              শিক্ষার্থীদের ব্যক্তিগত তথ্য গোপনীয়। অভিভাবক, শিক্ষক বা অনুমোদিত
+              প্রশাসনিক কর্মকর্তা ছাড়া কোনো তথ্য প্রকাশ করা যাবে না।
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Closing Message */}
-      <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
-            <div className="grid grid-cols-1 lg:grid-cols-12">
-              <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
-                  <FaCalendarCheck className="text-sm" />
+      {/* Message */}
+      <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <div className="mx-auto max-w-[1600px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                <FaRegCalendarDays className="text-sm" />
 
-                  <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    সমাপনী বার্তা
-                  </p>
-                </div>
-
-                <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  শিক্ষকই শিক্ষার্থীর ভবিষ্যৎ গঠনের পথপ্রদর্শক
-                </h2>
-
-                <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  একজন শিক্ষক শুধু পাঠদান করেন না, তিনি শিক্ষার্থীর চরিত্র,
-                  আত্মবিশ্বাস, নৈতিকতা ও ভবিষ্যৎ গঠনে গুরুত্বপূর্ণ ভূমিকা রাখেন।
-                  শিক্ষক, শিক্ষার্থী ও অভিভাবকের সম্মিলিত সহযোগিতায় মানসম্মত
-                  শিক্ষা নিশ্চিত করা সম্ভব।
+                <p className="text-xs font-black uppercase tracking-[0.18em]">
+                  Student Development
                 </p>
               </div>
 
-              <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
-                <div className="rounded-[28px] bg-page-primary p-6 text-center shadow-lg">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
-                    <FaGraduationCap />
-                  </div>
+              <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
+                শিক্ষার্থীর অগ্রগতি, শৃঙ্খলা ও সুন্দর ভবিষ্যৎ
+              </h2>
 
-                  <p className="mt-5 text-2xl font-black text-primary">
-                    Our Teachers
-                  </p>
+              <p className="mt-5 text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
+                শিক্ষার্থীদের একাডেমিক সাফল্য, নিয়মিত উপস্থিতি, নৈতিক মূল্যবোধ
+                এবং সহশিক্ষা কার্যক্রমের মাধ্যমে একটি সুন্দর ভবিষ্যৎ গড়ে তোলা
+                আমাদের লক্ষ্য। বিদ্যালয়, শিক্ষক ও অভিভাবকদের সম্মিলিত
+                সহযোগিতায় প্রতিটি শিক্ষার্থী এগিয়ে যাবে।
+              </p>
+            </div>
 
-                  <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    অভিজ্ঞ শিক্ষক-শিক্ষিকারাই বিদ্যালয়ের সবচেয়ে বড় সম্পদ।
-                  </p>
+            <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
+              <div className="w-full rounded-[30px] border border-soft bg-page-primary p-6 text-center shadow-xl">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[26px] bg-color-primary text-4xl text-inverse">
+                  <FaStar />
                 </div>
+
+                <p className="mt-6 text-3xl font-black text-primary">
+                  Student Success
+                </p>
+
+                <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
+                  জ্ঞান, শৃঙ্খলা ও আত্মবিশ্বাসের মাধ্যমে শিক্ষার্থীদের উন্নত
+                  ভবিষ্যৎ গড়ে তোলা।
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
+
+      {/* Office Contact */}
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-[1600px] rounded-[24px] border border-soft bg-page-primary p-5 shadow-sm">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 className="text-xl font-black text-primary">
+                Need official student information?
+              </h3>
+
+              <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
+                শিক্ষার্থীদের official record বা বিস্তারিত তথ্যের জন্য বিদ্যালয়
+                অফিসে যোগাযোগ করুন।
+              </p>
+            </div>
+
+            <Link
+              href="/contact"
+              className="inline-flex w-fit items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-lg transition-all duration-300 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
+            >
+              Contact Office
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
-};
+}
 
-export default TeachersInfoPage;
