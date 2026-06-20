@@ -31,10 +31,13 @@ type VideoCardProps = {
   onClick: () => void;
 };
 
+const toBanglaNumber = (value: string | number) =>
+  value.toString().replace(/\d/g, (digit) => "০১২৩৪৫৬৭৮৯"[Number(digit)]);
+
 const videoGallery: VideoGalleryItem[] = [
   {
     id: 1,
-    title: "Annual Cultural Program",
+    title: "বার্ষিক সাংস্কৃতিক অনুষ্ঠান",
     slug: "annual-cultural-program",
     youtubeEmbedUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
     description:
@@ -42,7 +45,7 @@ const videoGallery: VideoGalleryItem[] = [
   },
   {
     id: 2,
-    title: "Sports Day Highlights",
+    title: "বার্ষিক ক্রীড়া দিবসের বিশেষ মুহূর্ত",
     slug: "sports-day-highlights",
     youtubeEmbedUrl: "https://www.youtube.com/embed/ysz5S6PUM-U",
     description:
@@ -50,7 +53,7 @@ const videoGallery: VideoGalleryItem[] = [
   },
   {
     id: 3,
-    title: "Science Fair Presentation",
+    title: "বিজ্ঞান মেলা উপস্থাপনা",
     slug: "science-fair-presentation",
     youtubeEmbedUrl: "https://www.youtube.com/embed/jNQXAC9IVRw",
     description:
@@ -58,7 +61,7 @@ const videoGallery: VideoGalleryItem[] = [
   },
   {
     id: 4,
-    title: "Campus Activity Video",
+    title: "ক্যাম্পাস কার্যক্রমের ভিডিও",
     slug: "campus-activity-video",
     youtubeEmbedUrl: "https://www.youtube.com/embed/tgbNymZ7vqY",
     description:
@@ -66,15 +69,15 @@ const videoGallery: VideoGalleryItem[] = [
   },
   {
     id: 5,
-    title: "Classroom Learning Moments",
+    title: "শ্রেণিকক্ষের শেখার মুহূর্ত",
     slug: "classroom-learning-moments",
     youtubeEmbedUrl: "https://www.youtube.com/embed/aqz-KE-bpKQ",
     description:
-      "শ্রেণিকক্ষের পাঠদান, group activity এবং শিক্ষার্থীদের শেখার অভিজ্ঞতা।",
+      "শ্রেণিকক্ষের পাঠদান, দলীয় কার্যক্রম এবং শিক্ষার্থীদের শেখার অভিজ্ঞতা।",
   },
   {
     id: 6,
-    title: "Student Achievement Program",
+    title: "শিক্ষার্থী অর্জন অনুষ্ঠান",
     slug: "student-achievement-program",
     youtubeEmbedUrl: "https://www.youtube.com/embed/ScMzIvxBSi4",
     description:
@@ -115,7 +118,7 @@ function VideoCard({ item, index, onClick }: VideoCardProps) {
         <div className="pointer-events-none absolute left-5 top-5">
           <span className="inline-flex items-center gap-2 rounded-full bg-color-secondary px-4 py-2 text-xs font-black text-brand-primary shadow-md">
             <FaVideo />
-            Video {index + 1}
+            ভিডিও {toBanglaNumber(index + 1)}
           </span>
         </div>
 
@@ -125,7 +128,7 @@ function VideoCard({ item, index, onClick }: VideoCardProps) {
           </h3>
 
           <p className="mt-2 text-sm font-semibold text-inverse opacity-85">
-            Click to play video
+            ভিডিও চালাতে ক্লিক করুন
           </p>
         </div>
       </div>
@@ -141,14 +144,7 @@ export default function VideoFilteredPage() {
     return videoGallery.filter((item) => item.slug === slug);
   }, [slug]);
 
-  const currentAlbumTitle =
-    filteredVideos[0]?.title ||
-    slug
-      .split("-")
-      .filter(Boolean)
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ") ||
-    "Video Gallery";
+  const currentAlbumTitle = filteredVideos[0]?.title || "ভিডিও গ্যালারী";
 
   const [selectedVideo, setSelectedVideo] = useState<SelectedVideo | null>(
     null
@@ -184,13 +180,13 @@ export default function VideoFilteredPage() {
 
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Hero Section */}
+      {/* উপরের হিরো অংশ */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Video Gallery
+            ভিডিও গ্যালারী
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -201,8 +197,8 @@ export default function VideoFilteredPage() {
 
           <p className="mx-auto mt-9 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
             নির্বাচিত ভিডিও গ্যালারী অ্যালবামের অনুষ্ঠান ও কার্যক্রম এখানে
-            real YouTube video হিসেবে দেখানো হচ্ছে। প্রতিটি video card click
-            করলে বড় player open হবে।
+            সরাসরি ইউটিউব আইফ্রেম ভিডিও হিসেবে দেখানো হচ্ছে। প্রতিটি ভিডিও
+            কার্ডে ক্লিক করলে বড় প্লেয়ার খুলবে।
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -210,14 +206,14 @@ export default function VideoFilteredPage() {
               href="/gallery"
               className="inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
             >
-              Back to Gallery
+              গ্যালারীতে ফিরে যান
             </Link>
 
             <Link
               href="/"
               className="inline-flex items-center justify-center rounded-full border border-soft bg-color-secondary px-8 py-4 text-sm font-black text-brand-primary shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
             >
-              Back to Home
+              হোম পেজে ফিরে যান
             </Link>
           </div>
         </div>
@@ -225,13 +221,13 @@ export default function VideoFilteredPage() {
 
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
-          {/* Highlight Box */}
+          {/* হাইলাইট বক্স */}
           <div className="mb-10 overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12">
               <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-inverse">
                   <FaPhotoFilm />
-                  Video Archive
+                  ভিডিও আর্কাইভ
                 </span>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
@@ -239,18 +235,18 @@ export default function VideoFilteredPage() {
                 </h2>
 
                 <p className="mt-5 max-w-4xl text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
-                  এই page-এ thumbnail image-এর জায়গায় real YouTube embed video
-                  ব্যবহার করা হয়েছে। Card click করলে বড় modal player open হবে
-                  এবং ESC key চাপলে বন্ধ হবে।
+                  এই পেজে থাম্বনেইল ছবির জায়গায় সরাসরি ইউটিউব আইফ্রেম ভিডিও
+                  ব্যবহার করা হয়েছে। কার্ডে ক্লিক করলে বড় ভিডিও প্লেয়ার খুলবে
+                  এবং এস্কেপ কী চাপলে বন্ধ হবে।
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   {[
-                    "Real YouTube Video",
-                    "Embed Player",
-                    "Modal Player",
-                    "Same Card Style",
-                    "ESC Close",
+                    "সরাসরি ইউটিউব ভিডিও",
+                    "আইফ্রেম প্লেয়ার",
+                    "বড় প্লেয়ার",
+                    "একই কার্ড স্টাইল",
+                    "এস্কেপে বন্ধ",
                   ].map((badge) => (
                     <span
                       key={badge}
@@ -269,11 +265,11 @@ export default function VideoFilteredPage() {
                   </div>
 
                   <h3 className="mt-5 text-4xl font-black text-primary">
-                    {filteredVideos.length}
+                    {toBanglaNumber(filteredVideos.length)}
                   </h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Total Videos
+                    মোট ভিডিও
                   </p>
                 </div>
 
@@ -283,24 +279,24 @@ export default function VideoFilteredPage() {
                   </div>
 
                   <h3 className="mt-5 text-4xl font-black text-primary">
-                    Play
+                    চালু করুন
                   </h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    YouTube Video
+                    ইউটিউব ভিডিও
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Video Cards */}
+          {/* ভিডিও কার্ড */}
           {filteredVideos.length > 0 ? (
             <div className="rounded-[30px] border border-soft bg-page-primary p-5 shadow-sm sm:p-6">
               <div className="mb-6 flex flex-col gap-4 border-b border-soft pb-5 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-sm font-black uppercase tracking-[0.2em] text-brand-primary">
-                    Selected Album
+                    নির্বাচিত অ্যালবাম
                   </p>
 
                   <h2 className="mt-2 text-2xl font-black text-primary">
@@ -308,14 +304,14 @@ export default function VideoFilteredPage() {
                   </h2>
 
                   <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
-                    নির্বাচিত video album-এর real YouTube video এখানে card
-                    layout-এ দেখা যাবে।
+                    নির্বাচিত ভিডিও অ্যালবামের সরাসরি ইউটিউব আইফ্রেম ভিডিও
+                    এখানে কার্ড লেআউটে দেখা যাবে।
                   </p>
                 </div>
 
                 <div className="inline-flex w-fit items-center gap-2 rounded-full bg-color-secondary px-5 py-3 text-sm font-black text-brand-primary">
-                  <span>{filteredVideos.length}</span>
-                  <span>Items</span>
+                  <span>{toBanglaNumber(filteredVideos.length)}</span>
+                  <span>টি ভিডিও</span>
                 </div>
               </div>
 
@@ -337,26 +333,26 @@ export default function VideoFilteredPage() {
               </div>
 
               <h2 className="mt-6 text-2xl font-black text-primary sm:text-3xl">
-                No Video Found
+                কোনো ভিডিও পাওয়া যায়নি
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-7 text-secondary sm:text-base">
-                এই video album-এর জন্য কোনো item পাওয়া যায়নি। অন্য gallery
-                দেখতে Back to Gallery button চাপুন।
+                এই ভিডিও অ্যালবামের জন্য কোনো ভিডিও পাওয়া যায়নি। অন্য গ্যালারী
+                দেখতে গ্যালারীতে ফিরে যান।
               </p>
 
               <Link
                 href="/gallery"
                 className="mt-6 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
               >
-                Back to Gallery
+                গ্যালারীতে ফিরে যান
               </Link>
             </div>
           )}
         </div>
       </section>
 
-      {/* Closing Section */}
+      {/* সমাপনী অংশ */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1600px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -365,7 +361,7 @@ export default function VideoFilteredPage() {
                 <FaSchoolFlag className="text-sm" />
 
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  Video Gallery Message
+                  ভিডিও গ্যালারী বার্তা
                 </p>
               </div>
 
@@ -388,11 +384,11 @@ export default function VideoFilteredPage() {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Video Archive
+                  ভিডিও আর্কাইভ
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
-                  YouTube video player দিয়ে বিদ্যালয়ের স্মরণীয় মুহূর্তগুলো আরও
+                  ইউটিউব ভিডিও প্লেয়ার দিয়ে বিদ্যালয়ের স্মরণীয় মুহূর্তগুলো আরও
                   সুন্দরভাবে দেখুন।
                 </p>
               </div>
@@ -401,22 +397,22 @@ export default function VideoFilteredPage() {
         </div>
       </section>
 
-      {/* Technical Note */}
+      {/* টেকনিক্যাল নোট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[24px] border border-soft bg-page-primary p-5">
           <div className="flex items-start gap-3">
             <FaCircleInfo className="mt-1 shrink-0 text-brand-primary" />
 
             <p className="text-sm font-semibold leading-7 text-secondary">
-              Tip: নিজের video দিতে চাইলে `youtubeEmbedUrl` field-এ YouTube
-              embed link বসান। Example:
+              টিপস: নিজের ভিডিও দিতে চাইলে `youtubeEmbedUrl` ফিল্ডে ইউটিউব
+              এমবেড লিংক বসান। উদাহরণ:
               `https://www.youtube.com/embed/YOUR_VIDEO_ID`
             </p>
           </div>
         </div>
       </section>
 
-      {/* YouTube Video Modal */}
+      {/* ইউটিউব ভিডিও মডাল */}
       {selectedVideo && (
         <div
           className="fixed inset-0 z-[9999] bg-black/95 p-4"
@@ -434,7 +430,7 @@ export default function VideoFilteredPage() {
               type="button"
               onClick={closeModal}
               className="flex h-11 w-11 items-center justify-center rounded-full bg-color-primary text-xl text-inverse transition hover:opacity-90"
-              aria-label="Close"
+              aria-label="বন্ধ করুন"
             >
               <FaXmark />
             </button>

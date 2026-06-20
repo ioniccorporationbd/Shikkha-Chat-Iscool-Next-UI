@@ -329,10 +329,12 @@ const HeroNoticeSection = () => {
               href="#"
               className="group mt-6 flex items-center justify-between rounded-2xl border border-soft bg-color-primary p-4.5 text-inverse transition-all duration-300 hover:bg-color-secondary hover:text-primary hover:shadow-md"
             >
-              <div className="flex items-center gap-3">
-                <FaBarsStaggered className="text-sm" />
-                <span className="text-sm font-bold">সকল নোটিশ দেখুন</span>
-              </div>
+           <Link href="/notices">
+  <div className="flex items-center gap-3 transition hover:text-brand-primary">
+    <FaBarsStaggered className="text-sm" />
+    <span className="text-sm font-bold">সকল নোটিশ দেখুন</span>
+  </div>
+</Link>
               <FaArrowRight className="text-xs transition-transform duration-300 group-hover:translate-x-1" />
             </Link>
           </div>

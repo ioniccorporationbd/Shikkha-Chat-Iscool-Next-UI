@@ -30,6 +30,7 @@ const navList: NavItem[] = [
       { name: "গভর্নিং বডি", link: "/governing-body" },
       { name: "স্মাস্টার প্ল্যান", link: "/master-plan" },
       { name: "ইতিহাস", link: "/history" },
+        { name: "কোর্স", link: "/courses" },
       { name: "লক্ষ্য ও উদ্দেশ্য", link: "/vision-and-objectives" },
       { name: "অবকাঠামো", link: "/infrastructure" },
     ],

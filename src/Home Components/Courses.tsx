@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Autoplay, FreeMode } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -129,12 +130,12 @@ const CourseCard = ({ course }: { course: CourseItem }) => {
           {course.title}
         </h3>
 
-        <button
-          type="button"
+        <Link
+          href="/courses"
           className="mx-auto mt-4 rounded-full border border-white/30 bg-white/10 px-5 py-2 text-xs font-black text-inverse backdrop-blur-md transition-all duration-300 hover:bg-color-secondary hover:text-primary sm:text-sm"
         >
           বিস্তারিত দেখুন
-        </button>
+        </Link>
 
         <div className="mt-auto flex h-[145px] w-full items-center justify-center rounded-[22px] border border-white/20 bg-color-secondary p-5 transition-all duration-500 group-hover:bg-page-primary">
           <Image
@@ -178,7 +179,7 @@ const Courses = () => {
     <section className="relative w-full overflow-hidden bg-page-secondary px-4 py-12 font-main text-primary sm:px-6 lg:px-8 lg:py-16">
       <Image
         src={sectionBgImage}
-        alt="Courses background"
+        alt="কোর্স সেকশনের ব্যাকগ্রাউন্ড"
         fill
         sizes="100vw"
         className="pointer-events-none object-cover object-center opacity-10"
@@ -244,7 +245,6 @@ const Courses = () => {
             subtitle="আমাদের সহ-শিক্ষা কার্যক্রম শিক্ষার্থীদের সৃজনশীলতা, আত্মবিশ্বাস, নেতৃত্ব এবং সামাজিক দায়িত্ববোধ গঠনে সহায়তা করে।"
           />
 
-          {/* Refined grid structure to scale safely across mobile, tablets, and wide monitors */}
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
             {activities.map((activity) => (
               <ActivityCard key={activity.id} activity={activity} />

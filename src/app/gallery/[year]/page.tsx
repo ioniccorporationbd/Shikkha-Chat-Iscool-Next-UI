@@ -43,12 +43,15 @@ type GalleryCardProps = {
   onClick: () => void;
 };
 
+const toBanglaNumber = (value: string | number) =>
+  value.toString().replace(/\d/g, (digit) => "০১২৩৪৫৬৭৮৯"[Number(digit)]);
+
 const photoGalleryImages: PhotoGalleryImage[] = [
   {
     id: 1,
     year: "2026",
     image: "/assets/3.jpg",
-    title: "Annual Program 2026",
+    title: "বার্ষিক অনুষ্ঠান ২০২৬",
     description:
       "বার্ষিক অনুষ্ঠান, শিক্ষার্থীদের পরিবেশনা এবং বিদ্যালয়ের স্মরণীয় মুহূর্ত।",
   },
@@ -56,7 +59,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 2,
     year: "2026",
     image: "/assets/4.jpg",
-    title: "Campus Activity 2026",
+    title: "ক্যাম্পাস কার্যক্রম ২০২৬",
     description:
       "ক্যাম্পাস কার্যক্রম, শ্রেণিকক্ষের পরিবেশ এবং শিক্ষার্থীদের অংশগ্রহণ।",
   },
@@ -64,7 +67,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 3,
     year: "2026",
     image: "/assets/5.jpg",
-    title: "Achievement Ceremony 2026",
+    title: "অর্জন অনুষ্ঠান ২০২৬",
     description:
       "শিক্ষার্থীদের অর্জন, পুরস্কার বিতরণ এবং সম্মাননা অনুষ্ঠানের ছবি।",
   },
@@ -72,7 +75,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 4,
     year: "2025",
     image: "/assets/3.jpg",
-    title: "Cultural Program 2025",
+    title: "সাংস্কৃতিক অনুষ্ঠান ২০২৫",
     description:
       "সাংস্কৃতিক অনুষ্ঠান এবং শিক্ষার্থীদের সৃজনশীল পরিবেশনার মুহূর্ত।",
   },
@@ -80,7 +83,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 5,
     year: "2025",
     image: "/assets/4.jpg",
-    title: "Sports Day 2025",
+    title: "ক্রীড়া দিবস ২০২৫",
     description:
       "ক্রীড়া প্রতিযোগিতা, দলীয় কার্যক্রম এবং পুরস্কার বিতরণ অনুষ্ঠান।",
   },
@@ -88,7 +91,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 6,
     year: "2025",
     image: "/assets/5.jpg",
-    title: "Science Fair 2025",
+    title: "বিজ্ঞান মেলা ২০২৫",
     description:
       "বিজ্ঞান মেলা, প্রজেক্ট প্রদর্শনী এবং শিক্ষার্থীদের উদ্ভাবনী কাজ।",
   },
@@ -96,15 +99,15 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 7,
     year: "2024",
     image: "/assets/3.jpg",
-    title: "Classroom Moments 2024",
+    title: "শ্রেণিকক্ষের মুহূর্ত ২০২৪",
     description:
-      "শ্রেণিকক্ষের পাঠদান, group activity এবং শেখার সুন্দর পরিবেশ।",
+      "শ্রেণিকক্ষের পাঠদান, দলীয় কার্যক্রম এবং শেখার সুন্দর পরিবেশ।",
   },
   {
     id: 8,
     year: "2024",
     image: "/assets/4.jpg",
-    title: "Library Activity 2024",
+    title: "লাইব্রেরি কার্যক্রম ২০২৪",
     description:
       "লাইব্রেরি কার্যক্রম, পাঠাভ্যাস এবং শিক্ষার্থীদের জ্ঞানচর্চার মুহূর্ত।",
   },
@@ -112,7 +115,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 9,
     year: "2024",
     image: "/assets/5.jpg",
-    title: "School Event 2024",
+    title: "বিদ্যালয়ের অনুষ্ঠান ২০২৪",
     description:
       "বিদ্যালয়ের বিশেষ অনুষ্ঠান, অভিভাবক উপস্থিতি এবং আনন্দঘন পরিবেশ।",
   },
@@ -120,7 +123,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 10,
     year: "2023",
     image: "/assets/3.jpg",
-    title: "Campus Program 2023",
+    title: "ক্যাম্পাস প্রোগ্রাম ২০২৩",
     description:
       "ক্যাম্পাসের অনুষ্ঠান, শিক্ষার্থীদের অংশগ্রহণ এবং বিদ্যালয়ের কার্যক্রম।",
   },
@@ -128,7 +131,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 11,
     year: "2023",
     image: "/assets/4.jpg",
-    title: "Student Activity 2023",
+    title: "শিক্ষার্থী কার্যক্রম ২০২৩",
     description:
       "শিক্ষার্থীদের দলীয় কাজ, সহশিক্ষা কার্যক্রম এবং অংশগ্রহণমূলক শিক্ষা।",
   },
@@ -136,7 +139,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 12,
     year: "2023",
     image: "/assets/5.jpg",
-    title: "Prize Giving 2023",
+    title: "পুরস্কার বিতরণ ২০২৩",
     description:
       "পুরস্কার বিতরণ, সম্মাননা এবং শিক্ষার্থীদের সাফল্যের মুহূর্ত।",
   },
@@ -144,7 +147,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 13,
     year: "2022",
     image: "/assets/3.jpg",
-    title: "School Memories 2022",
+    title: "বিদ্যালয়ের স্মৃতি ২০২২",
     description:
       "বিদ্যালয়ের কার্যক্রম, অনুষ্ঠান এবং শিক্ষার্থীদের স্মরণীয় মুহূর্ত।",
   },
@@ -152,7 +155,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 14,
     year: "2022",
     image: "/assets/4.jpg",
-    title: "Academic Event 2022",
+    title: "একাডেমিক অনুষ্ঠান ২০২২",
     description:
       "একাডেমিক অনুষ্ঠান, পাঠ কার্যক্রম এবং শিক্ষক-শিক্ষার্থীদের অংশগ্রহণ।",
   },
@@ -160,7 +163,7 @@ const photoGalleryImages: PhotoGalleryImage[] = [
     id: 15,
     year: "2021",
     image: "/assets/5.jpg",
-    title: "Gallery Archive 2021",
+    title: "গ্যালারী আর্কাইভ ২০২১",
     description:
       "পুরোনো অ্যালবামের ছবি, বিদ্যালয়ের পরিবেশ এবং স্মৃতিময় মুহূর্ত।",
   },
@@ -193,7 +196,7 @@ function GalleryCard({ item, index, onClick }: GalleryCardProps) {
         <div className="absolute left-5 top-5">
           <span className="inline-flex items-center gap-2 rounded-full bg-color-secondary px-4 py-2 text-xs font-black text-brand-primary shadow-md">
             <FaCameraRetro />
-            Photo {index + 1}
+            ছবি {toBanglaNumber(index + 1)}
           </span>
         </div>
 
@@ -203,7 +206,7 @@ function GalleryCard({ item, index, onClick }: GalleryCardProps) {
           </h3>
 
           <p className="mt-2 text-sm font-semibold text-inverse opacity-85">
-            Click to preview image
+            ছবি বড় করে দেখতে ক্লিক করুন
           </p>
         </div>
       </div>
@@ -214,6 +217,7 @@ function GalleryCard({ item, index, onClick }: GalleryCardProps) {
 export default function GalleryYearPage() {
   const params = useParams<{ year?: string }>();
   const year = decodeURIComponent(params.year ?? "");
+  const displayYear = toBanglaNumber(year);
 
   const filteredImages = useMemo(() => {
     return photoGalleryImages.filter((item) => String(item.year) === year);
@@ -330,25 +334,25 @@ export default function GalleryYearPage() {
 
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* Top Hero Section */}
+      {/* উপরের হিরো অংশ */}
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Photo Gallery
+            ফটো গ্যালারী
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
-            {year} সালের গ্যালারী
+            {displayYear} সালের গ্যালারী
           </h1>
 
           <div className="mx-auto mt-7 h-1 w-28 rounded-full bg-color-primary" />
 
           <p className="mx-auto mt-9 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            এই পেজে {year} সালের বিদ্যালয়ের ছবি, অনুষ্ঠান, ক্যাম্পাস কার্যক্রম
-            এবং স্মরণীয় মুহূর্তের গ্যালারী দেখানো হচ্ছে। প্রতিটি ছবিতে click
-            করলে বড় preview দেখা যাবে।
+            এই পেজে {displayYear} সালের বিদ্যালয়ের ছবি, অনুষ্ঠান, ক্যাম্পাস
+            কার্যক্রম এবং স্মরণীয় মুহূর্তের গ্যালারী দেখানো হচ্ছে। প্রতিটি
+            ছবিতে ক্লিক করলে বড় প্রিভিউ দেখা যাবে।
           </p>
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
@@ -356,14 +360,14 @@ export default function GalleryYearPage() {
               href="/gallery"
               className="inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
             >
-              Back to Gallery
+              গ্যালারীতে ফিরে যান
             </Link>
 
             <Link
               href="/"
               className="inline-flex items-center justify-center rounded-full border border-soft bg-color-secondary px-8 py-4 text-sm font-black text-brand-primary shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
             >
-              Back to Home
+              হোম পেজে ফিরে যান
             </Link>
           </div>
         </div>
@@ -371,32 +375,32 @@ export default function GalleryYearPage() {
 
       <section className="px-4 py-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px]">
-          {/* Highlight Box */}
+          {/* হাইলাইট বক্স */}
           <div className="mb-10 overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12">
               <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-inverse">
                   <FaPhotoFilm />
-                  Gallery Archive
+                  গ্যালারী আর্কাইভ
                 </span>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
-                  {year} সালের ফটো অ্যালবাম
+                  {displayYear} সালের ফটো অ্যালবাম
                 </h2>
 
                 <p className="mt-5 max-w-4xl text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
-                  প্রতিটি ছবিতে click করলে বড় preview দেখা যাবে। Preview mode-এ
-                  zoom in, zoom out, mouse wheel zoom এবং drag করে image দেখা
-                  যাবে। ESC key চাপলে preview বন্ধ হবে।
+                  প্রতিটি ছবিতে ক্লিক করলে বড় প্রিভিউ দেখা যাবে। প্রিভিউ মোডে
+                  বড় করা, ছোট করা, মাউস হুইল দিয়ে জুম এবং টেনে ছবি দেখা যাবে।
+                  এস্কেপ কী চাপলে প্রিভিউ বন্ধ হবে।
                 </p>
 
                 <div className="mt-7 flex flex-wrap gap-3">
                   {[
-                    "Image Preview",
-                    "Zoom In / Out",
-                    "Wheel Zoom",
-                    "Drag Preview",
-                    "ESC Close",
+                    "ছবির প্রিভিউ",
+                    "বড় / ছোট করুন",
+                    "মাউস হুইল জুম",
+                    "টেনে দেখুন",
+                    "এস্কেপে বন্ধ করুন",
                   ].map((badge) => (
                     <span
                       key={badge}
@@ -415,11 +419,11 @@ export default function GalleryYearPage() {
                   </div>
 
                   <h3 className="mt-5 text-4xl font-black text-primary">
-                    {year || "Year"}
+                    {displayYear || "বছর"}
                   </h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Gallery Year
+                    গ্যালারীর বছর
                   </p>
                 </div>
 
@@ -429,24 +433,24 @@ export default function GalleryYearPage() {
                   </div>
 
                   <h3 className="mt-5 text-4xl font-black text-primary">
-                    {filteredImages.length}
+                    {toBanglaNumber(filteredImages.length)}
                   </h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Total Photos
+                    মোট ছবি
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Gallery Images */}
+          {/* গ্যালারীর ছবি */}
           {filteredImages.length > 0 ? (
             <div className="rounded-[30px] border border-soft bg-page-primary p-5 shadow-sm sm:p-6">
               <div className="mb-6 flex flex-col gap-4 border-b border-soft pb-5 sm:flex-row sm:items-center sm:justify-between">
                 <div>
                   <p className="text-sm font-black uppercase tracking-[0.2em] text-brand-primary">
-                    {year} Gallery
+                    {displayYear} গ্যালারী
                   </p>
 
                   <h2 className="mt-2 text-2xl font-black text-primary">
@@ -454,14 +458,14 @@ export default function GalleryYearPage() {
                   </h2>
 
                   <p className="mt-2 text-sm font-semibold leading-7 text-secondary">
-                    বিদ্যালয়ের {year} সালের কার্যক্রম, অনুষ্ঠান এবং স্মরণীয়
-                    মুহূর্তের ছবিগুলো এখানে দেখতে পারবেন।
+                    বিদ্যালয়ের {displayYear} সালের কার্যক্রম, অনুষ্ঠান এবং
+                    স্মরণীয় মুহূর্তের ছবিগুলো এখানে দেখতে পারবেন।
                   </p>
                 </div>
 
                 <div className="inline-flex w-fit items-center gap-2 rounded-full bg-color-secondary px-5 py-3 text-sm font-black text-brand-primary">
-                  <span>{filteredImages.length}</span>
-                  <span>Photos</span>
+                  <span>{toBanglaNumber(filteredImages.length)}</span>
+                  <span>টি ছবি</span>
                 </div>
               </div>
 
@@ -483,26 +487,26 @@ export default function GalleryYearPage() {
               </div>
 
               <h2 className="mt-6 text-2xl font-black text-primary sm:text-3xl">
-                No Image Found
+                কোনো ছবি পাওয়া যায়নি
               </h2>
 
               <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-7 text-secondary sm:text-base">
-                {year} সালের জন্য কোনো gallery image পাওয়া যায়নি। অন্য বছরের
-                gallery দেখতে Back to Gallery button চাপুন।
+                {displayYear} সালের জন্য কোনো গ্যালারী ছবি পাওয়া যায়নি। অন্য
+                বছরের গ্যালারী দেখতে গ্যালারীতে ফিরে যান।
               </p>
 
               <Link
                 href="/gallery"
                 className="mt-6 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
               >
-                Back to Gallery
+                গ্যালারীতে ফিরে যান
               </Link>
             </div>
           )}
         </div>
       </section>
 
-      {/* Closing Section */}
+      {/* সমাপনী অংশ */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
         <div className="mx-auto max-w-[1600px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -511,7 +515,7 @@ export default function GalleryYearPage() {
                 <FaSchoolFlag className="text-sm" />
 
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  Gallery Message
+                  গ্যালারী বার্তা
                 </p>
               </div>
 
@@ -534,7 +538,7 @@ export default function GalleryYearPage() {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Photo Archive
+                  ফটো আর্কাইভ
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
@@ -547,21 +551,22 @@ export default function GalleryYearPage() {
         </div>
       </section>
 
-      {/* Technical Note */}
+      {/* টেকনিক্যাল নোট */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1600px] rounded-[24px] border border-soft bg-page-primary p-5">
           <div className="flex items-start gap-3">
             <FaCircleInfo className="mt-1 shrink-0 text-brand-primary" />
 
             <p className="text-sm font-semibold leading-7 text-secondary">
-              Tip: ছবি preview mode-এ mouse wheel দিয়ে zoom, button দিয়ে zoom
-              in/out, zoom করার পর drag, reset এবং ESC key দিয়ে close করা যাবে।
+              টিপস: ছবির প্রিভিউ মোডে মাউস হুইল দিয়ে জুম, বাটন দিয়ে বড় বা ছোট
+              করা, জুম করার পর টেনে দেখা, রিসেট এবং এস্কেপ কী দিয়ে বন্ধ করা
+              যাবে।
             </p>
           </div>
         </div>
       </section>
 
-      {/* Lightbox Modal */}
+      {/* লাইটবক্স মডাল */}
       {selectedImage && (
         <div
           className="fixed inset-0 z-[9999] bg-black/95 p-4"
@@ -580,7 +585,7 @@ export default function GalleryYearPage() {
                 type="button"
                 onClick={handleZoomIn}
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-page-primary text-xl text-brand-primary transition hover:bg-color-secondary"
-                aria-label="Zoom in"
+                aria-label="বড় করুন"
               >
                 <FaMagnifyingGlassPlus />
               </button>
@@ -589,7 +594,7 @@ export default function GalleryYearPage() {
                 type="button"
                 onClick={handleZoomOut}
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-page-primary text-xl text-brand-primary transition hover:bg-color-secondary"
-                aria-label="Zoom out"
+                aria-label="ছোট করুন"
               >
                 <FaMagnifyingGlassMinus />
               </button>
@@ -598,7 +603,7 @@ export default function GalleryYearPage() {
                 type="button"
                 onClick={resetPreview}
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-page-primary text-xl text-brand-primary transition hover:bg-color-secondary"
-                aria-label="Reset preview"
+                aria-label="প্রিভিউ রিসেট করুন"
               >
                 <FaRotateRight />
               </button>
@@ -607,7 +612,7 @@ export default function GalleryYearPage() {
                 type="button"
                 onClick={closeModal}
                 className="flex h-11 w-11 items-center justify-center rounded-full bg-color-primary text-xl text-inverse transition hover:opacity-90"
-                aria-label="Close"
+                aria-label="বন্ধ করুন"
               >
                 <FaXmark />
               </button>
@@ -646,7 +651,7 @@ export default function GalleryYearPage() {
             className="absolute bottom-4 left-1/2 z-50 -translate-x-1/2 rounded-full border border-white/15 bg-white/10 px-5 py-2 text-xs font-semibold text-inverse opacity-90 backdrop-blur-sm"
             onClick={(event) => event.stopPropagation()}
           >
-            Zoom: {Math.round(zoom * 100)}%
+            জুম: {toBanglaNumber(Math.round(zoom * 100))}%
           </div>
         </div>
       )}

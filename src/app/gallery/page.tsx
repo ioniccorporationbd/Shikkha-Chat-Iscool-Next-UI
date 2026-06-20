@@ -46,6 +46,9 @@ type GalleryCardProps = {
   item: GalleryCardData;
 };
 
+const toBanglaNumber = (value: string | number) =>
+  value.toString().replace(/\d/g, (digit) => "০১২۳۴۵۶۷۸۹"[Number(digit)]);
+
 const photoGalleryYears: PhotoGalleryYear[] = [
   { year: "2026", image: "/assets/3.jpg" },
   { year: "2025", image: "/assets/4.jpg" },
@@ -58,37 +61,37 @@ const photoGalleryYears: PhotoGalleryYear[] = [
 const videoGallery: VideoGalleryItem[] = [
   {
     id: 1,
-    title: "Annual Cultural Program",
+    title: "বার্ষিক সাংস্কৃতিক অনুষ্ঠান",
     slug: "annual-cultural-program",
     image: "/assets/3.jpg",
   },
   {
     id: 2,
-    title: "Sports Day Highlights",
+    title: "বার্ষিক ক্রীড়া দিবসের বিশেষ মুহূর্ত",
     slug: "sports-day-highlights",
     image: "/assets/4.jpg",
   },
   {
     id: 3,
-    title: "Science Fair Presentation",
+    title: "বিজ্ঞান মেলা উপস্থাপনা",
     slug: "science-fair-presentation",
     image: "/assets/5.jpg",
   },
   {
     id: 4,
-    title: "Campus Activity Video",
+    title: "ক্যাম্পাস কার্যক্রমের ভিডিও",
     slug: "campus-activity-video",
     image: "/assets/3.jpg",
   },
   {
     id: 5,
-    title: "Classroom Learning Moments",
+    title: "শ্রেণিকক্ষের শেখার মুহূর্ত",
     slug: "classroom-learning-moments",
     image: "/assets/4.jpg",
   },
   {
     id: 6,
-    title: "Student Achievement Program",
+    title: "শিক্ষার্থী অর্জন অনুষ্ঠান",
     slug: "student-achievement-program",
     image: "/assets/5.jpg",
   },
@@ -135,7 +138,7 @@ function GalleryCard({ item }: GalleryCardProps) {
           <div className="absolute left-5 top-5">
             <span className="inline-flex items-center gap-2 rounded-full bg-color-secondary px-4 py-2 text-xs font-black text-brand-primary shadow-md">
               {isVideo ? <FaVideo /> : <FaCameraRetro />}
-              {isVideo ? "Video" : "Photo"}
+              {isVideo ? "ভিডিও" : "ছবি"}
             </span>
           </div>
 
@@ -143,7 +146,7 @@ function GalleryCard({ item }: GalleryCardProps) {
             <h3 className="text-2xl font-black text-inverse">{item.title}</h3>
 
             <p className="mt-2 text-sm font-semibold text-inverse opacity-85">
-              Click to view gallery
+              গ্যালারী দেখতে ক্লিক করুন
             </p>
           </div>
         </div>
@@ -157,14 +160,18 @@ export default function GalleryPage() {
 
   const galleryCards = useMemo<GalleryCardData[]>(() => {
     if (selected === "ফটোগ্যালারী") {
-      return photoGalleryYears.map((item) => ({
-        id: item.year,
-        image: item.image,
-        title: item.year,
-        alt: `Photo Gallery ${item.year}`,
-        href: `/gallery/${item.year}`,
-        type: "ফটোগ্যালারী",
-      }));
+      return photoGalleryYears.map((item) => {
+        const displayYear = toBanglaNumber(item.year);
+
+        return {
+          id: item.year,
+          image: item.image,
+          title: displayYear,
+          alt: `ফটো গ্যালারী ${displayYear}`,
+          href: `/gallery/${item.year}`,
+          type: "ফটোগ্যালারী",
+        };
+      });
     }
 
     return videoGallery.map((item) => ({
@@ -184,7 +191,7 @@ export default function GalleryPage() {
 
         <div className="relative z-10 mx-auto max-w-[1200px] text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.55em] text-brand-primary sm:text-sm">
-            Media Gallery
+            মিডিয়া গ্যালারী
           </p>
 
           <h1 className="mt-7 text-[42px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
@@ -203,7 +210,7 @@ export default function GalleryPage() {
             href="/"
             className="mt-10 inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
           >
-            Back to Home
+            হোমে ফিরে যান
           </Link>
         </div>
       </section>
@@ -215,7 +222,7 @@ export default function GalleryPage() {
               <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
                 <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-inverse">
                   <FaPhotoFilm />
-                  Gallery Archive
+                  গ্যালারী আর্কাইভ
                 </span>
 
                 <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
@@ -237,11 +244,11 @@ export default function GalleryPage() {
                   </div>
 
                   <h3 className="mt-5 text-4xl font-black text-primary">
-                    {photoGalleryYears.length}
+                    {toBanglaNumber(photoGalleryYears.length)}
                   </h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Photo Albums
+                    ফটো অ্যালবাম
                   </p>
                 </div>
 
@@ -251,11 +258,11 @@ export default function GalleryPage() {
                   </div>
 
                   <h3 className="mt-5 text-4xl font-black text-primary">
-                    {videoGallery.length}
+                    {toBanglaNumber(videoGallery.length)}
                   </h3>
 
                   <p className="mt-2 text-sm font-black text-brand-primary">
-                    Video Albums
+                    ভিডিও অ্যালবাম
                   </p>
                 </div>
               </div>
@@ -268,11 +275,11 @@ export default function GalleryPage() {
                 <div className="mb-6">
                   <span className="inline-flex items-center gap-2 rounded-full bg-color-secondary px-4 py-2 text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
                     <FaImages />
-                    Select Gallery
+                    গ্যালারী নির্বাচন করুন
                   </span>
 
                   <h2 className="mt-4 text-2xl font-black text-primary">
-                    ছবি ও ভিডিও গ্যালারি
+                    ছবি ও ভিডিও গ্যালারী
                   </h2>
 
                   <div className="mt-4 h-1 w-20 rounded-full bg-color-primary" />
@@ -362,8 +369,8 @@ export default function GalleryPage() {
                   </div>
 
                   <div className="inline-flex w-fit items-center gap-2 rounded-full bg-color-secondary px-5 py-3 text-sm font-black text-brand-primary">
-                    <span>{galleryCards.length}</span>
-                    <span>Items</span>
+                    <span>{toBanglaNumber(galleryCards.length)}</span>
+                    <span>টি আইটেম</span>
                   </div>
                 </div>
 
@@ -380,7 +387,7 @@ export default function GalleryPage() {
                     </div>
 
                     <h3 className="mt-5 text-2xl font-black text-primary">
-                      No Gallery Found
+                      কোনো গ্যালারী পাওয়া যায়নি
                     </h3>
 
                     <p className="mx-auto mt-3 max-w-xl text-sm font-semibold leading-7 text-secondary">
@@ -402,7 +409,7 @@ export default function GalleryPage() {
                 <FaSchoolFlag className="text-sm" />
 
                 <p className="text-xs font-black uppercase tracking-[0.18em]">
-                  Gallery Message
+                  গ্যালারী বার্তা
                 </p>
               </div>
 
@@ -423,7 +430,7 @@ export default function GalleryPage() {
                 </div>
 
                 <p className="mt-6 text-3xl font-black text-primary">
-                  Media Archive
+                  মিডিয়া আর্কাইভ
                 </p>
 
                 <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
