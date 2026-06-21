@@ -324,7 +324,7 @@ const AtAGlancePage = () => {
       <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
         <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
-        <div className="relative z-10 mx-auto max-w-[1200px] text-center">
+        <div className="relative z-10 mx-auto max-w-300 text-center">
           <p className="font-english text-xs font-black uppercase tracking-[0.65em] text-brand-primary sm:text-sm">
             এক নজরে
           </p>
@@ -351,7 +351,7 @@ const AtAGlancePage = () => {
 
       {/* সারসংক্ষেপ কার্ড */}
       <section className="px-4 py-12 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-375 grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
             <article
               key={item.title}
@@ -379,7 +379,7 @@ const AtAGlancePage = () => {
 
       {/* ছবিসহ পরিচিতি */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
+        <div className="mx-auto max-w-375 rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-6">
               <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
@@ -416,7 +416,7 @@ const AtAGlancePage = () => {
                   width={900}
                   height={520}
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="h-[360px] w-full rounded-[24px] object-cover"
+                  className="h-90 w-full rounded-3xl object-cover"
                 />
 
                 <div className="grid grid-cols-1 gap-4 pt-4 sm:grid-cols-2">
@@ -442,7 +442,7 @@ const AtAGlancePage = () => {
       
       {/* বিশেষ উপস্থাপনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
+        <div className="mx-auto max-w-375 overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
@@ -503,7 +503,7 @@ const AtAGlancePage = () => {
 
       {/* একাডেমিক তথ্য */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               একাডেমিক তথ্য
@@ -548,7 +548,7 @@ const AtAGlancePage = () => {
 
       {/* শিক্ষার্থী ও শিক্ষক */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
+        <div className="mx-auto max-w-375 rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               শিক্ষার্থী ও শিক্ষক
@@ -593,7 +593,7 @@ const AtAGlancePage = () => {
 
       {/* ছবিসহ শেখার পরিবেশ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
+        <div className="mx-auto max-w-375 rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
             <div className="overflow-hidden rounded-[30px] border border-soft bg-page-secondary p-4">
               <Image
@@ -602,7 +602,7 @@ const AtAGlancePage = () => {
                 width={900}
                 height={520}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="h-[340px] w-full rounded-[24px] object-cover"
+                className="h-85 w-full rounded-3xl object-cover"
               />
             </div>
 
@@ -647,7 +647,7 @@ const AtAGlancePage = () => {
       
       {/* প্রোগ্রাম */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
+        <div className="mx-auto max-w-375 rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               প্রোগ্রাম ও কার্যক্রম
@@ -688,7 +688,7 @@ const AtAGlancePage = () => {
 
       {/* ক্যাম্পাস সুবিধা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               ক্যাম্পাস সুবিধা
@@ -733,7 +733,7 @@ const AtAGlancePage = () => {
 
       {/* দ্বিতীয় ছবি অংশ */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
+        <div className="mx-auto max-w-375 rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:items-center">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
@@ -780,7 +780,7 @@ const AtAGlancePage = () => {
                 width={900}
                 height={520}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="h-[360px] w-full rounded-[24px] object-cover"
+                className="h-90 w-full rounded-3xl object-cover"
               />
             </div>
           </div>
@@ -789,7 +789,7 @@ const AtAGlancePage = () => {
 
       {/* অর্জন */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
+        <div className="mx-auto max-w-375 rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               অর্জন ও সাফল্য
@@ -837,7 +837,7 @@ const AtAGlancePage = () => {
         id="at-a-glance-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
       >
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               উপস্থাপিত তথ্য
@@ -955,7 +955,7 @@ const AtAGlancePage = () => {
 
       {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="mx-auto grid max-w-375 grid-cols-1 gap-6 lg:grid-cols-2">
           {guidelineSections.map((section) => (
             <article
               key={section.title}
@@ -1000,7 +1000,7 @@ const AtAGlancePage = () => {
 
       {/* সমাপনী */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
-        <div className="mx-auto max-w-[1500px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
+        <div className="mx-auto max-w-375 overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">

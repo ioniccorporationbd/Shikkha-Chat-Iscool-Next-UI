@@ -289,7 +289,7 @@ const ApplyNowPage = () => {
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
-        <div className="relative z-10 mx-auto max-w-[1200px] text-center">
+        <div className="relative z-10 mx-auto max-w-300 text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
             ভর্তি আবেদন
           </p>
@@ -316,11 +316,11 @@ const ApplyNowPage = () => {
 
       {/* আবেদন সারসংক্ষেপ */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-375 grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {overviewItems.map((item) => (
             <div
               key={item.title}
-              className="group rounded-[24px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+              className="group rounded-3xl border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="flex h-12 w-12 items-center justify-center rounded-[18px] bg-color-secondary text-xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
                 {item.icon}
@@ -340,7 +340,7 @@ const ApplyNowPage = () => {
 
       {/* ভূমিকা */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start">
               <div className="lg:col-span-4">
@@ -373,8 +373,8 @@ const ApplyNowPage = () => {
 
       {/* বিশেষ আবেদন কার্ড */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
+        <div className="mx-auto max-w-375">
+          <div className="overflow-hidden rounded-4xl border border-soft bg-color-primary shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12">
               <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-10">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
@@ -432,7 +432,7 @@ const ApplyNowPage = () => {
 
       {/* ভর্তি ধাপসমূহ */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
             <div className="mb-8 text-center">
               <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
@@ -453,7 +453,7 @@ const ApplyNowPage = () => {
               {admissionSteps.map((step, index) => (
                 <article
                   key={step.title}
-                  className="group rounded-[24px] border border-soft bg-page-secondary p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
+                  className="group rounded-3xl border border-soft bg-page-secondary p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
                 >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-color-secondary text-sm font-black text-primary transition-all duration-500 group-hover:bg-page-primary group-hover:text-brand-primary">
                     {["০১", "০২", "০৩", "০৪", "০৫"][index]}
@@ -475,7 +475,7 @@ const ApplyNowPage = () => {
 
       {/* প্রয়োজনীয় কাগজপত্র */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               প্রয়োজনীয় কাগজপত্র
@@ -516,7 +516,7 @@ const ApplyNowPage = () => {
 
       {/* আবেদন ফরমের তথ্য */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
             <div className="mb-8 text-center">
               <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
@@ -559,7 +559,7 @@ const ApplyNowPage = () => {
 
       {/* ভর্তি নিয়ম */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               ভর্তি নিয়ম
@@ -603,7 +603,7 @@ const ApplyNowPage = () => {
         id="application-table"
         className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
       >
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               আবেদন ধাপের তালিকা
@@ -741,7 +741,7 @@ const ApplyNowPage = () => {
 
       {/* নির্দেশনা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
             {guidelineSections.map((section) => (
               <article
@@ -788,8 +788,8 @@ const ApplyNowPage = () => {
 
       {/* সমাপনী বার্তা */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
+        <div className="mx-auto max-w-375">
+          <div className="overflow-hidden rounded-4xl border border-soft bg-color-primary shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12">
               <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-10">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">

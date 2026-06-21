@@ -125,7 +125,7 @@ const CodeOfConductsPage = () => {
       <section className="relative overflow-hidden bg-page-primary px-4 py-14 font-main text-primary sm:px-6 lg:px-8 lg:py-16">
         <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
 
-        <div className="relative z-10 mx-auto max-w-[1200px] text-center">
+        <div className="relative z-10 mx-auto max-w-300 text-center">
           <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
          আমাদের প্রতিষ্ঠান
           </p>
@@ -152,7 +152,7 @@ const CodeOfConductsPage = () => {
 
       {/* Values */}
       <section className="px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {keyValues.map((value) => (
               <div
@@ -174,7 +174,7 @@ const CodeOfConductsPage = () => {
 
       {/* Introduction */}
       <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start">
               <div className="lg:col-span-4">
@@ -209,7 +209,7 @@ const CodeOfConductsPage = () => {
 
       {/* Conduct Sections */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
+        <div className="mx-auto max-w-375">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               নিয়ম ও দায়িত্ব
@@ -271,8 +271,8 @@ const CodeOfConductsPage = () => {
 
       {/* Closing Message */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
+        <div className="mx-auto max-w-375">
+          <div className="overflow-hidden rounded-4xl border border-soft bg-color-primary shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12">
               <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-10">
                 <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">

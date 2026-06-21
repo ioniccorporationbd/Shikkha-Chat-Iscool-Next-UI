@@ -160,7 +160,7 @@ const Contact = () => {
               <div className="rounded-[30px] border border-soft bg-page-secondary p-5">
                 <div className="flex items-center gap-4 rounded-[24px] bg-color-primary p-6 text-inverse">
                   <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[22px] bg-white/10 text-3xl">
-                    <FaClock />
+                    <FaClock />  
                   </div>
 
                   <div>
@@ -208,7 +208,7 @@ const Contact = () => {
 
       {/* যোগাযোগ ফরম */}
       <section className="px-4 pb-12 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1260px] rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm transition-all duration-500 hover:shadow-xl sm:p-8 lg:p-12 xl:p-16">
+        <div className="mx-auto max-w-315 rounded-[34px] border border-soft bg-page-primary p-6 shadow-sm transition-all duration-500 hover:shadow-xl sm:p-8 lg:p-12 xl:p-16">
           <div className="mb-8 text-center">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
               বার্তা ফরম
@@ -230,14 +230,14 @@ const Contact = () => {
                 type="text"
                 name="name"
                 placeholder="আপনার নাম"
-                className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
+                className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-primary/30"
               />
 
               <input
                 type="tel"
                 name="mobile"
                 placeholder="মোবাইল নম্বর"
-                className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
+                className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-primary/30"
               />
             </div>
 
@@ -246,14 +246,14 @@ const Contact = () => {
                 type="text"
                 name="subject"
                 placeholder="বিষয়"
-                className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
+                className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-primary/30"
               />
 
               <input
                 type="email"
                 name="email"
                 placeholder="ইমেইল"
-                className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
+                className="w-full rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-primary/30"
               />
             </div>
 
@@ -261,7 +261,7 @@ const Contact = () => {
               rows={6}
               placeholder="বার্তা"
               name="message"
-              className="w-full resize-none rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-[color:var(--color-primary)]/30"
+              className="w-full resize-none rounded-2xl border border-soft bg-page-secondary p-4 text-sm font-semibold text-primary outline-none transition-all duration-300 placeholder:text-gray focus:bg-page-primary focus:ring-2 focus:ring-primary/30"
             />
 
             <button
@@ -277,7 +277,7 @@ const Contact = () => {
 
       {/* মানচিত্র / অবস্থান অংশ */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
-        <div className="mx-auto max-w-[1260px] overflow-hidden rounded-[34px] border border-soft bg-page-primary p-4 shadow-sm transition-all duration-500 hover:shadow-xl sm:p-5">
+        <div className="mx-auto max-w-[ overflow-hidden rounded-[34px] border border-soft bg-page-primary p-4 shadow-sm transition-all duration-500 hover:shadow-xl sm:p-5">
           <div className="mb-5 flex flex-col gap-4 rounded-[26px] bg-color-primary p-6 text-inverse lg:flex-row lg:items-center lg:justify-between">
             <div className="flex items-center gap-4">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[20px] bg-white/10 text-2xl">
@@ -309,14 +309,14 @@ const Contact = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            className="h-[320px] w-full rounded-[26px] sm:h-[400px] lg:h-[450px]"
+            className="h-80 w-full rounded-[26px] sm:h-100 lg:h-112.5"
           />
         </div>
       </section>
 
       {/* সমাপনী অংশ */}
       <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
-        <div className="mx-auto max-w-[1260px] overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
+        <div className="mx-auto max-w-315 overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
               <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">

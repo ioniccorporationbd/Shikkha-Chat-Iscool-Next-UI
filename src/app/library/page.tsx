@@ -1,707 +1,574 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
-import type { ReactNode } from "react";
+import { useMemo, useState } from "react";
 import {
+  FaArrowRight,
+  FaBook,
   FaBookOpen,
-  FaCalendarCheck,
+  FaCalendarDays,
   FaCheck,
-  FaClipboardCheck,
-  FaCloudArrowDown,
-  FaFileLines,
+  FaCircleInfo,
+  FaClock,
+  FaDownload,
   FaGraduationCap,
-  FaMobileScreenButton,
-  FaPeopleGroup,
-  FaPersonChalkboard,
-  FaRegClock,
+  FaMagnifyingGlass,
   FaSchoolFlag,
-  FaShieldHalved,
   FaStar,
-  FaUserGraduate,
-  FaUsersGear,
+  FaUsers,
 } from "react-icons/fa6";
 
-type OverviewItem = {
+type BookItem = {
+  id: number;
+  title: string;
+  author: string;
+  category: string;
+  image: string;
+  status: "available" | "borrowed";
+  classLevel: string;
+  shelf: string;
+};
+
+type LibraryStat = {
+  id: number;
   title: string;
   value: string;
-  icon: ReactNode;
+  icon: React.ReactNode;
 };
 
-type PolicyCategory = {
-  title: string;
-  description: string;
-  icon: ReactNode;
-};
-
-type GuidelineItem = {
-  title: string;
-  description: string;
-  icon: ReactNode;
-};
-
-type PolicyItem = {
+type LibraryRule = {
   id: number;
-  policyName: string;
-  category: string;
-  applicableFor: string;
-  importance: string;
-  fileUrl: string;
-};
-
-type GuidelineSection = {
   title: string;
-  icon: ReactNode;
-  points: string[];
+  description: string;
 };
 
-const overviewItems: OverviewItem[] = [
-  {
-    title: "আচরণবিধি",
-    value: "১২+",
-    icon: <FaUsersGear />,
-  },
-  {
-    title: "উপস্থিতি নীতিমালা",
-    value: "৯০%",
-    icon: <FaRegClock />,
-  },
-  {
-    title: "পরীক্ষা নীতিমালা",
-    value: "১০+",
-    icon: <FaClipboardCheck />,
-  },
-  {
-    title: "নিরাপত্তা নির্দেশিকা",
-    value: "২৪/৭",
-    icon: <FaShieldHalved />,
-  },
-];
+const toBanglaNumber = (value: string | number) =>
+  value.toString().replace(/\d/g, (digit) => "০১২৩৪৫৬۷۸۹"[Number(digit)]);
 
-const policyCategories: PolicyCategory[] = [
-  {
-    title: "একাডেমিক নীতিমালা",
-    description:
-      "পাঠদান, হোমওয়ার্ক, অ্যাসাইনমেন্ট, ক্লাস কার্যক্রম ও শিক্ষার্থীর একাডেমিক অগ্রগতি সম্পর্কিত নীতিমালা।",
-    icon: <FaBookOpen />,
-  },
-  {
-    title: "উপস্থিতি নীতিমালা",
-    description:
-      "নিয়মিত উপস্থিতি, সময়মতো বিদ্যালয়ে আসা, অনুপস্থিতির কারণ জানানো এবং উপস্থিতির রেকর্ড সংক্রান্ত নির্দেশনা।",
-    icon: <FaRegClock />,
-  },
-  {
-    title: "শৃঙ্খলা নীতিমালা",
-    description:
-      "শ্রেণিকক্ষ, ক্যাম্পাস, সহপাঠী ও শিক্ষকদের প্রতি সম্মানজনক আচরণ এবং শৃঙ্খলা বজায় রাখার নীতিমালা।",
-    icon: <FaUsersGear />,
-  },
-  {
-    title: "পরীক্ষা নীতিমালা",
-    description:
-      "পরীক্ষার সময়সূচি, পরীক্ষার হলে আচরণ, নকলমুক্ত পরীক্ষা ও মূল্যায়ন পদ্ধতি সম্পর্কিত নিয়ম।",
-    icon: <FaClipboardCheck />,
-  },
-  {
-    title: "নিরাপত্তা নীতিমালা",
-    description:
-      "বিদ্যালয় ক্যাম্পাসে নিরাপদ চলাচল, জরুরি পরিস্থিতি, স্বাস্থ্য সচেতনতা ও নিরাপত্তা নির্দেশনা।",
-    icon: <FaShieldHalved />,
-  },
-  {
-    title: "ডিজিটাল ডিভাইস নীতিমালা",
-    description:
-      "মোবাইল, ইন্টারনেট, কম্পিউটার, অনলাইন ক্লাস ও প্রযুক্তি ব্যবহারের দায়িত্বশীল নিয়মনীতি।",
-    icon: <FaMobileScreenButton />,
-  },
-];
+const libraryImage = "/assets/3.jpg";
 
-const importantGuidelines: GuidelineItem[] = [
-  {
-    title: "সময়মতো বিদ্যালয়ে উপস্থিত হওয়া",
-    description:
-      "প্রতিদিন নির্ধারিত সময়ের আগে বিদ্যালয়ে উপস্থিত হতে হবে এবং ক্লাস শুরু হওয়ার পর প্রবেশ এড়াতে হবে।",
-    icon: <FaRegClock />,
-  },
-  {
-    title: "ইউনিফর্ম ও পরিচয়পত্র ব্যবহার",
-    description:
-      "পরিচ্ছন্ন ইউনিফর্ম, জুতা এবং বিদ্যালয়ের পরিচয়পত্র ব্যবহার করে বিদ্যালয়ে আসতে হবে।",
-    icon: <FaUserGraduate />,
-  },
-  {
-    title: "ক্লাসে শৃঙ্খলা বজায় রাখা",
-    description:
-      "ক্লাস চলাকালীন মনোযোগ, নীরবতা, শিক্ষক নির্দেশনা এবং সহপাঠীর শেখার পরিবেশ বজায় রাখতে হবে।",
-    icon: <FaPersonChalkboard />,
-  },
-  {
-    title: "পরীক্ষায় সততা বজায় রাখা",
-    description:
-      "পরীক্ষার সময় নকল, অসদুপায় বা অন্যের সহায়তা নেওয়া থেকে বিরত থাকতে হবে।",
-    icon: <FaClipboardCheck />,
-  },
-  {
-    title: "বিদ্যালয়ের সম্পদ সংরক্ষণ",
-    description:
-      "বই, বেঞ্চ, বোর্ড, ল্যাব সামগ্রী, লাইব্রেরি ও ক্যাম্পাসের সম্পদ যত্নসহকারে ব্যবহার করতে হবে।",
-    icon: <FaSchoolFlag />,
-  },
-  {
-    title: "নিরাপত্তা নির্দেশনা মানা",
-    description:
-      "জরুরি পরিস্থিতি, বিরতি, ল্যাব, সিঁড়ি ও ক্যাম্পাস চলাচলের সময় নিরাপত্তা নির্দেশনা মেনে চলতে হবে।",
-    icon: <FaShieldHalved />,
-  },
-];
-
-const policyItems: PolicyItem[] = [
+const books: BookItem[] = [
   {
     id: 1,
-    policyName: "একাডেমিক নীতিমালা",
-    category: "একাডেমিক",
-    applicableFor: "শিক্ষার্থী ও শিক্ষক",
-    importance: "অতি গুরুত্বপূর্ণ",
-    fileUrl: "#",
+    title: "বাংলা সাহিত্য পাঠ",
+    author: "বিদ্যালয় গ্রন্থাগার",
+    category: "বাংলা",
+    image: "/assets/Courses images/book-1.png",
+    status: "available",
+    classLevel: "ষষ্ঠ থেকে অষ্টম শ্রেণি",
+    shelf: "শেলফ-০১",
   },
   {
     id: 2,
-    policyName: "উপস্থিতি নীতিমালা",
-    category: "উপস্থিতি",
-    applicableFor: "শিক্ষার্থী",
-    importance: "গুরুত্বপূর্ণ",
-    fileUrl: "#",
+    title: "ইংরেজি ভাষা চর্চা",
+    author: "বিদ্যালয় গ্রন্থাগার",
+    category: "ইংরেজি",
+    image: "/assets/Courses images/book-2.png",
+    status: "available",
+    classLevel: "ষষ্ঠ থেকে দশম শ্রেণি",
+    shelf: "শেলফ-০২",
   },
   {
     id: 3,
-    policyName: "আচরণ ও শৃঙ্খলা নীতিমালা",
-    category: "শৃঙ্খলা",
-    applicableFor: "সকল শিক্ষার্থী",
-    importance: "অতি গুরুত্বপূর্ণ",
-    fileUrl: "#",
+    title: "গণিত অনুশীলন",
+    author: "বিদ্যালয় গ্রন্থাগার",
+    category: "গণিত",
+    image: "/assets/Courses images/book-3.png",
+    status: "borrowed",
+    classLevel: "পঞ্চম থেকে দশম শ্রেণি",
+    shelf: "শেলফ-০৩",
   },
   {
     id: 4,
-    policyName: "পরীক্ষা নীতিমালা",
-    category: "পরীক্ষা",
-    applicableFor: "পরীক্ষার্থী",
-    importance: "অতি গুরুত্বপূর্ণ",
-    fileUrl: "#",
+    title: "সাধারণ বিজ্ঞান",
+    author: "বিদ্যালয় গ্রন্থাগার",
+    category: "বিজ্ঞান",
+    image: "/assets/Courses images/book-1.png",
+    status: "available",
+    classLevel: "ষষ্ঠ থেকে দশম শ্রেণি",
+    shelf: "শেলফ-০৪",
   },
   {
     id: 5,
-    policyName: "নিরাপত্তা নির্দেশিকা",
-    category: "নিরাপত্তা",
-    applicableFor: "শিক্ষার্থী, শিক্ষক ও অভিভাবক",
-    importance: "গুরুত্বপূর্ণ",
-    fileUrl: "#",
+    title: "বাংলাদেশ ও বিশ্বপরিচয়",
+    author: "বিদ্যালয় গ্রন্থাগার",
+    category: "সামাজিক বিজ্ঞান",
+    image: "/assets/Courses images/book-2.png",
+    status: "available",
+    classLevel: "তৃতীয় থেকে অষ্টম শ্রেণি",
+    shelf: "শেলফ-০৫",
   },
   {
     id: 6,
-    policyName: "ডিজিটাল ডিভাইস ব্যবহার নীতিমালা",
+    title: "তথ্য ও যোগাযোগ প্রযুক্তি",
+    author: "বিদ্যালয় গ্রন্থাগার",
     category: "প্রযুক্তি",
-    applicableFor: "শিক্ষার্থী",
-    importance: "গুরুত্বপূর্ণ",
-    fileUrl: "#",
+    image: "/assets/Courses images/book-3.png",
+    status: "borrowed",
+    classLevel: "ষষ্ঠ থেকে দ্বাদশ শ্রেণি",
+    shelf: "শেলফ-০৬",
   },
 ];
 
-const guidelineSections: GuidelineSection[] = [
+const categories = [
+  "সব বই",
+  "বাংলা",
+  "ইংরেজি",
+  "গণিত",
+  "বিজ্ঞান",
+  "সামাজিক বিজ্ঞান",
+  "প্রযুক্তি",
+];
+
+const libraryStats: LibraryStat[] = [
   {
-    title: "শিক্ষার্থীদের নীতিমালা",
-    icon: <FaUserGraduate />,
-    points: [
-      "প্রতিদিন সময়মতো বিদ্যালয়ে উপস্থিত থাকতে হবে এবং নিয়মিত ক্লাসে অংশগ্রহণ করতে হবে।",
-      "শিক্ষক, সহপাঠী, কর্মচারী এবং বিদ্যালয়ের সকল সদস্যের প্রতি সম্মানজনক আচরণ করতে হবে।",
-      "হোমওয়ার্ক, অ্যাসাইনমেন্ট, প্রজেক্ট ও ক্লাসওয়ার্ক সময়মতো সম্পন্ন করতে হবে।",
-      "পরীক্ষায় সততা বজায় রাখতে হবে এবং কোনো ধরনের অসদুপায় অবলম্বন করা যাবে না।",
-      "মোবাইল বা ডিজিটাল ডিভাইস বিদ্যালয়ের অনুমতি ছাড়া ব্যবহার করা যাবে না।",
-    ],
+    id: 1,
+    title: "মোট বই",
+    value: "৫,০০০+",
+    icon: <FaBook />,
   },
   {
-    title: "অভিভাবকদের নির্দেশিকা",
-    icon: <FaPeopleGroup />,
-    points: [
-      "সন্তানের নিয়মিত উপস্থিতি, সময়ানুবর্তিতা ও পড়াশোনার অগ্রগতি পর্যবেক্ষণ করুন।",
-      "বিদ্যালয়ের নোটিশ, পরীক্ষার সময়সূচি, ছুটি ও গুরুত্বপূর্ণ নির্দেশনা নিয়মিত অনুসরণ করুন।",
-      "শ্রেণি শিক্ষক ও বিষয় শিক্ষকের সঙ্গে সন্তানের পড়াশোনা ও আচরণ সম্পর্কে যোগাযোগ রাখুন।",
-      "বিদ্যালয়ের নীতিমালা মেনে চলতে সন্তানকে উৎসাহিত করুন এবং প্রয়োজনীয় সহায়তা দিন।",
-      "কোনো সমস্যা হলে সরাসরি বিদ্যালয় কর্তৃপক্ষ বা দায়িত্বপ্রাপ্ত শিক্ষকের সঙ্গে যোগাযোগ করুন।",
-    ],
+    id: 2,
+    title: "দৈনিক পাঠক",
+    value: "৩০০+",
+    icon: <FaUsers />,
+  },
+  {
+    id: 3,
+    title: "বিষয়ভিত্তিক বিভাগ",
+    value: "২৫+",
+    icon: <FaGraduationCap />,
+  },
+  {
+    id: 4,
+    title: "পাঠাগার সময়",
+    value: "৮ ঘণ্টা",
+    icon: <FaClock />,
   },
 ];
 
-const PoliciesGuidelinesPage = () => {
+const libraryRules: LibraryRule[] = [
+  {
+    id: 1,
+    title: "লাইব্রেরি কার্ড ব্যবহার",
+    description:
+      "বই ধার নেওয়ার জন্য শিক্ষার্থীদের লাইব্রেরি কার্ড ব্যবহার করতে হবে।",
+  },
+  {
+    id: 2,
+    title: "সময়মতো বই ফেরত",
+    description:
+      "নির্ধারিত সময়ের মধ্যে বই ফেরত দেওয়া শিক্ষার্থীর দায়িত্ব।",
+  },
+  {
+    id: 3,
+    title: "বই পরিষ্কার রাখা",
+    description:
+      "বইয়ে দাগ দেওয়া, পৃষ্ঠা ভাঁজ করা বা বই ক্ষতিগ্রস্ত করা যাবে না।",
+  },
+  {
+    id: 4,
+    title: "নীরব পরিবেশ বজায় রাখা",
+    description:
+      "লাইব্রেরিতে পড়ার উপযোগী শান্ত ও শৃঙ্খলাপূর্ণ পরিবেশ বজায় রাখতে হবে।",
+  },
+];
+
+function BookCard({ book }: { book: BookItem }) {
+  const available = book.status === "available";
+
+  return (
+    <article className="group flex h-full flex-col overflow-hidden rounded-[28px] border border-soft bg-page-primary shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl">
+      <div className="relative flex h-[230px] items-center justify-center overflow-hidden bg-color-primary p-6">
+        <div className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-color-secondary opacity-30 blur-2xl transition-all duration-700 group-hover:scale-150" />
+        <div className="pointer-events-none absolute -bottom-14 -left-14 h-40 w-40 rounded-full bg-page-primary opacity-10 blur-2xl" />
+
+        <Image
+          src={book.image}
+          alt={book.title}
+          width={170}
+          height={170}
+          className="relative z-10 h-32.5 w-auto object-contain transition-transform duration-500 group-hover:scale-110"
+        />
+
+        <span
+          className={`absolute left-5 top-5 rounded-full px-4 py-2 text-xs font-black shadow-sm ${
+            available
+              ? "bg-color-secondary text-brand-primary"
+              : "bg-white/15 text-inverse"
+          }`}
+        >
+          {available ? "উপলব্ধ" : "ধার দেওয়া হয়েছে"}
+        </span>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5">
+        <p className="w-fit rounded-full bg-color-secondary px-4 py-2 text-xs font-black text-brand-primary">
+          {book.category}
+        </p>
+
+        <h3 className="mt-4 text-xl font-black leading-snug text-primary">
+          {book.title}
+        </h3>
+
+        <p className="mt-2 text-sm font-semibold text-secondary">
+          লেখক / উৎস: {book.author}
+        </p>
+
+        <div className="mt-5 grid grid-cols-1 gap-3">
+          <div className="rounded-2xl bg-page-secondary p-4">
+            <div className="flex items-center gap-2 text-brand-primary">
+              <FaGraduationCap className="text-sm" />
+              <span className="text-xs font-black">উপযোগী শ্রেণি</span>
+            </div>
+
+            <p className="mt-2 text-sm font-black text-primary">
+              {book.classLevel}
+            </p>
+          </div>
+
+          <div className="rounded-2xl bg-page-secondary p-4">
+            <div className="flex items-center gap-2 text-brand-primary">
+              <FaBookOpen className="text-sm" />
+              <span className="text-xs font-black">বইয়ের অবস্থান</span>
+            </div>
+
+            <p className="mt-2 text-sm font-black text-primary">
+              {book.shelf}
+            </p>
+          </div>
+        </div>
+
+        <Link
+          href="/contact"
+          className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-6 py-3 text-sm font-black text-inverse shadow-lg transition-all duration-300 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
+        >
+          বই সম্পর্কে জানতে চান
+          <FaArrowRight />
+        </Link>
+      </div>
+    </article>
+  );
+}
+
+export default function LibraryPage() {
+  const [selectedCategory, setSelectedCategory] = useState("সব বই");
+  const [searchText, setSearchText] = useState("");
+
+  const filteredBooks = useMemo(() => {
+    return books.filter((book) => {
+      const matchesCategory =
+        selectedCategory === "সব বই" || book.category === selectedCategory;
+
+      const matchesSearch =
+        book.title.toLowerCase().includes(searchText.toLowerCase()) ||
+        book.author.toLowerCase().includes(searchText.toLowerCase()) ||
+        book.category.toLowerCase().includes(searchText.toLowerCase()) ||
+        book.classLevel.toLowerCase().includes(searchText.toLowerCase());
+
+      return matchesCategory && matchesSearch;
+    });
+  }, [selectedCategory, searchText]);
+
   return (
     <main className="min-h-screen bg-page-secondary font-main text-primary">
-      {/* উপরের অংশ */}
-      <section className="relative overflow-hidden bg-page-primary px-4 py-14 text-primary sm:px-6 lg:px-8 lg:py-16">
-        <div className="pointer-events-none absolute left-1/2 top-0 h-72 w-72 -translate-x-1/2 rounded-full bg-color-secondary opacity-20 blur-3xl" />
+      <section className="relative overflow-hidden border-b border-soft bg-page-primary px-4 py-20 sm:px-6 lg:px-8 lg:py-24">
+        <div className="pointer-events-none absolute left-1/2 top-8 h-52 w-52 -translate-x-1/2 rounded-full bg-color-secondary opacity-70 blur-3xl" />
 
-        <div className="relative z-10 mx-auto max-w-[1200px] text-center">
-          <p className="text-xs font-black uppercase tracking-[0.45em] text-brand-primary sm:text-sm">
-            বিদ্যালয়ের নিয়মনীতি
+        <div className="relative z-10 mx-auto max-w-300 text-center">
+          <p className="text-xs font-black uppercase tracking-[0.35em] text-brand-primary sm:text-sm">
+            বিদ্যালয় লাইব্রেরি
           </p>
 
-          <h1 className="mt-5 text-[36px] font-black leading-tight text-primary sm:text-5xl lg:text-6xl">
-            নীতিমালা ও নির্দেশিকা
+          <h1 className="mt-7 text-[40px] font-black leading-tight text-primary sm:text-6xl lg:text-7xl">
+            জ্ঞানচর্চার উন্মুক্ত পাঠাগার
           </h1>
 
-          <div className="mx-auto mt-5 h-1 w-28 rounded-full bg-color-primary" />
+          <div className="mx-auto mt-7 h-1 w-28 rounded-full bg-color-primary" />
 
-          <p className="mx-auto mt-7 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
-            বিদ্যালয়ের একাডেমিক, শৃঙ্খলা, নিরাপত্তা, উপস্থিতি, পরীক্ষা ও
-            অভিভাবক-শিক্ষার্থী সম্পর্কিত গুরুত্বপূর্ণ নীতিমালা ও নির্দেশিকা।
+          <p className="mx-auto mt-9 max-w-3xl text-sm font-semibold leading-8 text-secondary sm:text-base">
+            আমাদের লাইব্রেরি শিক্ষার্থীদের পাঠাভ্যাস, সৃজনশীল চিন্তা,
+            গবেষণামূলক মনোভাব এবং জ্ঞানচর্চার আগ্রহ বাড়াতে সহায়ক একটি সুন্দর
+            পরিবেশ।
           </p>
 
-          <Link
-            href="/"
-            className="mt-8 inline-flex items-center justify-center rounded-full bg-color-primary px-7 py-3 text-sm font-black text-inverse shadow-md transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary hover:shadow-xl"
-          >
-            হোমে ফিরে যান
-          </Link>
-        </div>
-      </section>
-
-      {/* নীতিমালার সারসংক্ষেপ */}
-      <section className="px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mx-auto grid max-w-[1500px] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {overviewItems.map((item) => (
-            <div
-              key={item.title}
-              className="group rounded-[24px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+          <div className="mt-10 flex flex-wrap justify-center gap-3">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center rounded-full bg-color-primary px-8 py-4 text-sm font-black text-inverse shadow-lg transition-all duration-500 hover:-translate-y-1 hover:opacity-90 hover:shadow-xl"
             >
-              <div className="flex h-12 w-12 items-center justify-center rounded-[18px] bg-color-secondary text-xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
-                {item.icon}
-              </div>
+              হোমে ফিরে যান
+            </Link>
 
-              <h3 className="mt-4 text-2xl font-black text-primary">
-                {item.value}
-              </h3>
-
-              <p className="mt-1 text-sm font-semibold text-secondary">
-                {item.title}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ভূমিকা */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8 lg:p-10">
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-start">
-              <div className="lg:col-span-4">
-                <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                  ভূমিকা
-                </p>
-
-                <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                  নিয়মনীতি মানলেই সুন্দর শিক্ষার পরিবেশ
-                </h2>
-
-                <div className="mt-5 flex items-center gap-2">
-                  <span className="h-1 w-16 rounded-full bg-color-primary" />
-                  <span className="h-1 w-7 rounded-full bg-color-secondary" />
-                </div>
-              </div>
-
-              <div className="lg:col-span-8">
-                <p className="text-justify text-sm font-semibold leading-8 text-secondary sm:text-base sm:leading-9">
-                  বিদ্যালয়ের নীতিমালা ও নির্দেশিকা শিক্ষার্থী, শিক্ষক,
-                  অভিভাবক এবং বিদ্যালয় কর্তৃপক্ষের মধ্যে দায়িত্ববোধ, শৃঙ্খলা ও
-                  সহযোগিতা নিশ্চিত করে। একটি নিরাপদ, পরিচ্ছন্ন, নৈতিক ও
-                  শিক্ষাবান্ধব পরিবেশ গড়ে তুলতে নিয়মনীতি অনুসরণ করা অত্যন্ত
-                  গুরুত্বপূর্ণ। এই পেজে বিদ্যালয়ের গুরুত্বপূর্ণ একাডেমিক,
-                  উপস্থিতি, পরীক্ষা, আচরণ, নিরাপত্তা ও প্রযুক্তি ব্যবহার
-                  সম্পর্কিত নির্দেশনা তুলে ধরা হয়েছে।
-                </p>
-              </div>
-            </div>
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center rounded-full border border-soft bg-color-secondary px-8 py-4 text-sm font-black text-brand-primary shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-xl"
+            >
+              যোগাযোগ করুন
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* প্রধান নীতিমালা */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
+      <section className="px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+        <div className="mx-auto max-w-400">
+          <div className="mb-10 overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12">
-              <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
-                  <FaStar className="text-sm" />
+              <div className="relative min-h-80 overflow-hidden lg:col-span-5">
+                <Image
+                  src={libraryImage}
+                  alt="বিদ্যালয় লাইব্রেরি"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                  className="object-cover"
+                />
 
-                  <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    মূল নির্দেশিকা
-                  </p>
+                <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/20 to-transparent" />
+
+                <div className="absolute bottom-6 left-6 right-6">
+                  <span className="inline-flex items-center gap-2 rounded-full bg-color-secondary px-5 py-2 text-xs font-black text-brand-primary shadow-md">
+                    <FaBookOpen />
+                    লাইব্রেরি কর্নার
+                  </span>
                 </div>
+              </div>
 
-                <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  শৃঙ্খলা, নিরাপত্তা ও সততা আমাদের প্রধান নীতি
+              <div className="p-6 text-inverse sm:p-8 lg:col-span-7 lg:p-12">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[0.18em] text-inverse">
+                  <FaSchoolFlag />
+                  পাঠাভ্যাস উন্নয়ন
+                </span>
+
+                <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
+                  বই, জ্ঞান ও গবেষণার সমন্বিত পরিবেশ
                 </h2>
 
-                <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  বিদ্যালয়ের প্রতিটি শিক্ষার্থীকে সময়ানুবর্তিতা, সততা,
-                  সম্মানজনক আচরণ এবং দায়িত্বশীলতার মাধ্যমে শিক্ষার পরিবেশ
-                  উন্নত করতে উৎসাহিত করা হয়। নিয়মনীতি মেনে চললে শিক্ষার্থী
-                  শুধু ভালো ফলাফল নয়, ভালো মানুষ হিসেবেও গড়ে ওঠে।
+                <p className="mt-5 max-w-4xl text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
+                  লাইব্রেরিতে রয়েছে পাঠ্যবই, সহায়ক বই, সাহিত্য, বিজ্ঞান,
+                  প্রযুক্তি, ইতিহাস, সাধারণ জ্ঞান এবং শিক্ষার্থীদের বয়সভিত্তিক
+                  উপযোগী বিভিন্ন বই। শিক্ষার্থীরা নিয়মিত পাঠচর্চার মাধ্যমে
+                  নিজের জ্ঞান ও সৃজনশীলতা বৃদ্ধি করতে পারে।
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    আচরণ: সম্মানজনক
-                  </span>
-
-                  <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    পরীক্ষা: নকলমুক্ত
-                  </span>
-
-                  <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-black">
-                    উপস্থিতি: নিয়মিত
-                  </span>
-                </div>
-              </div>
-
-              <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
-                <div className="rounded-[28px] bg-page-primary p-6 text-center shadow-lg">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
-                    <FaShieldHalved />
-                  </div>
-
-                  <p className="mt-5 text-2xl font-black text-primary">
-                    নিরাপদ ক্যাম্পাস
-                  </p>
-
-                  <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    নিয়মনীতি, নিরাপত্তা ও দায়িত্বশীল আচরণই সুন্দর ক্যাম্পাসের
-                    ভিত্তি।
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* নীতিমালার বিভাগ */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              নীতিমালার বিভাগ
-            </p>
-
-            <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              নীতিমালার বিভাগসমূহ
-            </h2>
-
-            <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-              <span className="h-1 w-16 rounded-full bg-color-primary" />
-              <span className="h-1 w-7 rounded-full bg-color-secondary" />
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {policyCategories.map((category) => (
-              <article
-                key={category.title}
-                className="group rounded-[26px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
-              >
-                <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-page-secondary group-hover:text-brand-primary">
-                  {category.icon}
-                </div>
-
-                <h3 className="mt-5 text-xl font-black leading-tight text-primary transition-colors duration-500 group-hover:text-inverse">
-                  {category.title}
-                </h3>
-
-                <p className="mt-3 text-sm font-semibold leading-7 text-secondary transition-colors duration-500 group-hover:text-inverse/80">
-                  {category.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* গুরুত্বপূর্ণ নির্দেশিকা */}
-      <section className="px-4 pb-8 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="rounded-[30px] border border-soft bg-page-primary p-6 shadow-sm sm:p-8">
-            <div className="mb-8 text-center">
-              <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-                গুরুত্বপূর্ণ নির্দেশিকা
-              </p>
-
-              <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-                গুরুত্বপূর্ণ নির্দেশনাসমূহ
-              </h2>
-
-              <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-                <span className="h-1 w-16 rounded-full bg-color-primary" />
-                <span className="h-1 w-7 rounded-full bg-color-secondary" />
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {importantGuidelines.map((item) => (
-                <article
-                  key={item.title}
-                  className="group rounded-[24px] border border-soft bg-page-secondary p-5 transition-all duration-500 hover:-translate-y-1 hover:bg-color-primary hover:shadow-xl"
-                >
-                  <div className="flex h-14 w-14 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-page-primary group-hover:text-brand-primary">
-                    {item.icon}
-                  </div>
-
-                  <h3 className="mt-5 text-xl font-black leading-tight text-primary transition-colors duration-500 group-hover:text-inverse">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-3 text-sm font-semibold leading-7 text-secondary transition-colors duration-500 group-hover:text-inverse/80">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* নীতিমালার তালিকা */}
-      <section
-        id="policy-table"
-        className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16"
-      >
-        <div className="mx-auto max-w-[1500px]">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-brand-primary">
-              নীতিমালা তালিকা
-            </p>
-
-            <h2 className="mt-3 text-3xl font-black leading-tight text-primary sm:text-4xl">
-              নীতিমালার বিস্তারিত তালিকা
-            </h2>
-
-            <div className="mx-auto mt-4 flex items-center justify-center gap-2">
-              <span className="h-1 w-16 rounded-full bg-color-primary" />
-              <span className="h-1 w-7 rounded-full bg-color-secondary" />
-            </div>
-          </div>
-
-          <div className="overflow-hidden rounded-[30px] border border-soft bg-page-primary shadow-sm">
-            <div className="hidden lg:block">
-              <table className="w-full border-collapse">
-                <thead>
-                  <tr className="border-b border-soft bg-page-secondary">
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      নীতিমালার নাম
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      বিভাগ
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      প্রযোজ্য ব্যক্তি
-                    </th>
-                    <th className="px-5 py-4 text-left text-sm font-black text-primary">
-                      গুরুত্ব
-                    </th>
-                    <th className="px-5 py-4 text-right text-sm font-black text-primary">
-                      বিস্তারিত
-                    </th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  {policyItems.map((item) => (
-                    <tr
-                      key={item.id}
-                      className="border-b border-soft transition-all duration-500 hover:bg-page-secondary"
+                <div className="mt-7 grid grid-cols-1 gap-4 sm:grid-cols-2">
+                  {libraryStats.map((stat) => (
+                    <div
+                      key={stat.id}
+                      className="rounded-3xl border border-white/15 bg-white/10 p-5"
                     >
-                      <td className="px-5 py-5">
-                        <div className="flex items-center gap-3">
-                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-color-secondary text-primary">
-                            <FaFileLines />
-                          </span>
+                      <div className="flex items-center gap-3">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-color-secondary text-xl text-brand-primary">
+                          {stat.icon}
+                        </div>
 
-                          <p className="text-sm font-black leading-6 text-primary">
-                            {item.policyName}
+                        <div>
+                          <p className="text-2xl font-black text-inverse">
+                            {stat.value}
+                          </p>
+                          <p className="text-sm font-bold text-inverse opacity-80">
+                            {stat.title}
                           </p>
                         </div>
-                      </td>
-
-                      <td className="px-5 py-5">
-                        <span className="inline-flex items-center rounded-full bg-page-secondary px-3 py-2 text-xs font-black text-brand-primary">
-                          {item.category}
-                        </span>
-                      </td>
-
-                      <td className="px-5 py-5 text-sm font-bold text-secondary">
-                        {item.applicableFor}
-                      </td>
-
-                      <td className="px-5 py-5 text-sm font-black text-secondary">
-                        {item.importance}
-                      </td>
-
-                      <td className="px-5 py-5 text-right">
-                        <Link
-                          href={item.fileUrl}
-                          className="inline-flex items-center gap-2 rounded-full bg-color-primary px-4 py-2 text-xs font-black text-inverse transition-all duration-500 hover:-translate-y-1 hover:bg-color-secondary hover:text-primary"
-                        >
-                          ডাউনলোড
-                          <FaCloudArrowDown />
-                        </Link>
-                      </td>
-                    </tr>
+                      </div>
+                    </div>
                   ))}
-                </tbody>
-              </table>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-10 rounded-[30px] border border-soft bg-page-primary p-5 shadow-sm sm:p-6">
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-12 lg:items-center">
+              <div className="lg:col-span-5">
+                <p className="text-sm font-black uppercase tracking-[0.2em] text-brand-primary">
+                  বই অনুসন্ধান
+                </p>
+
+                <h2 className="mt-2 text-2xl font-black text-primary">
+                  লাইব্রেরির বই খুঁজুন
+                </h2>
+              </div>
+
+              <div className="lg:col-span-7">
+                <div className="relative">
+                  <FaMagnifyingGlass className="absolute left-4 top-1/2 -translate-y-1/2 text-brand-primary" />
+
+                  <input
+                    type="text"
+                    value={searchText}
+                    onChange={(event) => setSearchText(event.target.value)}
+                    placeholder="বইয়ের নাম, বিষয় বা শ্রেণি লিখুন"
+                    className="w-full rounded-full border border-soft bg-page-secondary py-4 pl-12 pr-5 text-sm font-semibold text-primary outline-none transition focus:border-brand-primary focus:bg-page-primary"
+                  />
+                </div>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 p-4 lg:hidden">
-              {policyItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="rounded-[22px] border border-soft bg-page-secondary p-4"
+            <div className="mt-5 flex gap-3 overflow-x-auto pb-2">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  type="button"
+                  onClick={() => setSelectedCategory(category)}
+                  className={`shrink-0 rounded-full px-5 py-3 text-sm font-black transition-all duration-300 ${
+                    selectedCategory === category
+                      ? "bg-color-primary text-inverse shadow-lg"
+                      : "bg-color-secondary text-brand-primary hover:bg-color-primary hover:text-inverse"
+                  }`}
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                        {item.category}
-                      </p>
-
-                      <h3 className="mt-2 text-xl font-black leading-tight text-primary">
-                        {item.policyName}
-                      </h3>
-                    </div>
-
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-color-secondary text-primary">
-                      <FaFileLines />
-                    </div>
-                  </div>
-
-                  <div className="mt-4 space-y-2">
-                    <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">
-                        প্রযোজ্য ব্যক্তি:
-                      </span>{" "}
-                      {item.applicableFor}
-                    </p>
-
-                    <p className="text-sm font-semibold text-secondary">
-                      <span className="font-black text-primary">গুরুত্ব:</span>{" "}
-                      {item.importance}
-                    </p>
-                  </div>
-
-                  <Link
-                    href={item.fileUrl}
-                    className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-color-primary px-4 py-3 text-sm font-black text-inverse transition-all duration-500 hover:bg-color-secondary hover:text-primary"
-                  >
-                    ডাউনলোড
-                    <FaCloudArrowDown />
-                  </Link>
-                </div>
+                  {category}
+                </button>
               ))}
             </div>
           </div>
+
+          <div className="mb-7 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.2em] text-brand-primary">
+                বইয়ের তালিকা
+              </p>
+
+              <h2 className="mt-2 text-3xl font-black text-primary">
+                নির্বাচিত বইসমূহ
+              </h2>
+
+              <p className="mt-3 max-w-2xl text-sm font-semibold leading-7 text-secondary">
+                এখানে লাইব্রেরির গুরুত্বপূর্ণ বইগুলো শ্রেণি ও বিষয়ের ভিত্তিতে
+                দেখানো হয়েছে।
+              </p>
+            </div>
+
+            <div className="inline-flex w-fit items-center gap-2 rounded-full bg-color-secondary px-5 py-3 text-sm font-black text-brand-primary">
+              <span>{toBanglaNumber(filteredBooks.length)}</span>
+              <span>টি বই</span>
+            </div>
+          </div>
+
+          {filteredBooks.length > 0 ? (
+            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+              {filteredBooks.map((book) => (
+                <BookCard key={book.id} book={book} />
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-[30px] border border-soft bg-page-primary p-8 text-center shadow-sm sm:p-12">
+              <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[26px] bg-color-secondary text-3xl text-brand-primary">
+                <FaBook />
+              </div>
+
+              <h3 className="mt-5 text-2xl font-black text-primary">
+                কোনো বই পাওয়া যায়নি
+              </h3>
+
+              <p className="mx-auto mt-3 max-w-xl text-sm font-semibold leading-7 text-secondary">
+                আপনার অনুসন্ধান বা নির্বাচিত বিষয়ের সঙ্গে মিল পাওয়া যায়নি। অন্য
+                শব্দ দিয়ে আবার চেষ্টা করুন।
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* শিক্ষার্থী ও অভিভাবক নির্দেশিকা */}
-      <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {guidelineSections.map((section) => (
+      <section className="px-4 pb-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-400">
+          <div className="mb-8 text-center">
+            <p className="text-sm font-black uppercase tracking-[0.2em] text-brand-primary">
+              লাইব্রেরি নিয়মাবলি
+            </p>
+
+            <h2 className="mt-3 text-3xl font-black text-primary sm:text-4xl">
+              বই ব্যবহার ও পাঠাগার শৃঙ্খলা
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-2xl text-sm font-semibold leading-7 text-secondary">
+              লাইব্রেরির সুন্দর পরিবেশ বজায় রাখতে শিক্ষার্থীদের কিছু নিয়ম
+              অনুসরণ করতে হবে।
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {libraryRules.map((rule) => (
               <article
-                key={section.title}
-                className="group rounded-[28px] border border-soft bg-page-primary p-5 shadow-sm transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-xl sm:p-6 lg:p-7"
+                key={rule.id}
+                className="group rounded-[26px] border border-soft bg-page-primary p-6 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-[20px] bg-color-secondary text-2xl text-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
-                    {section.icon}
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-black uppercase tracking-[0.16em] text-brand-primary">
-                      নির্দেশিকা
-                    </p>
-
-                    <h3 className="mt-2 text-xl font-black leading-tight text-primary sm:text-2xl">
-                      {section.title}
-                    </h3>
-                  </div>
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-color-secondary text-xl text-brand-primary transition-all duration-500 group-hover:bg-color-primary group-hover:text-inverse">
+                  <FaCheck />
                 </div>
 
-                <div className="mt-5 space-y-3">
-                  {section.points.map((point) => (
-                    <div
-                      key={point}
-                      className="flex gap-3 rounded-[18px] border border-soft bg-page-secondary p-4 transition-all duration-500 group-hover:border-brand-primary-soft"
-                    >
-                      <span className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-color-primary text-[10px] text-inverse">
-                        <FaCheck />
-                      </span>
+                <h3 className="mt-5 text-xl font-black text-primary">
+                  {rule.title}
+                </h3>
 
-                      <p className="text-sm font-semibold leading-7 text-secondary">
-                        {point}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
+                  {rule.description}
+                </p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* সমাপনী বার্তা */}
-      <section className="px-4 pb-12 sm:px-6 lg:px-8 lg:pb-16">
-        <div className="mx-auto max-w-[1500px]">
-          <div className="overflow-hidden rounded-[32px] border border-soft bg-color-primary shadow-sm">
-            <div className="grid grid-cols-1 lg:grid-cols-12">
-              <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-10">
-                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
-                  <FaCalendarCheck className="text-sm" />
+      <section className="px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+        <div className="mx-auto max-w-400 overflow-hidden rounded-[36px] border border-soft bg-color-primary shadow-sm">
+          <div className="grid grid-cols-1 lg:grid-cols-12">
+            <div className="p-6 text-inverse sm:p-8 lg:col-span-8 lg:p-12">
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2">
+                <FaCircleInfo className="text-sm" />
 
-                  <p className="text-xs font-black uppercase tracking-[0.18em]">
-                    সমাপনী বার্তা
-                  </p>
-                </div>
-
-                <h2 className="mt-5 text-3xl font-black leading-tight sm:text-4xl">
-                  নিয়মনীতি মানলেই নিরাপদ ও সুন্দর বিদ্যালয়
-                </h2>
-
-                <p className="mt-4 text-sm font-semibold leading-8 text-inverse/90 sm:text-base">
-                  বিদ্যালয়ের নীতিমালা ও নির্দেশিকা মেনে চললে শিক্ষার্থী,
-                  শিক্ষক ও অভিভাবকের মধ্যে সুন্দর সমন্বয় তৈরি হয়। শৃঙ্খলা,
-                  সততা, নিরাপত্তা ও দায়িত্বশীলতার মাধ্যমে একটি আদর্শ
-                  শিক্ষাবান্ধব পরিবেশ গড়ে তোলা সম্ভব।
+                <p className="text-xs font-black uppercase tracking-[0.18em]">
+                  পাঠাগার বার্তা
                 </p>
               </div>
 
-              <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
-                <div className="rounded-[28px] bg-page-primary p-6 text-center shadow-lg">
-                  <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-[22px] bg-color-primary text-3xl text-inverse">
-                    <FaGraduationCap />
-                  </div>
+              <h2 className="mt-5 text-3xl font-black leading-tight text-inverse sm:text-4xl lg:text-5xl">
+                নিয়মিত বই পড়া শিক্ষার্থীর চিন্তাশক্তি বাড়ায়
+              </h2>
 
-                  <p className="mt-5 text-2xl font-black text-primary">
-                    সুন্দর শিক্ষাজীবন
-                  </p>
+              <p className="mt-5 text-sm font-semibold leading-8 text-inverse opacity-90 sm:text-base sm:leading-9">
+                বই পড়ার মাধ্যমে শিক্ষার্থীরা ভাষা, কল্পনাশক্তি, বিশ্লেষণ
+                ক্ষমতা, মনোযোগ এবং আত্মবিশ্বাস বাড়াতে পারে। তাই লাইব্রেরি
+                ব্যবহারকে আমরা শিক্ষার গুরুত্বপূর্ণ অংশ হিসেবে দেখি।
+              </p>
+            </div>
 
-                  <p className="mt-2 text-sm font-semibold leading-6 text-secondary">
-                    নিয়ম, দায়িত্ব ও সম্মান বজায় রাখাই সুন্দর শিক্ষাজীবনের
-                    ভিত্তি।
-                  </p>
+            <div className="flex items-center justify-center bg-color-secondary p-6 lg:col-span-4 lg:p-10">
+              <div className="w-full rounded-[30px] border border-soft bg-page-primary p-6 text-center shadow-xl">
+                <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-[26px] bg-color-primary text-4xl text-inverse">
+                  <FaStar />
                 </div>
+
+                <p className="mt-6 text-3xl font-black text-primary">
+                  পাঠাভ্যাস গঠন
+                </p>
+
+                <p className="mt-3 text-sm font-semibold leading-7 text-secondary">
+                  প্রতিদিন নিয়মিত বই পড়ার মাধ্যমে শিক্ষার্থীরা আরও আত্মবিশ্বাসী
+                  ও জ্ঞানসমৃদ্ধ হয়ে ওঠে।
+                </p>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 pb-12 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-400 rounded-3xl border border-soft bg-page-primary p-5">
+          <div className="flex items-start gap-3">
+            <FaDownload className="mt-1 shrink-0 text-brand-primary" />
+
+            <p className="text-sm font-semibold leading-7 text-secondary">
+              নোট: লাইব্রেরি কার্ড, বই ধার নেওয়া এবং বই ফেরত দেওয়ার সময়সূচি
+              সম্পর্কে বিস্তারিত জানতে বিদ্যালয় অফিসে যোগাযোগ করুন।
+            </p>
           </div>
         </div>
       </section>
     </main>
   );
-};
+}
 
-export default PoliciesGuidelinesPage;
+
+
+
